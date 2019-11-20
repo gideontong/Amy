@@ -4,6 +4,8 @@ import urllib.parse
 import re
 import pafy
 
+import vlc
+
 query_string = urllib.parse.urlencode({"search_query" : input()})
 html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string)
 search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
@@ -16,6 +18,20 @@ video = pafy.new(uri)
 bestaudio = video.getbestaudio()
 bestaudio.download()
 playurl = best.url
+
+instance = vlc.Instance()
+
+#Define VLC player
+player=instance.media_player_new()
+
+#Define VLC media
+media=instance.media_new(playurl)
+
+#Set player media
+player.set_media(media)
+
+#Play the media
+player.play()
 """
 downloadOptions = {
     'postprocessors': [{

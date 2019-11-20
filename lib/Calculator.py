@@ -26,6 +26,9 @@ def divide(*args) -> float:
 
 """
 
+def correctWord(s: str) -> str:
+    return
+
 def findExpression(s: str) -> float:
     arguments = s.split(" ")
     return

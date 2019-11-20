@@ -1,4 +1,5 @@
 # COMMENTS ARE NOT ALLOWED
+from lib import *
 import speech_recognition as sr
 import sys
 

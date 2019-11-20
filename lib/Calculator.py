@@ -1,5 +1,6 @@
 # a calculator for arithmetic sequences
 
+"""
 def add(*args) -> float:
     output = 0
     for x in args:
@@ -22,3 +23,9 @@ def divide(*args) -> float:
     output = 1
     for x in args:
         output = output / x
+
+"""
+
+def findExpression(s: str) -> float:
+    arguments = s.split(" ")
+    return

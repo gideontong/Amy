@@ -1,0 +1,3 @@
+It's a json file you can figure it out, but here's the structure...
+
+No keys needed for any APIs yet

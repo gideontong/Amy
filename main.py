@@ -1,4 +1,10 @@
+# COMMENTS ARE NOT ALLOWED
 import speech_recognition as sr
+import sys
+
+MIN_PYTHON = (3, 8)
+if sys.version_info < MIN_PYTHON:
+    sys.exit("Python %s.%s or later is required.\n" % MIN_PYTHON)
 
 r = sr.Recognizer()
 mic = sr.Microphone()

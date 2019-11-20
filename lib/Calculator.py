@@ -30,10 +30,5 @@ def correctWord(s: str) -> str:
     return
 
 def findExpression(s: str) -> float:
-    quickOperations = ["+", "-", "*", "/", "%", "^"]
-    knownOperations = [
-        ["plus"],
-        ["minus"]
-    ]
     arguments = s.split(" ")
     return

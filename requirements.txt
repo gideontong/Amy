@@ -1,5 +1,6 @@
-SpeechRecognition
 lib/PyAudio-0.2.11-cp38-cp38-win_amd64.whl ; sys_platform == "win32"
 PyAudio ; sys_platform == "linux"
 PyAudio ; sys_platform == "linux2"
 PyAudio ; sys_platform == "darwin"
+SpeechRecognition
+youtube-dl

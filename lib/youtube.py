@@ -12,6 +12,17 @@ uri = "http://www.youtube.com/watch?v=" + search_results[0]
 
 print(uri)
 
+
+video = pafy.new(uri)
+best = video.getbest()
+playurl = best.url
+
+Instance = vlc.Instance()
+player = Instance.media_player_new()
+Media = Instance.media_new(playurl)
+Media.get_mrl()
+player.set_media(Media)
+player.play()
 """
 downloadOptions = {
     'postprocessors': [{

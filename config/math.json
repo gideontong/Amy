@@ -1,0 +1,29 @@
+{
+    "fastOperations": [
+        ["+", "-", "*", "/", "%"]
+    ],
+    "operations": [
+        [
+            "add",
+            "sum"
+        ],
+        [
+            "subtract",
+            "minus"
+        ],
+        [
+            "times",
+            "multiply",
+            "multiplied by"
+        ],
+        [
+            "divide",
+            "divided by"
+        ],
+        [
+            "mod",
+            "modulous",
+            "remainder"
+        ]
+    ]
+}

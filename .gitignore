@@ -1,6 +1,6 @@
 # Gideon's gitignores
 .vscode
-keys.json
+config/keys.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

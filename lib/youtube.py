@@ -2,7 +2,6 @@ from youtube_dl import YoutubeDL
 import urllib.request
 import urllib.parse
 import re
-import vlc
 import pafy
 
 query_string = urllib.parse.urlencode({"search_query" : input()})
@@ -14,15 +13,9 @@ print(uri)
 
 
 video = pafy.new(uri)
-best = video.getbest()
+bestaudio = video.getbestaudio()
+bestaudio.download()
 playurl = best.url
-
-Instance = vlc.Instance()
-player = Instance.media_player_new()
-Media = Instance.media_new(playurl)
-Media.get_mrl()
-player.set_media(Media)
-player.play()
 """
 downloadOptions = {
     'postprocessors': [{

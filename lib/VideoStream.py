@@ -20,5 +20,9 @@ print("set media")
 player.play()
 print("should've played")
 
+# to do
+# cloes the window after done
+# hide the vide
+
 while True:
     pass

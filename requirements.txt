@@ -5,4 +5,4 @@ PyAudio ; sys_platform == "linux2"
 PyAudio ; sys_platform == "darwin"
 python-vlc
 SpeechRecognition
-youtube-dl
+# youtube-dl

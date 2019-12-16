@@ -22,6 +22,7 @@ player.set_media(Media)
 # print("set media")
 player.play()
 print("should've played")
+player.stop()
 
 # This is actually a really janky way of closing the thread. It works
 # by simply counting the number of seconds the video should've run
@@ -31,7 +32,7 @@ print("should've played")
 
 # Still need to hide the video
 
-
+"""
 start = datetime.now()
 elapsed = datetime.now() - start
 print(elapsed.total_seconds())
@@ -41,3 +42,4 @@ while elapsed.total_seconds() < length + 20:
     # if elapsed.total_seconds() % 10 == 0:
     print("elasped", elapsed.total_seconds(), "seconds")
     pass
+"""

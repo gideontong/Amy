@@ -4,7 +4,7 @@ from lib import *
 import speech_recognition as sr # Speech Recognition
 import getopt, sys # Program Arguments
 
-MIN_PYTHON = (3, 9)
+MIN_PYTHON = (4, 0)
 
 def versionCheck():
     if sys.version_info < MIN_PYTHON:
@@ -28,7 +28,7 @@ def main():
             print("--test was run! Nothing was done!")
         if argument in ("-e", "--exert"):
             global MIN_PYTHON
-            MIN_PYTHON = (MIN_PYTHON[0], 8)
+            MIN_PYTHON = (3, 8)
         else:
             print("Nothing was run! Nothing was done!")
 

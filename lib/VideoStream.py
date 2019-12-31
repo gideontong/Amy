@@ -24,22 +24,4 @@ player.play()
 print("should've played")
 player.stop()
 
-# This is actually a really janky way of closing the thread. It works
-# by simply counting the number of seconds the video should've run
-# and then ending the thread. A better way would be to hook into the
-# VLC runtime, but that would require me to look at the API and docs
-# first and I'm lazy.
-
 # Still need to hide the video
-
-"""
-start = datetime.now()
-elapsed = datetime.now() - start
-print(elapsed.total_seconds())
-
-while elapsed.total_seconds() < length + 20:
-    elapsed = datetime.now() - start
-    # if elapsed.total_seconds() % 10 == 0:
-    print("elasped", elapsed.total_seconds(), "seconds")
-    pass
-"""

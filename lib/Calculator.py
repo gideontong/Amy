@@ -1,34 +1,3 @@
-# a calculator for arithmetic sequences
+import wolframalpha
 
-"""
-def add(*args) -> float:
-    output = 0
-    for x in args:
-        output = output + x
-    return output
-
-def subtract(*args) -> float:
-    output = 0
-    for x in args:
-        output = output - x
-    return output
-
-def multiply(*args) -> float:
-    output = 1
-    for x in args:
-        output = output * x
-    return output
-
-def divide(*args) -> float:
-    output = 1
-    for x in args:
-        output = output / x
-
-"""
-
-def correctWord(s: str) -> str:
-    return
-
-def findExpression(s: str) -> float:
-    arguments = s.split(" ")
-    return
+client = wolframalpha.Client('Z1W064-W0RPBKLKFJE')

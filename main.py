@@ -4,6 +4,9 @@ from lib import *
 import speech_recognition as sr # Speech Recognition
 import getopt, sys # Program Arguments
 
+#from gtts import gTTS
+#from playsound import playsound
+
 MIN_PYTHON = (4, 0)
 
 def versionCheck():
@@ -25,7 +28,9 @@ def main():
         if argument in ("-v", "--verbose"):
             print("--verbose was run! Nothing was done!")
         if argument in ("-t", "--test"):
-            print("--test was run! Nothing was done!")
+            print("hi")
+            test = Calculator.query("1 + 4")
+            print(test)
         if argument in ("-e", "--exert"):
             global MIN_PYTHON
             MIN_PYTHON = (3, 8)
@@ -42,5 +47,9 @@ def main():
 
     text = r.recognize_google(audio)
     print(text)
+
+    #tts = gTTS(text)
+    #tts.save('playback.mp3')
+    #playsound('playback.mp3')
 
 main()

@@ -4,8 +4,8 @@ from lib import *
 import speech_recognition as sr # Speech Recognition
 import getopt, sys # Program Arguments
 
-#from gtts import gTTS
-#from playsound import playsound
+from gtts import gTTS
+from playsound import playsound
 
 MIN_PYTHON = (4, 0)
 
@@ -48,8 +48,8 @@ def main():
     text = r.recognize_google(audio)
     print(text)
 
-    #tts = gTTS(text)
-    #tts.save('playback.mp3')
-    #playsound('playback.mp3')
+    tts = gTTS(text)
+    tts.save('playback.mp3')
+    playsound('playback.mp3')
 
 main()

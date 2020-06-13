@@ -1,0 +1,9 @@
+{
+    "name": "AmyUndelete",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "dependencies": {
+        "discord.js": "^12.2.0"
+    }
+}

@@ -34,6 +34,7 @@ client.on('messageDelete', message => {
 });
 
 client.on('message', message => {
+    if(message.author.bot) return;
     if(message.content.toLowerCase().includes('valorant')) {
         if(Math.random() < 0.5) {
             if(Math.random() < 0.9) {

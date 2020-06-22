@@ -7,7 +7,10 @@
 ## Features
 
 * Calls people out when they delete a message
-* Randomly decides whether or not it's time to play VALORANT
+* Randomly decides whether or not it's time to play the following video games
+  * VALORANT
+  * SkyFactory
+* Pretends to share photos of Leo when asked
 
 ## Getting Started
 

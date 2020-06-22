@@ -1,4 +1,4 @@
-const responses = ('../config/responses.json');
+const responses = require('../config/responses.json');
 // const Discord = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

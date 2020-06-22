@@ -24,8 +24,8 @@ module.exports = async message => {
         }
         log.info(`${message.author} mentioned SkyFactory!`);
     } else if (sanitizedMessage.includes('photo of leo')) {
-        response = respones.requester[Math.floor(Math.random() * responses.requester.length)]
-            + ": " + respones.photo[Math.floor(Math.random() * responses.photo.length)];
+        response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
+            + ": " + responses.photo[Math.floor(Math.random() * responses.photo.length)];
         message.reply(response);
         log.info(`${message.author} requested a picture of Leo!`);
     }

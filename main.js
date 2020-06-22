@@ -3,7 +3,6 @@ const log4js = require('log4js');
 const client = new Discord.Client();
 
 const secrets = require('./config/secrets.json');
-const responses = require('./config/responses.json');
 
 log4js.configure({
     appenders: {

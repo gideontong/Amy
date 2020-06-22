@@ -23,8 +23,7 @@ module.exports = async message => {
             }
         }
         log.info(`${message.author} mentioned SkyFactory!`);
-    }
-    if(message.content.toLowerCase().includes('photo of leo')) {
+    } else if (sanitizedMessage.includes('photo of leo')) {
         if(Math.random() = 0.1) {
                 message.reply("https://photos.google.com/album/AF1QipNH0m1kl-6fFSd_s5p6gflEwcMZVvIOwoaoecHD/photo/AF1QipMiTONLb4nzG0Twg3TS_mJxuncFEHfZOA8KpH24");
             } 

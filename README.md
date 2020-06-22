@@ -7,10 +7,24 @@
 * Calls people out when they delete a message
 * Randomly decides whether or not it's time to play VALORANT
 
-## Maintainers
+## Getting Started
 
-Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).
+To get started, simply clone this repository to your hard drive. You'll need [Node 12.x](https://nodejs.org) or another JS code interpreter. Assuming you have Node installed, simply type
+
+```bash
+npm install
+```
+
+and while Node grabs the dependencies for you, move the file in `config/secrets-blank.json` to `config/secrets.json` and replace `token` with your [Discord API key](https://discord.com/developers/applications). Then start the application with
+
+```bash
+node main.js
+```
 
 ## Contributing
 
 If you'd like to contribute, submit a [pull request](https://github.com/gideontong/Amy/pulls)! I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
+
+## Maintainers
+
+Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).

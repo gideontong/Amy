@@ -1,7 +1,30 @@
 const Discord = require('discord.js');
+const log4js = require('log4js');
 const client = new Discord.Client();
+
 const secrets = require('./config/secrets.json');
 const responses = require('./config/responses.json');
+
+log4js.configure({
+    appenders: {
+        console: {
+            type: 'console'
+        },
+        file: {
+            type: 'file',
+            filename: `${new Date()}.log`
+        }
+    },
+    categories: {
+        amy: {
+            appenders: ['console', 'file'],
+            level: 'info'
+        }
+    }
+});
+const log = log4js.getLogger('amy');
+
+require('./event.js')(bot);
 
 client.on('ready', () => {
     console.log(`[${new Date()}] Starting up as ${bot.user.tag}#${bot.user.id}`)

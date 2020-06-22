@@ -6,7 +6,6 @@ secrets.json
 # Code
 node_modules
 package-lock.json
-logs
 *.log*
 .yarn
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

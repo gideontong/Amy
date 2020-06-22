@@ -1,8 +1,19 @@
 {
-    "name": "AmyUndelete",
-    "version": "1.0.0",
-    "description": "",
+    "name": "amy",
+    "version": "1.0.1",
+    "description": "Your personal assisstant, reimagined",
     "main": "main.js",
+    "scripts": {
+        "dev": "node main.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gideontong/Amy.git"
+    },
+    "keywords": ["bot", "digital assisstant", "artificial intelligence"],
+    "license": "MIT",
+    "bugs": "https://github.com/gideontong/Amy/issues",
+    "homepage": "https://amyhelps.ml",
     "dependencies": {
         "discord.js": "^12.2.0"
     }

@@ -11,7 +11,7 @@ log4js.configure({
         },
         file: {
             type: 'file',
-            filename: `${new Date()}.log`
+            filename: `logs/${new Date()}.log`
         }
     },
     categories: {

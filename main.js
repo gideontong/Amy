@@ -24,14 +24,14 @@ log4js.configure({
 });
 const log = log4js.getLogger('amy');
 
-require('./event.js')(bot);
+require('./event.js')(client);
 
 client.on('ready', () => {
-    console.log(`[${new Date()}] Starting up as ${bot.user.tag}#${bot.user.id}`)
-    client.user.setActivity('Leo Zhang', { type: 'WATCHING' })
-        .then(presence => console.log(`Presence set!`))
-        .catch(console.error);
-    console.log('Online');
+    log.info(`Starting up as ${client.user.tag}`)
+    client.user.setActivity('Andrew', { type: 'WATCHING' })
+        .then(presence => log.info('Successfully set current presence!'))
+        .catch(log.error);
+    log.info('Bot is now online!');
 });
 
 kek = responses.delete;

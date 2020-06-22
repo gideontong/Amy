@@ -28,7 +28,7 @@ require('./event.js')(client);
 
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag}`)
-    client.user.setActivity('Andrew', { type: 'WATCHING' })
+    client.user.setActivity('Andrew', { type: 'LISTENING' })
         .then(presence => log.info('Successfully set current presence!'))
         .catch(log.error);
     log.info('Bot is now online!');

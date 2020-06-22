@@ -16,7 +16,7 @@ log4js.configure({
         }
     },
     categories: {
-        amy: {
+        default: {
             appenders: ['console', 'file'],
             level: 'info'
         }

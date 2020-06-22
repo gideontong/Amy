@@ -5,6 +5,6 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if(message.author.bot) return;
     log.info(`${message.author} deleted "${message.cleanContent}"`);
-    response = respones.delete[Math.floor(Math.random() * responses.delete.length)];
+    response = responses.delete[Math.floor(Math.random() * responses.delete.length)];
     message.reply(response);
 }

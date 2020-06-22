@@ -1,13 +1,14 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const secrets = require("./config/secrets.json");
-const responses = require("./config/responses.json");
+const secrets = require('./config/secrets.json');
+const responses = require('./config/responses.json');
 
-client.on("ready", () => {
+client.on('ready', () => {
+    console.log(`[${new Date()}] Starting up as ${bot.user.tag}#${bot.user.id}`)
     client.user.setActivity('Leo Zhang', { type: 'WATCHING' })
         .then(presence => console.log(`Presence set!`))
         .catch(console.error);
-    console.log("Online");
+    console.log('Online');
 });
 
 kek = responses.delete;

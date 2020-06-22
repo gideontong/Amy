@@ -10,11 +10,16 @@
         "type": "git",
         "url": "https://github.com/gideontong/Amy.git"
     },
-    "keywords": ["bot", "digital assisstant", "artificial intelligence"],
+    "keywords": [
+        "bot",
+        "digital assisstant",
+        "artificial intelligence"
+    ],
     "license": "MIT",
     "bugs": "https://github.com/gideontong/Amy/issues",
     "homepage": "https://amyhelps.ml",
     "dependencies": {
-        "discord.js": "^12.2.0"
+        "discord.js": "^12.2.0",
+        "log4js": "^6.3.0"
     }
 }

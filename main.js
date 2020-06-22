@@ -34,9 +34,4 @@ client.on('ready', () => {
     log.info('Bot is now online!');
 });
 
-client.on('messageDelete', message => {
-    console.log(`Deleted ${new Date()}: ${message.author} said "${message.cleanContent}"`);
-    message.reply(kek[Math.floor(Math.random() * kek.length)]);
-});
-
 client.login(secrets.token);

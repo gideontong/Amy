@@ -1,5 +1,5 @@
-const responses = ('../config/responses.json');
-const Discord = require('discord.js');
+// const responses = ('../config/responses.json');
+// const Discord = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 module.exports = async message => {
@@ -13,5 +13,15 @@ module.exports = async message => {
             }
         }
         log.info(`${message.author} mentioned VALORANT!`)
+    }
+    if(message.content.toLowerCase().includes('skyfactory')) {
+        if(Math.random() < 1.0) {
+            if(Math.random() < 0.9) {
+                message.reply("it's time to play Sky Factory 4!");
+            } else {
+                message.reply("it's not time to play Sky Factory 4...");
+            }
+        }
+        console.log(`${message.author} mentioned SkyFactory at ${new Date()}`);
     }
 }

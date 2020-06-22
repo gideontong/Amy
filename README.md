@@ -9,4 +9,8 @@
 
 ## Maintainers
 
-Amy is maintained by primarily [Gideon Tong](https://gideontong.com) `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).
+Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).
+
+## Contributing
+
+If you'd like to contribute, submit a [pull request](https://github.com/gideontong/Amy/pulls)! I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.

@@ -5,7 +5,7 @@ const log = require('log4js').getLogger('amy');
 
 module.exports = async message => {
     if(message.author.bot) return;
-    log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent}"`);
+    log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent} [${message.attachments.keyArray().length}]"`);
     response = "you deleted a message, but I couldn't think of anything to say! (*This is an error. Please contact <@"
         + targets.gideon + "> for support.*)"
     if(message.author.tag.id == targets.leo && message.attachments.keyArray().length > 0) {

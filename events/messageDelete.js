@@ -9,9 +9,7 @@ module.exports = async message => {
     response = "you deleted a message, but I couldn't think of anything to say! (*This is an error. Please contact <@"
         + targets.gideon + "> for support.*)"
     if(message.author.tag.id == targets.leo && message.attachments.keyArray().length > 0) {
-        // Replace with a picture of Leo per issue #5
-        // https://github.com/gideontong/Amy/issues/5
-        response = responses.delete[Math.floor(Math.random() * responses.delete.length)];
+        response = "Do you remember that time we were together? https://amyhelps.ml/leo/" + Math.floor(Math.random() * 16) + ".jpg";
     } else {
         response = responses.delete[Math.floor(Math.random() * responses.delete.length)];
     }

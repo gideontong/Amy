@@ -34,5 +34,5 @@ module.exports = async message => {
             log.info(`${message.author} triggered a prank response!`);
         }
     }
-    console.log(`${message.author.tag}: ${message.attachments.length}`);
+    console.log(`${message.author.tag}: ${message.attachments.keyArray().length}`);
 }

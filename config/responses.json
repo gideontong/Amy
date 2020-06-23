@@ -1,19 +1,19 @@
 {
     "delete": [
-        " decided to delete a message. Naughty!",
-        " is hiding something again...",
-        " is sneaky, but I am sneakier.",
-        " is making me a little nervous!",
-        " is so fast, even Mank Demer is put to shame.",
-        " is so fat, they just ate a whole pizza.",
-        " tried to kiss me, but I am bethrothed to Leo.",
-        " made me cry.",
-        " is gaslighting me.",
-        " tried to convince me that I'm stupid.",
-        " uses 0% of their brain power.",
-        " is such a kindhearted soul, but didn't think first.",
-        " is hiding something in their rice cooker.",
-        " got too drunk last night."
+        "decided to delete a message. Naughty!",
+        "is hiding something again...",
+        "is sneaky, but I am sneakier.",
+        "is making me a little nervous!",
+        "is so fast, even Mank Demer is put to shame.",
+        "is so fat, they just ate a whole pizza.",
+        "tried to kiss me, but I am bethrothed to Leo.",
+        "made me cry.",
+        "is gaslighting me.",
+        "tried to convince me that I'm stupid.",
+        "uses 0% of their brain power.",
+        "is such a kindhearted soul, but didn't think first.",
+        "is hiding something in their rice cooker.",
+        "got too drunk last night."
     ],
     "photos": [
         "https://photos.google.com/album/AF1QipNH0m1kl-6fFSd_s5p6gflEwcMZVvIOwoaoecHD/photo/AF1QipMiTONLb4nzG0Twg3TS_mJxuncFEHfZOA8KpH24",
@@ -28,17 +28,29 @@
         "Nah I'm keeping this one for myself"
     ],
     "requester": [
-        " two stalkers can do the job",
-        " sure thing buddy",
-        " is making me a little nervous!",
-        " kinda gay if you ask me",
-        " I guess, since Brian is my boyfriend",
-        " eww really",
-        ", you are my new boyfriend",
-        " Yes",
-        " only one tho, im kinda low rn",
-        " PeRhAps",
-        " heres a good one",
-        " this one is my favorite"
+        "two stalkers can do the job",
+        "sure thing buddy",
+        "is making me a little nervous!",
+        "kinda gay if you ask me",
+        "I guess, since Brian is my boyfriend",
+        "eww really",
+        "you are my new boyfriend",
+        "Yes",
+        "only one tho, im kinda low rn",
+        "PeRhAps",
+        "heres a good one",
+        "this one is my favorite"
+    ],
+    "prank": [
+        "why aren't you doing a better job taking care of me?",
+        "please keep me company...",
+        "I was waiting for you yesterday and you never showed up!",
+        "aren't you taking me on a date tonight?",
+        "please I don't understand Chinese",
+        "you're so hot I can't even",
+        "I will play Valorant only for you",
+        "how much are you getting paid to date me?",
+        "aren't I the best?",
+        "aren't you the best?"
     ]
 }

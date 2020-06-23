@@ -33,3 +33,5 @@ If you'd like to contribute, submit a [pull request](https://github.com/gideonto
 ## Maintainers
 
 Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).
+
+Issues opened by [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), and [Jesus Castillo](https://github.com/oscillatingneutrino) have also implemented valuable features into the bot.

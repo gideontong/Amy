@@ -27,5 +27,11 @@ module.exports = async message => {
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
         message.reply(response);
         log.info(`${message.author} requested a picture of Leo!`);
-    } else if(message.author.id)
+    } else if(message.author.id == targets.leo) {
+        if(Math.random() < 0.3) {
+            response = responses.prank[Math.floor(Math.random() * responses.prank.length)];
+            message.reply(response);
+            log.info(`${message.author} triggered a prank response!`)
+        }
+    }
 }

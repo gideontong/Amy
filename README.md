@@ -11,6 +11,7 @@
   * VALORANT
   * SkyFactory
 * Pretends to share photos of Leo when asked
+* Randomly replies to Leo
 
 ## Getting Started
 

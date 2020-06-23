@@ -31,7 +31,8 @@ module.exports = async message => {
         if(Math.random() < 0.3) {
             response = responses.prank[Math.floor(Math.random() * responses.prank.length)];
             message.reply(response);
-            log.info(`${message.author} triggered a prank response!`)
+            log.info(`${message.author} triggered a prank response!`);
         }
     }
+    console.log(`${message.author.tag}: ${message.attachments.length}`);
 }

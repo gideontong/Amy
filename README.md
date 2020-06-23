@@ -12,6 +12,7 @@
   * SkyFactory
 * Pretends to share photos of Leo when asked
 * Randomly replies to Leo
+* Calls Leo out when he deletes a photo
 
 ## Getting Started
 

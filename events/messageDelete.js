@@ -8,10 +8,12 @@ module.exports = async message => {
     log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent} [${message.attachments.keyArray().length}]"`);
     if(message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()
-            .setTitle('Do you remember that time we were together?')
+            .setTitle('Leo, wait a second!')
+            .setDescription('Do you remember that time we were together?')
             .setImage("https://amyhelps.ml/leo/" + Math.floor(Math.random() * 16) + ".jpg");
     } else {
-        response = responses.delete[Math.floor(Math.random() * responses.delete.length)];
+        response = "<@" + message.author.id + "> "
+            + responses.delete[Math.floor(Math.random() * responses.delete.length)];
     }
-    message.reply(response);
+    message.channel.send(response);
 }

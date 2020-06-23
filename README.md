@@ -32,8 +32,12 @@ node main.js
 
 If you'd like to contribute, submit a [pull request](https://github.com/gideontong/Amy/pulls)! I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
 
-## Maintainers
+### Maintainers
 
 Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd).
 
 Issues opened by [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), and [Jesus Castillo](https://github.com/oscillatingneutrino) have also implemented valuable features into the bot.
+
+### Licensing
+
+**Amy** is licensed under the MIT License. She depends on the [Discord.js](https://discord.js.org) and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.

@@ -14,25 +14,24 @@ module.exports = async message => {
                 message.reply("it's not time to play Valorant...");
             }
         }
-        log.info(`${message.author} mentioned VALORANT!`)
+        log.info(`${message.author.tag} ${message.author} mentioned VALORANT!`)
     } else if(sanitizedMessage.includes('skyfactory')) {
         if(Math.random() < 0.9) {
             message.reply("it's time to play Sky Factory 4!");
         } else {
             message.reply("it's not time to play Sky Factory 4...");
         }
-        log.info(`${message.author} mentioned SkyFactory!`);
+        log.info(`${message.author.tag} ${message.author} mentioned SkyFactory!`);
     } else if (sanitizedMessage.includes(' of leo')) {
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
         message.reply(response);
-        log.info(`${message.author} requested a picture of Leo!`);
-    } else if(message.author.id == targets.leo) {
+        log.info(`${message.author.tag} ${message.author} requested a picture of Leo!`);
+    } else if(message.author.tag.id == targets.leo) {
         if(Math.random() < 0.3) {
             response = responses.prank[Math.floor(Math.random() * responses.prank.length)];
             message.reply(response);
-            log.info(`${message.author} triggered a prank response!`);
+            log.info(`${message.author.tag} ${message.author} triggered a prank response!`);
         }
     }
-    console.log(`${message.author.tag}: ${message.attachments.keyArray().length}`);
 }

@@ -22,7 +22,7 @@ module.exports = async message => {
             message.reply("it's not time to play Sky Factory 4...");
         }
         log.info(`${message.author} mentioned SkyFactory!`);
-    } else if (sanitizedMessage.includes('photo of leo')) {
+    } else if (sanitizedMessage.includes(' of leo')) {
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
         message.reply(response);

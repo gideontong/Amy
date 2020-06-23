@@ -5,6 +5,10 @@ const log = require('log4js').getLogger('amy');
 
 module.exports = async message => {
     if(message.author.bot) return;
+    if (message.cleanContent == "!test") {
+        message.channel.send("... <@" + targets.gideon + ">" + "...");
+        return;
+    }
     sanitizedMessage = message.content.toLowerCase();
     if(sanitizedMessage.includes('valorant')) {
         if(Math.random() < 0.3) {

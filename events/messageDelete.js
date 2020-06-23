@@ -5,10 +5,6 @@ const log = require('log4js').getLogger('amy');
 
 module.exports = async message => {
     if(message.author.bot) return;
-    if (message.cleanContent == "!test") {
-        message.reply("... <@" + targets.gideon + ">" + "...");
-        return;
-    }
     log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent} [${message.attachments.keyArray().length}]"`);
     if(message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()

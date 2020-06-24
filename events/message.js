@@ -34,5 +34,10 @@ module.exports = async message => {
             message.reply(response);
             log.info(`${message.author.tag} ${message.author} triggered a prank response!`);
         }
+    // TODO: replace hardcoded ID with self.bot
+    } else if (sanitizedMessage.substr(0, 3) == "amy" || sanitizedMessage.includes(targets.bot)) {
+        if (Math.random() < 0.05) {
+            message.reply("you called me?");
+        }
     }
 }

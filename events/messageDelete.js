@@ -1,5 +1,6 @@
 const responses = require('../config/responses.json');
-const targets = require('../config/targets.json');
+const config = require('../config/config.json');
+const targets = config.targets;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

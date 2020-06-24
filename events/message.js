@@ -39,5 +39,6 @@ module.exports = async message => {
         if (Math.random() < 0.05) {
             message.reply("you called me?");
         }
+        log.info(`${message.author.tag} ${message.author} mentioned me...`)
     }
 }

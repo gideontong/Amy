@@ -11,7 +11,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (message.author.bot) return;
     if (message.author == targets.gideon && message.content[0] == "!") return;
-    log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent} [${message.attachments.keyArray().length}]"`);
+    log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent}" [${message.attachments.keyArray().length}]`);
     if (message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()
             .setTitle('Leo, wait a second!')

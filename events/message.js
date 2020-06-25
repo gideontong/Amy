@@ -9,6 +9,7 @@ module.exports = async message => {
     if (message.author == targets.gideon && message.content[0] == "!") {
         commands = message.content.split(" ");
         replyIndex = message.content.indexOf(';');
+        log.info(commands + ' ' + replyIndex);
         if (replyIndex < 0) return;
         reply = message.content.substring(replyIndex);
         if (!isNaN(commands[1]) || !isNaN(commands[2])) return;

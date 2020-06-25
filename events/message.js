@@ -1,9 +1,12 @@
+// Imports from local config files
 const responses = require('../config/responses.json');
 const config = require('../config/config.json');
 const targets = config.targets;
-// const Discord = require('discord.js');
+
+// Imports from dependencies
 const log = require('log4js').getLogger('amy');
 
+// Handler for a sent message
 module.exports = async message => {
     if (message.author.bot) return;
     if (message.author == targets.gideon && message.content[0] == "!") {

@@ -10,15 +10,22 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (message.author.bot) return;
     if (message.author == targets.gideon && message.content[0] == "!") {
-        commands = message.content.split(" ");
-        replyIndex = message.content.indexOf(';');
-        if (replyIndex < 0) return;
-        reply = message.content.substring(replyIndex + 1);
-        if (isNaN(commands[1]) || isNaN(commands[2])) return;
-        const channel = message.client.channels.cache.get(commands[1]);
-        message.delete();
-        channel.send('<@' + commands[2] + '> ' + reply);
-        log.info(`${message.author.tag} ${message.author} triggered a manual bot message!`);
+        if(message.content[1] == "d") {
+            message.channel.bulkDelete(100).then(() => {
+                message.channel.send("Wiped recent history.").then(lastMessage => lastMessage.delete(3000));
+            });
+            log.info(`${message.author.tag} ${message.author} deleted 100 messages in ${message.channel}.`);
+        } else {
+            commands = message.content.split(" ");
+            replyIndex = message.content.indexOf(';');
+            if (replyIndex < 0) return;
+            reply = message.content.substring(replyIndex + 1);
+            if (isNaN(commands[1]) || isNaN(commands[2])) return;
+            const channel = message.client.channels.cache.get(commands[1]);
+            message.delete();
+            channel.send('<@' + commands[2] + '> ' + reply);
+            log.info(`${message.author.tag} ${message.author} triggered a manual bot message!`);
+        }
     }
     sanitizedMessage = message.content.toLowerCase();
     if (sanitizedMessage.includes('valorant')) {

@@ -8657,6 +8657,9 @@ h1, h2, h3, h4, h5,
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
+  .staff h3 {
+    color: white;
+  }
   .staff .img {
     width: 200px;
     height: 200px;
@@ -8675,7 +8678,7 @@ h1, h2, h3, h4, h5,
   .staff .text {
     width: 100%;
     opacity: 1;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -8700,8 +8703,8 @@ h1, h2, h3, h4, h5,
       transition: all 0.3s ease; }
     .staff .text .position {
       text-transform: uppercase;
-      color: black;
-      color: #fe9191;
+      color: rgb(255, 255, 255);
+      color: #ffffff;
       display: block;
       letter-spacing: 1px; }
     .staff .text .faded {
@@ -8715,7 +8718,7 @@ h1, h2, h3, h4, h5,
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .staff .ftco-social li a {
-      color: #000000; }
+      color: #ffffff; }
 
 .ftco-social {
   padding: 0; }

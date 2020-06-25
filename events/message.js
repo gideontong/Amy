@@ -12,8 +12,9 @@ module.exports = async message => {
     if (message.author == targets.gideon && message.content[0] == "!") {
         if(message.content[1] == "d") {
             message.channel.bulkDelete(100).then(() => {
+                timeout = {"timeout": 3000};
                 message.channel.send("Wiped recent history.")
-                    .then(msg => msg.delete(3000));
+                    .then(msg => msg.delete(timeout));
             });
             log.info(`${message.author.tag} ${message.author} deleted 100 messages in ${message.channel}.`);
         } else {

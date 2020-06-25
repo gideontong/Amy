@@ -13,6 +13,8 @@
 * Pretends to share photos of Leo when asked
 * Randomly replies to Leo
 * Calls Leo out when he deletes a photo
+* Manually control messages the bot sends
+* Allows admins to wipe recent message history in channels
 
 ## Getting Started
 

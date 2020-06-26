@@ -23,7 +23,7 @@ module.exports = async (bot, msg, args) => {
     }
     if (Math.random() < constants.trollProbability) {
         text = strings.troll;
-        log.info(`${msg.id} activated troll mode in generating QR code`)
+        log.info(`${msg.author.tag} ${msg.author} activated troll mode in generating QR code for ${msg.id}`)
     }
     QRCode.toDataURL(text, function (err, url) {
         const data = url.replace(/^data:image\/png;base64,/, '');

@@ -13,7 +13,7 @@ module.exports = async message => {
     // Will be deleted on next major update
     if (message.author == targets.gideon && message.content[0] == "!") {
         commands = message.content.split(" ");
-        if (message.content[1] == "d") {
+        if (message.content[1] != " ") {
             var count;
             if (commands.length > 1 && !isNaN(commands[1])) count = parseInt(commands[1]);
             if (!count > 0) count = 100;

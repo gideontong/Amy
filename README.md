@@ -22,7 +22,7 @@
 To get started, simply clone this repository to your hard drive. You'll need [Node 12.x](https://nodejs.org) or another JS code interpreter. Assuming you have Node installed, simply type
 
 ```bash
-npm install
+npm install --production
 ```
 
 and while Node grabs the dependencies for you, move the file in `config/secrets-blank.json` to `config/secrets.json` and replace `token` with your [Discord API key](https://discord.com/developers/applications). Then start the application with

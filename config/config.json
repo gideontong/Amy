@@ -13,7 +13,10 @@
         "isValorantTime": "it's time to play Valorant!",
         "notValorantTime": "it's not time to play Valorant...",
         "isSkyFactoryTime": "it's time to play Sky Factory 4!",
-        "notSkyFactoryTime": "it's not time to play Sky Factory 4..."
+        "notSkyFactoryTime": "it's not time to play Sky Factory 4...",
+        "qr": {
+            "empty": "you want me to make a QR code with nothing in it?"
+        }
     },
     "constants": {
         "clearHistory": 100

@@ -1,3 +1,7 @@
+// Imports from local config files
+const config = require('../config/config.json');
+const strings = config.strings;
+
 // Imports from dependencies
 const { MessageAttachment } = require('discord.js');
 const QRCode = require('qrcode');
@@ -6,7 +10,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for running qr command
 module.exports = async (bot, msg, args) => {
     if (args < 2) {
-        msg.reply('you want me to make a QR code with nothing in it?');
+        msg.reply(strings.qr.empty);
         log.info(`${msg.author.tag} ${msg.author} tried to make an empty QR code`);
         return;
     }

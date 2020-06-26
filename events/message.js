@@ -20,7 +20,7 @@ module.exports = async message => {
                 message.channel.send("Wiped recent history.")
                     .then(msg => msg.delete(timeout));
             });
-            log.info(`${message.author.tag} ${message.author} deleted 100 messages in ${message.channel}.`);
+            log.info(`${message.author.tag} ${message.author} deleted ${count} messages in ${message.channel}.`);
         } else {
             replyIndex = message.content.indexOf(';');
             if (replyIndex < 0) return;

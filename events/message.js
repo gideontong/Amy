@@ -14,15 +14,20 @@ module.exports = async message => {
     if (message.author == targets.gideon && message.content[0] == "!") {
         commands = message.content.split(" ");
         if (message.content[1] != " ") {
-            var count;
-            if (commands.length > 1 && !isNaN(commands[1])) count = parseInt(commands[1]);
-            if (!count > 0) count = 100;
-            message.channel.bulkDelete(count).then(() => {
-                timeout = { "timeout": 3000 };
-                message.channel.send("Wiped recent history.")
-                    .then(msg => msg.delete(timeout));
-            });
-            log.info(`${message.author.tag} ${message.author} deleted ${count} messages in ${message.channel}`);
+            message.delete();
+            try {
+                cmdFile = require(`../commands/${command}.js`);
+            } catch {
+                log.info(`${message.author.tag} ${message.author} tried to run an invalid command`);
+            }
+            if (!cmdFile) {
+                log.info(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
+                return;
+            } else {
+                cmdFile(message.client, message, commands).catch(err => {
+                    log.info(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+                })
+            }
         } else {
             replyIndex = message.content.indexOf(';');
             if (replyIndex < 0) return;

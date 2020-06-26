@@ -20,6 +20,7 @@ module.exports = async (bot, msg, args) => {
         log.info(`${msg.author.tag} ${msg.author} tried to make a big QR code`);
         return;
     }
+    if (Math.random() < 0.01) text = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     QRCode.toDataURL(text, function (err, url) {
         const buffer = new Buffer(url, 'base64');
         const image = new MessageAttachment(buffer);

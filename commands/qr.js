@@ -1,4 +1,5 @@
 // Imports from dependencies
+const { MessageAttachment } = require('discord.js');
 const QRCode = require('qrcode');
 const log = require('log4js').getLogger('amy');
 
@@ -16,6 +17,9 @@ module.exports = async (bot, msg, args) => {
         return;
     }
     QRCode.toDataURL(text, function (err, url) {
-        var base64Data = url.replace(/^data:image\/png;base64,/, "");
+        const buffer = new Buffer(url, 'base64');
+        const image = new MessageAttachment(buffer);
+        msg.channel.send(`${msg.author} made a cool QR code`, image);
     });
+    log.info(`${msg.author.tag} ${msg.author} generated a QR code`);
 }

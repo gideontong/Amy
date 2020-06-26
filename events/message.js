@@ -10,6 +10,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for a sent message
 module.exports = async message => {
     if (message.author.bot) return;
+    // Will be deleted on next major update
     if (message.author == targets.gideon && message.content[0] == "!") {
         commands = message.content.split(" ");
         if (message.content[1] == "d") {

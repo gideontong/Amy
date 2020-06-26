@@ -1,9 +1,12 @@
+// Imports from local config files
+const secrets = require('./config/secrets.json');
+
+// Imports from dependencies
 const Discord = require('discord.js');
 const log4js = require('log4js');
 const client = new Discord.Client();
 
-const secrets = require('./config/secrets.json');
-
+// Logger setup
 log4js.configure({
     appenders: {
         console: {
@@ -23,6 +26,7 @@ log4js.configure({
 });
 const log = log4js.getLogger('amy');
 
+// Client setup
 require('./event.js')(client);
 
 client.on('ready', () => {

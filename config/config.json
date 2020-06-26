@@ -23,6 +23,6 @@
     },
     "constants": {
         "clearHistory": 100,
-        "trollProbability": 0.01
+        "trollProbability": 0.5
     }
 }

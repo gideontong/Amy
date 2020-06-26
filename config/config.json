@@ -15,7 +15,7 @@
         "isSkyFactoryTime": "it's time to play Sky Factory 4!",
         "notSkyFactoryTime": "it's not time to play Sky Factory 4..."
     },
-    "defaults": {
+    "constants": {
         "clearHistory": 100
     }
 }

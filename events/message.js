@@ -18,15 +18,15 @@ module.exports = async message => {
             try {
                 cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
             } catch {
-                log.info(`${message.author.tag} ${message.author} tried to run an invalid command`);
+                log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
                 return;
             }
             if (!cmdFile) {
-                log.info(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
+                log.warn(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
                 return;
             } else {
                 cmdFile(message.client, message, commands).catch(err => {
-                    log.info(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+                    log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
                 })
             }
         } else {

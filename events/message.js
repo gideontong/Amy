@@ -2,6 +2,7 @@
 const responses = require('../config/responses.json');
 const config = require('../config/config.json');
 const targets = config.targets;
+const strings = config.strings;
 
 // Imports from dependencies
 const log = require('log4js').getLogger('amy');
@@ -36,9 +37,9 @@ module.exports = async message => {
     if (sanitizedMessage.includes('valorant')) {
         if (Math.random() < 0.3) {
             if (Math.random() < 0.8) {
-                message.reply("it's time to play Valorant!");
+                message.reply(strings.isValorantTime);
             } else {
-                message.reply("it's not time to play Valorant...");
+                message.reply(strings.notValorantTime);
             }
         }
         log.info(`${message.author.tag} ${message.author} mentioned VALORANT`)

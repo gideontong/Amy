@@ -16,7 +16,7 @@ module.exports = async message => {
         if (message.content[1] != " ") {
             message.delete();
             try {
-                cmdFile = require(`../commands/${commands[1].slice(1)}.js`);
+                cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
             } catch {
                 log.info(`${message.author.tag} ${message.author} tried to run an invalid command`);
                 return;

@@ -1,4 +1,8 @@
 {
+    "activity": {
+        "type": "LISTENING",
+        "activity": "Andrew"
+    },
     "targets": {
         "gideon": "132525049977503744",
         "amy": "209114126503378944",

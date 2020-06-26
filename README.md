@@ -15,6 +15,7 @@
 * Calls Leo out when he deletes a photo
 * Manually control messages the bot sends
 * Allows admins to wipe recent message history in channels
+* Greets people when they join the server
 
 ## Getting Started
 

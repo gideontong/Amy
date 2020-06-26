@@ -1,6 +1,5 @@
 // Imports from local config files
 const config = require('../config/config.json');
-const message = require('../events/message');
 
 // Imports from dependencies
 const log = require('log4js').getLogger('amy');

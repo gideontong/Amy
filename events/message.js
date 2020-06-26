@@ -10,15 +10,18 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (message.author.bot) return;
     if (message.author == targets.gideon && message.content[0] == "!") {
-        if(message.content[1] == "d") {
-            message.channel.bulkDelete(100).then(() => {
-                timeout = {"timeout": 3000};
+        commands = message.content.split(" ");
+        if (message.content[1] == "d") {
+            var count;
+            if (commands.length > 1 && !isNaN(commands[1])) count = parseInt(commands[1]);
+            if (!count > 0) count = 100;
+            message.channel.bulkDelete(count).then(() => {
+                timeout = { "timeout": 3000 };
                 message.channel.send("Wiped recent history.")
                     .then(msg => msg.delete(timeout));
             });
             log.info(`${message.author.tag} ${message.author} deleted 100 messages in ${message.channel}.`);
         } else {
-            commands = message.content.split(" ");
             replyIndex = message.content.indexOf(';');
             if (replyIndex < 0) return;
             reply = message.content.substring(replyIndex + 1);

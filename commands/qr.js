@@ -21,10 +21,7 @@ module.exports = async (bot, msg, args) => {
         log.info(`${msg.author.tag} ${msg.author} tried to make a big QR code`);
         return;
     }
-    var a = Math.random();
-    var e = a < constants.trollProbability;
-    log.debug(`Now testing ${a} ${constants.trollProbability} ${e}`);
-    if (e) {
+    if (Math.random() < constants.trollProbability) {
         text = strings.troll;
         log.info(`${msg.id} activated troll mode in generating QR code`)
     }

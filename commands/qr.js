@@ -1,6 +1,5 @@
 // Imports from dependencies
 const QRCode = require('qrcode');
-const fs = require('fs');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running qr command

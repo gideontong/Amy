@@ -15,7 +15,8 @@
         "isSkyFactoryTime": "it's time to play Sky Factory 4!",
         "notSkyFactoryTime": "it's not time to play Sky Factory 4...",
         "qr": {
-            "empty": "you want me to make a QR code with nothing in it?"
+            "empty": "you want me to make a QR code with nothing in it?",
+            "tooLarge": "I'm not advanced enough to make a QR code that big, try asking Leo..."
         }
     },
     "constants": {

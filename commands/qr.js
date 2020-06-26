@@ -16,7 +16,7 @@ module.exports = async (bot, msg, args) => {
     }
     var text = msg.content.substring(args[0].length);
     if (text.length > 512) {
-        msg.reply('I\'m not advanced enough to make a QR code that big, try asking Leo...');
+        msg.reply(strings.qr.tooLarge);
         log.info(`${msg.author.tag} ${msg.author} tried to make a big QR code`);
         return;
     }

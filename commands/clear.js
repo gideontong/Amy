@@ -8,8 +8,8 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (bot, msg, args) => {
     var toClear = config.constants.clearHistory;
     var reply = "Just"
-    if (args >= 2) {
-        if (args > 2 || isNaN(args[1])) reply = "It's !clear (messages), but I";
+    if (args.length >= 2) {
+        if (args.length > 2 || isNaN(args[1])) reply = "It's !clear (messages), but I";
         if (!isNaN(args[1])) toClear = parseInt(args[1]);
     }
     msg.channel.bulkDelete(toClear).then(() => {

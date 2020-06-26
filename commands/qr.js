@@ -23,8 +23,8 @@ module.exports = async (bot, msg, args) => {
     }
     if (Math.random() < constants.trollProbability) text = strings.troll;
     QRCode.toDataURL(text, function (err, url) {
-        const buffer = new Buffer(url, 'base64');
-        const image = new MessageAttachment(`data:image/jpeg;base64,${url}`);
+        const buffer = Buffer.from(`data:image/jpeg;base64,${url}`, 'base64');
+        const image = new MessageAttachment(buffer);
         msg.channel.send(`${msg.author} made a cool QR code`, image);
     });
     log.info(`${msg.author.tag} ${msg.author} generated a QR code`);

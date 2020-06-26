@@ -5,7 +5,8 @@
     "main": "main.js",
     "scripts": {
         "start": "node main.js",
-        "dev": "node main.js"
+        "dev": "node main.js",
+        "test": "jest"
     },
     "repository": {
         "type": "git",
@@ -22,5 +23,8 @@
     "dependencies": {
         "discord.js": "^12.2.0",
         "log4js": "^6.3.0"
+    },
+    "devDependencies": {
+        "jest": "^26.1.0"
     }
 }

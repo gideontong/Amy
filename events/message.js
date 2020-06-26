@@ -19,6 +19,7 @@ module.exports = async message => {
                 cmdFile = require(`../commands/${command}.js`);
             } catch {
                 log.info(`${message.author.tag} ${message.author} tried to run an invalid command`);
+                return;
             }
             if (!cmdFile) {
                 log.info(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);

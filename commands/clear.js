@@ -5,7 +5,7 @@ const config = require('../config/config.json');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running clear command
-module.exports = async(bot, msg, args) => {
+module.exports = async (bot, msg, args) => {
     var toClear = config.constants.clearHistory;
     var reply = "Just"
     if (args >= 2) {

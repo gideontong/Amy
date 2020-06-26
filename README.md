@@ -28,7 +28,7 @@ npm install
 and while Node grabs the dependencies for you, move the file in `config/secrets-blank.json` to `config/secrets.json` and replace `token` with your [Discord API key](https://discord.com/developers/applications). Then start the application with
 
 ```bash
-node main.js
+npm start
 ```
 
 ## Contributing

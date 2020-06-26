@@ -14,5 +14,8 @@
         "notValorantTime": "it's not time to play Valorant...",
         "isSkyFactoryTime": "it's time to play Sky Factory 4!",
         "notSkyFactoryTime": "it's not time to play Sky Factory 4..."
+    },
+    "defaults": {
+        "clearHistory": 100
     }
 }

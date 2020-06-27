@@ -1,4 +1,6 @@
 // Imports from dependencies
+const Today = require('../lib/Today');
+const { convertSnowflake } = require('../lib/Today');
 const log = require('log4js').getLogger('amy')
 
 // new Date(ID ? (ID / 4194304) + 1420070400000 : 0).toLocaleString()
@@ -10,8 +12,7 @@ module.exports = async (bot, msg, args) => {
         id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
         requester = "they";
     }
-    const joined = new Date(id ? (id / 4194304) + 1420070400000 : 0)
-        .toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+    const joined = Today.toLocaleString(Today.convertSnowflake(id));
     msg.reply(`${requester} joined Discord at ${joined}`);
     // msg.reply(`you joined at ${joined}. Use \`!howold\` to see how old your Discord account is!`);
     log.info(`${msg.author.tag} ${msg.author} requested a Discord account creation time`);

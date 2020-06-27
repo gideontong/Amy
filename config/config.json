@@ -30,5 +30,10 @@
     "constants": {
         "clearHistory": 100,
         "trollProbability": 0.5
+    },
+    "links": {
+        "website": "https://amyhelps.ml",
+        "github": "https://www.github.com/gideontong/Amy",
+        "docs": "https://www.github.com/gideontong/Amy/tree/master/docs"
     }
 }

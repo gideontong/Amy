@@ -5,6 +5,7 @@ const log = require('log4js').getLogger('amy')
 // Handler for running joined command
 module.exports = async (bot, msg, args) => {
     var id = parseInt(args[1]) ? (args.legnth > 1 && !isNaN(args[1])) : msg.author.id;
+    log.info(id);
     const joined = new Date(id ? (id / 4194304) + 1420070400000 : 0)
         .toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
     msg.reply(`you (or the person you're requesting) joined at ${joined}`);

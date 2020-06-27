@@ -4,6 +4,8 @@ Some information is coming soon!
 
 Read [setup process](setup).
 
+Read [usage](usage).
+
 ## Upcoming features
 
 * 1% chance the bot will troll you rather than listen to you

@@ -19,3 +19,4 @@ Read [usage](usage).
 * `!joined` will tell you when you joined Discord
 * `!docs` will point you to how to use Amy
 * `!github` will take you to Amy's source code
+* `!accountage` calculates how old your Discord account is

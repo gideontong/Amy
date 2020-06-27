@@ -7,7 +7,7 @@ module.exports = async (bot, msg, args) => {
     var id = msg.author.id;
     var requester = "you";
     if (args.length > 1) {
-        id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey);
+        id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
         requester = "they";
     }
     const joined = new Date(id ? (id / 4194304) + 1420070400000 : 0)

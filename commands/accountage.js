@@ -1,4 +1,5 @@
 // Imports from dependencies
+const { timeSinceSnowflake } = require('../lib/Today');
 const log = require('log4js').getLogger('amy')
 
 // See joined command for more info
@@ -9,6 +10,6 @@ module.exports = async (bot, msg, args) => {
         id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
         requester = "they";
     }
-    const joined = new Date(id ? (id / 4194304) + 1420070400000 : 0)
-        .toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+    const timeSince = timeSinceSnowflake(id);
+    log.info(timeSince);
 }

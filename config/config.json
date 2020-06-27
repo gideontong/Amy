@@ -29,7 +29,7 @@
     },
     "constants": {
         "clearHistory": 100,
-        "trollProbability": 0.5
+        "trollProbability": 0.01
     },
     "links": {
         "website": "https://amyhelps.ml",

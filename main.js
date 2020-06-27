@@ -26,9 +26,11 @@ log4js.configure({
     }
 });
 const log = log4js.getLogger('amy');
+// const sublog = log4js.getLogger('kevin');
 
 // Client setup
 require('./event.js')(client);
+// require('./kevin/main.js');
 
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag}`)

@@ -36,7 +36,7 @@ require('./event.js')(client);
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag}`)
     client.user.setActivity(activity.activity, { type: activity.type })
-        .then(presence => log.info(`Successfully set current presence as ${presence}`))
+        .then(presence => log.info(`Successfully set current presence as ${presence.status}`))
         .catch(log.error);
     log.info('Discord client is now online');
 });

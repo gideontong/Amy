@@ -1,7 +1,13 @@
 {
     "activity": {
-        "type": "LISTENING",
-        "activity": "Andrew"
+        "amy": {
+            "type": "LISTENING",
+            "activity": "Andrew"
+        },
+        "kevin": {
+            "type": "WATCHING",
+            "activity": "your mom"
+        }
     },
     "targets": {
         "gideon": "132525049977503744",

@@ -12,7 +12,7 @@ module.exports = async (bot, msg, args) => {
     }
     const joined = new Date(id ? (id / 4194304) + 1420070400000 : 0)
         .toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
-    msg.reply(`${requester} joined at ${joined}`);
+    msg.reply(`${requester} joined Discord at ${joined}`);
     // msg.reply(`you joined at ${joined}. Use \`!howold\` to see how old your Discord account is!`);
     log.info(`${msg.author.tag} ${msg.author} requested a Discord account creation time`);
 }

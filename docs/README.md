@@ -6,7 +6,14 @@ Read [setup process](setup).
 
 ## Upcoming features
 
-* Clear recent chat history using `!clear`
-* Generate a QR code using `!qr`
-* Say something on command
 * 1% chance the bot will troll you rather than listen to you
+
+## Upcoming Commands
+
+* `!clear` will now clear recent chat history (**admins only**)
+* `!qr` will generate a QR code
+* `!tell` will force the bot to say something (**admins only**)
+* `!website` takes you to Amy's website
+* `!joined` will tell you when you joined Discord
+* `!docs` will point you to how to use Amy
+* `!github` will take you to Amy's source code

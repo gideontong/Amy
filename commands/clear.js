@@ -12,7 +12,8 @@ module.exports = async (bot, msg, args) => {
         if (args.length > 2 || isNaN(args[1])) reply = "It's !clear (messages), but I";
         if (!isNaN(args[1])) toClear = parseInt(args[1]);
     }
-    msg.channel.bulkDelete(toClear + 1).then(() => {
+    toClear = toClear > 100 ? 100 : toClear + 1;
+    msg.channel.bulkDelete(toClear).then(() => {
         timeout = { "timeout": 3000 };
         msg.channel.send(`${reply} deleted the last ${toClear} messages.`)
             .then(msg => msg.delete(timeout));

@@ -1,6 +1,7 @@
 // Imports from local config files
 const secrets = require('./config/secrets.json');
 const config = require('./config/config.json');
+const activity = config.activity.amy;
 
 // Imports from dependencies
 const Discord = require('discord.js');
@@ -34,7 +35,7 @@ require('./event.js')(client);
 
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag}`)
-    client.user.setActivity(config.activity.amy.activity, { type: config.activity.amy.type })
+    client.user.setActivity(activity.activity, { type: activity.type })
         .then(presence => log.info(`Successfully set current presence as ${presence}`))
         .catch(log.error);
     log.info('Discord client is now online');

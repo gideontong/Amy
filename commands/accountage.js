@@ -11,6 +11,6 @@ module.exports = async (bot, msg, args) => {
         requester = "they";
     }
     const timeSince = timeSinceSnowflake(id);
-    msg.reply(`Your account is ${timeSince} old!`)
+    msg.reply(`your account is ${timeSince} old!`)
     log.info(`${msg.author.tag} ${msg.author} requested their account age`); 
 }

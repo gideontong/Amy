@@ -11,5 +11,5 @@ module.exports = async (bot, msg, args) => {
         requester = "they";
     }
     const timeSince = timeSinceSnowflake(id);
-    log.info(timeSince);
+    log.info(`${msg.author.tag} ${timeSince}`);
 }

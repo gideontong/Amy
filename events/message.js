@@ -5,6 +5,7 @@ const targets = config.targets;
 const strings = config.strings;
 
 // Imports from dependencies
+const { geometric } = require('../lib/Poisson');
 const log = require('log4js').getLogger('amy');
 
 // Handler for a sent message
@@ -59,7 +60,7 @@ module.exports = async message => {
         log.info(`${message.author.tag} ${message.author} mentioned SkyFactory`);
     } else if (sanitizedMessage.includes(' of leo')) {
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
-            + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
+            + ": " + responses.photos[Math.floor(geometric() * responses.photos.length)];
         message.reply(response);
         log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
     } else if (message.author.id == targets.leo) {

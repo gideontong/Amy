@@ -7,7 +7,11 @@ const log = require('log4js').getLogger('amy')
 module.exports = async (bot, msg, args) => {
     var id = msg.author.id;
     if (args.length > 1) {
-        id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
+        if (args.length > 2) {
+            msg.reply('run `!joined (ID)` to see when you joined Discord!');
+            return;
+        }
+        id = (!isNaN(args[1])) ? args[1] : args[1].substring(3, args[1].length - 1);
     }
     const joined = humanSnowflake(id);
     msg.channel.send(`<@${id}> joined Discord at ${joined}`);

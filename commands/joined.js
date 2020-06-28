@@ -11,6 +11,5 @@ module.exports = async (bot, msg, args) => {
     }
     const joined = humanSnowflake(id);
     msg.channel.send(`<@${id}> joined Discord at ${joined}`);
-    // msg.reply(`you joined at ${joined}. Use \`!howold\` to see how old your Discord account is!`);
     log.info(`${msg.author.tag} ${msg.author} requested a Discord account creation time`);
 }

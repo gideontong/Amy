@@ -6,13 +6,11 @@ const log = require('log4js').getLogger('amy')
 // Handler for running joined command
 module.exports = async (bot, msg, args) => {
     var id = msg.author.id;
-    var requester = "you";
     if (args.length > 1) {
         id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
-        requester = "they";
     }
     const joined = humanSnowflake(id);
-    msg.reply(`${requester} joined Discord at ${joined}`);
+    msg.channel.send(`<@${id}> joined Discord at ${joined}`);
     // msg.reply(`you joined at ${joined}. Use \`!howold\` to see how old your Discord account is!`);
     log.info(`${msg.author.tag} ${msg.author} requested a Discord account creation time`);
 }

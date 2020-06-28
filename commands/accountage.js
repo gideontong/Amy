@@ -6,12 +6,10 @@ const log = require('log4js').getLogger('amy')
 // Handler for running accountage command
 module.exports = async (bot, msg, args) => {
     var id = msg.author.id;
-    var requester = "your";
     if (args.length > 1) {
         id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.members.firstKey());
-        requester = "their";
     }
     const timeSince = timeSinceSnowflake(id);
-    msg.reply(`${requester} account is ${timeSince} old!`)
+    msg.channel.send(`<@${id}>'s account is ${timeSince} old!`)
     log.info(`${msg.author.tag} ${msg.author} requested their account age`); 
 }

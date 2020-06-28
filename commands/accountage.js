@@ -10,6 +10,6 @@ module.exports = async (bot, msg, args) => {
         id = (!isNaN(args[1])) ? parseInt(args[1]) : parseInt(msg.mentions.users.first().id);
     }
     const timeSince = timeSinceSnowflake(id);
-    msg.channel.send(`<@${id}>'s account is ${timeSince} old!`)
-    log.info(`${msg.author.tag} ${msg.author} requested their account age`); 
+    msg.channel.send(`<@${id}>'s account is ${timeSince} old! ${msg.mentions.users.first().tag}`);
+    log.info(`${msg.author.tag} ${msg.author} requested the account age of ${id}`); 
 }

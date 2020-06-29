@@ -8,6 +8,6 @@ const log = require('log4js').getLogger('amy');
 // Handler for running clear command
 module.exports = async (bot, msg, args) => {
     if (!msg.author.id == targets.gideon) return;
-    config.welcome.forEach(wText => function() { msg.channel.send(wText) });
+    config.welcome.forEach(wText => msg.channel.send(wText));
     log.info(`${msg.author.tag} ${msg.author} triggered the welcome message in ${msg.channel}`);
 }

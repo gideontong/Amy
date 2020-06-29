@@ -35,5 +35,41 @@
         "website": "https://amyhelps.ml",
         "github": "https://www.github.com/gideontong/Amy",
         "docs": "https://www.github.com/gideontong/Amy/tree/master/docs"
+    },
+    "welcome": {
+        "content": "Welcome to the **Dudes of 708** Discord server! We are Sixth College students at UCSD creating content that we enjoy. Subscribe to our YouTube channel and comment on what you want to see next. <:leoFoot:712427304587886603>?",
+        "embeds": [
+            {
+                "title": "Click to subscribe",
+                "description": "We love to create content that we think you'll enjoy. From *daily rice cooking shows* (hosted by <@578715287491182595>!) to music videos, Minecraft content, and variety gaming, we'd love to hear your feedback in <#727207500520095775>!",
+                "url": "https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA?sub_confirmation=1",
+                "color": 3265972,
+                "author": {
+                    "name": "Subscribe to our YouTube channel!",
+                    "icon_url": "https://img.icons8.com/plasticine/100/000000/youtube-squared.png"
+                }
+            },
+            {
+                "title": "Click to join the homies",
+                "description": "Here on the **Dudes of 708** server, you'll enjoy certain benefits, like access to special channels if you're a Patreon supporter. You also get first looks and exclusive access to our content as well.",
+                "url": "https://www.patreon.com/dudesof708",
+                "color": 13204508,
+                "author": {
+                    "name": "Join our Patreon!",
+                    "icon_url": "https://img.icons8.com/bubbles/50/000000/patreon.png"
+                }
+            },
+            {
+                "description": "Got a question about Amy (aka, me)? Direct that to the fake Amy <@209114126503378944> or the dev <@132525049977503744> instead. You can also click [here](https://amyhelps.ml) to visit the website, or click [here](https://www.github.com/gideontong/Amy/issues) to submit a bug report or feature request.",
+                "color": 11933597,
+                "author": {
+                    "name": "Who am I?",
+                    "icon_url": "https://cdn.discordapp.com/avatars/721503241531162707/e04f2a03baf23be92a9c937e79e973d0.png"
+                },
+                "footer": {
+                    "text": "Version 1.3.4"
+                }
+            }
+        ]
     }
 }

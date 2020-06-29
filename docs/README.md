@@ -20,3 +20,6 @@ Read [usage](usage).
 * `!docs` will point you to how to use Amy
 * `!github` will take you to Amy's source code
 * `!accountage` calculates how old your Discord account is
+* `!howold` is an alias for `!accountage`, as well as command alias support
+* `!howold`, `!accountage`, and `!joined` allow you to check someone else's age or join date
+* Added a custom welcome message (triggered by `!welcome` for **admins only**)

@@ -10,7 +10,7 @@ const log = require('log4js').getLogger('kevin');
 // Handler for a sent message
 module.exports = async message => {
     if (message.author.bot || message.content[0] == "!") return;
-    if (messague.author == targets.kevin || message.author == targets.gideon) {
+    if (message.author == targets.kevin || message.author == targets.gideon) {
         if (message.content[0] == "?") {
             commands = message.content.split(" ");
             if (message.content[1] != " ") {

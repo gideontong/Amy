@@ -30,7 +30,8 @@
     },
     "constants": {
         "clearHistory": 100,
-        "trollProbability": 0.01
+        "trollProbability": 0.01,
+        "kevinSarcastic": 0.03
     },
     "links": {
         "website": "https://amyhelps.ml",

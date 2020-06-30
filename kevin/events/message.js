@@ -31,7 +31,7 @@ module.exports = async message => {
                 }
             }
         }
-    } else if (Math.random() < 0.01) {
+    } else if (Math.random() < config.constants.kevinSarcastic) {
         message.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
         log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
     }

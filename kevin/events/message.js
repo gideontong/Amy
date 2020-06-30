@@ -29,6 +29,15 @@ module.exports = async message => {
                         log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
                     })
                 }
+            } else {
+                replyIndex = message.content.indexOf(';');
+                if (replyIndex < 0) return;
+                reply = message.content.substring(replyIndex + 1);
+                if (isNaN(commands[1]) || isNaN(commands[2])) return;
+                const channel = message.client.channels.cache.get(commands[1]);
+                message.delete();
+                channel.send('<@' + commands[2] + '> ' + reply);
+                log.info(`${message.author.tag} ${message.author} triggered a manual bot message that said ${reply}`);
             }
         }
     } else if (Math.random() < config.constants.kevinSarcastic) {

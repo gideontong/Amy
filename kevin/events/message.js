@@ -9,8 +9,8 @@ const log = require('log4js').getLogger('kevin');
 
 // Handler for a sent message
 module.exports = async message => {
-    if (message.author.bot || message.author == targets.kevin) return;
-    if (message.author == targets.gideon || Math.random() < 0.01) {
+    if (message.author.bot || message.author == targets.kevin || message.content[0] == "!") return;
+    if (Math.random() < 0.01) {
         message.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
     }
     log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);

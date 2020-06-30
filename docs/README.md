@@ -8,12 +8,13 @@ Read [usage](usage).
 
 ## Upcoming features
 
-* 1% chance the bot will troll you rather than listen to you
+* 1% chance *Amy* will troll you rather than listen to you
 * Added a new custom welcome message when you join a server
 * Added a new custom about screen when you join a server
-* Added a new bot named *Kevin*
+* Added *Kevin*
 * *Kevin* will randomly decide if it's time for you to die
 * The probability for which you die by *Kevin* is configurable (currently 3%)
+* What *Amy* trolls you with is configurable
 
 ## Upcoming Commands
 
@@ -30,6 +31,7 @@ Read [usage](usage).
 * `!accountage` calculates how old your Discord account is
 * `!howold` is an alias for `!accountage`, as well as command alias support
 * `!howold`, `!accountage`, and `!joined` allow you to check someone else's age or join date
+* `!insaneasylum` returns the infamous [Insane Asylum playlist](https://www.youtube.com/playlist?list=PL3q1l2_RQCr7fk0jyOmNwiUp9F6CaDyQd)
 
 ### Kevin's Commands
 

@@ -22,7 +22,7 @@ module.exports = async (bot, msg, args) => {
         return;
     }
     if (Math.random() < constants.trollProbability) {
-        text = strings.troll;
+        text = config.links.troll;
         log.info(`${msg.author.tag} ${msg.author} activated troll mode in generating QR code for ${msg.id}`)
     }
     QRCode.toDataURL(text, function (err, url) {

@@ -24,8 +24,7 @@
         "notSkyFactoryTime": "it's not time to play Sky Factory 4...",
         "qr": {
             "empty": "you want me to make a QR code with nothing in it?",
-            "tooLarge": "I'm not advanced enough to make a QR code that big, try asking Leo...",
-            "troll": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            "tooLarge": "I'm not advanced enough to make a QR code that big, try asking Leo..."
         }
     },
     "constants": {
@@ -36,7 +35,8 @@
     "links": {
         "website": "https://amyhelps.ml",
         "github": "https://www.github.com/gideontong/Amy",
-        "docs": "https://www.github.com/gideontong/Amy/tree/master/docs"
+        "docs": "https://www.github.com/gideontong/Amy/tree/master/docs",
+        "troll": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     "welcome": [
         {

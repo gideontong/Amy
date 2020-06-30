@@ -6,6 +6,10 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for running website command
 module.exports = async (bot, msg, args) => {
-    msg.channel.send(config.links.website);
+    if (Math.random() < config.constants.trollProbability) {
+        msg.channel.send(config.links.troll);
+    } else {
+        msg.channel.send(config.links.website);
+    }
     log.info(`${msg.author.tag} ${msg.author} requested the website`);
 }

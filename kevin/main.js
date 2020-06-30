@@ -14,7 +14,7 @@ require('./event.js')(client);
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag}`);
     client.user.setActivity(activity.activity, { type: activity.type })
-        .then(presence => log.info(`Successfully set current presence as ${presence.status}`))
+        .then(presence => log.info(`Successfully set current presence as ${presence.activities.toString()}`))
         .catch(log.error);
     log.info('Discord subclient is now online');
 });

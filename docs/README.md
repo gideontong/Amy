@@ -1,12 +1,8 @@
 # Amy
 
-Some information is coming soon!
+Some information is coming soon! Quick links: [setup process](setup) and [usage](usage).
 
-Read [setup process](setup).
-
-Read [usage](usage).
-
-## Changes
+## Upcoming Changes
 
 * *Amy* no longer responds to you if you mention *VALORANT* in a link
 

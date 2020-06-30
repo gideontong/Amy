@@ -1,6 +1,6 @@
 # Setup
 
-Setup process coming soon!
+Setup process coming soon! Will be fully released after big 2.0 update.
 
 ## Developers
 

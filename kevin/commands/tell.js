@@ -8,7 +8,7 @@ const log = require('log4js').getLogger('kevin');
 
 // Handler for running tell command
 module.exports = async (bot, msg, args) => {
-    if (msg.author != targets.gideon || msg.author != targets.kevin) {
+    if (msg.author != targets.gideon && msg.author != targets.kevin) {
         msg.reply(strings.notAdmin);
         log.info(`${msg.author.tag} ${msg.author} tried to force me to say something`);
     } else {

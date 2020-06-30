@@ -8,13 +8,14 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 
 ## Upcoming Features
 
-* 1% chance *Amy* will troll you rather than listen to you
-* Added a new custom welcome message when you join a server
+* *Amy* will now randomly troll you
+* The probability for which *Amy* trolls you is configurable (currently 1%)
+* What *Amy* trolls you with is configurable
 * Added a new custom about screen when you join a server
+* Added a new custom welcome message when you join a server
 * Added *Kevin*
 * *Kevin* will randomly decide if it's time for you to die
 * The probability for which you die by *Kevin* is configurable (currently 3%)
-* What *Amy* trolls you with is configurable
 
 ## Upcoming Commands
 

@@ -12,6 +12,6 @@ module.exports = async message => {
     if (message.author.bot || message.author == targets.kevin || message.content[0] == "!") return;
     if (Math.random() < 0.01) {
         message.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
+        log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
     }
-    log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
 }

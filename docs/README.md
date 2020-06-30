@@ -17,6 +17,8 @@ Read [usage](usage).
 
 ## Upcoming Commands
 
+### Amy's Commands
+
 * `!clear` will now clear recent chat history (**admins only**)
 * `!qr` will generate a QR code
 * `!tell` will force the bot to say something (**admins only**)
@@ -28,3 +30,7 @@ Read [usage](usage).
 * `!howold` is an alias for `!accountage`, as well as command alias support
 * `!howold`, `!accountage`, and `!joined` allow you to check someone else's age or join date
 * `!welcome` triggers the new about screen manually (**admins only**)
+
+### Kevin's Commands
+
+* `?tell` will force the bot to say something (**admins only**)

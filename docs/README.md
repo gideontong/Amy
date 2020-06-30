@@ -6,7 +6,11 @@ Read [setup process](setup).
 
 Read [usage](usage).
 
-## Upcoming features
+## Changes
+
+* *Amy* no longer responds to you if you mention *VALORANT* in a link
+
+## Upcoming Features
 
 * 1% chance *Amy* will troll you rather than listen to you
 * Added a new custom welcome message when you join a server

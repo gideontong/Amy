@@ -42,7 +42,7 @@ module.exports = async message => {
         }
     }
     sanitizedMessage = message.content.toLowerCase();
-    if (sanitizedMessage.includes('valorant')) {
+    if (sanitizedMessage.includes('valorant') && sanitizedMessage.includes(' ')) {
         if (Math.random() < 0.3) {
             if (Math.random() < 0.8) {
                 message.reply(strings.isValorantTime);

@@ -21,7 +21,7 @@ Read [usage](usage).
 
 * `!clear` will now clear recent chat history (**admins only**)
 * `!qr` will generate a QR code
-* `!tell` will force the bot to say something (**admins only**)
+* `!tell` will force the bot to say something (**admins only**, or if you are Amy)
 * `!website` takes you to Amy's website
 * `!joined` will tell you when you joined Discord
 * `!docs` will point you to how to use Amy
@@ -33,4 +33,4 @@ Read [usage](usage).
 
 ### Kevin's Commands
 
-* `?tell` will force the bot to say something (**admins only**)
+* `?tell` will force the bot to say something (**admins only**, or if you are Kevin)

@@ -18,6 +18,7 @@ None
 * Call Leo gay
 * Discover every sarcastic comment Kevin can make
 * Change your status to playing Leo (or whatever his nickname is)
+* Get trolled by the QR code generator
 * Make the bot do something unintended (*secret achievement*)
 * Break a rule (*secret achievement*)
 * Change your nickname to something that contains Amy (*secret achievement*)

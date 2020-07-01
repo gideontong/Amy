@@ -69,6 +69,13 @@
             "description": "Change your status such that you are now playing Leo, no matter what he changed his nickname to. Does that mean you are gay?",
             "disabledIcon": "",
             "enabledIcon": ""
+        },
+        {
+            "id": "qrRickroll",
+            "name": "Pocket Weapon",
+            "description": "Get trolled by the QR code generator. You'll know when it happens, since you have to scan the QR code, eh?",
+            "disabledIcon": "",
+            "enabledIcon": ""
         }
     ],
     "secret": [

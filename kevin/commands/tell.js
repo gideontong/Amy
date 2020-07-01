@@ -15,7 +15,6 @@ module.exports = async (bot, msg, args) => {
         return;
     } else if (args.length > 2) {
         const snowflake = extractSnowflake(args[1]);
-        log.info(`${snowflake} ${args[1]}`);
         // More input validation may be needed
         if (snowflake) {
             const channel = msg.client.channels.cache.get(snowflake);

@@ -15,6 +15,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * *Amy* will now randomly troll you
 * The probability for which *Amy* trolls you is configurable (currently 1%)
 * What *Amy* trolls you with is configurable
+* Added easter eggs to *Amy*
 * Added a new custom about screen when you join a server
 * Added a new custom welcome message when you join a server
 * Added *Kevin*

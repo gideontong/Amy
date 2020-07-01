@@ -1,1 +1,33 @@
-{}
+{
+    "public": [
+        {
+            "id": "runSudo",
+            "name": "Sudo, make me a sandwich!",
+            "description": "Run the `!sudo` command.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "failSudo",
+            "name": "Not a sudoer?",
+            "description": "You aren't in the sudoers file. This incident will be reported. (Run the `!sudo` command on a command you do not have permission to.)",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "newIssue",
+            "name": "Baby Tester",
+            "description": "Open your first issue on [Amy's GitHub](https://github.com/gideontong/Amy/issues). This can be a bug report *or* a feature request!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "newBug",
+            "name": "Advanced Tester",
+            "description": "Open an issue on [Amy's GitHub](https://github.com/gideontong/Amy/issues) and have it marked as a bug. You're a bug hunter now!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        }
+    ],
+    "secret": []
+}

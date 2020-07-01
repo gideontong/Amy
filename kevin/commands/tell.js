@@ -18,7 +18,7 @@ module.exports = async (bot, msg, args) => {
         // More input validation may be needed
         if (snowflake) {
             const channel = msg.client.channels.cache.get(snowflake);
-            channel.send(message.content.substring(args[0].length + args[1].length + 2));
+            channel.send(msg.content.substring(args[0].length + args[1].length + 2));
             log.info(`${msg.author.tag} ${msg.author} told me to send a message in channel <#${snowflake}>`);
             return;
         }

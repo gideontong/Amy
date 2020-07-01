@@ -23,6 +23,7 @@
     "dependencies": {
         "discord.js": "^12.2.0",
         "log4js": "^6.3.0",
+        "node-persist": "^3.1.0",
         "qrcode": "^1.4.4"
     },
     "devDependencies": {

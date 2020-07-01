@@ -18,6 +18,7 @@ None
 8. Break a rule (*secret achievement*)
 9. Annoy someone
 10. Annoy yourself (*secret achievement*)
+11. Change your nickname to something that contains Amy (*secret achievement*)
 
 ## Retroactive
 

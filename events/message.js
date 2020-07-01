@@ -14,31 +14,20 @@ module.exports = async message => {
     // Will be deleted on next major update
     if ((message.author == targets.gideon && message.content[0] == "!") || (message.author == targets.amy && message.content.startsWith("!tell"))) {
         commands = message.content.split(" ");
-        if (message.content[1] != " ") {
-            message.delete();
-            try {
-                cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
-            } catch {
-                log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
-                return;
-            }
-            if (!cmdFile) {
-                log.warn(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
-                return;
-            } else {
-                cmdFile(message.client, message, commands).catch(err => {
-                    log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
-                })
-            }
+        message.delete();
+        try {
+            cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
+        } catch {
+            log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
+            return;
+        }
+        if (!cmdFile) {
+            log.warn(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
+            return;
         } else {
-            replyIndex = message.content.indexOf(';');
-            if (replyIndex < 0) return;
-            reply = message.content.substring(replyIndex + 1);
-            if (isNaN(commands[1]) || isNaN(commands[2])) return;
-            const channel = message.client.channels.cache.get(commands[1]);
-            message.delete();
-            channel.send('<@' + commands[2] + '> ' + reply);
-            log.info(`${message.author.tag} ${message.author} triggered a manual bot message that said ${reply}`);
+            cmdFile(message.client, message, commands).catch(err => {
+                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+            })
         }
     }
     sanitizedMessage = message.content.toLowerCase();

@@ -1,5 +1,9 @@
 # Amy
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+![Amy](https://i.imgur.com/q2YAmF5.png)
+
 Some information is coming soon! Quick links: [setup process](setup) and [usage](usage).
 
 ## Upcoming Changes

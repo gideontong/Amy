@@ -8,7 +8,10 @@ const log = require('log4js').getLogger('amy');
 // Handler for running printemoji command
 module.exports = async (bot, msg, args) => {
     if (msg.author != targets.gideon && msg.author != targets.amy) return;
-    // msg.channel.send(`<:${args[1]}:${args[2]}>`);
-    msg.channel.send(bot.emojis.resolve(args[1]).toString());
-    log.info(`${msg.author.tag} ${msg.author} told me to repeat ${args[1]}`);
+    // TODO: add support for emoji names
+    const emoji = bot.emojis.resolve(args[1]);
+    if (emoji) {
+        msg.channel.send(emoji.toString());
+        log.info(`${msg.author.tag} ${msg.author} told me to repeat :${emoji.name}: ${emoji.animated? '(animated)': ''}`);
+    }
 }

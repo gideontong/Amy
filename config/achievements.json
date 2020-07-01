@@ -71,5 +71,34 @@
             "enabledIcon": ""
         }
     ],
-    "secret": []
+    "secret": [
+        {
+            "id": "breakAmy",
+            "name": "She's Dead, Brian!",
+            "description": "Make Amy do something unintended. If you manage to crash Amy, you'll get this achievement awarded manually.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "rulebreaker",
+            "name": "What a rebel! To be 12, eh?",
+            "description": "Break a server-wide rule without getting banned. The simplest way is to break rule 6.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "becomeAmy",
+            "name": "So who's the real Amy?",
+            "description": "Set your username to something with Amy in it. Bonus points if you can convince us you're the real Amy.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "selfAnnoy",
+            "name": "I hate myself!",
+            "description": "Annoy yourself. Not sure why you would do this, but I guess since you did it, you should get an achievement for it.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        }
+    ]
 }

@@ -25,5 +25,8 @@ None
 
 ## Retroactive
 
-* Grant `[3]` to Leo, Jesus
-* Grant `[3]`, `[4]` to Amy, Kevin, Brian, Max
+* Grant `newIssue` to Leo, Jesus, Amy, Kevin, Brian, Max
+* Grant `newBug` to Amy, Kevin, Brian, Max
+* Grant `rulebreaker` to Leo
+* Grant `breakAmy` to Leo, Amy, Max
+* Grant `becomeAmy` to Leo, Amy, Jesus

@@ -1,5 +1,9 @@
+// Imports from local config files
+const config = require('../config/config.json');
+
 // Imports from dependencies
 const log = require('log4js').getLogger('amy');
+const { extractSnowflake } = require('../lib/Validation');
 
 // Handler for running annoy command
 module.exports = async (bot, msg, args) => {
@@ -9,8 +13,9 @@ module.exports = async (bot, msg, args) => {
     } else if (args.length > 2) {
         msg.reply('run `!annoy (user)` to annoy them!');
     } else {
-        var annoy = (!isNaN(args[1])) ? args[1] : args[1].substring(3, args[1].length - 1);
-        // Add something here to annoy the target user
+        const annoy = extractSnowflake(args[1]);
+        const link = Math.random() < 0.3 ? config.links.troll : "https://www.youtube.com/watch?v=VGBO663oenw";
+        msg.channel.send(`Hey, <@${annoy}>! I was told to be annoying to you, so watch this video: `);
         log.info(`${msg.author.tag} ${msg.author} decided to annoy <@${annoy}>`);
     }
 }

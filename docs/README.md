@@ -24,6 +24,10 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `!clear` will now clear recent chat history (**admins only**)
 * `!welcome` triggers the new about screen manually (**admins only**)
 * `!tell` will force the bot to say something (**admins only**, or if you are Amy)
+  * `!tell (channel ID) (message)` will send a message to the channel with that specific ID
+  * `!tell (channel) (message)` will send a message to the channel mentioned
+  * If you do not specify a message and only a channel, Amy will send the name of the channel to the current channel
+  * Asking Kevin to send a message to a channel that does not exist will result in doing nothing
 * `!qr` will generate a QR code
 * `!website` takes you to Amy's website
 * `!joined` will tell you when you joined Discord
@@ -39,5 +43,6 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `?tell` will force Kevin to say something (**admins only**, or if you are Kevin)
   * `?tell (channel ID) (message)` will send a message to the channel with that specific ID
   * `?tell (channel) (message)` will send a message to the channel mentioned
-  * If you do not specific a message and only a channel, Kevin will send the name of the channel to the current channel
+  * If you do not specify a message and only a channel, Kevin will send the name of the channel to the current channel
   * Asking Kevin to send a message to a channel that does not exist will result in nothing happening
+  * `?tell` has feature parity with Amy's `!tell`

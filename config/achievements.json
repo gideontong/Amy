@@ -27,6 +27,48 @@
             "description": "Open an issue on [Amy's GitHub](https://github.com/gideontong/Amy/issues) and have it marked as a bug. You're a bug hunter now!",
             "disabledIcon": "",
             "enabledIcon": ""
+        },
+        {
+            "id": "pullRequest",
+            "name": "Code Writer!",
+            "description": "Open a pull request to [Amy on GitHub](https://github.com/gideontong/Amy) with at least 1 code change. You're a code writer now!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "useCommandsAll",
+            "name": "Jack of All Trades",
+            "description": "Use every command available to you (all non-admin commands). Amy thanks you for your support!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "annoying",
+            "name": "You're so annoying!",
+            "description": "Get Amy to annoy someone for you. It's not that hard!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "leoGay",
+            "name": "Speak the Truth",
+            "description": "Call Leo gay. It doesn't matter how he responds, you spoke the truth.",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "allKevinResponses",
+            "name": "Get Dunked On",
+            "description": "Discover every sarcastic comment Kevin can make. With such a low response rate, you must talk a lot!",
+            "disabledIcon": "",
+            "enabledIcon": ""
+        },
+        {
+            "id": "leoStatus",
+            "name": "Become the Truth",
+            "description": "Change your status such that you are now playing Leo, no matter what he changed his nickname to. Does that mean you are gay?",
+            "disabledIcon": "",
+            "enabledIcon": ""
         }
     ],
     "secret": []

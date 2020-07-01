@@ -8,17 +8,20 @@ None
 
 ## Planned
 
-1. Run `!sudo`
-2. Run `!sudo` on a command you do not have permission to
-3. Open an issue on GitHub
-4. Open an issue on GitHub that gets marked as a bug
-5. Open an pull request on GitHub
-6. Use 5, 10, and every command available (3 achievements)
-7. Make the bot do something unintended (*secret achievement*)
-8. Break a rule (*secret achievement*)
-9. Annoy someone
-10. Annoy yourself (*secret achievement*)
-11. Change your nickname to something that contains Amy (*secret achievement*)
+* Run `!sudo`
+* Run `!sudo` on a command you do not have permission to
+* Open an issue on GitHub
+* Open an issue on GitHub that gets marked as a bug
+* Open an pull request on GitHub
+* Use every command available
+* Annoy someone
+* Call Leo gay
+* Discover every sarcastic comment Kevin can make
+* Change your status to playing Leo (or whatever his nickname is)
+* Make the bot do something unintended (*secret achievement*)
+* Break a rule (*secret achievement*)
+* Change your nickname to something that contains Amy (*secret achievement*)
+* Annoy yourself (*secret achievement*)
 
 ## Retroactive
 

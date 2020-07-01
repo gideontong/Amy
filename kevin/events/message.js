@@ -30,7 +30,12 @@ module.exports = async message => {
             }
         }
     } else if (Math.random() < config.constants.kevinSarcastic && !config.targets.disabledChannels.includes(message.channel.id)) {
-        message.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
+        if (Math.random() < 0.5) {
+            message.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
+        } else {
+            message.react(message.guild.emojis.cache.get(config.emoji.pepeYikes))
+                .catch(log.error);
+        }
         log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
     }
 }

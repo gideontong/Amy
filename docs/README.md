@@ -36,4 +36,8 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 
 ### Kevin's Commands
 
-* `?tell` will force the bot to say something (**admins only**, or if you are Kevin)
+* `?tell` will force Kevin to say something (**admins only**, or if you are Kevin)
+  * `?tell (channel ID) (message)` will send a message to the channel with that specific ID
+  * `?tell (channel) (message)` will send a message to the channel mentioned
+  * If you do not specific a message and only a channel, Kevin will send the name of the channel to the current channel
+  * Asking Kevin to send a message to a channel that does not exist will result in nothing happening

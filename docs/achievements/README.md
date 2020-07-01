@@ -16,6 +16,8 @@ None
 6. Use 5, 10, and every command available (3 achievements)
 7. Make the bot do something unintended (*secret achievement*)
 8. Break a rule (*secret achievement*)
+9. Annoy someone
+10. Annoy yourself (*secret achievement*)
 
 ## Retroactive
 

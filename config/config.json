@@ -87,5 +87,16 @@
         {
             "content": "Oh, and one more thing. Here's the permanent invite link to this server: https://discord.gg/WUGMTcZ"
         }
-    ]
+    ],
+    "rules": {
+        "content": "Rules:",
+        "embed": {
+            "description": "**[1]** Use common sense\n**[2]** Don't not use common sense\n**[3]** Annoy Leo aka <@578715287491182595>\n**[4]** Follow the three rules listed above\n**[5]** Do not question the rules, you are playing with fire\n**[7]** Leo's order is not absolute\n**[6]** Rule 7 preceds rule 6",
+            "color": 14684947,
+            "footer": {
+                "text": "Questions? Ask an admin!",
+                "icon_url": "https://cdn.discordapp.com/avatars/721503241531162707/e04f2a03baf23be92a9c937e79e973d0.png"
+            }
+        }
+    }
 }

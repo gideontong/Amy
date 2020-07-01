@@ -5,7 +5,7 @@ const targets = config.targets;
 // Imports from dependencies
 const log = require('log4js').getLogger('amy');
 
-// Handler for running clear command
+// Handler for running welcome command
 module.exports = async (bot, msg, args) => {
     if (!msg.author.id == targets.gideon) return;
     config.welcome.forEach(wText => msg.channel.send(wText));

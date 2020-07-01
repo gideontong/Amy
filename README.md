@@ -4,7 +4,7 @@
 
 ![Amy](https://i.imgur.com/q2YAmF5.png)
 
-🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy.
+🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs).
 
 ## Features
 

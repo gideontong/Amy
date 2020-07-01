@@ -1,6 +1,7 @@
 // Imports from local config files
 const responses = require('../../config/responses.json');
 const config = require('../../config/config.json');
+const { isIgnored } = require('../../lib/Validation');
 const targets = config.targets;
 const sarcasm = responses.sarcasticKevin;
 
@@ -9,7 +10,7 @@ const log = require('log4js').getLogger('kevin');
 
 // Handler for a sent message
 module.exports = async message => {
-    if (message.author.bot || message.content[0] == "!") return;
+    if (isIgnored(message, config.targets.ignores, "?")) return;
     if (message.author == targets.kevin || message.author == targets.gideon) {
         if (message.content[0] == "?") {
             commands = message.content.split(" ");

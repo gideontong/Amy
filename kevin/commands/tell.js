@@ -1,6 +1,6 @@
 // Imports from local config files
 const config = require('../../config/config.json');
-const { extractSnowflake } = require('../../lib/Validation');
+const { extractSnowflake, validChannel } = require('../../lib/Validation');
 const targets = config.targets;
 const strings = config.strings;
 
@@ -13,7 +13,7 @@ module.exports = async (bot, msg, args) => {
         msg.reply(strings.notAdmin);
         log.info(`${msg.author.tag} ${msg.author} tried to force me to say something`);
         return;
-    } else if (args.length > 2) {
+    } else if (args.length > 2 && validChannel(args[1])) {
         const snowflake = extractSnowflake(args[1]);
         // More input validation may be needed
         if (snowflake) {

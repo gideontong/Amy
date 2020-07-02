@@ -11,7 +11,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (bot, msg, args) => {
     // x = 18
     if (msg.author != targets.gideon) return;
-    registerFont('../assets/minecraft.ttf', {family: 'minecraft'});
+    registerFont('./assets/minecraft.ttf', {family: 'minecraft'});
     const canvas = createCanvas(320, 64);
     const canvasData = canvas.getContext('2d');
     loadImage('./assets/achievement.png').then((image) => {

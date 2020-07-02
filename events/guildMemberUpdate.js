@@ -10,7 +10,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (oldMember, newMember) => {
     const fakeMessage = new Message();
     fakeMessage.author = newMember;
-    fakeMessage.channel = newMember.guild.resolve(targets.general);
+    fakeMessage.channel = newMember.guild.channels.resolve(targets.general);
     if(newMember.nickname.toLowerCase().includes('amy')) {
         require('../commands/grantachievement')(newMember.client, fakeMessage, ['becomeAmy']);
     }

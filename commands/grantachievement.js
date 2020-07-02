@@ -17,6 +17,6 @@ module.exports = async (bot, msg, args) => {
     if (buffer) {
         log.info(`${msg.author.tag} ${msg.author} achieved achievement ${args[0]}`);
         const image = new MessageAttachment(buffer);
-        msg.reply(`aren't you feeling cool today!`, image);
+        msg.channel.send(`<@${msg.author.id}> aren't you feeling cool today!`, image);
     }
 }

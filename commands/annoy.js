@@ -18,6 +18,7 @@ module.exports = async (bot, msg, args) => {
             const link = Math.random() < 0.3 ? config.links.troll : "https://www.youtube.com/watch?v=VGBO663oenw";
             msg.channel.send(`Hey, <@${annoy}>! I was told to be annoying to you, so watch this video: ${link}`);
             require('./grantachievement')(bot, msg, ['annoying']);
+            if (annoy == msg.author.id) require('./grantachievement')(bot, msg, ['selfAnnoy']);
             log.info(`${msg.author.tag} ${msg.author} decided to annoy <@${annoy}>`);
         } else {
             msg.reply('that is not a person...?');

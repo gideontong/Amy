@@ -11,6 +11,7 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Annoy someone
 * Get trolled by the QR code generator
 * Change your nickname to something that contains Amy (*secret achievement*)
+* Annoy yourself (*secret achievement*)
 
 ### In Progress
 
@@ -23,7 +24,6 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Change your status to playing Leo (or whatever his nickname is)
 * Make the bot do something unintended (*secret achievement*)
 * Break a rule (*secret achievement*)
-* Annoy yourself (*secret achievement*)
 
 ### Planned
 

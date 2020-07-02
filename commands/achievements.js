@@ -9,7 +9,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for running achievements command
 module.exports = async (bot, msg, args) => {
     if (msg.author != targets.gideon) return;
-    let emojiString, unlocked, secret = await generateAchievementProgress(msg.author.id);
+    let [emojiString, unlocked, secret] = await generateAchievementProgress(msg.author.id);
     let message = {
         content: `Your achievements are looking pretty strong...`,
         embed:

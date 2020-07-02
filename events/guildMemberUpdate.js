@@ -3,15 +3,19 @@ const config = require('../config/config.json');
 const targets = config.targets;
 
 // Imports from dependencies
-const { Message } = require('discord.js');
+const { Message, MessageAttachment } = require('discord.js');
+const { grantAchievement } = require('../lib/Achievement');
 const log = require('log4js').getLogger('amy');
 
 // Handler for a member update
 module.exports = async (oldMember, newMember) => {
     if(newMember.nickname.toLowerCase().includes('amy')) {
-        var fakeMessage = new Message(newMember.client, '', newMember.guild.channels.cache.get(targets.general));
-        fakeMessage.author = newMember;
-        log.info(`A new member changed to include Amy, checking with ${fakeMessage}`);
-        require('../commands/grantachievement')(newMember.client, fakeMessage, ['becomeAmy']);
+        log.info(`${newMember.tag} ${newMember} changed their nickname to include Amy`);
+        let channel = newMember.client.channels.cache.get(targets.general);
+        const buffer = await grantAchievement(newMember.id, 'becomeAmy');
+        if (buffer) {
+            const image = new MessageAttachment(buffer);
+            channel.send(`<@${newMember.id}> I shouldn't even be surprised you did this...`, image);
+        }
     }
 }

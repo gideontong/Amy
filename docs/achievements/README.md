@@ -10,6 +10,7 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Run `!sudo` on a command you do not have permission to
 * Annoy someone
 * Get trolled by the QR code generator
+* Change your nickname to something that contains Amy (*secret achievement*)
 
 ### In Progress
 
@@ -22,7 +23,6 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Change your status to playing Leo (or whatever his nickname is)
 * Make the bot do something unintended (*secret achievement*)
 * Break a rule (*secret achievement*)
-* Change your nickname to something that contains Amy (*secret achievement*)
 * Annoy yourself (*secret achievement*)
 
 ### Planned

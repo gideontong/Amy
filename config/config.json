@@ -34,7 +34,7 @@
     },
     "constants": {
         "clearHistory": 100,
-        "trollProbability": 0.5,
+        "trollProbability": 0.01,
         "kevinSarcastic": 0.03
     },
     "links": {

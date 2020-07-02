@@ -30,6 +30,7 @@ None
 
 * Locate Leo
 * Locate Leo and zoom in on the map
+* Be the most talkative person in a day
 
 ## Retroactive
 

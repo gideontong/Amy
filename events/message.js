@@ -26,10 +26,9 @@ module.exports = async message => {
             log.warn(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
             return;
         } else {
-            cmdFile(message.client, message, commands)
-            //.catch(err => {
-                //log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
-            //})
+            cmdFile(message.client, message, commands).catch(err => {
+                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+            })
         }
     }
     sanitizedMessage = message.content.toLowerCase();

@@ -11,7 +11,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (oldMember, newMember) => {
     if(newMember.nickname.toLowerCase().includes('amy')) {
         log.info(`${newMember.tag} ${newMember} changed their nickname to include Amy`);
-        let channel = newMember.client.channels.cache.get(targets.bots);
+        let channel = newMember.client.channels.cache.get(targets.general);
         const buffer = await grantAchievement(newMember.id, 'becomeAmy');
         if (buffer) {
             const image = new MessageAttachment(buffer);

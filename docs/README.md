@@ -52,6 +52,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `!youtube` takes you to the [Dudes of 708 YouTube channel](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA)
 * `!rules` returns the list of rules for the server
 * `!achievements` will show you your achievement progress
+* `!ping` will tell you to ask GreustBot or Akov instead of Amy
 
 ### Kevin's Commands
 

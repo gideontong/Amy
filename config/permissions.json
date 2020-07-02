@@ -1,0 +1,14 @@
+{
+    "commands": [
+        "clear",
+        "welcome",
+        "generateachievement",
+        "grantachievement",
+        "revokeachievement",
+        "tell",
+        "printemoji"
+    ],
+    "admins": [
+        "132525049977503744"
+    ]
+}

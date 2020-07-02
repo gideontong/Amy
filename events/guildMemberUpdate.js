@@ -9,7 +9,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for a member update
 module.exports = async (oldMember, newMember) => {
     if(newMember.nickname.toLowerCase().includes('amy')) {
-        var fakeMessage = new Message(newMember.client, '', newMember.guild.channels.resolve(targets.general));
+        var fakeMessage = new Message(newMember.client, '', newMember.guild.channels.get(targets.general));
         fakeMessage.author = newMember;
         log.info(`A new member changed to include Amy, checking with ${fakeMessage}`);
         require('../commands/grantachievement')(newMember.client, fakeMessage, ['becomeAmy']);

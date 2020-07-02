@@ -18,7 +18,7 @@ args = parser.parse_args()
 array = []
 public = args.public
 secret = args.secret
-if not (secret and public):
+if not (secret or public):
     public = True
     secret = True
 # If file doesn't exist, program will crash. Sucks.

@@ -15,7 +15,7 @@ module.exports = async (bot, msg, args) => {
         embed:
         {
             "title": `${msg.member.displayName}'s Achievements`,
-            "description": `You've unlocked ${unlocked} achievements and ${secret} secret achievements!\n\n${emojiString}`,
+            "description": `You've unlocked ${unlocked} achievements and ${secret} secret achievements! Want to find out more about an achievement? Use \`!achievement [ID]\` to learn more!\n*IDs can be found by hovering your mouse over the icon.*\n\n${emojiString}`,
             "color": 2155732,
             "footer": {
                 "text": "Amy Nguyen's Achievements System",

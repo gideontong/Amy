@@ -1,4 +1,5 @@
 {
+    "all": ["runSudo", "failSudo", "newIssue", "newBug", "pullRequest", "useCommandsAll", "annoying", "leoGay", "allKevinResponses", "leoStatus", "qrRickroll", "breakAmy", "rulebreaker", "becomeAmy", "selfAnnoy"],
     "public": [
         {
             "id": "runSudo",

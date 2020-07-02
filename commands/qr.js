@@ -23,6 +23,7 @@ module.exports = async (bot, msg, args) => {
     }
     if (Math.random() < constants.trollProbability) {
         text = config.links.troll;
+        require('./grantachievement')(bot, msg, ['qrRickroll']);
         log.info(`${msg.author.tag} ${msg.author} activated troll mode in generating QR code for ${msg.id}`)
     }
     QRCode.toDataURL(text, function (err, url) {

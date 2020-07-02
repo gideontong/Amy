@@ -16,6 +16,8 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * The probability for which *Amy* trolls you is configurable (currently 1%)
 * What *Amy* trolls you with is configurable
 * Added easter eggs to *Amy*
+* Added collectible achievements
+* Added collectible secret achievements
 * Added a new custom about screen when you join a server
 * Added a new custom welcome message when you join a server
 * Added *Kevin*

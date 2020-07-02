@@ -14,12 +14,11 @@ module.exports = async (bot, msg, args) => {
     registerFont('./assets/minecraft.ttf', {family: 'minecraft'});
     const canvas = createCanvas(320, 64);
     const canvasData = canvas.getContext('2d');
-    loadImage('../assets/achievement.png').then((image) => {
-        canvasData.drawImage(image, 0, 0);
-    });
-    loadImage('../assets/test.png').then ((image) => {
-        canvasData.drawImage(image, 18, 17);
-    });
+    const bg = await loadImage('./assets/achievement.png')
+    canvasData.drawImage(bg, 0, 0);
+    const icon = await loadImage('./assets/test.png');
+    loadImage('./assets/test.png');
+    canvasData.drawImage(icon, 18, 17);
     canvasData.font = '12px minecraft';
     canvasData.fillText('Achievement get!', 60, 28);
     canvasData.fillText(msg.content.substring(args[0].length + 1), 60, 50);

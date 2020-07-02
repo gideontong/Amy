@@ -2,11 +2,13 @@
 
 Achievements and easter eggs are a feature coming soon. It hasn't been implemented yet. This is a document to keep track of all of them:
 
-## Implemented
+## Progress
+
+### Implemented
 
 None
 
-## Planned
+### In Progress
 
 * Run `!sudo`
 * Run `!sudo` on a command you do not have permission to
@@ -23,6 +25,11 @@ None
 * Break a rule (*secret achievement*)
 * Change your nickname to something that contains Amy (*secret achievement*)
 * Annoy yourself (*secret achievement*)
+
+### Planned
+
+* Locate Leo
+* Locate Leo and zoom in on the map
 
 ## Retroactive
 

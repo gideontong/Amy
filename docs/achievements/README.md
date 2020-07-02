@@ -6,17 +6,16 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 
 ### Implemented
 
-None
+* Run `!sudo`
+* Run `!sudo` on a command you do not have permission to
+* Annoy someone
 
 ### In Progress
 
-* Run `!sudo`
-* Run `!sudo` on a command you do not have permission to
 * Open an issue on GitHub
 * Open an issue on GitHub that gets marked as a bug
 * Open an pull request on GitHub
 * Use every command available
-* Annoy someone
 * Call Leo gay
 * Discover every sarcastic comment Kevin can make
 * Change your status to playing Leo (or whatever his nickname is)

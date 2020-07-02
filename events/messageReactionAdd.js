@@ -1,3 +1,2 @@
-module.exports = async message => {
-    // Do something
+module.exports = async (reaction, user) => {
 }

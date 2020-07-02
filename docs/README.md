@@ -47,6 +47,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `!insaneasylum` returns the infamous [Insane Asylum playlist](https://www.youtube.com/playlist?list=PL3q1l2_RQCr7fk0jyOmNwiUp9F6CaDyQd)
 * `!youtube` takes you to the [Dudes of 708 YouTube channel](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA)
 * `!rules` returns the list of rules for the server
+* `!achievements` will show you your achievement progress
 
 ### Kevin's Commands
 

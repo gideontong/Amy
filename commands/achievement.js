@@ -13,7 +13,7 @@ module.exports = async (bot, msg, args) => {
                 "description": `${data.description}`,
                 "color": 14366683,
                 "footer": {
-                    "text": "Achieved by [coming soon] people."
+                    "text": `Achievement ${data.id} has been achieved by [coming soon] people.`
                 },
                 "thumbnail": {
                     "url": `https://amyhelps.ml/images/achievements/${data.id}.png`

@@ -5,7 +5,7 @@ const { MessageAttachment } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 // Wrapper for Achievement.grantAchievement()
-module.exports = async (bot, msg, args) {
+module.exports = async (bot, msg, args) => {
     const buffer = await grantAchievement(args[1]);
     if (buffer) {
         log.info(`${msg.author.tag} ${msg.author} achieved achievement ${args[1]}`);

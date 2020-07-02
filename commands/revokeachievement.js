@@ -1,6 +1,6 @@
 // Imports from local config files
 const config = require('../config/config.json');
-const targest = config.targets;
+const targets = config.targets;
 
 // Imports from dependencies
 const { removeAchievement } = require('../lib/Achievement');

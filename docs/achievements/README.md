@@ -28,8 +28,9 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 ### Planned
 
 * Locate Leo
-* Locate Leo and zoom in on the map
 * Be the most talkative person in a day
+* Locate Leo and zoom in on the map (*secret achievement*)
+* React to a message with `:pepeYikes:` before Kevin reacts to a message with `:pepeYikes:` (*secret achievement*)
 
 ## Retroactive
 

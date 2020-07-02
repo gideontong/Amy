@@ -7,7 +7,7 @@ module.exports = async (bot, msg, args) => {
     if (data) {
         const embed = {
             "content": "Want to use your achievement as an emoji? That feature is coming soon! Vote for it on the bugtracker to make it a higher priority.",
-            "embeds":
+            "embed":
             {
                 "title": `${data.name}`,
                 "description": `${data.description}`,

@@ -14,10 +14,10 @@ module.exports = async (bot, msg, args) => {
     registerFont('../assets/minecraft.ttf', {family: 'minecraft'});
     const canvas = createCanvas(320, 64);
     const canvasData = canvas.getContext('2d');
-    loadImage('../assets/achievement.png').then((image) => {
+    loadImage('./assets/achievement.png').then((image) => {
         canvasData.drawImage(image, 0, 0);
     });
-    loadImage('../assets/test.png').then ((image) => {
+    loadImage('./assets/test.png').then ((image) => {
         canvasData.drawImage(image, 18, 17);
     });
     canvasData.font = '12px minecraft';

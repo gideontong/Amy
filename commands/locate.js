@@ -23,9 +23,9 @@ module.exports = async (bot, msg, args) => {
     }
     if(isLeo(searchString)) {
         var attachment;
-        if (args[args.length - 1].includes('superzoom')) attachment = new MessageAttachment('../assets/superzoom.jpg');
-        else if (args[args.length - 1].includes('zoom')) attachment = new MessageAttachment('../assets/zoom.jpg');
-        else attachment = new MessageAttachment('../assets/map.jpg');
+        if (args[args.length - 1].includes('superzoom')) attachment = new MessageAttachment('./assets/superzoom.jpg');
+        else if (args[args.length - 1].includes('zoom')) attachment = new MessageAttachment('./assets/zoom.jpg');
+        else attachment = new MessageAttachment('./assets/map.jpg');
         msg.channel.send(`I've found the current result for Leo's current location... took ${Math.floor(Math.random() * 1000)}ms!`, attachment);
     } else {
         msg.channel.send(`Searching...`)

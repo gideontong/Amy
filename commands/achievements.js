@@ -11,10 +11,10 @@ module.exports = async (bot, msg, args) => {
     if (msg.author != targets.gideon) return;
     let emojiString = await generateAchievementProgress(msg.author.id);
     let message = {
-        content: `${msg.author.tag}'s achievements are looking pretty strong...`,
+        content: `Your achievements are looking pretty strong...`,
         embed:
         {
-            "title": `<@${msg.author.id}>'s Achievements`,
+            "title": `${msg.member.displayname}'s Achievements`,
             "description": `You've unlocked [coming soon] achievements and [coming soon] secret achievements!\n\n${emojiString}`,
             "color": 2155732,
             "footer": {
@@ -23,6 +23,6 @@ module.exports = async (bot, msg, args) => {
             }
         }
     }
-    msg.reply(message);
+    msg.channel.send(message);
     log.info(`${msg.author.tag} ${msg.author} requested their achievements progress`);
 }

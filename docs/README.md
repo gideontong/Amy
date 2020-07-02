@@ -33,7 +33,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
   * `!tell (channel) (message)` will send a message to the channel mentioned
   * If you do not specify a message and only a channel, Amy will send the name of the channel to the current channel
   * Asking Kevin to send a message to a channel that does not exist will result in doing nothing
-* `!printemoji (emoji) (ID)` will repeat the emoji (**admins only**, or if you are Amy)
+* `!printemoji (ID)` will repeat the emoji (**admins only**, or if you are Amy)
   * Since this does not provide input validation, it's been reserved for admins until further notice
 * `!qr (text, website, or phone number)` will generate a QR code
 * `!website` takes you to [Amy's website](https://amyhelps.ml)

@@ -45,4 +45,4 @@ Issues opened by [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](htt
 
 ### Licensing
 
-**Amy** is licensed under the MIT License. She depends on the [Discord.js](https://discord.js.org), [node-qrcode](https://github.com/soldair/node-qrcode), and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.
+**Amy** is licensed under the MIT License. She depends on the [Discord.js](https://discord.js.org), [node-qrcode](https://github.com/soldair/node-qrcode), [node-canvas](https://github.com/Automattic/node-canvas), and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.

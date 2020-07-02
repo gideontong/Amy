@@ -4,78 +4,78 @@
             "id": "runSudo",
             "name": "Sudo, make me a sandwich!",
             "description": "Run the `!sudo` command.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:runSudo_disabled:728133275469742132>",
+            "enabledIcon": "<:runSudo:728133251306225684>"
         },
         {
             "id": "failSudo",
             "name": "Not a sudoer?",
             "description": "You aren't in the sudoers file. This incident will be reported. (Run the `!sudo` command on a command you do not have permission to.)",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:failSudo_disabled:728133275524136990>",
+            "enabledIcon": "<:failSudo:728133251268477048>"
         },
         {
             "id": "newIssue",
             "name": "Baby Tester",
             "description": "Open your first issue on [Amy's GitHub](https://github.com/gideontong/Amy/issues). This can be a bug report *or* a feature request!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:newIssue_disabled:728133275670937600>",
+            "enabledIcon": "<:newIssue:728133251256025138>"
         },
         {
             "id": "newBug",
             "name": "Advanced Tester",
             "description": "Open an issue on [Amy's GitHub](https://github.com/gideontong/Amy/issues) and have it marked as a bug. You're a bug hunter now!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:newBug_disabled:728133275222016012>",
+            "enabledIcon": "<:newBug:728133250853371966>"
         },
         {
             "id": "pullRequest",
             "name": "Code Writer!",
             "description": "Open a pull request to [Amy on GitHub](https://github.com/gideontong/Amy) with at least 1 code change. You're a code writer now!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:pullRequest_disabled:728133275889172490>",
+            "enabledIcon": "<:pullRequest:728133250924675154>"
         },
         {
             "id": "useCommandsAll",
             "name": "Jack of All Trades",
             "description": "Use every command available to you (all non-admin commands). Amy thanks you for your support!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:useCommandsAll_disabled:728133275612086282>",
+            "enabledIcon": "<:useCommandsAll:728133251360620625>"
         },
         {
             "id": "annoying",
             "name": "You're so annoying!",
             "description": "Get Amy to annoy someone for you. It's not that hard!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:annoying_disabled:728133275515617330>",
+            "enabledIcon": "<:annoying:728133251079864340>"
         },
         {
             "id": "leoGay",
             "name": "Speak the Truth",
             "description": "Call Leo gay. It doesn't matter how he responds, you spoke the truth.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:leoGay_disabled:728133275565948928>",
+            "enabledIcon": "<:leoGay:728133251209887744>"
         },
         {
             "id": "allKevinResponses",
             "name": "Get Dunked On",
             "description": "Discover every sarcastic comment Kevin can make. With such a low response rate, you must talk a lot!",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:allKevinResponses_disabled:728133275192786956>",
+            "enabledIcon": "<:allKevinResponses:728133251117613066>"
         },
         {
             "id": "leoStatus",
             "name": "Become the Truth",
             "description": "Change your status such that you are now playing Leo, no matter what he changed his nickname to. Does that mean you are gay?",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:leoStatus_disabled:728133275595309096>",
+            "enabledIcon": "<:leoStatus:728133250861629474>"
         },
         {
             "id": "qrRickroll",
             "name": "Pocket Weapon",
             "description": "Get trolled by the QR code generator. You'll know when it happens, since you have to scan the QR code, eh?",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:qrRickroll_disabled:728133275645771816>",
+            "enabledIcon": "<:qrRickroll:728133251222339585>"
         }
     ],
     "secret": [
@@ -83,29 +83,29 @@
             "id": "breakAmy",
             "name": "She's Dead, Brian!",
             "description": "Make Amy do something unintended. If you manage to crash Amy, you'll get this achievement awarded manually.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:breakAmy_disabled:728133275544977468>",
+            "enabledIcon": "<:breakAmy:728133251310551140>"
         },
         {
             "id": "rulebreaker",
             "name": "What a rebel! To be 12, eh?",
             "description": "Break a server-wide rule without getting banned. The simplest way is to break rule 6.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:rulebreaker_disabled:728133275582726195>",
+            "enabledIcon": "<:rulebreaker:728133251318677524>"
         },
         {
             "id": "becomeAmy",
             "name": "So who's the real Amy?",
             "description": "Set your username to something with Amy in it. Bonus points if you can convince us you're the real Amy.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:becomeAmy_disabled:728133275541045298>",
+            "enabledIcon": "<:becomeAmy:728133251331522630>"
         },
         {
             "id": "selfAnnoy",
             "name": "I hate myself!",
             "description": "Annoy yourself. Not sure why you would do this, but I guess since you did it, you should get an achievement for it.",
-            "disabledIcon": "",
-            "enabledIcon": ""
+            "disabledIcon": "<:selfAnnoy_disabled:728133275435925505>",
+            "enabledIcon": "<:selfAnnoy:728133251344105512>"
         }
     ]
 }

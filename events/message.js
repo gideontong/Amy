@@ -55,7 +55,7 @@ module.exports = async message => {
         message.reply(response);
         log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
     } else if (message.author.id == targets.leo) {
-        if (Math.random() < 0.2) {
+        if (Math.random() < 0.1) {
             response = responses.prank[Math.floor(Math.random() * responses.prank.length)];
             message.reply(response);
             log.info(`${message.author.tag} ${message.author} triggered a prank response`);

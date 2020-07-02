@@ -31,6 +31,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `!clear` will now clear recent chat history (**admins only**)
 * `!welcome` triggers the new about screen manually (**admins only**)
 * `!generateachievement (text)` will generate a test achievement (**admins only**)
+* `!grantachievement (ID)` will grant yourself the achievement (**admins only**)
 * `!tell` will force the bot to say something (**admins only**, or if you are Amy)
   * `!tell (channel ID) (message)` will send a message to the channel with that specific ID
   * `!tell (channel) (message)` will send a message to the channel mentioned

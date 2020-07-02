@@ -1,12 +1,16 @@
-const { grantAchievement } = require('../lib/Achievement');
-const { MessageAttachment } = require('discord.js');
+// Imports from local config files
+const config = require('../config/config.json');
+const targets = config.targets;
 
 // Imports from dependencies
+const { grantAchievement } = require('../lib/Achievement');
+const { MessageAttachment } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 // Wrapper for Achievement.grantAchievement()
 module.exports = async (bot, msg, args) => {
-    const buffer = await grantAchievement(msg.author.id, args[1]);
+    if (args[0].startsWith('!') && msg.author != targets.gideon) return;
+    const buffer = await grantAchievement(msg.author.id, args[0]);
     if (buffer) {
         log.info(`${msg.author.tag} ${msg.author} achieved achievement ${args[1]}`);
         const image = new MessageAttachment(buffer);

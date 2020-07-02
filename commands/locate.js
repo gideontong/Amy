@@ -29,6 +29,8 @@ module.exports = async (bot, msg, args) => {
         msg.channel.send(`I've found the current result for Leo's current location... took ${Math.floor(Math.random() * 1000)}ms!`, attachment);
     } else {
         msg.channel.send(`Searching...`)
-            .then(msg => msg.edit(`Searching... I wasn't able to find this person! Failed after 1 second.`, { "timeout": 1000 }));
+            .then(msg => setTimeout(function() {
+                msg.edit(`Searching... I wasn't able to find this person! Failed after 1 second.`);
+            }, 1000));
     }
 }

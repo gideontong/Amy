@@ -6,7 +6,7 @@ const log = require('log4js').getLogger('amy');
 
 // Wrapper for Achievement.grantAchievement()
 module.exports = async (bot, msg, args) => {
-    const buffer = await grantAchievement(args[1]);
+    const buffer = await grantAchievement(msg.author.id, args[1]);
     if (buffer) {
         log.info(`${msg.author.tag} ${msg.author} achieved achievement ${args[1]}`);
         const image = new MessageAttachment(buffer);

@@ -16,12 +16,12 @@ module.exports = async message => {
     if ((message.author == targets.gideon && message.content[0] == "!") || (message.author == targets.amy && message.content.startsWith("!tell"))) {
         commands = message.content.split(" ");
         message.delete();
-        try {
+        //try {
             cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
-        } catch {
-            log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
-            return;
-        }
+        //} catch {
+            //log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
+            //return;
+        //}
         if (!cmdFile) {
             log.warn(`${message.author.tag} ${messague.author} ran a command that doesn't exist`);
             return;

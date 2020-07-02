@@ -20,7 +20,9 @@ module.exports = async (bot, msg, args) => {
     loadImage('./assets/test.png');
     canvasData.drawImage(icon, 18, 17);
     canvasData.font = '12px minecraft';
+    canvasData.fillStyle = 'rgb(255, 255, 0)';
     canvasData.fillText('Achievement get!', 60, 28);
+    canvasData.fillStyle = 'rgb(255, 255, 255)';
     canvasData.fillText(msg.content.substring(args[0].length + 1), 60, 50);
     const image = new MessageAttachment(canvas.toBuffer());
     msg.channel.send(`Here's your test achievement:`, image);

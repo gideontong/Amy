@@ -4,6 +4,7 @@ const targets = config.targets;
 
 // Imports from dependencies
 const { removeAchievement } = require('../lib/Achievement');
+const { extractSnowflake } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 // Wrapper for Achievement.removeAchievement()

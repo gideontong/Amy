@@ -4,12 +4,18 @@ const targets = config.targets;
 
 // Imports from dependencies
 const { generateAchievementProgress } = require('../lib/Achievement');
+const { extractSnowflake } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running achievements command
 module.exports = async (bot, msg, args) => {
     if (msg.author != targets.gideon) return;
-    let [emojiString, unlocked, secret] = await generateAchievementProgress(msg.author.id);
+    let snowflake = msg.author.id;
+    if (args[1]) {
+        let sfArg = extractSnowflake(args[1]);
+        if (sfArg) snowflake = sfArg;
+    }
+    let [emojiString, unlocked, secret] = await generateAchievementProgress(snowflake);
     let message = {
         content: `Your achievements are looking pretty strong...`,
         embed:

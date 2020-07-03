@@ -17,3 +17,4 @@ Handeled by node-persist
     * say_eh: `Array<integer>` - *stores number of times "eh" has been said, with index in array as number of h's*
     * discover_comment: `Array<boolean>` - *stores whether or not the specified Kevin comment has been discovered*
     * discover_pepeyikes: `boolean` - *whether or not Kevin has reacted with pepeYikes*
+    * github: `str` - *records your GitHub username for achievements*

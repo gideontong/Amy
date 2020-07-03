@@ -30,6 +30,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 
 * `!clear` will now clear recent chat history (**admins only**)
 * `!welcome` triggers the new about screen manually (**admins only**)
+* `!loadingscreentips` will show you 3 loading screen tips before disappearing (**admins only**)
 * `!generateachievement (text)` will generate a test achievement (**admins only**)
 * `!grantachievement (ID)` will grant yourself the achievement (**admins only**)
 * `!revokeachievement (ID)` will revoke yourself from the achievement (**admins only**)

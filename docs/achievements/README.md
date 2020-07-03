@@ -31,6 +31,7 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Be the most talkative person in a day
 * Discover every single loading screen tip
 * Lose 100,000 coins playing slots or blackjack against GruestBot (Brian's bot)
+* React `:leoapproves:` or `:riceReady:` to the rules
 * Locate Leo and zoom in on the map (*secret achievement*)
 * React to a message with `:pepeYikes:` before Kevin reacts to a message with `:pepeYikes:` (*secret achievement*)
 

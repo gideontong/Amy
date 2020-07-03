@@ -14,15 +14,16 @@ module.exports = async (bot, msg, args) => {
     msg.channel.send(`Loading...`)
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {
-                let nextMsg = messages[i];
-                (function(text) {
-                    await setTimeout(function() {
-                        msg.edit(`> ${text}\nLoading...`);
-                    }, 2000, text);
-                })(nextMsg);
+                writeMessage(msg, messages[i]);
             } 
             setTimeout(function() {
                 msg.delete();
             }, 2000);
         })
+}
+
+function writeMessage(msg, text) {
+    setTimeout(() => {
+        msg.edit(`> ${text}\nLoading...`);
+    }, 2000, text)
 }

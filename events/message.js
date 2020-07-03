@@ -1,12 +1,13 @@
 // Imports from local config files
 const responses = require('../config/responses.json');
 const config = require('../config/config.json');
-const { isIgnored } = require('../lib/Validation');
 const targets = config.targets;
 const strings = config.strings;
 
 // Imports from dependencies
 // const { geometric } = require('../lib/Poisson');
+const { isIgnored } = require('../lib/Validation');
+const { updateStatistic } = require('../lib/Achievement');
 const log = require('log4js').getLogger('amy');
 
 // Handler for a sent message
@@ -16,8 +17,9 @@ module.exports = async message => {
     if ((message.author == targets.gideon && message.content[0] == "!") || (message.author == targets.amy && message.content.startsWith("!tell"))) {
         commands = message.content.split(" ");
         message.delete();
+        toRun = commands[0].slice(1);
         try {
-            cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
+            cmdFile = require(`../commands/${toRun}.js`);
         } catch {
             log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
             return;
@@ -26,6 +28,7 @@ module.exports = async message => {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
             return;
         } else {
+            updateStatistic(message.author.id, `use_${toRun}`, 1);
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })

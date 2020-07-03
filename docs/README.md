@@ -18,6 +18,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * Added easter eggs to *Amy*
 * Added collectible achievements
 * Added collectible secret achievements
+* Normally, *Amy* will give you the achievement, but there are some special achievements that *Kevin* awards
 * Added a new custom about screen when you join a server
 * Added a new custom welcome message when you join a server
 * Added *Kevin*

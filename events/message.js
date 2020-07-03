@@ -28,7 +28,13 @@ module.exports = async message => {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
             return;
         } else {
-            updateStatistic(message.author.id, `use_${toRun}`, 1);
+            updateStatistic(message.author.id, `use_${toRun}`, 1)
+                .then((value) => {
+                    if (value == 1) updateStatistic(message.author.id, 'commands', 1)
+                        .then((value) => {
+                            if (value == config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useAllCommands']);
+                        }
+                });
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })

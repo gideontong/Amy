@@ -17,7 +17,7 @@ module.exports = async (oldPresence, newPresence) => {
     if (newPresence.activities && newPresence.activities[0].type == "PLAYING") {
         let name = newPresence.activities[0].name.toLowerCase();
         let leo = newPresence.guild.members.cache.get(targets.leo);
-        let channel = newPresence.client.channels.cache.get(targets.general);
+        let channel = newPresence.client.channels.cache.get(targets.bots);
         if (leo) {
             let nick = leo.nickname;
             if (name == "leo" || name == nick || name.includes("leo ")) {

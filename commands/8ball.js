@@ -35,6 +35,7 @@ const { selectN } = require('../lib/Today');
 // Handler for 8ball command
 module.exports = async (bot, msg, args) => {
     const messages = selectN(tips, 3);
+    const ask = msg.content.substring(args[0].length + 1);
     msg.channel.send(`Loading...`)
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {
@@ -42,8 +43,8 @@ module.exports = async (bot, msg, args) => {
             }
             setTimeout(() => {
                 let response = responses[Math.floor(Math.random() * responses.length)];
-                msg.edit(`> ${msg.content.substring(args[0].length + 1)}\n${response}`);
-            }, (messages.length + 1) * 2000, msg, responses, args);
+                msg.edit(`> ${ask}\n${response}`);
+            }, (messages.length + 1) * 2000, msg, responses, ask);
         });
     log.info(`${msg.author.tag} ${msg.author} requested an 8ball!`);
 }

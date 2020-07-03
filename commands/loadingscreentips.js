@@ -15,11 +15,11 @@ module.exports = async (bot, msg, args) => {
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {
                 let nextMsg = messages[i];
-                (function(nextMsg, timeout) {
+                (function(text) {
                     setTimeout(function() {
-                        msg.edit(`> ${nextMsg}\nLoading...`);
-                    }, timeout, nextMsg);
-                })(messages[i], 2000)
+                        msg.edit(`> ${text}\nLoading...`);
+                    }, 2000, text);
+                })(nextMsg)
             } 
         })
         .then(msg => msg.delete());

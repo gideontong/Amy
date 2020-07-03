@@ -14,6 +14,8 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Use every command available
 * Change your nickname to something that contains Amy (*secret achievement*)
 * Annoy yourself (*secret achievement*)
+* Break a rule (*secret achievement* - manually given)
+* Make the bot do something unintended (*secret achievement* - manually given)
 
 ### In Progress
 
@@ -22,8 +24,6 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Open an pull request on GitHub
 * Discover every sarcastic comment Kevin can make
 * Change your status to playing Leo (or whatever his nickname is)
-* Make the bot do something unintended (*secret achievement*)
-* Break a rule (*secret achievement*)
 
 ### Planned
 

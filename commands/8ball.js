@@ -46,7 +46,7 @@ module.exports = async (bot, msg, args) => {
                 msg.edit(`> ${ask}\n${response}`);
             }, (messages.length + 1) * 2000, msg, responses, ask);
         });
-    log.info(`${msg.author.tag} ${msg.author} requested an 8ball!`);
+    log.info(`${msg.author.tag} ${msg.author} requested an 8ball`);
 }
 
 function writeMessage(msg, text, timeout) {

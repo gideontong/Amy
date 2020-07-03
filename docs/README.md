@@ -54,6 +54,7 @@ Some information is coming soon! Quick links: [setup process](setup) and [usage]
 * `!rules` returns the list of rules for the server
 * `!achievements` will show you your achievement progress
 * `!ping` will tell you to ask GreustBot or Akov instead of Amy
+* `!8ball` will now show you a 8-ball message after showing you some loading screen tips
 
 ### Kevin's Commands
 

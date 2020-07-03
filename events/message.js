@@ -35,7 +35,7 @@ module.exports = async message => {
                 .then((value) => {
                     if (value == 1) updateStatistic(message.author.id, 'commands', 1)
                         .then((value) => {
-                            if (value == config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useAllCommands']);
+                            if (value >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
                         });
                 });
         }

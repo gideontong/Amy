@@ -19,8 +19,10 @@ module.exports = async (bot, msg, args) => {
                     setTimeout(function() {
                         msg.edit(`> ${text}\nLoading...`);
                     }, 2000, text);
-                })(nextMsg)
+                })(nextMsg);
             } 
+            setTimeout(function() {
+                msg.delete();
+            }, 2000);
         })
-        .then(msg => msg.delete());
 }

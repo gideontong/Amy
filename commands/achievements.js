@@ -16,7 +16,7 @@ module.exports = async (bot, msg, args) => {
         if (sfArg) snowflake = sfArg;
     }
     let [emojiString, unlocked, secret] = await generateAchievementProgress(snowflake);
-    let displayName = message.guild.members.resolve(snowflake).displayName;
+    let displayName = msg.guild.members.resolve(snowflake).displayName;
     let message = {
         content: `Your achievements are looking pretty strong...`,
         embed:

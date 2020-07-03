@@ -16,11 +16,12 @@ module.exports = async (bot, msg, args) => {
         if (sfArg) snowflake = sfArg;
     }
     let [emojiString, unlocked, secret] = await generateAchievementProgress(snowflake);
+    let displayName = message.guild.members.resolve(snowflake).displayName;
     let message = {
         content: `Your achievements are looking pretty strong...`,
         embed:
         {
-            "title": `${msg.member.displayName}'s Achievements`,
+            "title": `${displayName}'s Achievements`,
             "description": `You've unlocked ${unlocked} achievements and ${secret} secret achievements! Want to find out more about an achievement? Use \`!achievement [ID]\` to learn more!\n*IDs can be found by hovering your mouse over the icon.*\n\n${emojiString}`,
             "color": 2155732,
             "footer": {
@@ -30,5 +31,5 @@ module.exports = async (bot, msg, args) => {
         }
     }
     msg.channel.send(message);
-    log.info(`${msg.author.tag} ${msg.author} requested their achievements progress`);
+    log.info(`${msg.author.tag} ${msg.author} requested achievements progress of ${displayName} <@${snowflake}>`);
 }

@@ -11,14 +11,18 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (bot, msg, args) => {
     if (msg.author != targets.gideon) return;
     let snowflake = msg.author.id;
+    let who = "Your";
     if (args[1]) {
         let sfArg = extractSnowflake(args[1]);
-        if (sfArg) snowflake = sfArg;
+        if (sfArg) {
+            snowflake = sfArg;
+            who = "Their";
+        }
     }
     let [emojiString, unlocked, secret] = await generateAchievementProgress(snowflake);
     let displayName = msg.guild.members.resolve(snowflake).displayName;
     let message = {
-        content: `Your achievements are looking pretty strong...`,
+        content: `${who} achievements are looking pretty strong...`,
         embed:
         {
             "title": `${displayName}'s Achievements`,

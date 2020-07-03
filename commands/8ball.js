@@ -34,6 +34,7 @@ const { selectN } = require('../lib/Today');
 
 // Handler for 8ball command
 module.exports = async (bot, msg, args) => {
+    const messages = selectN(tips, 3);
     msg.channel.send(`Loading...`)
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {

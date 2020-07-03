@@ -8,14 +8,21 @@ const log = require('log4js').getLogger('amy');
 
 // Wrapper for Achievement.removeAchievement()
 module.exports = async (bot, msg, args) => {
+    var snowflake = msg.author.id;
     if (args[0].startsWith('!')) {
         if (msg.author != targets.gideon) return;
-        else args[0] = args[1];
+        else {
+            args[0] = args[1];
+            if (args[2]) {
+                let sfArg = extractSnowflake(args[2]);
+                if (sfArg) snowflake = sfArg;
+            }
+        }
     }
-    const success = removeAchievement(msg.author.id, args[0]);
+    const success = removeAchievement(snowflake, args[0]);
     if (success) {
         timeout = { "timeout": 3000 };
-        msg.channel.send(`Deleted ${args[0]} from your achievements.`)
+        msg.channel.send(`Deleted ${args[0]} from ${args[2] ? 'their' : 'your'} achievements.`)
             .then(msg => msg.delete(timeout));
         log.info(`${msg.author.tag} ${msg.author} deleted self achievement ${args[0]}`);
     }

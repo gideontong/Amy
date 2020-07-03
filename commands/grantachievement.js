@@ -23,8 +23,8 @@ module.exports = async (bot, msg, args) => {
     }
     const buffer = await grantAchievement(snowflake, args[0]);
     if (buffer) {
-        log.info(`${msg.author.tag} ${msg.author} achieved achievement ${args[0]}`);
+        log.info(`${msg.author.tag} ${args[2] ? 'granted ' : ''}<@${snowflake}> achieved achievement ${args[0]}`);
         const image = new MessageAttachment(buffer);
-        msg.channel.send(`<@${msg.author.id}> aren't you feeling cool today!`, image);
+        msg.channel.send(`<@${snowflake}> aren't you feeling cool today!`, image);
     }
 }

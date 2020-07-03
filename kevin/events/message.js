@@ -47,6 +47,7 @@ module.exports = async message => {
         } else {
             message.react(message.guild.emojis.cache.get(config.emoji.pepeYikes))
                 .catch(log.error);
+            await setStatistic(message.author.id, 'discover_pepeyikes', true);
         }
         log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
     }

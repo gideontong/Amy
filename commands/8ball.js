@@ -43,7 +43,7 @@ module.exports = async (bot, msg, args) => {
             setTimeout(() => {
                 let response = responses[Math.floor(Math.random() * responses.length)];
                 msg.edit(`> ${msg.content.substring(args[0].length + 1)}\n${response}`);
-            }, (messages.length + 1) * 2000, msg, responses);
+            }, (messages.length + 1) * 2000, msg, responses, args);
         });
     log.info(`${msg.author.tag} ${msg.author} requested an 8ball!`);
 }

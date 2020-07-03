@@ -33,7 +33,7 @@ module.exports = async message => {
             })
             let uses = await updateStatistic(message.author.id, `use_${toRun}`, 1)
             if (uses == 1) {
-                let cmdUses = updateStatistic(message.author.id, 'commands', 1);
+                let cmdUses = await updateStatistic(message.author.id, 'commands', 1);
                 if (cmdUses >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
             }
         }

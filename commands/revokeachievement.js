@@ -25,6 +25,6 @@ module.exports = async (bot, msg, args) => {
         timeout = { "timeout": 3000 };
         msg.channel.send(`Deleted ${args[0]} from ${args[2] ? 'their' : 'your'} achievements.`)
             .then(msg => msg.delete(timeout));
-        log.info(`${msg.author.tag} ${msg.author} deleted self achievement ${args[0]}`);
+        log.info(`${msg.author.tag} ${msg.author} deleted achievement ${args[0]} from <@${snowflake}>`);
     }
 }

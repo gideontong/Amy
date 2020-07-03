@@ -16,7 +16,7 @@ module.exports = async (bot, msg, args) => {
             for (var i = 0; i < messages.length; i++) {
                 let nextMsg = messages[i];
                 (function(text) {
-                    setTimeout(function() {
+                    await setTimeout(function() {
                         msg.edit(`> ${text}\nLoading...`);
                     }, 2000, text);
                 })(nextMsg);

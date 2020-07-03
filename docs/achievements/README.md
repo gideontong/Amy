@@ -13,6 +13,7 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Call Leo gay
 * Use every command available
 * Discover every sarcastic comment Kevin can make
+* Change your status to playing Leo (or whatever his nickname is)
 * Change your nickname to something that contains Amy (*secret achievement*)
 * Annoy yourself (*secret achievement*)
 * Break a rule (*secret achievement* - manually given)
@@ -23,7 +24,6 @@ Achievements and easter eggs are a feature coming soon. It hasn't been implement
 * Open an issue on GitHub
 * Open an issue on GitHub that gets marked as a bug
 * Open an pull request on GitHub
-* Change your status to playing Leo (or whatever his nickname is)
 
 ### Planned
 

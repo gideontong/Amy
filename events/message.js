@@ -31,13 +31,11 @@ module.exports = async message => {
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
-            updateStatistic(message.author.id, `use_${toRun}`, 1)
-                .then((value) => {
-                    if (value == 1) updateStatistic(message.author.id, 'commands', 1)
-                        .then((value) => {
-                            if (value >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
-                        });
-                });
+            let uses = await updateStatistic(message.author.id, `use_${toRun}`, 1)
+            if (uses == 1) {
+                let cmdUses = updateStatistic(message.author.id, 'commands', 1);
+                if (cmdUses >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
+            }
         }
     }
     sanitizedMessage = message.content.toLowerCase();

@@ -14,7 +14,7 @@ module.exports = async (bot, msg, args) => {
     msg.channel.send(`Loading...`)
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {
-                writeMessage(msg, messages[i]);
+                writeMessage(msg, messages[i], (i + 1) * 2000);
             } 
             setTimeout(function() {
                 msg.delete();
@@ -22,8 +22,8 @@ module.exports = async (bot, msg, args) => {
         })
 }
 
-function writeMessage(msg, text) {
+function writeMessage(msg, text, timeout) {
     setTimeout(() => {
         msg.edit(`> ${text}\nLoading...`);
-    }, 2000, text)
+    }, timeout, text)
 }

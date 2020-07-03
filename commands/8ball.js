@@ -30,5 +30,7 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for 8ball command
 module.exports = async (bot, msg, args) => {
-    msg.channel.send()
+    await require('./loadingscreentips')(bot, msg, args);
+    msg.channel.send(responses[Math.floor(Math.random() * responses.length)]);
+    log.info(`${msg.author.tag} ${msg.author} requested an 8ball!`);
 }

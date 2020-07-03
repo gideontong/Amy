@@ -15,10 +15,10 @@ module.exports = async (bot, msg, args) => {
         .then(msg => {
             for (var i = 0; i < messages.length; i++) {
                 writeMessage(msg, messages[i], (i + 1) * 2000);
-            } 
-            setTimeout(function() {
+            }
+            setTimeout(() => {
                 msg.delete();
-            }, 2000);
+            }, (messages.length + 1) * 2000, msg);
         })
 }
 

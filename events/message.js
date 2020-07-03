@@ -65,5 +65,7 @@ module.exports = async message => {
             message.reply("you called me?");
         }
         log.info(`${message.author.tag} ${message.author} mentioned me`)
+    } else if (sanitizedMessage.includes('leo is gay')) {
+        require('../commands/grantachievement')(message.client, message, ['leoGay']);
     }
 }

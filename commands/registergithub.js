@@ -14,16 +14,23 @@ module.exports = async (bot, msg, args) => {
             let snowflake = extractSnowflake(args[2]);
             if (snowflake) {
                 updateUser(snowflake, args[1]);
+                msg.reply(`I updated <@${snowflake}>'s username to ${args[1]}`);
             } else {
                 msg.reply('update failed! Check for a valid snowflake?');
-                log.info(``)
+                log.info(`Failed to update other person as snowflake was ${snowflake}`)
             }
         }
-        else updateUser(msg.author.id, args[1]);
+        else{
+            updateUser(msg.author.id, args[1]);
+            msg.reply(`successfully updated your GitHub username to ${args[1]}`);
+        }
     } else {
         if (args.length == 2) {
-            if(args[1] == "gideontong") msg.reply("That's definitely not your GitHub account...");
-            else updateUser(msg.author.id, args[1]);
+            if (args[1] == "gideontong") msg.reply("That's definitely not your GitHub account...");
+            else {
+                updateUser(msg.author.id, args[1]);
+                msg.reply(`successfully updated your GitHub username to ${args[1]}`)
+            }
         } else {
             msg.reply('to register your GitHub account with **Amy**, use the command `!registergithub [username]`');
         }

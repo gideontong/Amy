@@ -14,6 +14,7 @@ const log = require('log4js').getLogger('amy');
 // Activity.state -> 3rd line in Rich Presence only
 // Activity.details -> should be name in CUSTOM_STATUS but not read correctly, do not use
 module.exports = async (oldPresence, newPresence) => {
+    if (newPresence.status == "offline") return;
     try {
         if (newPresence.activities && newPresence.activities[0].type == "PLAYING") {
             let name = newPresence.activities[0].name.toLowerCase();

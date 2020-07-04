@@ -1,6 +1,6 @@
 # Amy
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) [![Build Status](https://travis-ci.com/gideontong/Amy.svg?branch=master)](https://travis-ci.com/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy)
 
 ![Amy](https://i.imgur.com/q2YAmF5.png)
 
@@ -56,6 +56,7 @@ There are many ways you can contribute to the project, and we greatly appreicate
 * [Submit bugs and feature requests](https://github.com/gideontong/Amy/issues), and if you see a bug report, you can help verify it by testing it as well.
 * Review the [documentation](https://github.com/gideontong/Amy/blob/master/docs/README.md), then make a [pull request](https://github.com/gideontong/Amy/pulls) for anything from typos to new content.
 * Make comments on upcoming [changes to the source code](https://github.com/gideontong/Amy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
+* Contribute to writing more comprehensive [unit tests](https://github.com/gideontong/Amy/tree/master/tests).
 
 If you'd like to contribute directly to the code base, see the [contributor's guide](https://github.com/gideontong/Amy/blob/master/CONTRIBUTING.md) before getting started. But thank you so much if you'd like to contribute! Just submit a [pull request](https://github.com/gideontong/Amy/pulls), as I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
 

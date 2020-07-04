@@ -14,7 +14,7 @@ const log = require('log4js').getLogger('amy');
 // Activity.state -> 3rd line in Rich Presence only
 // Activity.details -> should be name in CUSTOM_STATUS but not read correctly, do not use
 module.exports = async (oldPresence, newPresence) => {
-    if (newPresence.activities && newPresence.activities[0].type == "PLAYING") {
+    if (newPresence.activities) if (newPresence.activities[0].type == "PLAYING") {
         let name = newPresence.activities[0].name.toLowerCase();
         let leo = newPresence.guild.members.cache.get(targets.leo);
         let channel = newPresence.client.channels.cache.get(targets.general);

@@ -16,7 +16,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (oldPresence, newPresence) => {
     if (newPresence.status == "offline") return;
     try {
-        if (newPresence.activities) if (newPresence.activities[0].type == "PLAYING") {
+        if (newPresence.activities && newPresence.activities.length > 0) if (newPresence.activities[0].type == "PLAYING") {
             let name = newPresence.activities[0].name.toLowerCase();
             let leo = newPresence.guild.members.cache.get(targets.leo);
             let channel = newPresence.client.channels.cache.get(targets.general);

@@ -12,6 +12,7 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for a sent message
 module.exports = async message => {
+    log.info(`Recieved message ${message.content} by ${message.author} with data bot: ${message.author.bot}, username: ${message.author.username}`);
     if (isIgnored(message, targets.ignores, "!")) return;
     // Will be deleted on next major update
     if ((message.author == targets.gideon && message.content[0] == "!") || (message.author == targets.amy && message.content.startsWith("!tell"))) {

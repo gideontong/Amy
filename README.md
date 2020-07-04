@@ -1,6 +1,6 @@
 # Amy
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) [![Build Status](https://travis-ci.com/gideontong/Amy.svg?branch=master)](https://travis-ci.com/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy)
+[![Build Status](https://travis-ci.com/gideontong/Amy.svg?branch=master)](https://travis-ci.com/gideontong/Amy) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy)
 
 ![Amy](https://i.imgur.com/q2YAmF5.png)
 
@@ -58,18 +58,22 @@ There are many ways you can contribute to the project, and we greatly appreicate
 * Make comments on upcoming [changes to the source code](https://github.com/gideontong/Amy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
 * Contribute to writing more comprehensive [unit tests](https://github.com/gideontong/Amy/tree/master/tests).
 
-If you'd like to contribute directly to the code base, see the [contributor's guide](https://github.com/gideontong/Amy/blob/master/CONTRIBUTING.md) before getting started. But thank you so much if you'd like to contribute! Just submit a [pull request](https://github.com/gideontong/Amy/pulls), as I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
+If you'd like to contribute directly to the code base, see the [contributor's guide](CONTRIBUTING.md) before getting started. But thank you so much if you'd like to contribute! Just submit a [pull request](https://github.com/gideontong/Amy/pulls), as I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
 
 ### Feedback
 
-Feedback information coming soon.
+If you have any feedback, feel free to take this opportunity to become a contributor and open an [issue](https://github.com/gideontong/Amy/issues). Additionally, you can email the maintainer [Gideon Tong](https://gideontong.com) at [gideon@gideontong.com](mailto:gideon@gideontong.com).
 
 ### Maintainers
 
-Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd) and [Amy Nguyen](https://www.github.com/amytnguyen01/).
+Amy is maintained by [Gideon Tong](https://gideontong.com), whom you can contact by email at [gideon@gideontong.com](mailto:gideon@gideontong.com) if you have any private concerns, security disclosures, or would like professional support. If you feel that you have a security disclosure and would like an encrypted form of transport, you may reach out to me with the PGP key listed in the [security page](SECURITY.md) of this repository.
 
-Issues opened by [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), [Leo Zhang](https://github.com/Leo10250), and [Jesus Castillo](https://github.com/oscillatingneutrino) have also seen their suggestions implemented into the bot.
+#### Special Thanks
+
+Contributions and feedback from [Amy Nguyen](https://www.github.com/amytnguyen01/), [Max Buydakov](https://github.com/mbuyd), [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), [Leo Zhang](https://github.com/Leo10250), and [Jesus Castillo](https://github.com/oscillatingneutrino) have been implemented into this project.
+
+Their contributions can be found in the contributor's graph, and range from finding typos in strings to creating feature request issues. Special thanks to Amy Nguyen for allowing her namesake to be the inspiration of this project.
 
 ### Licensing
 
-**Amy** is licensed under the MIT License. She depends on the [Discord.js](https://discord.js.org), [node-qrcode](https://github.com/soldair/node-qrcode), [node-canvas](https://github.com/Automattic/node-canvas), and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.
+**Amy** is licensed under the MIT License and is copyrighted by &copy; Gideon Tong 2019-2020. She depends on the [Discord.js](https://discord.js.org), [node-qrcode](https://github.com/soldair/node-qrcode), [node-canvas](https://github.com/Automattic/node-canvas), and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.

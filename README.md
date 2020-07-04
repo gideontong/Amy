@@ -8,20 +8,29 @@
 
 🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs).
 
+Amy builds upon over a decade of experience in social interactions at scale using various messaging platforms, with the current platform of choice being [Discord](https://discord.com) as the community comes together to build best-in-class ideas and practices for our own purposes.
+
+Amy currently runs on [Gideon Tong's Server Network](https://me.gideontong.com) and has been given her own private subdomain space. If you would like to get involved in helping to shape the evolution of not just Amy but also future smart personal assisstants, consider reading the [contributor's guide](CONTRIBUTING.md) to get started.
+
 -----
 
 ## Features
 
-* Calls people out when they delete a message
-* Randomly decides whether or not it's time to play the following video games
-  * VALORANT
-  * SkyFactory
-* Pretends to share photos of Leo when asked
-* Randomly replies to Leo
-* Calls Leo out when he deletes a photo
-* Manually control messages the bot sends
-* Allows admins to wipe recent message history in channels
-* Greets people when they join the server
+* Custom welcome, about, join, and help messages tailored to communities
+* Utility commands to find out user information
+* Moderation commands to help moderators manage a community and find out user details
+  * Wipe recent channel history
+  * Control and manage announcements
+* Easter eggs and collectible achievements to create friendly competition between memebers of a community
+  * Intelligently respond to certain users
+* Calls members out when they delete a spicy message (like an image)
+* Randomly prank users of a Discord server
+* All values, variables, and settings are admin-configurable
+* Advanced permissions system with clear hierarchy and inhereitance
+* Multiple bot instances controlled via one dashboard
+* Automatic multi-process load balancing without dependencies
+
+Amy is in active development, and if you have a feature request, simply fill out an [issue](https://github.com/gideontong/Amy/issues) and we will get to it as soon as possible.
 
 ### Achievements
 
@@ -42,6 +51,10 @@ and while Node grabs the dependencies for you, move the file in `config/secrets-
 ```bash
 npm start
 ```
+
+### Developers
+
+If you're a developer and would like to get started, see the [setup guide](docs/setup/README.md) in the documentation `/docs` folder.
 
 ## Support
 

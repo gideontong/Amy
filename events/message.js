@@ -13,8 +13,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for a sent message
 module.exports = async message => {
     if (isIgnored(message, targets.ignores, "!")) return;
-    // Will be deleted on next major update
-    if ((message.author == targets.gideon && message.content[0] == "!") || (message.author == targets.amy && message.content.startsWith("!tell"))) {
+    if (message.content[0] == "!") {
         commands = message.content.split(" ");
         message.delete();
         toRun = commands[0].slice(1);

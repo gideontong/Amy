@@ -6,7 +6,8 @@
         "grantachievement",
         "revokeachievement",
         "tell",
-        "printemoji"
+        "printemoji",
+        "loadingscreentips"
     ],
     "admins": [
         "132525049977503744"

@@ -1,3 +1,51 @@
 # Usage
 
-Usage docs are coming soon, and will be released after the big 2.0 update.
+> If you are a contributor, or you are looking for someting to contribute to, a guide on how to use each of Amy's commands would be greatly appreciated!
+
+-----
+
+![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) • [Return to main README](../README.md)
+
+-----
+
+In this guide, parenthesis operators `(like this)` are optional, and bracket operators `[like this]` are required for a command to work. The command prefix by default is `!`, although this is changing in a future update so server managers and even normal users will be able to change this on a granular level.
+
+## Users
+
+Users have access to the following commands:
+
+| Command                     | Description                                                      |
+|-----------------------------|------------------------------------------------------------------|
+| `8ball [question]`          | Find out your future!                                            |
+| `accountage (user)`         | See how old you (or your friends') account is.                   |
+| `achievement [achievement]` | See details about an achievement (non-secret achievements only). |
+| `achievements (user)`       | See your (or your friends') achievements.                        |
+| `annoy [user]`              | Annoy someone.                                                   |
+| `docs`                      | Learn to use Amy.                                                |
+| `github`                    | See how Amy runs?                                                |
+| `howold (user)`             | See how old you (or your friends') account is.                   |
+| `insaneaslyum`              | Get the best YouTube playlist in the world. It's a bop.          |
+| `joined (user)`             | See when you (or your friends') joined Discord.                  |
+| `locate [user] (zoom)`      | Find a Discord member on the world wide map.                     |
+| `ping`                      | Pong!                                                            |
+| `qr [data]`                 | Make a QR code.                                                  |
+| `registergithub [username]` | Register your GitHub username with Amy.                          |
+| `rules`                     | See the server rules.                                            |
+| `sudo (command)`            | Make a sandwich.                                                 |
+| `website`                   | Find out more about Amy.                                         |
+| `youtube`                   | See what Amy is sharing with the world? If you're into that?     |
+
+## Admins
+
+On top of normal user permissions, admins also get access to the following commands:
+
+| Command                         | Description                                                         |
+|---------------------------------|---------------------------------------------------------------------|
+| `clear (number)`                | Clear a certain number of messages (default: 100).                  |
+| `generateachievement (text)`    | Make a fake achievement banner using the given text.                |
+| `grantachievement [id] (user)`  | Grant an achievement to yourself or another user.                   |
+| `loadingscreentips`             | Show some loading screen tips.                                      |
+| `printemoji [snowflake]`        | Print any emoji from any server, even animated ones.                |
+| `revokeachievement [id] (user)` | Revoke an achievement from yourself or another user.                |
+| `tell (channel) [message]`      | Make Amy repeat after you. Sends in the given channel if specified. |
+| `welcome`                       | Prints the welcome message.                                         |

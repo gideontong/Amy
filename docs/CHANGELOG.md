@@ -1,8 +1,12 @@
 # Changelog
 
+![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+
 As always, you can read about and download the latest releases from [Amy's releases page](https://github.com/gideontong/Amy/releases).
 
-## Unreleased Changes
+## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
+
+We will transition from using Greek letter to using names of animals in alphabetical order to name our releases. This marks the **elephant update**.
 
 This release brings:
 

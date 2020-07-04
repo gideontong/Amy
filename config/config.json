@@ -38,7 +38,7 @@
         "clearHistory": 100,
         "trollProbability": 0.01,
         "kevinSarcastic": 0.03,
-        "uniqueCommands": 13
+        "uniqueCommands": 16
     },
     "links": {
         "website": "https://amyhelps.ml",

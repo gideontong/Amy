@@ -32,6 +32,6 @@ module.exports = async (oldPresence, newPresence) => {
             }
         }
     } catch (err) {
-        log.error(`Something weird happened in getting a new presence and I got this instead: ${err}`);
+        log.error(`A new presence from ${newPresence.user} caused an error: ${err}`);
     }
 }

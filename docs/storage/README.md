@@ -2,7 +2,9 @@
 
 -----
 
-![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) • [Return to main README](../README.md)
+![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+
+[Return to main README](../README.md)
 
 -----
 

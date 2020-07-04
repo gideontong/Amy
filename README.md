@@ -6,7 +6,7 @@
 
 -----
 
-🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs).
+🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs/README.md).
 
 Amy builds upon over a decade of experience in social interactions at scale using various messaging platforms, with the current platform of choice being [Discord](https://discord.com) as the community comes together to build best-in-class ideas and practices for our own purposes.
 

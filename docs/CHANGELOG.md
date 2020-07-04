@@ -1,6 +1,12 @@
 # Changelog
 
+-----
+
 ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+
+[Return to main README](../README.md)
+
+-----
 
 As always, you can read about and download the latest releases from [Amy's releases page](https://github.com/gideontong/Amy/releases).
 

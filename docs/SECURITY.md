@@ -1,5 +1,14 @@
 # Security Policy
 
+-----
+
+![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+
+[Return to main README](../README.md)
+
+-----
+
+
 ## Supported Versions
 
 The following table shows which versions still recieve security updates. As always, the latest version will also recieve feature updates.

@@ -1,6 +1,12 @@
 # Introduction
 
+-----
+
 ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
+
+[Return to main README](../README.md)
+
+-----
 
 First off, thank you for considering contributing to Amy. It's people like you that make Amy who she is today. Following these guidelines helps to communicate that you respect the time of the developers ([Dudes of 708](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA)) managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 

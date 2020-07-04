@@ -1,10 +1,14 @@
 # Amy
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg)
 
 ![Amy](https://i.imgur.com/q2YAmF5.png)
 
+-----
+
 🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs).
+
+-----
 
 ## Features
 
@@ -18,6 +22,12 @@
 * Manually control messages the bot sends
 * Allows admins to wipe recent message history in channels
 * Greets people when they join the server
+
+### Achievements
+
+![Achievements](https://i.imgur.com/2k0UDC2.png)
+
+Amy supports custom achievements, which you can add your own instance of the bot (if you're running a custom instance for a private server), and soon will support admin-configurable achievements as well as default achievements that can be enabled globally (across servers) as well as only within a server.
 
 ## Getting Started
 
@@ -33,13 +43,29 @@ and while Node grabs the dependencies for you, move the file in `config/secrets-
 npm start
 ```
 
+## Support
+
+If you need support, you can start with reference guides and Google searches.
+
+That said, if you have questions, feel free to [reach out to me](mailto:gideon@gideontong.com) if you have any questions.
+
 ## Contributing
 
-If you'd like to contribute, submit a [pull request](https://github.com/gideontong/Amy/pulls)! I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
+There are many ways you can contribute to the project, and we greatly appreicate all the work you want to put into helping me making Amy better! For example:
+
+* [Submit bugs and feature requests](https://github.com/gideontong/Amy/issues), and if you see a bug report, you can help verify it by testing it as well.
+* Review the [documentation](https://github.com/gideontong/Amy/blob/master/docs/README.md), then make a [pull request](https://github.com/gideontong/Amy/pulls) for anything from typos to new content.
+* Make comments on upcoming [changes to the source code](https://github.com/gideontong/Amy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
+
+If you'd like to contribute directly to the code base, see the [contributor's guide](https://github.com/gideontong/Amy/blob/master/CONTRIBUTING.md) before getting started. But thank you so much if you'd like to contribute! Just submit a [pull request](https://github.com/gideontong/Amy/pulls), as I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
+
+### Feedback
+
+Feedback information coming soon.
 
 ### Maintainers
 
-Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>` or Discord `Gideon [#5433]`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd) and [Amy Nguyen](https://www.github.com/amytnguyen01/).
+Amy is maintained by primarily [Gideon Tong](https://gideontong.com), whom you can contact by email at `<gideon [at] gideontong.com>`. It has also seen contributions from [Max Buydakov](https://github.com/mbuyd) and [Amy Nguyen](https://www.github.com/amytnguyen01/).
 
 Issues opened by [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), [Leo Zhang](https://github.com/Leo10250), and [Jesus Castillo](https://github.com/oscillatingneutrino) have also seen their suggestions implemented into the bot.
 

@@ -23,8 +23,12 @@ Users have access to the following commands:
 | `achievement [achievement]` | See details about an achievement (non-secret achievements only). |
 | `achievements (user)`       | See your (or your friends') achievements.                        |
 | `annoy [user]`              | Annoy someone.                                                   |
+| `changelog`                 | See the most recent changes to Amy.                              |
 | `docs`                      | Learn to use Amy.                                                |
+| `donate`                    | Get a donate link to support the devs.                           |
+| `downloadvideo [link]`      | Get a direct link to download* a video.                          |
 | `github`                    | See how Amy runs?                                                |
+| `help`                      | Get an animated help screen that takes you to this page.         |
 | `howold (user)`             | See how old you (or your friends') account is.                   |
 | `insaneaslyum`              | Get the best YouTube playlist in the world. It's a bop.          |
 | `joined (user)`             | See when you (or your friends') joined Discord.                  |
@@ -36,6 +40,8 @@ Users have access to the following commands:
 | `sudo (command)`            | Make a sandwich.                                                 |
 | `website`                   | Find out more about Amy.                                         |
 | `youtube`                   | See what Amy is sharing with the world? If you're into that?     |
+
+**Note on `downloadvideo`*: it doesn't support all websies, but you can find the list of supported video hosts [here](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md).
 
 ## Admins
 

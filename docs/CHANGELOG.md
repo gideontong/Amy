@@ -24,6 +24,13 @@ It fixes the following critical bugs:
 * Sometimes achievements are broken for a person (*this bugfix is in beta*)
 * Slenderman is in the game
 
+* The following commands have been added
+
+* `!changelog` will tell you the most recent changes to Amy
+* `!donate` will bring you to a donate link to support the development of Amy
+* `!downloadvideo` will generate a download link for a video link you specify
+* `!help` will return a help screen with information about commands you can use
+
 ## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
 
 We will transition from using Greek letter to using names of animals in alphabetical order to name our releases. This marks the **elephant update**.

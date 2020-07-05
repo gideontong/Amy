@@ -47,4 +47,4 @@ This is a document to keep track of all achievements.
 ## Retroactive
 
 * Grant `breakAmy` to Amy
-* Grant `becomeAmy` to Leo, Amy, Jesus
+* Grant `becomeAmy` to Amy, Jesus

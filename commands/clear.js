@@ -7,7 +7,6 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for running clear command
 module.exports = async (bot, msg, args) => {
-    if (!msg.author.id == targets.gideon) return;
     var toClear = config.constants.clearHistory;
     var reply = "Just"
     if (args.length >= 2) {

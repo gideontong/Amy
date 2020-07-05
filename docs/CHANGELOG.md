@@ -15,7 +15,9 @@ As always, you can read about and download the latest releases from [Amy's relea
 This release brings:
 
 * Commands are now case-insensitive
-* A permissions system now lets you know if you don't have permission or if the command is simply upcoming
+* Updated permissions system
+  * Added error messages if you don't have permissions
+  * Made it dynamic and configurable
 * *Amy* now counts the amount of eh's you say
 
 It fixes the following critical bugs:

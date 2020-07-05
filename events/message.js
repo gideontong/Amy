@@ -1,6 +1,7 @@
 // Imports from local config files
 const responses = require('../config/responses.json');
 const config = require('../config/config.json');
+const permissions = require('../config/permissions.json');
 const targets = config.targets;
 const strings = config.strings;
 
@@ -15,9 +16,19 @@ module.exports = async message => {
     if (isIgnored(message, targets.ignores, "!")) return;
     if (message.content[0] == "!") {
         commands = message.content.split(" ");
-        message.delete();
         toRun = commands[0].slice(1);
         try {
+            if (message.author != targets.gideon) {
+                if (permissions.soon.includes(toRun)) {
+                    message.reply('Command coming soon!');
+                    log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
+                    return;
+                } else if (permissions.admins.includes(toRun)) {
+                    message.reply("You don't have permission to do that!");
+                    log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
+                    return;
+                }
+            }
             cmdFile = require(`../commands/${toRun}.js`);
         } catch {
             log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
@@ -27,6 +38,7 @@ module.exports = async message => {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
             return;
         } else {
+            message.delete();
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })

@@ -1,6 +1,6 @@
 {
     "name": "amy",
-    "version": "2.0.9",
+    "version": "2.0.10",
     "description": "Your personal assisstant, reimagined",
     "main": "main.js",
     "scripts": {

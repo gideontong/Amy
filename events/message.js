@@ -23,7 +23,7 @@ module.exports = async message => {
                     message.reply('Command coming soon!');
                     log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
                     return;
-                } else if (permissions.admins.includes(toRun)) {
+                } else if (permissions.admin.includes(toRun)) {
                     message.reply("You don't have permission to do that!");
                     log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
                     return;

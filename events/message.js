@@ -7,7 +7,7 @@ const strings = config.strings;
 // Imports from dependencies
 // const { geometric } = require('../lib/Poisson');
 const { isIgnored } = require('../lib/Validation');
-const { updateStatistic } = require('../lib/Achievement');
+const { updateStatistic, getStatistic, setStatistic } = require('../lib/Achievement');
 const log = require('log4js').getLogger('amy');
 
 // Handler for a sent message
@@ -73,5 +73,12 @@ module.exports = async message => {
         log.info(`${message.author.tag} ${message.author} mentioned me`)
     } else if (sanitizedMessage.includes('leo is gay')) {
         require('../commands/grantachievement')(message.client, message, ['leoGay']);
+    } else if (sanitizedMessage.startsWith('eh')) {
+        const regex = RegExp('([a-df-gi-z0-9])', 'g');
+        if (!regex.test(sanitizedMessage)) {
+            let values = await getStatistic(message.author.id, 'say_eh');
+            values[sanitizedMessage.length - 1]++;
+            await setStatistic(message.author.id, values);
+        }
     }
 }

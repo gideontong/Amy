@@ -1,7 +1,7 @@
-const helpText = "<a:help:422704174300397579>";
+const helpText = "<a:ditto:729440915835322379>";
 const helpEmbed = {
     "title": "Need help? Never fear, Amy is here!",
-    "description": "**Amy** is your personal assistant and here to save the day.\n\nTo see a full list of commands you can use, [click here](https://github.com/gideontong/Amy/blob/master/docs/usage/README.md).\n<a:achievements:421523341879410698> To see your achievements, use the command `!achievements`.\n\n[Amy's Website](https://amyhelps.ml) • [Full Help Screen](https://github.com/gideontong/Amy/blob/master/docs/README.md) • [Donate](https://ko-fi.com/gideontong)",
+    "description": "**Amy** is your personal assistant and here to save the day.\n\nTo see a full list of commands you can use, [click here](https://github.com/gideontong/Amy/blob/master/docs/usage/README.md).\n<a:catdance:729440916128923649> To see your achievements, use the command `!achievements`.\n\n[Amy's Website](https://amyhelps.ml) • [Full Help Screen](https://github.com/gideontong/Amy/blob/master/docs/README.md) • [Donate](https://ko-fi.com/gideontong)",
     "footer": {
         "text": "!help always calls the help command."
     },

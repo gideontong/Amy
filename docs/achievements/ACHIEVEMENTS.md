@@ -47,8 +47,5 @@ This is a document to keep track of all achievements.
 
 ## Retroactive
 
-* Grant `newIssue` to Leo, Jesus, Amy, Brian, Max
-* Grant `newBug` to Amy, Kevin, Brian, Max
-* Grant `rulebreaker` to Leo
-* Grant `breakAmy` to Leo, Amy, Max
+* Grant `breakAmy` to Amy
 * Grant `becomeAmy` to Leo, Amy, Jesus

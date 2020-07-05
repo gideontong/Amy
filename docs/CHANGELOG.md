@@ -10,6 +10,20 @@
 
 As always, you can read about and download the latest releases from [Amy's releases page](https://github.com/gideontong/Amy/releases).
 
+## Upcoming Changes
+
+This release brings:
+
+* Commands are now case-insensitive
+* A permissions system now lets you know if you don't have permission or if the command is simply upcoming
+* *Amy* now counts the amount of eh's you say
+
+It fixes the following critical bugs:
+
+* *Amy* doesn't respond to you enough
+* Sometimes achievements are broken for a person (*this bugfix is in beta*)
+* Slenderman is in the game
+
 ## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
 
 We will transition from using Greek letter to using names of animals in alphabetical order to name our releases. This marks the **elephant update**.

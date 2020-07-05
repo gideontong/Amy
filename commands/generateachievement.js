@@ -9,7 +9,6 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for running generateachievement command
 module.exports = async (bot, msg, args) => {
-    if (msg.author != targets.gideon) return;
     let secret = args[1] == "secret";
     let string = args[1] == "secret" ? msg.content.substring(args[0].length + args[1].length + 2) : msg.content.substring(args[0].length + 1);
     const buffer = await generateAchievementBanner('test', string, secret, true);

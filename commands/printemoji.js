@@ -7,7 +7,6 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for running printemoji command
 module.exports = async (bot, msg, args) => {
-    if (msg.author != targets.gideon && msg.author != targets.amy) return;
     // TODO: add support for emoji names
     var emoji = bot.emojis.resolve(args[1]);
     if (emoji) {

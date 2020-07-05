@@ -9,7 +9,6 @@ const { selectN } = require('../lib/Today');
 
 // Handler for running loadingscreentips command
 module.exports = async (bot, msg, args) => {
-    if (args[0].startsWith('!') && msg.author != targets.gideon) return;
     const messages = selectN(tips, 3);
     msg.channel.send(`Loading...`)
         .then(msg => {

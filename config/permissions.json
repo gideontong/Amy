@@ -5,7 +5,6 @@
         "generateachievement",
         "grantachievement",
         "revokeachievement",
-        "tell",
         "printemoji",
         "loadingscreentips"
     ],

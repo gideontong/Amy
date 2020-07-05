@@ -16,7 +16,7 @@ module.exports = async message => {
     if (isIgnored(message, targets.ignores, "!")) return;
     if (message.content[0] == "!") {
         commands = message.content.split(" ");
-        toRun = commands[0].slice(1);
+        toRun = commands[0].slice(1).toLowerCase();
         try {
             if (message.author != targets.gideon) {
                 if (permissions.soon.includes(toRun)) {

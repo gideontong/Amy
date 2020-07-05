@@ -9,7 +9,6 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for running achievements command
 module.exports = async (bot, msg, args) => {
-    if (msg.author != targets.gideon) return;
     let snowflake = msg.author.id;
     let who = "Your";
     if (args[1]) {

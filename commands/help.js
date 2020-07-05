@@ -15,7 +15,7 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for help command
 module.exports = async (bot, msg, args) => {
-    let repeat = Math.floor(Math.random() * 10);
+    let repeat = Math.floor(Math.random() * 11);
     let embed = {
         "content": helpText.repeat(repeat),
         "embed": helpEmbed

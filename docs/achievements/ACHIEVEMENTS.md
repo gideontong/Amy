@@ -41,6 +41,7 @@ This is a document to keep track of all achievements.
 * Be the most talkative person in a day
 * Discover every single loading screen tip
 * React `:leoapproves:` or `:riceReady:` to the rules
+* Get 10 dittos on the help screen
 * Locate Leo and zoom in on the map (*secret achievement*)
 * React to a message with `:pepeYikes:` before Kevin reacts to a message with `:pepeYikes:` (*secret achievement*)
 

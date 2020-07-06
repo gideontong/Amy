@@ -9,8 +9,8 @@ module.exports = async (reaction, user) => {
         let embed = reaction.message.embeds[0].toJSON();
         let yesEmoji = reaction.message.reactions.cache.get(emoji.yes);
         let noEmoji = reaction.message.reactions.cache.get(emoji.no);
-        let yes = yesEmoji ? yesEmoji.count : 0;
-        let no = noEmoji ? noEmoji.count : 0;
+        let yes = yesEmoji ? yesEmoji.count - 1 : 0;
+        let no = noEmoji ? noEmoji.count - 1 : 0;
         let percentage = Math.round((yes / (yes + no)) * 100);
         let nextString = embed.fields[2].value;
         if (yes > no) {

@@ -14,11 +14,12 @@ module.exports = async (bot, msg, args) => {
         if (!isNaN(args[1])) toClear = parseInt(args[1]);
     }
     toClear = toClear > 99 ? 100 : toClear + 1;
+    var clearSize = toClear;
     msg.channel.bulkDelete(toClear, true).then(messages => {
-        toClear = messages.size;
+        clearSize = messages.size;
         timeout = { "timeout": 3000 };
-        msg.channel.send(`${reply} deleted the last ${toClear} messages.`)
+        msg.channel.send(`${reply} deleted the last ${clearSize} messages.`)
             .then(msg => msg.delete(timeout));
     });
-    log.info(`${msg.author.tag} ${msg.author} deleted ${toClear} messages in ${msg.channel}`)
+    log.info(`${msg.author.tag} ${msg.author} deleted ${clearSize} messages in ${msg.channel}`)
 }

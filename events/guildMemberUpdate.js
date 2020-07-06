@@ -9,13 +9,15 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for a member update
 module.exports = async (oldMember, newMember) => {
-    if(newMember.nickname.toLowerCase().includes('amy') && newMember.id != targets.amy) {
-        log.info(`${newMember.tag} ${newMember} changed their nickname to include Amy`);
-        let channel = newMember.client.channels.cache.get(targets.general);
-        const buffer = await grantAchievement(newMember.id, 'becomeAmy');
-        if (buffer) {
-            const image = new MessageAttachment(buffer);
-            channel.send(`<@${newMember.id}> I shouldn't even be surprised you did this...`, image);
+    if (newMember.nickname) {
+        if (newMember.nickname.toLowerCase().includes('amy') && newMember.id != targets.amy) {
+            log.info(`${newMember.tag} ${newMember} changed their nickname to include Amy`);
+            let channel = newMember.client.channels.cache.get(targets.general);
+            const buffer = await grantAchievement(newMember.id, 'becomeAmy');
+            if (buffer) {
+                const image = new MessageAttachment(buffer);
+                channel.send(`<@${newMember.id}> I shouldn't even be surprised you did this...`, image);
+            }
         }
     }
 }

@@ -1,3 +1,8 @@
+const reacts = {
+    "yes": "729594115989176332",
+    "no": "729594117017042964"
+}
+
 // Dependencies
 const log = require('log4js').getLogger('amy');
 
@@ -11,10 +16,14 @@ module.exports = async (bot, msg, args) => {
             "content": "Hey! Kids it's time to answer a survey!",
             "embed": {
                 "title": "Survey Time!",
-                "description": `${question}\n\nReact with <a:yes:729594115989176332> for yes, and <a:no:729594117017042964> for no!\n\nCurrently we are leaning towards <a:yes:729594115989176332> **yes** with a [coming soon]% vote.`,
+                "description": `${question}\n\nReact with <a:yes:${reacts.yes}> for yes, and <a:no:${reacts.no}> for no!\n\nCurrently we are leaning towards <a:yes:${reacts.yes}> **yes** with a [coming soon]% vote.`,
                 "color": 10873618
             }
         };
-        msg.channel.send(embed);
+        msg.channel.send(embed)
+            .then((message) => {
+                message.react(client.emojis.resolve(reacts.yes));
+                message.react(client.emojis.resolve(reacts.no));
+            });
     }
 }

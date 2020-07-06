@@ -4,6 +4,7 @@ const { getInfo } = require('youtube-dl');
 
 // downloadvideo handler
 module.exports = async (bot, msg, args) => {
+    // TODO: input sanitation
     if (args.length != 2) return;
     let url = args[1];
     getInfo(url, [], function (err, data) {

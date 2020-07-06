@@ -5,5 +5,6 @@ module.exports = client => {
     client.on('message', reqEvent('message'));
     client.on('messageDelete', reqEvent('messageDelete'));
     client.on('messageReactionAdd', reqEvent('messageReactionAdd'));
+    client.on('messageReactionRemove', reqEvent('messageReactionRemove'));
     client.on('presenceUpdate', reqEvent('presenceUpdate'));
 }

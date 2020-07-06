@@ -13,10 +13,19 @@ module.exports = async (bot, msg, args) => {
             return;
         }
 
+        let description = data.description;
+        let descLines = description.split(/\r?\n/);
+        if (descLines.length > 5) {
+            description = descLines[0];
+            for(var i = 1; i < 5; i++) {
+                description += '\n' + descLines[i];
+            }
+        }
+
         let embed = {
             "embed": {
-                "title": "title",
-                "description": `Your download is ready! Click [here](${data.url}) to download your video.\n\n${data.description}`,
+                "title": data.title,
+                "description": `Your download is ready! Click [here](${data.url}) to download your video.\n\n**About your video:**\n${description}`,
                 "url": args[1],
                 "author": {
                     "name": "Amy's Video Downloader"

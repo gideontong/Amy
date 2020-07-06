@@ -14,9 +14,9 @@ module.exports = async (reaction, user) => {
         let percentage = Math.round((yes / (yes + no)) * 100);
         let nextString = embed.fields[2].value;
         if (yes > no) {
-            nextString = `Currently we are leaning towards <a:yes:${emoji.yes}> with ${percentage}% of the votes.`;
+            nextString = `Currently we are leaning towards <a:yes:${emoji.yes}> **yes** with ${percentage}% of the votes.`;
         } else if (no > yes) {
-            nextString = `Currently we are leaning towards <a:no:${emoji.no}> with ${100 - percentage}% of the votes.`;
+            nextString = `Currently we are leaning towards <a:no:${emoji.no}> **no** with ${100 - percentage}% of the votes.`;
         } else {
             nextString = "The votes are currently tied!";
         }

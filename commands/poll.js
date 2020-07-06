@@ -17,7 +17,16 @@ module.exports = async (bot, msg, args) => {
             "embed": {
                 "title": "Survey Time!",
                 "description": `**${question}**\n\nReact with <a:yes:${reacts.yes}> for yes, and <a:no:${reacts.no}> for no!\n\nCurrently we are leaning towards <a:yes:${reacts.yes}> **yes** with a [coming soon]% vote.`,
-                "color": 10873618
+                "color": 10873618,
+                "fields": [
+                    {
+                        "name": "Question",
+                        "value": question
+                    }
+                ],
+                "footer": {
+                    "text": "id: test"
+                }
             }
         };
         msg.channel.send(embed)

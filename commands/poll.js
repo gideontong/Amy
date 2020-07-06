@@ -22,8 +22,8 @@ module.exports = async (bot, msg, args) => {
         };
         msg.channel.send(embed)
             .then((message) => {
-                message.react(client.emojis.resolve(reacts.yes));
-                message.react(client.emojis.resolve(reacts.no));
+                message.react(bot.emojis.resolve(reacts.yes));
+                message.react(bot.emojis.resolve(reacts.no));
             });
     }
 }

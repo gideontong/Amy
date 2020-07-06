@@ -8,6 +8,12 @@ const Discord = require('discord.js');
 const log4js = require('log4js');
 const client = new Discord.Client();
 
+function genLog() {
+    let date = new Date();
+    return date.getFullYear() + "." + date.getMonth() + "." + date.getDate() + "." +
+        date.getHours() + "." + date.getMinutes() + "." + date.getSeconds() + ".log";
+}
+
 // Logger setup
 log4js.configure({
     appenders: {
@@ -16,7 +22,7 @@ log4js.configure({
         },
         file: {
             type: 'file',
-            filename: `logs/${new Date()}.log`
+            filename: `logs/${genLog()}`
         }
     },
     categories: {

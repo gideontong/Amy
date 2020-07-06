@@ -51,7 +51,9 @@
         "changelog": "https://github.com/gideontong/amy/releases"
     },
     "emoji": {
-        "pepeYikes": "699414631822786630"
+        "pepeYikes": "699414631822786630",
+        "yes": "729594115989176332",
+        "no": "729594117017042964"
     },
     "welcome": [
         {

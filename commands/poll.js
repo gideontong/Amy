@@ -19,20 +19,20 @@ module.exports = async (bot, msg, args) => {
                 "color": 10873618,
                 "fields": [
                     {
-                        "name": "Question",
-                        "value": question
+                        "name": "What you're voting on:",
+                        "value": question + '\n'
                     },
                     {
                         "name": "How to vote:",
-                        "value": `React with <a:yes:${reacts.yes}> for yes, and <a:no:${reacts.no}> for no!`
+                        "value": `React with <a:yes:${reacts.yes}> for yes, and <a:no:${reacts.no}> for no!\n`
                     },
                     {
                         "name": "Results:",
-                        "value": `Currently we are leaning towards <a:yes:${reacts.yes}> **yes** with a [coming soon]% vote.`
+                        "value": `Currently, no one has voted!`
                     }
                 ],
                 "footer": {
-                    "text": "id: test"
+                    "text": "This is a placeholder for an upcoming feature!"
                 }
             }
         };

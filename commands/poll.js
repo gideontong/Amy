@@ -41,5 +41,6 @@ module.exports = async (bot, msg, args) => {
                 message.react(bot.emojis.resolve(reacts.yes));
                 message.react(bot.emojis.resolve(reacts.no));
             });
+        log.info(`${msg.author.tag} ${msg.author} started a quick poll asking ${question}`);
     }
 }

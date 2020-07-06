@@ -13,7 +13,7 @@ module.exports = async (bot, msg, args) => {
             return;
         }
 
-        let description = data.description;
+        let description = data.description.length > 1500 ? data.description.substring(0, 1500) : data.description;
         let descLines = description.split(/\r?\n/);
         if (descLines.length > 5) {
             description = descLines[0];

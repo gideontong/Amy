@@ -32,6 +32,7 @@ It fixes the following critical bugs:
 * `!donate` will bring you to a donate link to support the development of Amy
 * `!downloadvideo` will generate a download link for a video link you specify
 * `!help` will return a help screen with information about commands you can use
+* `!poll` to poll your friends!
 
 ## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
 

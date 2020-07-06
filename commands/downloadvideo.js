@@ -25,7 +25,7 @@ module.exports = async (bot, msg, args) => {
         let embed = {
             "embed": {
                 "title": data.title,
-                "description": `Your download is ready! Click [here](${data.url}) to download your video.\n\n**About your video:**\n${description}`,
+                "description": `Your download is ready! Click [here](${data.url}) to download your video.\n\n**About your video:**\n${description}...`,
                 "url": args[1],
                 "author": {
                     "name": "Amy's Video Downloader"

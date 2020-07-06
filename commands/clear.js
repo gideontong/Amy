@@ -15,8 +15,9 @@ module.exports = async (bot, msg, args) => {
     }
     toClear = toClear > 99 ? 100 : toClear + 1;
     msg.channel.bulkDelete(toClear, true).then(messages => {
+        toClear = messages.size;
         timeout = { "timeout": 3000 };
-        msg.channel.send(`${reply} deleted the last ${messages.size} messages.`)
+        msg.channel.send(`${reply} deleted the last ${toClear} messages.`)
             .then(msg => msg.delete(timeout));
     });
     log.info(`${msg.author.tag} ${msg.author} deleted ${toClear} messages in ${msg.channel}`)

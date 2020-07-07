@@ -8,7 +8,7 @@ module.exports = async (bot, msg, args) => {
         msg.channel.send('Polls wizard feature coming soon!')
     } else if (args[1] == 'quick') {
         let question = msg.content.substring(args[0].length + args[1].length + 2);
-        createQuickPoll(msg.channel, question);
+        createQuickPoll(bot, msg.channel, question);
         log.info(`${msg.author.tag} ${msg.author} started a quick poll asking ${question}`);
     }
 }

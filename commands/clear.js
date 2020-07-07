@@ -14,12 +14,10 @@ module.exports = async (bot, msg, args) => {
         if (!isNaN(args[1])) toClear = parseInt(args[1]);
     }
     toClear = toClear > 99 ? 100 : toClear + 1;
-    var clearSize = toClear;
     msg.channel.bulkDelete(toClear, true)
     .then(messages => {
-        clearSize = messages.size;
         timeout = { "timeout": 3000 };
-        msg.channel.send(`${reply} deleted the last ${clearSize} messages.`)
+        msg.channel.send(`${reply} deleted the last ${messages.size} messages.`)
             .then(msg => msg.delete(timeout));
     })
     .catch(err => {
@@ -27,5 +25,5 @@ module.exports = async (bot, msg, args) => {
             .then(msg => msg.delete({ "timeout": 3000 }));
         log.error(`${msg.author.tag} ${msg.author} tried to delete messages but I got ${err}`);
     });
-    log.info(`${msg.author.tag} ${msg.author} deleted ${clearSize} messages in ${msg.channel}`)
+    log.info(`${msg.author.tag} ${msg.author} deleted ${toClear} messages in ${msg.channel}`)
 }

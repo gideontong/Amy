@@ -17,7 +17,7 @@ module.exports = async message => {
     if (message.content[0] == "!") {
         commands = message.content.split(" ");
         toRun = commands[0].slice(1).toLowerCase();
-        //try {
+        try {
             if (message.author != targets.gideon) {
                 if (permissions.soon.includes(toRun)) {
                     message.reply('Command coming soon!');
@@ -30,10 +30,10 @@ module.exports = async message => {
                 }
             }
             cmdFile = require(`../commands/${toRun}.js`);
-        //} catch {
-            //log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
-            //return;
-        //}
+        } catch {
+            log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
+            return;
+        }
         if (!cmdFile) {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
             return;

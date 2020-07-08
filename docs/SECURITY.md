@@ -33,9 +33,6 @@ Sign your emails with the following key:
 
 ```bash
 -----BEGIN PGP PUBLIC KEY BLOCK-----
-Version: OpenPGP.js v4.10.4
-Comment: https://openpgpjs.org
-
 xsBNBFygFKIBCAC5APtHaFysyyybjWB5NF/4qW7o2dA7ClxgpaXY+lk6gfJ8
 ZR72MvlRcHztUs3oaOZdMRwFZLplqFzCLnpWOTnqCE9tLUhhxqUpe20SYjz8
 hhnTSZknlydqICJygtFd283SM19q2FCgO4QGYvfWKwktah3r4yWu0hHR2z1f

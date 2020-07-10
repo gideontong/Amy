@@ -16,7 +16,7 @@ module.exports = async (bot, msg, args) => {
                 log.error(`${msg.author.tag} ${msg.author} tried to start a quick poll but got ${id}`);
             }
         } else if (args[1] == 'game') {
-            [success, id] = createGamePoll(bot, msg.channel, question, ['8', '9']);
+            [success, id] = createGamePoll(bot, msg.channel, question, ['8:00 PM', '9:00 PM']);
             if (success) {
                 log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${question}`);
             } else {

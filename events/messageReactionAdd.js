@@ -1,5 +1,4 @@
 // Dependencies
-const { emoji } = require('../config/config.json');
 const { updateExistingPoll } = require('../lib/Survey');
 
 module.exports = async (reaction, user) => {

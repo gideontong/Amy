@@ -37,5 +37,6 @@ module.exports = async (bot, msg, args) => {
             }
         };
         msg.channel.send(embed);
+        log.info(`${msg.author.tag} ${msg.author} downloaded video ${url} and got ${data.title}`);
     })
 }

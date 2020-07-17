@@ -111,44 +111,45 @@ function createExamples(channel, quick = false, game = false, multipleChoice = f
             }
         }
         channel.send(noneType);
-    }
-    if (quick) {
-        let quickInfo = {
-            "name": "Quick Polls",
-            "value": "You can make quick polls to ask your friends yes/no questions.\n\nTry asking your friends questions with commands like:\n"
-        };
-        let quickExamples = selectN(examples.quick, n);
-        for (var i = 0; i < quickExamples.length; i++) {
-            quickInfo.value += catdance + " `!poll quick " + quickExamples[i] + "`\n";
+    } else {
+        if (quick) {
+            let quickInfo = {
+                "name": "Quick Polls",
+                "value": "You can make quick polls to ask your friends yes/no questions.\n\nTry asking your friends questions with commands like:\n"
+            };
+            let quickExamples = selectN(examples.quick, n);
+            for (var i = 0; i < quickExamples.length; i++) {
+                quickInfo.value += catdance + " `!poll quick " + quickExamples[i] + "`\n";
+            }
+            example.embed.fields.push(quickInfo);
         }
-        example.embed.fields.push(quickInfo);
-    }
-    if (game) {
-        let gameInfo = {
-            "name": "Game Polls",
-            "value": "You can make game polls to see if anyone's down to play a game.\n\nTry making or with commands like:\n"
-        };
-        let timeInfo = {
-            "name": "Formatting Time",
-            "value": "Separate the times you want with commas, and no spaces in between. If you put spaces, Amy will try to figure out what you meant, but she isn't *that* smart yet.\n\n<a:catdance:729440916128923649> `3,4,5` means **3 PM, 4 PM, 5 PM**\n<a:catdance:729440916128923649> `3h,4h,5h` means **in 3 hours, in 4 hours, in 5 hours**. You can also use `m` or `d` for months or days. *It'll automatically be converted into an approximate date and time.*\n<a:catdance:729440916128923649> `3:30,4:30,5:30` means **3:30 PM, 4:30 PM, 5:30 PM**\n\nYou're  also allowed to mix and match, so `3,4:15,8h` is **3 PM, 4:15 PM, in 8 hours**."
-        };
-        let gameExamples = selectN(examples.game, n);
-        for (var i = 0; i < gameExamples.length; i++) {
-            gameInfo.value += catdance + " `!poll game [times] " + gameExamples[i] + "`\n";
+        if (game) {
+            let gameInfo = {
+                "name": "Game Polls",
+                "value": "You can make game polls to see if anyone's down to play a game.\n\nTry making or with commands like:\n"
+            };
+            let timeInfo = {
+                "name": "Formatting Time",
+                "value": "Separate the times you want with commas, and no spaces in between. If you put spaces, Amy will try to figure out what you meant, but she isn't *that* smart yet.\n\n<a:catdance:729440916128923649> `3,4,5` means **3 PM, 4 PM, 5 PM**\n<a:catdance:729440916128923649> `3h,4h,5h` means **in 3 hours, in 4 hours, in 5 hours**. You can also use `m` or `d` for months or days. *It'll automatically be converted into an approximate date and time.*\n<a:catdance:729440916128923649> `3:30,4:30,5:30` means **3:30 PM, 4:30 PM, 5:30 PM**\n\nYou're  also allowed to mix and match, so `3,4:15,8h` is **3 PM, 4:15 PM, in 8 hours**."
+            };
+            let gameExamples = selectN(examples.game, n);
+            for (var i = 0; i < gameExamples.length; i++) {
+                gameInfo.value += catdance + " `!poll game [times] " + gameExamples[i] + "`\n";
+            }
+            example.embed.fields.push(gameInfo);
+            example.embed.fields.push(timeInfo);
         }
-        example.embed.fields.push(gameInfo);
-        example.embed.fields.push(timeInfo);
-    }
-    if (multipleChoice) {
-        let mcInfo = {
-            "name": "Multiple Choice Polls",
-            "value": "You can make multiple choice polls for additional flexibility. List your options, then a semicolon, then the question, like so:\n\n"
-        };
-        let mcExamples = selectN(examples.multipleChoice, n);
-        for (var i = 0; i < mcExamples.length; i++) {
-            mcInfo.value += catdance + " `!poll mc " + mcExamples[i] + "`\n";
+        if (multipleChoice) {
+            let mcInfo = {
+                "name": "Multiple Choice Polls",
+                "value": "You can make multiple choice polls for additional flexibility. List your options, then a semicolon, then the question, like so:\n\n"
+            };
+            let mcExamples = selectN(examples.multipleChoice, n);
+            for (var i = 0; i < mcExamples.length; i++) {
+                mcInfo.value += catdance + " `!poll mc " + mcExamples[i] + "`\n";
+            }
+            example.embed.fields.push(mcInfo);
         }
-        example.embed.fields.push(mcInfo);
+        channel.send(example);
     }
-    channel.send(example);
 }

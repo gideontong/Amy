@@ -110,7 +110,7 @@ function createExamples(channel, quick = false, game = false, multipleChoice = f
                 }
             }
         }
-        channel.send(nonType);
+        channel.send(noneType);
     }
     if (quick) {
         let quickInfo = {

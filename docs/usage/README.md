@@ -41,7 +41,7 @@ Users have access to the following commands:
 | `website`                   | Find out more about Amy.                                         |
 | `youtube`                   | See what Amy is sharing with the world? If you're into that?     |
 
-**Note on `downloadvideo`*: it doesn't support all websies, but you can find the list of supported video hosts [here](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md).
+**Note on `downloadvideo`**: it doesn't support all websies, but you can find the list of supported video hosts [here](https://github.com/ytdl-org/youtube-dl/blob/master/docs/supportedsites.md).
 
 ## Admins
 

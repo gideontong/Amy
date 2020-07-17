@@ -19,6 +19,7 @@ This release brings:
   * Added error messages if you don't have permissions
   * Made it dynamic and configurable
 * *Amy* now counts the amount of eh's you say
+* Your commands are no longer deleted and will stay in chat history
 
 It fixes the following critical bugs:
 
@@ -33,6 +34,10 @@ It fixes the following critical bugs:
 * `!downloadvideo` will generate a download link for a video link you specify
 * `!help` will return a help screen with information about commands you can use
 * `!poll` to poll your friends!
+  * `!poll quick [question]` creates a yes/no question for your friends to answer
+  * `!poll game [times,] [game]` creates a game poll for your friends to answer
+  * `!poll mc [options,];[question]` creates a multiple choice poll for your friends to answer
+  * Instead of `!poll mc`, you can also use `!poll multiplechoice`, `!poll choice`, or `!poll choose`
 
 ## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
 

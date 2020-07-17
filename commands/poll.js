@@ -4,10 +4,20 @@ const examples = {
         "Have you ever seen a UFO?",
         "Have you ever crushed on someone?",
         "Have you ever been dumped?",
-        "Would you try bathing with all your clothes on?"
+        "Would you try bathing with all your clothes on?",
+        "If you had a twin, would you be identical?",
+        "Do you think anyone saw you steal that laptop?",
+        "Are dopplegangers allowed to eat?"
     ],
     game: [
-        ""
+        "PlayerUnknown's Battlegrounds",
+        "Minecraft",
+        "Fortnite",
+        "League of Legends",
+        "MapleStory",
+        "Roblox",
+        "Grant Theft Auto V",
+        "VALORANT"
     ]
 }
 
@@ -20,6 +30,12 @@ const { createQuickPoll, createGamePoll } = require('../lib/Survey');
 
 // Handler for poll command
 module.exports = async (bot, msg, args) => {
+    let multipleChoiceKeywords = [
+        "mc",
+        "multiplechoice",
+        "choice",
+        "choose"
+    ];
     if (args.length < 2) {
         msg.channel.send('Polls wizard feature coming soon! Start a poll with `!poll quick` or `!poll game`, or get examples with `!poll examples`');
     } else {
@@ -48,7 +64,18 @@ module.exports = async (bot, msg, args) => {
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
         } else if (args[1].startsWith('example')) {
-            // Examples
+            if (args.length > 2) {
+                if (args[2] == 'quick') createExamples(msg.channel, quick = true);
+                else if (args[2] == 'game') createExamples(msg.channel, game = true);
+                else if (multipleChoiceKeywords.includes(args[2])) createExamples(msg.channel, multipleChoice = true);
+                else createExamples(msg.channel);
+            } else createExamples(msg.channel);
         }
+    }
+}
+
+function createExamples(channel, quick = false, game = false, multipleChoice = false) {
+    if (!(quick && game && multipleChoice)) {
+        quick = true, game = true, multipleChoice = true;
     }
 }

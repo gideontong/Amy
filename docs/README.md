@@ -103,4 +103,4 @@ Their contributions can be found in the contributor's graph, and range from find
 
 ### Licensing
 
-**Amy** is licensed under the MIT License and is copyrighted by &copy; Gideon Tong 2019-2020. She depends on the [Discord.js](https://discord.js.org), [node-qrcode](https://github.com/soldair/node-qrcode), [node-canvas](https://github.com/Automattic/node-canvas), [youtube-dl](https://github.com/przemyslawpluta/node-youtube-dl#readme) and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.
+**Amy** is licensed under the MIT License and is copyrighted by &copy; Gideon Tong 2019-2020. She depends on the [Discord.js](https://discord.js.org), [qrcode](https://github.com/soldair/node-qrcode), [canvas](https://github.com/Automattic/node-canvas), [youtube-dl](https://github.com/przemyslawpluta/node-youtube-dl#readme) and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.

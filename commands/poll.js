@@ -90,6 +90,7 @@ function createExamples(channel, quick = false, game = false, multipleChoice = f
         "embed": {
             "title": "We can make cool polls, yes.",
             "description": "Here are some examples.",
+            "color": 16236854,
             "fields": [],
             "footer": {
                 "text": "!help always calls the help command."
@@ -97,8 +98,19 @@ function createExamples(channel, quick = false, game = false, multipleChoice = f
         }
     };
     let n = 2;
-    if (!(quick && game && multipleChoice)) {
-        quick = true, game = true, multipleChoice = true;
+    if (!(quick || game || multipleChoice)) {
+        let noneType = {
+            "content": "I can make lots of different kinds of polls!",
+            "embed": {
+                "title": "What kind of poll are you looking for?",
+                "description": "Type `!poll examples quick` to see quick polls.\nType `!poll examples game` to see game polls.\nType `!poll examples mc` to see multiple choice polls.",
+                "color": 16236854,
+                "footer": {
+                    "text": "!help always calls the help command."
+                }
+            }
+        }
+        channel.send(nonType);
     }
     if (quick) {
         let quickInfo = {
@@ -113,7 +125,7 @@ function createExamples(channel, quick = false, game = false, multipleChoice = f
     }
     if (game) {
         let gameInfo = {
-            "name": "GamePolls",
+            "name": "Game Polls",
             "value": "You can make game polls to see if anyone's down to play a game.\n\nTry making or with commands like:\n"
         };
         let timeInfo = {

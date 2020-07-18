@@ -83,7 +83,9 @@ module.exports = async (bot, msg, args) => {
     }
 }
 
+// Each default value is whether or not they will be displayed on the help page
 function createExamples(channel, quick = false, game = false, multipleChoice = false) {
+    log.info(`Creating polling examples with quick=${quick}, game=${game}, mc=${multipleChoice}`);
     let catdance = "<a:catdance:729440916128923649>";
     let example = {
         "content": "<a:ditto:729440915835322379> So you want some **polling** examples! <a:ditto:729440915835322379>",

@@ -65,7 +65,7 @@ module.exports = async (bot, msg, args) => {
                 msg.reply('Game polls are a great way to see if anyone wants to play a game! Try `!poll game [times] [game]` or `!poll examples game` for examples.');
                 return;
             }
-            let game = msg.content.substring(args[0].length + args[1].length + 2);
+            let game = msg.content.substring(args[0].length + args[1].length + args[2].length + 3);
             [success, id] = createGamePoll(bot, msg.channel, game, ['8:00 PM', '9:00 PM']);
             if (success) {
                 log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${question}`);

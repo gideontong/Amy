@@ -74,18 +74,18 @@ module.exports = async (bot, msg, args) => {
             }
         } else if (args[1].startsWith('example')) {
             if (args.length > 2) {
-                if (args[2] == 'quick') createExamples(msg.channel, quick = true);
-                else if (args[2] == 'game') createExamples(msg.channel, game = true);
-                else if (multipleChoiceKeywords.includes(args[2])) createExamples(msg.channel, multipleChoice = true);
+                if (args[2] == 'quick') createExamples(msg.channel, true);
+                else if (args[2] == 'game') createExamples(msg.channel, false, true);
+                else if (multipleChoiceKeywords.includes(args[2])) createExamples(msg.channel, false, false, true);
                 else createExamples(msg.channel);
             } else createExamples(msg.channel);
+            log.info(`${msg.author.tag} ${msg.author} requested polling examples`);
         }
     }
 }
 
 // Each default value is whether or not they will be displayed on the help page
 function createExamples(channel, quick = false, game = false, multipleChoice = false) {
-    log.info(`Creating polling examples with quick=${quick}, game=${game}, mc=${multipleChoice}`);
     let catdance = "<a:catdance:729440916128923649>";
     let example = {
         "content": "<a:ditto:729440915835322379> So you want some **polling** examples! <a:ditto:729440915835322379>",

@@ -17,6 +17,7 @@ parser = argparse.ArgumentParser(description='Generate hits.')
 parser.add_argument('-c', '--count', default=10)
 parser.add_argument('-p', '--proxies')
 parser.add_argument('-s', '--sleep', default=1)
+parser.add_argument('-r', '--repo', default='Amy')
 args = parser.parse_args()
 
 if args.proxies != None:
@@ -33,7 +34,7 @@ def getProxy():
 
 
 def doRequest():
-    url = 'http://hits.dwyl.com/gideontong/Amy.svg'
+    url = 'http://hits.dwyl.com/gideontong/' + args.repo + '.svg'
     proxy, addr = getProxy()
     try:
         response = requests.request(

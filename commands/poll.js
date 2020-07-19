@@ -66,10 +66,11 @@ module.exports = async (bot, msg, args) => {
                 return;
             }
             let game = msg.content.substring(args[0].length + args[1].length + args[2].length + 3);
-            [success, id] = createGamePoll(bot, msg.channel, game, ['8:00 PM', '9:00 PM']);
+            [success, id] = createGamePoll(bot, msg.channel, game, args[2].split(','));
             if (success) {
-                log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${question}`);
+                log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${game}`);
             } else {
+                msg.channel.send(`I tried to make your poll, but got an error ${id}`);
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
         } else if (args[1].startsWith('example')) {

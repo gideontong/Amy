@@ -46,5 +46,4 @@ for i in range(int(args.count)):
     doRequest()
     if args.multi:
         doRequest("https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgideontong%2F" + args.repo, xLoc='61.5')
-        doRequest("https://visitor-badge.glitch.me/badge?page_id=gideontong." + args.repo, xLoc='571.0')
         doRequest("https://visitor-badge.laobi.icu/badge?page_id=gideontong." + args.repo, xLoc='606.0')

@@ -12,6 +12,7 @@ import sys
 from bs4 import BeautifulSoup
 from time import sleep
 from random import choice
+from datetime import datetime
 
 parser = argparse.ArgumentParser(description='Generate hits.')
 parser.add_argument('-c', '--count', default=10)
@@ -37,7 +38,8 @@ def doRequest(url='http://hits.dwyl.com/gideontong/' + args.repo + '.svg', xLoc=
     try:
         response = requests.request(
             'GET', url, headers={}, data={}, proxies=proxy)
-        print('[repo:' + args.repo + ']', 'Got', BeautifulSoup(response.text.encode('utf8'),'html.parser').find(x=xLoc).text, 'hits using', addr)
+        # print('[repo:' + args.repo + ']', 'Got', BeautifulSoup(response.text.encode('utf8'),'html.parser').find(x=xLoc).text, 'hits using', addr)
+        print(datetime.now(), 'Successfully pinged', args.repo)
         sleep(int(args.sleep))
     except:
         print('Failed to connect to', addr)

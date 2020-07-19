@@ -38,9 +38,9 @@ module.exports = async message => {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
             return;
         } else {
-            cmdFile(message.client, message, commands).catch(err => {
-                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
-            })
+            cmdFile(message.client, message, commands)//.catch(err => {
+                //log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+            //})
             let uses = await updateStatistic(message.author.id, `use_${toRun}`, 1)
             if (uses == 1) {
                 let cmdUses = await updateStatistic(message.author.id, 'commands', 1);

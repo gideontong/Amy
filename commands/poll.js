@@ -70,7 +70,7 @@ module.exports = async (bot, msg, args) => {
             if (success) {
                 log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${game}`);
             } else {
-                msg.channel.send(`I tried to make your poll, but got an error ${id}`);
+                msg.channel.send(`I tried to make your poll, but got an error! Try again?`);
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
         } else if (args[1].startsWith('example')) {

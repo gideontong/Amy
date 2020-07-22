@@ -75,7 +75,7 @@ module.exports = async (bot, msg, args) => {
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
         } else if (multipleChoiceKeywords.includes(args[1])) {
-            let content = msg.content.substring(args[0].length + 1);
+            let content = msg.content.substring(args[0].length + args[1].length + 2);
             content = content.split(";");
             if (content.length != 2) {
                 msg.channel.send("Your poll should only contain one `;`, as it is a separator!");

@@ -30,7 +30,7 @@ const examples = {
 
 // Dependencies
 const log = require('log4js').getLogger('amy');
-const { createQuickPoll, createGamePoll } = require('../lib/Survey');
+const { createQuickPoll, createGamePoll, createMultipleChoicePoll } = require('../lib/Survey');
 const { selectN } = require('../lib/Poisson');
 
 // poll quick [question]
@@ -57,7 +57,7 @@ module.exports = async (bot, msg, args) => {
             let question = msg.content.substring(args[0].length + args[1].length + 2);
             [success, id] = createQuickPoll(bot, msg.channel, question);
             if (success) {
-                log.info(`${msg.author.tag} ${msg.author} started a quick poll at ${id} asking ${question}`);
+                log.info(`${msg.author.tag} ${msg.author} started a quick poll at ${id} in ${msg.channel}`);
             } else {
                 log.error(`${msg.author.tag} ${msg.author} tried to start a quick poll but got ${id}`);
             }
@@ -69,13 +69,26 @@ module.exports = async (bot, msg, args) => {
             let game = msg.content.substring(args[0].length + args[1].length + args[2].length + 3);
             [success, id] = createGamePoll(bot, msg.channel, game, args[2].split(','));
             if (success) {
-                log.info(`${msg.author.tag} ${msg.author} started a game poll with game ${game}`);
+                log.info(`${msg.author.tag} ${msg.author} started a game poll in ${msg.channel}`);
             } else {
                 msg.channel.send(`I tried to make your poll, but got an error! Try again?`);
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
         } else if (multipleChoiceKeywords.includes(args[1])) {
-            msg.channel.send("Multiple choice keywords coming soon!");
+            let content = msg.content.substring(args[0].length + 1);
+            content = content.split(";");
+            if (content.length != 2) {
+                msg.channel.send("Your poll should only contain one `;`, as it is a separator!");
+                return;
+            }
+            let options = content[0].split(",");
+            [success, id] = createMultipleChoicePoll(channel, content[1], options);
+            if (success) {
+                log.info(`${msg.author.tag} ${msg.author} started a multiple choice poll in ${msg.channel}`);
+            } else {
+                msg.channel.send(`I tried to make your poll, but here's what I got: ${id}`);
+                log.error(`${msg.author.tag} ${msg.author} tried to start a multiple choice poll but got ${id}`);
+            }
         } else if (args[1].startsWith('example')) {
             if (args.length > 2) {
                 if (args[2] == 'quick') createExamples(msg.channel, true);

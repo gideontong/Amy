@@ -82,7 +82,7 @@ module.exports = async (bot, msg, args) => {
                 return;
             }
             let options = content[0].split(",");
-            [success, id] = createMultipleChoicePoll(channel, content[1], options);
+            [success, id] = createMultipleChoicePoll(msg.channel, content[1], options);
             if (success) {
                 log.info(`${msg.author.tag} ${msg.author} started a multiple choice poll in ${msg.channel}`);
             } else {

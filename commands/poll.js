@@ -48,6 +48,7 @@ module.exports = async (bot, msg, args) => {
     if (args.length < 2) {
         msg.channel.send('Polls wizard feature coming soon! Start a poll with `!poll quick` or `!poll game`, or get examples with `!poll examples`');
     } else {
+        args[1] = args[1].toLowerCase();
         if (args[1] == 'quick') {
             if (args.length < 3) {
                 msg.reply('Quick polls are a fast way to make a yes/no poll! Simply type `!poll quick [question]` or `!poll exampels quick` for examples.');
@@ -73,6 +74,8 @@ module.exports = async (bot, msg, args) => {
                 msg.channel.send(`I tried to make your poll, but got an error! Try again?`);
                 log.error(`${msg.author.tag} ${msg.author} tried to start a game poll but got ${id}`);
             }
+        } else if (multipleChoiceKeywords.includes(args[1])) {
+            msg.channel.send("Multiple choice keywords coming soon!");
         } else if (args[1].startsWith('example')) {
             if (args.length > 2) {
                 if (args[2] == 'quick') createExamples(msg.channel, true);

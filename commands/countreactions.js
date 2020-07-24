@@ -20,7 +20,7 @@ async function readChannel(channel) {
     let messageWindowKeys = messageWindow.keyArray().sort();
     value += messageWindowKeys[0] + ' ';
     messages.concat(messageWindowKeys);
-    messageWindow = await channels.messages.fetch({ limit: 100, before: messageWindow[0] });
+    messageWindow = await channel.messages.fetch({ limit: 100, before: messageWindow[0] });
     messageWindowKeys = messageWindow.keyArray().sort();
     value += messageWindowKeys[messageWindowKeys.length - 1];
     messages.concat(messageWindowKeys);

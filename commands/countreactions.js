@@ -8,13 +8,19 @@ module.exports = async (bot, msg, args) => {
             textChannels.push(channels[i]);
         }
     }
-    msg.channel.send(textChannels.length);
+    msg.channel.send('Scanning channel: '+ textChannels[0]);
     let array = await readChannel(textChannels[0]);
-    log.info(array);
+    msg.channel.send(array);
 }
 
 async function readChannel(channel) {
-    let messages = await channel.messages.fetch({ limit: 100 });
-    log.info(messages);
-    return messages.keyArray();
+    let value = "a: ";
+    let messages = [];
+    let messageWindow = await channel.messages.fetch({ limit: 100 }).keyArray().sort();
+    value += messageWindow[0] + ' ';
+    messages.concat(messageWindow);
+    messageWindow = await channels.messages.fetch({ limit: 100, before: messageWindow[0] }).keyArray().sort();
+    value += messageWindow[messageWindow.length - 1];
+    messages.concat(messageWindow);
+    return value;
 }

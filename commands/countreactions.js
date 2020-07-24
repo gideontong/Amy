@@ -16,11 +16,13 @@ module.exports = async (bot, msg, args) => {
 async function readChannel(channel) {
     let value = "a: ";
     let messages = [];
-    let messageWindow = await channel.messages.fetch({ limit: 100 }).keyArray().sort();
-    value += messageWindow[0] + ' ';
-    messages.concat(messageWindow);
-    messageWindow = await channels.messages.fetch({ limit: 100, before: messageWindow[0] }).keyArray().sort();
-    value += messageWindow[messageWindow.length - 1];
-    messages.concat(messageWindow);
+    let messageWindow = await channel.messages.fetch({ limit: 100 });
+    let messageWindowKeys = messageWindow.keyArray().sort();
+    value += messageWindowKeys[0] + ' ';
+    messages.concat(messageWindowKeys);
+    messageWindow = await channels.messages.fetch({ limit: 100, before: messageWindow[0] });
+    messageWindowKeys = messageWindow.keyArray().sort();
+    value += messageWindowKeys[messageWindowKeys.length - 1];
+    messages.concat(messageWindowKeys);
     return value;
 }

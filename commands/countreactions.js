@@ -13,6 +13,6 @@ module.exports = async (bot, msg, args) => {
 }
 
 function readChannel(channel) {
-    let messages = channel.fetch({ limit: 100 });
+    let messages = channel.messages.fetch({ limit: 100 });
     channel.send(messages.keyArray());
 }

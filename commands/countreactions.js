@@ -14,6 +14,7 @@ module.exports = async (bot, msg, args) => {
 }
 
 async function readChannel(channel) {
+    log.info(`Now looking at channel #${channel.name} id: ${channel.id}`);
     let messages = [];
     let messageWindow = await channel.messages.fetch({ limit: 100 });
     let messageWindowKeys = messageWindow.keyArray().sort();
@@ -21,7 +22,9 @@ async function readChannel(channel) {
     while (messageWindowKeys.length > 99) {
         log.info(`Now looking at window ending ${messageWindowKeys[0]}`);
         messageWindow = await channel.messages.fetch({ limit: 100, before: messageWindowKeys[0] });
+        log.info(`Got a size of ${messageWindow.size}`)
         messageWindowKeys = messageWindow.keyArray().sort();
+        log.info(`Sorting into array of size ${messageWindowKeys.length}`)
         messages.concat(messageWindowKeys);
     }
     return messages.length;

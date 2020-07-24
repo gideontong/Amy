@@ -2,7 +2,7 @@ const log = require('log4js').getLogger('amy');
 
 module.exports = async (bot, msg, args) => {
     let channels = msg.guild.channels; // Collection
-    let channelSnowflakes = channels.array();
+    let channelSnowflakes = channels.cache.array();
     log.info(channels);
     let string = "";
     for (var i = 0; i < channelSnowflakes.length; i++) {

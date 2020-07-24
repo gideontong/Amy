@@ -5,7 +5,7 @@ module.exports = async (bot, msg, args) => {
     let string = "__Quick Response__\n";
     for (var i = 0; i < channels.length; i++) {
         if (channels[i].type == "text") {
-            string += channels[i].name + '\n';
+            string += channels[i].viewable + ' ' + channels[i].name + '\n';
         }
     }
     msg.channel.send(string);

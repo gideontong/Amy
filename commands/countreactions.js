@@ -14,6 +14,6 @@ module.exports = async (bot, msg, args) => {
 }
 
 function readChannel(channel) {
-    let messages = channel.messages.fetch({ limit: 100 });
+    let messages = await channel.messages.fetch({ limit: 100 });
     return messages.keyArray();
 }

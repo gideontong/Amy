@@ -18,14 +18,14 @@ async function readChannel(channel) {
     let messages = [];
     let messageWindow = await channel.messages.fetch({ limit: 100 });
     let messageWindowKeys = messageWindow.keyArray().sort();
-    messages.concat(messageWindowKeys);
+    messages = messages.concat(messageWindowKeys);
     while (messageWindowKeys.length > 99) {
         log.info(`Now looking at window ending ${messageWindowKeys[0]}`);
         messageWindow = await channel.messages.fetch({ limit: 100, before: messageWindowKeys[0] });
         log.info(`Got a size of ${messageWindow.size}`)
         messageWindowKeys = messageWindow.keyArray().sort();
         log.info(`Sorting into array of size ${messageWindowKeys.length}`)
-        messages.concat(messageWindowKeys);
+        messages = messages.concat(messageWindowKeys);
     }
     return messages.length;
 }

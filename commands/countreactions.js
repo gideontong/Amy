@@ -2,14 +2,14 @@ const log = require('log4js').getLogger('amy');
 
 module.exports = async (bot, msg, args) => {
     let channels = msg.guild.channels.cache.array(); // Array of GuildChannels
-    let string = "__Quick Response__\n";
+    let textChannels = [];
     for (var i = 0; i < channels.length; i++) {
         if (channels[i].type == "text") {
-            string += channels[i].viewable + ' ' + channels[i].name + '\n';
+            textChannels.push(channels[i]);
         }
     }
-    msg.channel.send(string);
-    let array = readChannel(channels[0]);
+    msg.channel.send(textChannels.length);
+    let array = readChannel(textChannels[0]);
     log.info(array);
 }
 

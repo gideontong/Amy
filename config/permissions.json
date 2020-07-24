@@ -6,7 +6,8 @@
         "grantachievement",
         "revokeachievement",
         "printemoji",
-        "loadingscreentips"
+        "loadingscreentips",
+        "countreactions"
     ],
     "soon":[
         "changelog",

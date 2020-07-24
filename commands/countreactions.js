@@ -9,10 +9,11 @@ module.exports = async (bot, msg, args) => {
         }
     }
     msg.channel.send(string);
-    readChannel(channels[0]);
+    let array = readChannel(channels[0]);
+    log.info(array);
 }
 
 function readChannel(channel) {
     let messages = channel.messages.fetch({ limit: 100 });
-    channel.send(messages.keyArray());
+    return messages.keyArray();
 }

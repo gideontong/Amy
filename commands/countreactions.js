@@ -46,8 +46,10 @@ async function getReactions(channels) {
         log.info(`User ${key} was in the map`);
         value.forEach(logUsers);
     }
-    let reactions = getMessageReactions(channels[0]);
-    (await reactions).forEach(logReactions);
+    log.info(`Now grabbing the reactions`);
+    let reactions = await getMessageReactions(channels[0]);
+    log.info(`Reaction grabbing done, now parsing...`);
+    reactions.forEach(logReactions);
 }
 
 // Returns Map of user -> reaction -> count

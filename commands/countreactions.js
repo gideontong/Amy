@@ -44,7 +44,7 @@ async function getReactions(channels) {
     log.info(`Reaction grabbing done, now parsing... ${reactions}`);
     let reactionIterator = reactions.entries();
     let reaction = reactionIterator.next();
-    while (reaction.done) {
+    while (!reaction.done) {
         log.info(reaction.value);
         reaction = reactionIterator.next();
     }

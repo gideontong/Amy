@@ -34,7 +34,7 @@ module.exports = async (bot, msg, args) => {
         }
     }
     msg.channel.send('Check the log for more details');
-    getReactions(channels);
+    getReactions(textChannels);
 }
 
 // Collect all reactions from all channels

@@ -48,7 +48,7 @@ async function getReactions(channels) {
     }
     log.info(`Now grabbing the reactions`);
     let reactions = await getMessageReactions(channels[0]);
-    log.info(`Reaction grabbing done, now parsing...`);
+    log.info(`Reaction grabbing done, now parsing... ${typeof reactions}`);
     reactions.forEach(logReactions);
 }
 
@@ -58,7 +58,7 @@ async function getMessageReactions(channel) {
     let reactionCollector = new Map();
     let messages = await readChannelMessages(channel);
     let messageManager = channel.messages;
-    for (var i = 0; i < messages.length; i++) {
+    for (var i = 0; i < messages.length / 5; i++) {
         if (i % 100 == 0) log.info(`Now reading from message ${messages[i]}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions

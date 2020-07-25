@@ -42,10 +42,11 @@ async function getReactions(channels) {
     log.info(`Now grabbing the reactions`);
     let reactions = await getMessageReactions(channels[0]);
     log.info(`Reaction grabbing done, now parsing... ${reactions}`);
-    for (const user of reactions) {
-        for (const reaction of user) {
-            log.info(`Found user ${user[0]} with ${reaction[0]} and count ${reaction[1]}`);
-        }
+    let reactionIterator = reactions.entries();
+    let reaction = reactionIterator.next();
+    while (reaction.done) {
+        log.info(reaction.value);
+        reaction = reactionIterator.next();
     }
 }
 

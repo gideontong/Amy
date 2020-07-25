@@ -48,17 +48,17 @@ async function getReactions(channels) {
 
 // Returns Map of user -> reaction -> count
 async function getMessageReactions(channel) {
-    log.info(`Now looking at channel #${channel.name} id: ${channel.id}`);
     let reactionCollector = new Map();
     let messages = await readChannelMessages(channel);
     let messageManager = channel.messages;
     for (var i = 0; i < messages.length / 5; i++) {
+        if (i % 100 == 0) log.info(`Now reading from: channel #${channel.name} message ${i} / ${messages.length}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions
-        log.info(`Now reading from message ${messages[i]} with ${reactions.length} reactions`);
         for (var j = 0; i < reactions.length; j++) {
             let reactionName = reactions[j].emoji.name;
             let users = reactions[j].users.cache.array(); // Array of Users
+            log.info(`Found reactions ${reactionName} with ${users.length}`)
             for (var k = 0; k < users.length; k++) {
                 countReaction(reactionCollector, users[i], reactionName);
             }

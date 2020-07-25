@@ -43,12 +43,7 @@ async function getReactions(channels) {
     let reactions = await getMessageReactions(channels[0]);
     log.info(`Reaction grabbing done, now parsing... ${reactions}`);
     let reactionIterator = reactions.entries();
-    let reaction = reactionIterator.next();
-    log.info(reaction.value + ' ' + reaction + ' ' + reactionIterator);
-    while (!reaction.done) {
-        log.info(reaction.value);
-        reaction = reactionIterator.next();
-    }
+    log.info(reactionIterator.next().value + ' ' + reactionIterator);
 }
 
 // Returns Map of user -> reaction -> count

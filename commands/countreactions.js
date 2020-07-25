@@ -55,7 +55,7 @@ async function getMessageReactions(channel) {
         if (i % 100 == 0) log.info(`Now reading from: channel #${channel.name} message ${i} / ${messages.length}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions
-        for (var j = 0; i < reactions.length; j++) {
+        for (var j = 0; j < reactions.length; j++) {
             let reactionName = reactions[j].emoji.name;
             let users = reactions[j].users.cache.array(); // Array of Users
             log.info(`Found reactions ${reactionName} with ${users.length}`)

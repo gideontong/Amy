@@ -39,18 +39,14 @@ module.exports = async (bot, msg, args) => {
 
 // Collect all reactions from all channels
 async function getReactions(channels) {
-    function logReactions(value, key, map) {
-        function logUsers(value, key, map) {
-            log.info(`Reaction ${key} was found with ${value}`);
-        }
-        log.info(`User ${key} was in the map`);
-        value.forEach(logUsers);
-    }
     log.info(`Now grabbing the reactions`);
     let reactions = await getMessageReactions(channels[0]);
-    let reactionMap = new Map(reactions.entries()); // Cast back to Map
-    log.info(`Reaction grabbing done, now parsing... ${typeof reactionMap}`);
-    reactionMap.forEach(logReactions);
+    log.info(`Reaction grabbing done, now parsing... ${reactions}`);
+    for (const user of reactions) {
+        for (const reaction of user) {
+            log.info(`Found user ${user[0]} with ${reaction[0]} and count ${reaction[1]}`);
+        }
+    }
 }
 
 // Returns Map of user -> reaction -> count

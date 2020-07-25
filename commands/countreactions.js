@@ -57,7 +57,7 @@ async function getMessageReactions(channel) {
     let messages = await readChannelMessages(channel);
     let messageManager = channel.messages;
     for (var i = 0; i < messages.length; i++) {
-        log.info(`Now reading from message ${messages[i]}`);
+        if (i % 100 == 0) log.info(`Now reading from message ${messages[i]}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions
         for (var j = 0; i < reactions.length; j++) {

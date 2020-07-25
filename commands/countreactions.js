@@ -37,9 +37,17 @@ module.exports = async (bot, msg, args) => {
     getReactions(channels);
 }
 
+// Collect all reactions from all channels
 async function getReactions(channels) {
-    // Collect all reactions from all channels
-    getMessageReactions(channels[0]);
+    function logReactions(value, key, map) {
+        function logUsers(value, key, map) {
+            log.info(`Reaction ${key} was found with ${value}`);
+        }
+        log.info(`User ${key} was in the map`);
+        value.forEach(logUsers);
+    }
+    let reactions = getMessageReactions(channels[0]);
+    (await reactions).forEach(logReactions);
 }
 
 // Returns Map of user -> reaction -> count
@@ -55,9 +63,22 @@ async function getMessageReactions(channel) {
             let reactionName = reactions[j].emoji.name;
             let users = reactions[j].users.cache.array(); // Array of Users
             for (var k = 0; k < users.length; k++) {
+                countReaction(reactionCollector, users[i], reactionName);
             }
         }
     }
+    return reactionCollector;
+}
+
+// Counts a reaction and modifies the map in place
+function countReaction(reactionCollector, user, reaction) {
+    let userCollector = map.has(user) ? map.get(user) : new Map();
+    if (userCollector.has(reaction)) {
+        userCollector.set(reaction, userCollector.get(reaction) + 1);
+    } else {
+        userCollector.set(reaction, 1);
+    }
+    reactionCollector.set(user, userCollector);
 }
 
 // Returns array of snowflakes, one for each message in a channel

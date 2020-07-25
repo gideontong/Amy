@@ -48,7 +48,7 @@ async function getReactions(channels) {
     }
     log.info(`Now grabbing the reactions`);
     let reactions = await getMessageReactions(channels[0]);
-    reactions = new Map(reactions.entires()); // Cast back to Map
+    reactions = new Map(reactions.entries()); // Cast back to Map
     log.info(`Reaction grabbing done, now parsing... ${typeof reactions}`);
     reactions.forEach(logReactions);
 }

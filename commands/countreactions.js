@@ -28,13 +28,15 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (bot, msg, args) => {
     let channels = msg.guild.channels.cache.array(); // Array of GuildChannels
     let textChannels = [];
-    for (var i = 0; i < channels.length / 5; i++) {
+    for (var i = 0; i < channels.length; i++) {
         if (channels[i].type == "text") {
             textChannels.push(channels[i]);
         }
     }
-    msg.channel.send('Check the log for more details');
-    getReactions(textChannels);
+    msg.channel.send('Message download beginning, ETA unknown...');
+    log.warn(`Getting reactions of an entire server, expect some lag!`)
+    let reactionCount = await getReactions(textChannels);
+    msg.channel.send(`Message download is ***done***, got ${reactionCount} total reactions across all users and channels. :pepeHype:`)
 }
 
 // Collect all reactions from all channels
@@ -45,11 +47,15 @@ async function getReactions(channels) {
         let reactions = await getMessageReactions(channel);
         mergeMaps(reactionMap, reactions);
     }
+    let reactionCount = 0;
     for (let [user, reactions] of reactionMap) {
         for (let [reaction, value] of reactions) {
-            log.info(`User ${user} had ${value} count of ${reaction}`);
+            // Pipe output for CSV parsing
+            reactionCount += value;
+            log.info(`${user},${reaction},${value}`);
         }
     }
+    return reactionCount;
 }
 
 // Merges reaction map in-place
@@ -85,7 +91,7 @@ async function getMessageReactions(channel) {
     let reactionCollector = new Map();
     let messages = await readChannelMessages(channel);
     let messageManager = channel.messages;
-    for (var i = 0; i < messages.length / 10; i++) {
+    for (var i = 0; i < messages.length; i++) {
         if (i % 100 == 0) log.info(`Now reading from: channel #${channel.name} message ${i} / ${messages.length}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions

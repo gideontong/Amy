@@ -45,11 +45,11 @@ async function getReactions(channels) {
         let reactions = await getMessageReactions(channel);
         mergeMaps(reactionMap, reactions);
     }
-    /*
-    for (let [key, value] of reactions) {
-        log.info(`Found ${key} in the reactions map!`);
+    for (let [user, reactions] of reactionMap) {
+        for (let [reaction, value] of reactions) {
+            log.info(`User ${user} had ${value} count of ${reaction}`);
+        }
     }
-    */
 }
 
 // Merges reaction map in-place

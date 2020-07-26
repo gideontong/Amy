@@ -70,14 +70,12 @@ async function getMessageReactions(channel) {
 
 // Counts a reaction and modifies the map in place
 function countReaction(reactionCollector, user, reaction) {
-    log.info(`countReaction was called with object ${reactionCollector}`);
     let userCollector = reactionCollector.has(user) ? reactionCollector.get(user) : new Map();
     if (userCollector.has(reaction)) {
         userCollector.set(reaction, userCollector.get(reaction) + 1);
     } else {
         userCollector.set(reaction, 1);
     }
-    log.info(`Grabbed object ${userCollector}`);
     reactionCollector.set(user, userCollector);
 }
 

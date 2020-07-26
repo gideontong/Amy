@@ -62,8 +62,8 @@ async function getMessageReactions(channel) {
                 .then((userCollection) => {
                     let users = userCollection.array(); // Array<Users>
                     for (var k = 0; k < users.length; k++) {
-                        let tag = users[i].username + '#' + users[i].discriminator;
-                        countReaction(reactionCollector, tag, reactionName);
+                        // let tag = users[k].username + '#' + users[k].discriminator;
+                        countReaction(reactionCollector, users[k].tag, reactionName);
                     }
                 });
         }

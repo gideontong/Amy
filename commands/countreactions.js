@@ -57,11 +57,14 @@ async function getMessageReactions(channel) {
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions
         for (var j = 0; j < reactions.length; j++) {
             let reactionName = reactions[j].emoji.name;
-            let userCollection = await reactions[j].users.fetch(); // Collection of Users
-            let users = userCollection.array();
-            for (var k = 0; k < users.length; k++) {
-                countReaction(reactionCollector, users[i].tag, reactionName);
-            }
+            // Collection of Users
+            let userCollection = reactions[j].users.fetch()
+                .then(() => {
+                    let users = userCollection.array();
+                    for (var k = 0; k < users.length; k++) {
+                        countReaction(reactionCollector, users[i].tag, reactionName);
+                    }
+                });
         }
     }
     return reactionCollector;

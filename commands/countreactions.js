@@ -57,9 +57,9 @@ async function getMessageReactions(channel) {
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions
         for (var j = 0; j < reactions.length; j++) {
             let reactionName = reactions[j].emoji.name;
-            // Collection of Users
-            let userCollection = reactions[j].users.fetch()
-                .then(() => {
+            // Collection<Snowflake, User>
+            reactions[j].users.fetch()
+                .then((userCollection) => {
                     let users = userCollection.array();
                     for (var k = 0; k < users.length; k++) {
                         countReaction(reactionCollector, users[i].tag, reactionName);

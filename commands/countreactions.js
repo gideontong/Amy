@@ -40,11 +40,28 @@ module.exports = async (bot, msg, args) => {
 // Collect all reactions from all channels
 async function getReactions(channels) {
     log.info(`Now grabbing the reactions`);
-    let reactions = await getMessageReactions(channels[0]);
-    log.info(`Reaction grabbing done, now parsing... ${reactions}`);
+    let reactionMap = new Map();
+    for (let channel of channels) {
+        let reactions = await getMessageReactions(channel);
+    }
+    /*
     for (let [key, value] of reactions) {
         log.info(`Found ${key} in the reactions map!`);
     }
+    */
+}
+
+// Merges reaction map in-place
+function mergeMaps(base, insert) {
+    // Copy interior map if key does not exist
+    // If key exists, merge values of interior map
+    return base;
+}
+
+// Merges interior reaction map in-place
+function mergeMapValues(base, insert) {
+    // Copy interior map if key does not exist
+    return base;
 }
 
 // Returns Map of user -> reaction -> count
@@ -52,7 +69,7 @@ async function getMessageReactions(channel) {
     let reactionCollector = new Map();
     let messages = await readChannelMessages(channel);
     let messageManager = channel.messages;
-    for (var i = 0; i < messages.length / 5; i++) {
+    for (var i = 0; i < messages.length / 10; i++) {
         if (i % 100 == 0) log.info(`Now reading from: channel #${channel.name} message ${i} / ${messages.length}`);
         let message = await messageManager.fetch(messages[i]);
         let reactions = await message.reactions.cache.array(); // Array of MessageReactions

@@ -12,6 +12,10 @@ As always, you can read about and download the latest releases from [Amy's relea
 
 ## Upcoming Changes
 
+None so far.
+
+## [v2.1.0 Fox](https://github.com/gideontong/Amy/releases/tag/v2.1.0)
+
 This release brings:
 
 * Commands are now case-insensitive

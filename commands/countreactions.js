@@ -28,7 +28,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (bot, msg, args) => {
     let channels = msg.guild.channels.cache.array(); // Array of GuildChannels
     let textChannels = [];
-    for (var i = 0; i < channels.length; i++) {
+    for (var i = 0; i < channels.length / 5; i++) {
         if (channels[i].type == "text") {
             textChannels.push(channels[i]);
         }

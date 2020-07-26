@@ -60,9 +60,10 @@ async function getMessageReactions(channel) {
             // Collection<Snowflake, User>
             reactions[j].users.fetch()
                 .then((userCollection) => {
-                    let users = userCollection.array();
+                    let users = userCollection.array(); // Array<Users>
+                    log.info(users);
                     for (var k = 0; k < users.length; k++) {
-                        countReaction(reactionCollector, users[i].tag, reactionName);
+                        // countReaction(reactionCollector, users[i].tag, reactionName);
                     }
                 });
         }

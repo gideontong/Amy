@@ -38,6 +38,7 @@ It fixes the following critical bugs:
   * `!poll game [times,] [game]` creates a game poll for your friends to answer
   * `!poll mc [options,];[question]` creates a multiple choice poll for your friends to answer
   * Instead of `!poll mc`, you can also use `!poll multiplechoice`, `!poll choice`, or `!poll choose`
+* `!countreactions` is an admin-only command that will generate a special tool to see all the reactions on a server (beta)
 
 ## [v2.0.0 Elephant](https://github.com/gideontong/Amy/releases/tag/v2.0.0)
 

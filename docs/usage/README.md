@@ -50,6 +50,7 @@ On top of normal user permissions, admins also get access to the following comma
 | Command                         | Description                                                         |
 |---------------------------------|---------------------------------------------------------------------|
 | `clear (number)`                | Clear a certain number of messages (default: 100).                  |
+| `countreactions`                | Generates an admin-only Map of all server-wide reactions (beta!).   |
 | `generateachievement (text)`    | Make a fake achievement banner using the given text.                |
 | `grantachievement [id] (user)`  | Grant an achievement to yourself or another user.                   |
 | `loadingscreentips`             | Show some loading screen tips.                                      |

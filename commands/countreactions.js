@@ -43,6 +43,7 @@ async function getReactions(channels) {
     let reactionMap = new Map();
     for (let channel of channels) {
         let reactions = await getMessageReactions(channel);
+        mergeMaps(reactionMap, reactions);
     }
     /*
     for (let [key, value] of reactions) {
@@ -54,13 +55,28 @@ async function getReactions(channels) {
 // Merges reaction map in-place
 function mergeMaps(base, insert) {
     // Copy interior map if key does not exist
-    // If key exists, merge values of interior map
+    for (let [key, value] of insert) {
+        if (base.has(key)) {
+            let baseKey = base.get(key);
+            mergeMapValues(baseKey, value);
+            base.set(baseKey);
+        } else {
+            base.set(key, value);
+        }
+    }
     return base;
 }
 
 // Merges interior reaction map in-place
 function mergeMapValues(base, insert) {
     // Copy interior map if key does not exist
+    for (let [key, value] of insert) {
+        if (base.has(key)) {
+            base.set(key, base.get(key) + value);
+        } else {
+            base.set(key, value);
+        }
+    }
     return base;
 }
 

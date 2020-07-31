@@ -2,6 +2,7 @@
     "name": "amy",
     "version": "2.1.0",
     "description": "Your personal assisstant, reimagined",
+    "author": "Gideon Tong <gideon@gideontong.com",
     "main": "main.js",
     "scripts": {
         "start": "node main.js",
@@ -29,6 +30,6 @@
         "youtube-dl": "^3.0.2"
     },
     "devDependencies": {
-        "jest": "^26.1.0"
+        "jest": "^26.2.1"
     }
 }

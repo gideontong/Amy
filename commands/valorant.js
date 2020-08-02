@@ -54,7 +54,7 @@ const profile = {
 }
 
 module.exports = async (bot, msg, args) => {
-    msg.channel.send("Help menu coming soon!");
+    if (args.length == 1) msg.channel.send("Help menu coming soon!");
     switch (args[1]) {
         case 'profile':
             msg.channel.send(profile);

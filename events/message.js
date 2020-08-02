@@ -36,7 +36,6 @@ module.exports = async message => {
         }
         if (!cmdFile) {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
-            return;
         } else {
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
@@ -47,6 +46,7 @@ module.exports = async message => {
                 if (cmdUses >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
             }
         }
+        return;
     }
     sanitizedMessage = message.content.toLowerCase();
     if (sanitizedMessage.includes('valorant') && sanitizedMessage.includes(' ')) {

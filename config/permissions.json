@@ -10,7 +10,8 @@
         "countreactions"
     ],
     "soon":[
-        "riotlogin"
+        "riotlogin",
+        "riotlogout"
     ],
     "admins": [
         "132525049977503744"

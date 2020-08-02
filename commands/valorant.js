@@ -53,8 +53,11 @@ const profile = {
     }
 }
 
+const log = require('log4js').getLogger('amy');
+
 module.exports = async (bot, msg, args) => {
     if (args.length == 1) msg.channel.send("Help menu coming soon!");
+    log.info(args[1]);
     switch (args[1]) {
         case 'profile':
             msg.channel.send(profile);

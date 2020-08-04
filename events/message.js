@@ -17,6 +17,7 @@ module.exports = async message => {
     if (message.content[0] == "!") {
         commands = message.content.split(" ");
         toRun = commands[0].slice(1).toLowerCase();
+        if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {
             if (message.author != targets.gideon) {
                 if (permissions.soon.includes(toRun)) {

@@ -59,13 +59,6 @@ module.exports = async message => {
             }
         }
         log.info(`${message.author.tag} ${message.author} mentioned VALORANT`)
-    } else if (sanitizedMessage.includes('skyfactory')) {
-        if (Math.random() < 0.9) {
-            message.reply(strings.isSkyFactoryTime);
-        } else {
-            message.reply(strings.notSkyFactoryTime);
-        }
-        log.info(`${message.author.tag} ${message.author} mentioned SkyFactory`);
     } else if (sanitizedMessage.includes(' of leo')) {
         // Replace with Poisson class in the future
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]

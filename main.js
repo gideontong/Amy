@@ -7,12 +7,7 @@ const activity = config.activity.amy;
 const Discord = require('discord.js');
 const log4js = require('log4js');
 const client = new Discord.Client();
-
-function genLog() {
-    let date = new Date();
-    return date.getFullYear() + "." + date.getMonth() + "." + date.getDate() + "." +
-        date.getHours() + "." + date.getMinutes() + "." + date.getSeconds() + ".log";
-}
+const { generateLogName } = require('./lib/MagicNumbers');
 
 // Logger setup
 log4js.configure({
@@ -22,7 +17,7 @@ log4js.configure({
         },
         file: {
             type: 'file',
-            filename: `logs/${genLog()}`
+            filename: `logs/${generateLogName()}`
         }
     },
     categories: {

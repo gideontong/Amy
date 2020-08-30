@@ -65,12 +65,6 @@ module.exports = async message => {
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
         message.reply(response);
         log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
-    } else if (message.author.id == targets.leo) {
-        if (Math.random() < 0.1) {
-            response = responses.prank[Math.floor(Math.random() * responses.prank.length)];
-            message.reply(response);
-            log.info(`${message.author.tag} ${message.author} triggered a prank response`);
-        }
     } else if (sanitizedMessage.substr(0, 3) == "amy" || sanitizedMessage.includes(message.client.user.id)) {
         if (Math.random() < 0.05) {
             message.reply("you called me?");

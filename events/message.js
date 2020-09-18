@@ -50,16 +50,7 @@ module.exports = async message => {
         return;
     }
     sanitizedMessage = message.content.toLowerCase();
-    if (sanitizedMessage.includes('valorant') && sanitizedMessage.includes(' ')) {
-        if (Math.random() < 0.3) {
-            if (Math.random() < 0.8) {
-                message.reply(strings.isValorantTime);
-            } else {
-                message.reply(strings.notValorantTime);
-            }
-        }
-        log.info(`${message.author.tag} ${message.author} mentioned VALORANT`)
-    } else if (sanitizedMessage.includes(' of leo')) {
+    if (sanitizedMessage.includes(' of leo')) {
         // Replace with Poisson class in the future
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];

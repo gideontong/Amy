@@ -16,11 +16,11 @@ module.exports = async message => {
             let channel = guild.channels.resolve(config.snowflakes.channels.logging);
             if (channel && channel.type == 'text') {
                 const deletedComment = new MessageEmbed()
-                    .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
-                    .setTitle(`Message deleted in ${msg.guild.name}!`)
-                    .setDescription(msg.content)
-                    .setFooter(`${msg.createdAt} in ${msg.channel.name}`)
-                    .attachFiles(msg.attachments.array());
+                    .setAuthor(message.author.tag, message.author.displayAvatarURL())
+                    .setTitle(`Message deleted in ${message.guild.name}!`)
+                    .setDescription(message.content)
+                    .setFooter(`${message.createdAt} in ${message.channel.name}`)
+                    .attachFiles(message.attachments.array());
                 channelLog.send(deletedComment);
             }
         }

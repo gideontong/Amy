@@ -1,5 +1,4 @@
 // Imports from local config files
-const responses = require('../config/responses.json');
 const config = require('../config/config.json');
 const targets = config.targets;
 
@@ -9,17 +8,30 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for a deleted message
 module.exports = async message => {
-    if (message.author.bot) return;
-    if (message.content[0] == "?" || message.content[0] == config.prefix) return;
-    log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent}" [${message.attachments.keyArray().length}]`);
+    if (message.author.bot || message.content.startsWith(config.prefix)) return;
+    log.info(`${message.author.tag} deleted "${message.cleanContent}" from ${message.guild.name} (${message.channel.name})`);
+    let guild = message.client.guilds.resolve(config.snowflakes.guilds.logging);
+    try {
+        if (guild.available) {
+            let channel = guild.channels.resolve(config.snowflakes.channels.logging);
+            if (channel && channel.type == 'text') {
+                const deletedComment = new MessageEmbed()
+                    .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
+                    .setTitle(`Message deleted in ${msg.guild.name}!`)
+                    .setDescription(msg.content)
+                    .setFooter(`${msg.createdAt} in ${msg.channel.name}`)
+                    .attachFiles(msg.attachments.array());
+                channelLog.send(deletedComment);
+            }
+        }
+    } catch (err) {
+        log.error(`While trying to emite a messageDelete I got ${err}`);
+    }
     if (message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()
             .setTitle('Leo, wait a second!')
             .setDescription('Do you remember that time we were together?')
             .setImage("https://amyhelps.ml/leo/" + Math.floor(Math.random() * 16) + ".jpg");
-    } else {
-        response = "<@" + message.author.id + "> "
-            + responses.delete[Math.floor(Math.random() * responses.delete.length)];
+        message.channel.send(response);
     }
-    message.channel.send(response);
 }

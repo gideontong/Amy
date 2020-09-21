@@ -21,7 +21,7 @@ module.exports = async message => {
                     .setDescription(message.content)
                     .setFooter(`${message.createdAt} in ${message.channel.name}`)
                     .attachFiles(message.attachments.array());
-                channelLog.send(deletedComment);
+                channel.send(deletedComment);
             }
         }
     } catch (err) {

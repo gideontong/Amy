@@ -43,7 +43,6 @@
         "ignores": ["-", "pls", "!", "?", ".", "~"]
     },
     "strings": {
-        "newMember": "Hey! Welcome to the Dudes of 708 Discord server. If you have questions about the server, ask anyone with the tag **Dudes of 708**. Questions about me, feel free to ask **Gideon#5433**. I don't respond to messages yet, but enjoy your stay!",
         "notAdmin": "don't you tell me what to do!",
         "isValorantTime": "it's time to play Valorant!",
         "notValorantTime": "it's not time to play Valorant...",

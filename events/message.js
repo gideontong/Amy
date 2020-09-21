@@ -3,7 +3,6 @@ const responses = require('../config/responses.json');
 const config = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const targets = config.targets;
-const strings = config.strings;
 
 // Imports from dependencies
 // const { geometric } = require('../lib/Poisson');
@@ -13,8 +12,8 @@ const log = require('log4js').getLogger('amy');
 
 // Handler for a sent message
 module.exports = async message => {
-    if (isIgnored(message, targets.ignores, "!")) return;
-    if (message.content[0] == "!") {
+    if (isIgnored(message, targets.ignores, config.prefix)) return;
+    if (message.content[0] == config.prefix) {
         commands = message.content.split(" ");
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;

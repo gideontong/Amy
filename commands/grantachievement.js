@@ -11,7 +11,7 @@ const log = require('log4js').getLogger('amy');
 // Wrapper for Achievement.grantAchievement()
 module.exports = async (bot, msg, args) => {
     var snowflake = msg.author.id;
-    if (args[0].startsWith('!')) {
+    if (args[0].startsWith(config.prefix)) {
         args[0] = args[1];
         if (args[2]) {
             let sfArg = extractSnowflake(args[2]);

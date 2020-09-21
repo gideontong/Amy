@@ -10,7 +10,7 @@ const log = require('log4js').getLogger('amy');
 // Handler for a deleted message
 module.exports = async message => {
     if (message.author.bot) return;
-    if (message.content[0] == "?" || message.content[0] == "!") return;
+    if (message.content[0] == "?" || message.content[0] == config.prefix) return;
     log.info(`${message.author.tag} ${message.author} deleted "${message.cleanContent}" [${message.attachments.keyArray().length}]`);
     if (message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()

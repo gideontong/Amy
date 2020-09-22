@@ -1,5 +1,6 @@
 const reqEvent = (event) => require(`./events/${event}`);
 module.exports = client => {
+    client.on('guildCreate', reqEvent('guildCreate'));
     client.on('guildMemberAdd', reqEvent('guildMemberAdd'));
     client.on('guildMemberUpdate', reqEvent('guildMemberUpdate'));
     client.on('message', reqEvent('message'));

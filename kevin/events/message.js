@@ -15,7 +15,6 @@ module.exports = async message => {
     if (message.author == targets.kevin || message.author == targets.gideon) {
         if (message.content[0] == "?") {
             commands = message.content.split(" ");
-            message.delete();
             try {
                 cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
             } catch {

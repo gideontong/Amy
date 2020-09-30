@@ -12,7 +12,8 @@
     "soon":[
         "riotlogin",
         "riotlogout",
-        "valorant"
+        "valorant",
+        "ping"
     ],
     "admins": [
         "132525049977503744"

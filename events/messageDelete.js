@@ -23,10 +23,12 @@ module.exports = async message => {
                 channel.send(deletedComment);
                 let attachments = message.attachments.array();
                 if (attachments.length > 0) {
+                    s = ''
+                    attachments.forEach(element => s += element + '\n')
                     const deletedAttachments = new MessageEmbed()
                         .setAuthor(message.author.tag, message.author.displayAvatarURL())
                         .setTitle("The last deleted message also contained attachments!")
-                        .setDescription(`**Guild:** ${message.guild.name}\n**Message ID:** ${message.id}`)
+                        .setDescription(`**Guild:** ${message.guild.name}\n**Message ID:** ${message.id}\n\n__Attachments__\n${s}`)
                         .setFooter(`${message.createdAt} in ${message.channel.name}`);
                     channel.send(deletedAttachments);
                 }

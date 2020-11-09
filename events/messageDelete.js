@@ -19,9 +19,17 @@ module.exports = async message => {
                     .setAuthor(message.author.tag, message.author.displayAvatarURL())
                     .setTitle(`Message deleted in ${message.guild.name}!`)
                     .setDescription(message.content)
-                    .setFooter(`${message.createdAt} in ${message.channel.name}`)
-                    .attachFiles(message.attachments.array());
+                    .setFooter(`${message.createdAt} in ${message.channel.name}`);
                 channel.send(deletedComment);
+                let attachments = message.attachments.array();
+                if (attachments.length > 0) {
+                    const deletedAttachments = new MessageEmbed()
+                        .setAuthor(message.author.tag, message.author.displayAvatarURL())
+                        .setTitle("The last deleted message also contained attachments!")
+                        .setDescription(`**Guild:** ${message.guild.name}\n**Message ID:** ${message.id}`)
+                        .setFooter(`${message.createdAt} in ${message.channel.name}`);
+                    channel.send(deletedAttachments);
+                }
             }
         }
     } catch (err) {

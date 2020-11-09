@@ -24,7 +24,7 @@ module.exports = async message => {
                 let attachments = message.attachments.array();
                 if (attachments.length > 0) {
                     s = ''
-                    attachments.forEach(element => s += element + '\n')
+                    attachments.forEach(element => s += element.url + '\n')
                     const deletedAttachments = new MessageEmbed()
                         .setAuthor(message.author.tag, message.author.displayAvatarURL())
                         .setTitle("The last deleted message also contained attachments!")

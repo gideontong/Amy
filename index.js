@@ -1,13 +1,12 @@
-// Imports from local config files
-const secrets = require('./config/secrets.json');
-const config = require('./config/config.json');
-const activity = config.activity.amy;
+// Local imports
+const { amy } = require('./config/secrets.json');
+const { prefix, activities } = require('./config/config.json');
+const { generateLogName } = require('./lib/MagicNumbers');
 
-// Imports from dependencies
+// Dependency imports
 const Discord = require('discord.js');
 const log4js = require('log4js');
 const client = new Discord.Client();
-const { generateLogName } = require('./lib/MagicNumbers');
 
 // Logger setup
 log4js.configure({
@@ -31,14 +30,15 @@ const log = log4js.getLogger('amy');
 
 // Client setup
 require('./event.js')(client);
-require('./kevin/main.js');
+require('./kevin/index.js');
 
 client.on('ready', () => {
-    log.info(`Starting up as ${client.user.tag}`)
-    client.user.setActivity(activity.activity, { type: activity.type })
-        .then(presence => log.info(`Successfully set current presence as ${presence.activities[0].type} ${presence.activities.toString()}`))
-        .catch(log.error);
-    log.info('Discord client is now online');
+    log.info(`Starting up as ${client.user.tag} with prefix ${prefix}`);
+    setInterval(() => {
+        let index = Math.floor(Mat.random() * activities.length);
+        client.user.setActivity(activities.amy[index].text, activities.amy[index].options)
+            .catch(log.error);
+    }, activities.interval * 1000);
 });
 
-client.login(secrets.token);
+client.login(amy);

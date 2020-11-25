@@ -10,7 +10,7 @@
                 }
             },
             {
-                "activity": "video games and kissing",
+                "text": "video games and kissing",
                 "options": {
                     "type": "STREAMING",
                     "url": "https://twitch.tv/dudesof708"
@@ -19,18 +19,27 @@
         ],
         "kevin": [
             {
-                "activity": "your mom",
+                "text": "your mom",
                 "options": {
                     "type": "WATCHING"
                 }
             },
             {
-                "activity": "gentleman boners",
+                "text": "gentleman boners",
                 "options": {
                     "type": "STREAMING",
                     "url": "https://twitch.tv/dudesof708"
                 }
             }
+        ]
+    },
+    "channels": {
+        "logging": [
+            "735272343773118504"
+        ],
+        "disabled": [
+            "698357411706306701",
+            "727649976766693416"
         ]
     }
 }

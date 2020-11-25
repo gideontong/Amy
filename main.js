@@ -28,7 +28,6 @@ log4js.configure({
     }
 });
 const log = log4js.getLogger('amy');
-// const sublog = log4js.getLogger('kevin');
 
 // Client setup
 require('./event.js')(client);

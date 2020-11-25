@@ -1,4 +1,4 @@
-const { snowflakes } = require('../config/config.json');
+const { logging } = require('../config/config.json').channels;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -6,17 +6,14 @@ module.exports = async guild => {
     log.info(`Left guild ${guild.name}`);
     try {
         if (guild.available) {
-            let loggerGuild = guild.client.guilds.resolve(snowflakes.guilds.logging);
-            if (loggerGuild) {
-                let channel = loggerGuild.channels.resolve(snowflakes.channels.logging);
-                if (channel && channel.type == 'text') {
-                    const guildNotifcation = new MessageEmbed()
-                        .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())
-                        .setTitle(`Left server ${guild.name}`)
-                        .setDescription(`Has ${guild.memberCount} members and was originally created on ${guild.createdAt}`)
-                        .setFooter(`Originally joined at ${guild.joinedAt}`);
-                    channel.send(guildNotifcation);
-                }
+            let channel = client.channels.cache.get(logging);
+            if (channel && channel.type == 'text') {
+                const notification = new MessageEmbed()
+                    .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())
+                    .setTitle(`Left server ${guild.name}`)
+                    .setDescription(`Has ${guild.memberCount} members and was originally created on ${guild.createdAt}`)
+                    .setFooter(`Originally joined at ${guild.joinedAt}`);
+                channel.send(notification);
             }
         }
     } catch (err) {

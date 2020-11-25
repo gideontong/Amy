@@ -3,10 +3,10 @@
     "version": "2.2.0",
     "description": "Your personal assisstant, reimagined",
     "author": "Gideon Tong <gideon@gideontong.com",
-    "main": "main.js",
+    "main": "index.js",
     "scripts": {
-        "start": "node main.js",
-        "dev": "node main.js",
+        "start": "node index.js",
+        "dev": "node index.js",
         "test": "jest"
     },
     "repository": {

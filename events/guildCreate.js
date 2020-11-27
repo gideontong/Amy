@@ -2,6 +2,10 @@ const { logging } = require('../config/config.json').channels;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
+/**
+ * Creates an alert when the bot joins a new server
+ * @param {Guild} guild The guild that was joined
+ */
 module.exports = async guild => {
     const client = guild.client;
     log.info(`Joined new guild ${guild.name}`);

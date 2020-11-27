@@ -2,6 +2,10 @@ const { logging } = require('../config/config.json').channels;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
+/**
+ * Creates an alert when the bot is kicked from a server
+ * @param {Guild} guild The guild that was left
+ */
 module.exports = async guild => {
     log.info(`Left guild ${guild.name}`);
     try {

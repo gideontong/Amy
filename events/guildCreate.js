@@ -11,14 +11,16 @@ module.exports = async guild => {
     log.info(`Joined new guild ${guild.name}`);
     try {
         if (guild.available) {
-            let channel = client.channels.cache.get(logging);
-            if (channel && channel.type == 'text') {
-                const notification = new MessageEmbed()
-                    .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())
-                    .setTitle(`Joined new server ${guild.name}`)
-                    .setDescription(`Has ${guild.memberCount} members and was originally created on ${guild.createdAt}`)
-                    .setFooter(`Joined at ${guild.joinedAt}`);
-                channel.send(notification);
+            const notification = new MessageEmbed()
+                .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())
+                .setTitle(`Joined new server ${guild.name}`)
+                .setDescription(`Has ${guild.memberCount} members and was originally created on ${guild.createdAt}`)
+                .setFooter(`Joined at ${guild.joinedAt}`);
+            for (channelID of logging) {
+                let channel = client.channels.cache.get(channelID);
+                if (channel && channel.type == 'text') {
+                    channel.send(notification);
+                }
             }
         }
     } catch (err) {

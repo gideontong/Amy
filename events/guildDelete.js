@@ -10,7 +10,7 @@ module.exports = async guild => {
     log.info(`Left guild ${guild.name}`);
     try {
         if (guild.available) {
-            let channel = client.channels.cache.get(logging);
+            let channel = guild.client.channels.cache.get(logging);
             if (channel && channel.type == 'text') {
                 const notification = new MessageEmbed()
                     .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())

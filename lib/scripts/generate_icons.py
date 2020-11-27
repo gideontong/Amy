@@ -1,9 +1,9 @@
 #!/bin/python3
 
 """
-Usage: generateIcons folderName
+Usage: generate_icons folderName
 
-generateIcons will automatically find all .pngs in folderName and drop
+generate_icons will automatically find all .pngs in folderName and drop
 64x64 versions in a 64 folder, 30x30 versions in a 30 folder, 
 64x64 grayscale versions in a disabled64 folder, and 30x30 grayscale
 versions in a disabled30 folder.

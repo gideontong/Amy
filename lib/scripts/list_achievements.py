@@ -1,7 +1,7 @@
 #!/bin/python3
 
 """
-Usage: listAchievements (achievements.json) (--public/secret)
+Usage: list_achievements (achievements.json) (--public/secret)
 
 Lists all achievements, if no arguments are given, for
 a file in the same directory. Otherwise uses the file

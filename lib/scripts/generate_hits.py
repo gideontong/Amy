@@ -1,7 +1,7 @@
 #!/bin/python3
 
 """
-Usage: generateHits -c hits -p proxylist
+Usage: generate_hits -c hits -p proxylist
 
 What do you think this does? The counter is there for a reason.
 """

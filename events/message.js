@@ -4,15 +4,15 @@ const config = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const targets = config.targets;
 
-// Imports from dependencies
-// const { geometric } = require('../lib/Poisson');
 const { isIgnored } = require('../lib/Validation');
-const { updateStatistic, getStatistic, setStatistic } = require('../lib/Achievement');
 const log = require('log4js').getLogger('amy');
 
-// Handler for a sent message
+/**
+ * Handles messages for newly sent messages, parsing for commands and actions
+ * @param {Message} message Message that was newly sent
+ */
 module.exports = async message => {
-    if (isIgnored(message, targets.ignores, config.prefix)) return;
+    if (isIgnored(message)) return;
     if (message.content[0] == config.prefix) {
         commands = message.content.split(" ");
         toRun = commands[0].slice(1).toLowerCase();
@@ -50,24 +50,9 @@ module.exports = async message => {
     }
     sanitizedMessage = message.content.toLowerCase();
     if (sanitizedMessage.includes(' of leo')) {
-        // Replace with Poisson class in the future
         response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
             + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
         message.reply(response);
         log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
-    } else if (sanitizedMessage.substr(0, 3) == "amy" || sanitizedMessage.includes(message.client.user.id)) {
-        if (Math.random() < 0.05) {
-            message.reply("you called me?");
-        }
-        log.info(`${message.author.tag} ${message.author} mentioned me`)
-    } else if (sanitizedMessage.includes('leo is gay')) {
-        require('../commands/grantachievement')(message.client, message, ['leoGay']);
-    } else if (sanitizedMessage.startsWith('eh')) {
-        const regex = RegExp('([a-df-gi-z0-9])', 'g');
-        if (!regex.test(sanitizedMessage)) {
-            let values = await getStatistic(message.author.id, 'say_eh');
-            values[sanitizedMessage.length - 1]++;
-            await setStatistic(message.author.id, values);
-        }
     }
 }

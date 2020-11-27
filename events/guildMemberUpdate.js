@@ -1,25 +1,25 @@
-// Imports from local config files
-const config = require('../config/config.json');
-const targets = config.targets;
-
-// Imports from dependencies
-const { Message, MessageAttachment } = require('discord.js');
-const { grantAchievement } = require('../lib/Achievement');
+const { guilds, channels } = require('../config/config.json');
+const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
-// Handler for a member update
+/**
+ * Emits a server alert if someone changes their nickname
+ * @param {GuildMember} oldMember Old member object before it was updated
+ * @param {GuildMember} newMember New member object after it was updated
+ */
 module.exports = async (oldMember, newMember) => {
-    /*
-    if (newMember.nickname) {
-        if (newMember.nickname.toLowerCase().includes('amy') && newMember.id != targets.amy) {
-            log.info(`${newMember.tag} ${newMember} changed their nickname to include Amy`);
-            let channel = newMember.client.channels.cache.get(targets.general);
-            const buffer = await grantAchievement(newMember.id, 'becomeAmy');
-            if (buffer) {
-                const image = new MessageAttachment(buffer);
-                channel.send(`<@${newMember.id}> I shouldn't even be surprised you did this...`, image);
+    if (newMember.guild.available && guilds.enabled.includes(newMember.guild.id)) {
+        if (newMember.nickname) {
+            log.info(`${newMember.user.tag} updated their nickname to ${newMember.nickname}`);
+            let message = new MessageEmbed()
+                .setAuthor(newMember.user.tag, newMember.user.displayAvatarURL())
+                .setColor('GOLD')
+                .setTitle('Nickname was updated!');
+            if (oldMember.nickname) {
+                message.setDescription(`Nickname was changed from ${oldMember.nickname} to ${newMember.nickname}.`);
+            } else {
+                message.setDescription(`A new nickname was added, which was ${newMember.nickname}.`);
             }
         }
     }
-    */
 }

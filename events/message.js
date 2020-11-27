@@ -1,9 +1,5 @@
-// Imports from local config files
-const responses = require('../config/responses.json');
-const config = require('../config/config.json');
+const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
-const targets = config.targets;
-
 const { isIgnored } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
@@ -12,8 +8,8 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} message Message that was newly sent
  */
 module.exports = async message => {
-    if (isIgnored(message)) return;
-    if (message.content[0] == config.prefix) {
+    if (isIgnored(message, prefix)) return;
+    if (message.content[0] == prefix) {
         commands = message.content.split(" ");
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;

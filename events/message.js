@@ -10,12 +10,12 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (isIgnored(message, prefix)) return;
     if (message.content[0] == prefix) {
-        commands = message.content.split(" ");
+        commands = message.content.split(' ');
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {
-            if (message.author != targets.gideon) {
-                if (permissions.soon.includes(toRun)) {
+            if (!permissions.users.admin.includes(message.author)) {
+                if (permissions.commands.unreleased.includes(toRun)) {
                     message.reply('Command coming soon!');
                     log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
                     return;
@@ -36,11 +36,6 @@ module.exports = async message => {
             cmdFile(message.client, message, commands).catch(err => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
-            let uses = await updateStatistic(message.author.id, `use_${toRun}`, 1)
-            if (uses == 1) {
-                let cmdUses = await updateStatistic(message.author.id, 'commands', 1);
-                if (cmdUses >= config.constants.uniqueCommands) require('../commands/grantachievement')(message.client, message, ['useCommandsAll']);
-            }
         }
         return;
     }

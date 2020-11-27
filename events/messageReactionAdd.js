@@ -1,4 +1,3 @@
-// Dependencies
 const { updateExistingPoll } = require('../lib/Survey');
 
 module.exports = async (reaction, user) => {

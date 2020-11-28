@@ -7,9 +7,8 @@ const { MessageAttachment } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running locate command
-module.exports = async (bot, msg, args) => {
+module.exports = async (client, msg, args) => {
     let searchString = msg.content.substring(args[0].length + 1).toLowerCase();
-    // msg.guild.members.fetch(targets.leo);
     function isLeo(string) {
         let search = [
             targets.leo,

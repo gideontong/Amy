@@ -1,11 +1,11 @@
-// Config
-const { links } = require('../config/config.json');
+const link = 'https://github.com/gideontong/Amy/blob/master/docs/CHANGELOG.md';
 
-// Dependencies
-const log = require('log4js').getLogger('amy');
-
-// changelog handler
-module.exports = async (bot, msg, args) => {
-    msg.channel.send(`You can find the latest changes here: ${links.changelog}`);
-    log.info(`${msg.author.tag} ${msg.author} requested the changelog`);
+/**
+ * Returns the changelog
+ * @param {Client} client Discord server client
+ * @param {Message} msg Message to execute
+ * @param {Array} args Arguments to execute
+ */
+module.exports = async (client, msg, args) => {
+    msg.channel.send(`You can find the latest changes here: ${link}`);
 }

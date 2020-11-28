@@ -1,21 +1,27 @@
 {
-    "admin": [
-        "clear",
-        "welcome",
-        "generateachievement",
-        "grantachievement",
-        "revokeachievement",
-        "printemoji",
-        "loadingscreentips",
-        "countreactions"
-    ],
-    "soon":[
-        "riotlogin",
-        "riotlogout",
-        "valorant",
-        "ping"
-    ],
-    "admins": [
-        "132525049977503744"
-    ]
+    "commands": {
+        "admin": [
+            "clear",
+            "welcome",
+            "generateachievement",
+            "grantachievement",
+            "revokeachievement",
+            "countreactions",
+            "tell",
+            "say"
+        ],
+        "unreleased": [
+            "achievement",
+            "achievements",
+            "sudo",
+            "poll"
+        ]
+    },
+    "users": {
+        "admin": [
+            "132525049977503744"
+        ],
+        "moderators": [
+        ]
+    }
 }

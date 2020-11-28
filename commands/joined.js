@@ -1,11 +1,14 @@
-// Imports from dependencies
 const { humanSnowflake } = require('../lib/Today');
 const { validSnowflake } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy')
 
-// new Date(ID ? (ID / 4194304) + 1420070400000 : 0).toLocaleString()
-// Handler for running joined command
-module.exports = async (bot, msg, args) => {
+/**
+ * Check when someone created a Discord account
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Command arguments
+ */
+module.exports = async (client, msg, args) => {
     var id = msg.author.id;
     if (args.length > 1) {
         if (args.length > 2) {

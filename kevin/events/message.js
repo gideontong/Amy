@@ -1,52 +1,58 @@
 // Imports from local config files
-const responses = require('../../config/responses.json');
-const config = require('../../config/config.json');
-const targets = config.targets;
-const sarcasm = responses.sarcasticKevin;
+const { prefix,
+    probabilities,
+    channels,
+    emotes } = require('../../config/config.json');
+const { sarcasm } = require('../../config/responses.json');
+const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies
-const log = require('log4js').getLogger('kevin');
 const { isIgnored } = require('../../lib/Validation');
-const { getStatistic, setStatistic } = require('../../lib/Achievement');
+const log = require('log4js').getLogger('kevin');
 
-// Handler for a sent message
+/**
+ * Handles messages for newly sent messages, parsing for commands and actions
+ * @param {Message} message Message that was newly sent
+ */
 module.exports = async message => {
-    if (isIgnored(message, config.targets.ignores, "?")) return;
-    if (message.author == targets.kevin || message.author == targets.gideon) {
-        if (message.content[0] == "?") {
-            commands = message.content.split(" ");
-            try {
-                cmdFile = require(`../commands/${commands[0].slice(1)}.js`);
-            } catch {
-                log.warn(`${message.author.tag} ${message.author} tried to run an invalid command`);
-                return;
+    if (isIgnored(message, prefix)) return;
+    if (message.content[0] == prefix.kevin) {
+        commands = message.content.split(' ');
+        toRun = commands[0].slice(1).toLowerCase();
+        if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
+        try {
+            if (!permissions.users.admin.includes(message.author)) {
+                if (permissions.commands.unreleased.includes(toRun)) {
+                    message.reply('Command coming soon!');
+                    log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
+                    return;
+                } else if (permissions.admin.includes(toRun)) {
+                    message.reply("You don't have permission to do that!");
+                    log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
+                    return;
+                }
             }
-            if (!cmdFile) {
-                log.warn(`${message.author.tag} ${message.author} ran a command that doesn't exist`);
-                return;
-            } else {
-                cmdFile(message.client, message, commands).catch(err => {
-                    log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
-                })
-            }
+            cmdFile = require(`../commands/${toRun}.js`);
+        } catch {
+            log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
+            return;
         }
-    } else if (Math.random() < config.constants.kevinSarcastic && !config.targets.disabledChannels.includes(message.channel.id)) {
+        if (!cmdFile) {
+            log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
+        } else {
+            cmdFile(message.client, message, commands).catch(err => {
+                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+            })
+        }
+        return;
+    }
+    if (Math.random() < probabilities.kevinReply && !channels.disabled.includes(message.channel.id)) {
         if (Math.random() < 0.5) {
             let pick = Math.floor(Math.random() * sarcasm.length);
             message.reply(sarcasm[pick]);
-            let replies = await getStatistic(message.author.id, 'discover_comment');
-            if (!replies) replies = [];
-            replies[pick] = true;
-            if(replies.reduce((total, forward) => {
-                return total + forward;
-            }) == sarcasm.length) {
-                require('../../commands/grantachievement')(message.client, message, ['allKevinResponses']);
-            }
-            await setStatistic(message.author.id, 'discover_comment', replies);
         } else {
-            message.react(message.guild.emojis.cache.get(config.emoji.pepeYikes))
+            message.react(message.guild.emojis.cache.get(emotes.yikes))
                 .catch(log.error);
-            await setStatistic(message.author.id, 'discover_pepeyikes', true);
         }
         log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
     }

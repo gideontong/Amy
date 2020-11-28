@@ -1,11 +1,11 @@
-// Imports from local config files
-const config = require('../config/config.json');
+const link = 'https://github.com/gideontong/Amy';
 
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-
-// Handler for running github command
-module.exports = async (bot, msg, args) => {
-    msg.channel.send(config.links.github);
-    log.info(`${msg.author.tag} ${msg.author} requested the GitHub repo`);
+/**
+ * Returns the GitHub link
+ * @param {Client} client Discord client
+ * @param {Message} msg Command
+ * @param {Array} args Command arguments
+ */
+module.exports = async (client, msg, args) => {
+    msg.channel.send(`Check out Amy's GitHub repository here: ${link}`);
 }

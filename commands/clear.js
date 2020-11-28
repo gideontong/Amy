@@ -1,13 +1,13 @@
-// Imports from local config files
-const config = require('../config/config.json');
-const targets = config.targets;
-
-// Imports from dependencies
 const log = require('log4js').getLogger('amy');
 
-// Handler for running clear command
-module.exports = async (bot, msg, args) => {
-    var toClear = config.constants.clearHistory;
+/**
+ * Clear the specified last N messages
+ * @param {Client} client Discord server client
+ * @param {Message} msg Message to execute
+ * @param {Array} args Arguments to execute
+ */
+module.exports = async (client, msg, args) => {
+    var toClear = 10;
     var reply = "Just"
     if (args.length >= 2) {
         if (args.length > 2 || isNaN(args[1])) reply = "It's !clear (messages), but I";

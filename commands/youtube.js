@@ -1,11 +1,11 @@
-// Imports from local config files
-const links = require('../config/config.json').links;
+const link = 'https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA';
 
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-
-// Handler for running YouTube command
-module.exports = async (bot, msg, args) => {
-    msg.channel.send(links.youtube);
-    log.info(`${msg.author.tag} ${msg.author} requested the YouTube channel`);
+/**
+ * Returns the link to our YouTube channel
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Arguments
+ */
+module.exports = async (client, msg, args) => {
+    msg.channel.send(`Check out our YouTube channel! ${link}`);
 }

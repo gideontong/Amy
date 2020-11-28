@@ -1,10 +1,13 @@
-// Dependencies
 const log = require('log4js').getLogger('amy');
 const { getInfo } = require('youtube-dl');
 
-// downloadvideo handler
-module.exports = async (bot, msg, args) => {
-    // TODO: input sanitation
+/**
+ * Downloads an online video and provides a download link
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Command arguments
+ */
+module.exports = async (client, msg, args) => {
     if (args.length != 2) return;
     let url = args[1];
     getInfo(url, [], function (err, data) {
@@ -14,7 +17,7 @@ module.exports = async (bot, msg, args) => {
             return;
         }
 
-        let description = data.description.length > 1500 ? data.description.substring(0, 1500) : data.description;
+        let description = data.description.length > 1000 ? data.description.substring(0, 1000) + '...' : data.description;
         let descLines = description.split(/\r?\n/);
         if (descLines.length > 5) {
             description = descLines[0];

@@ -19,38 +19,20 @@ const responses = [
     "Yes.",
     "Yes - definitely!",
     "You may rely on it.",
-    "As likely as Leo is gay.",
-    "Maybe after Leo passes this CS class?",
-    "Ask me after Amy gets married - *which might be never*.",
-    "You'll know as soon as quarantine ends."
-]
+    "As likely as <@578715287491182595> is gay.",
+    "Maybe after <@578715287491182595> passes this CS class?",
+    "Ask me after <@721503241531162707> gets married - *which might be never*.",
+    "You'll know as soon as quarantine ends.",
+    "Ask me when <@107890862679162880> and <@257613641698902016> get internships.",
+    "As likely as <@132525049977503744> leaving the house is."
+];
 
-// Imports from local config files
-const tips = require('../config/loading.json').messages;
-
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-const { selectN } = require('../lib/Today');
-
-// Handler for 8ball command
-module.exports = async (bot, msg, args) => {
-    const messages = selectN(tips, 3);
-    const ask = msg.content.substring(args[0].length + 1);
-    msg.channel.send(`Loading...`)
-        .then(msg => {
-            for (var i = 0; i < messages.length; i++) {
-                writeMessage(msg, messages[i], (i + 1) * 2000);
-            }
-            setTimeout(() => {
-                let response = responses[Math.floor(Math.random() * responses.length)];
-                msg.edit(`> ${ask}\n${response}`);
-            }, (messages.length + 1) * 2000, msg, responses, ask);
-        });
-    log.info(`${msg.author.tag} ${msg.author} requested an 8ball`);
-}
-
-function writeMessage(msg, text, timeout) {
-    setTimeout(() => {
-        msg.edit(`> ${text}\nLoading...`);
-    }, timeout, text)
+/**
+ * 8-ball command that responds with a random message
+ * @param {Client} client Discord bot client
+ * @param {Message} msg Message to execute command on
+ * @param {Array} args Arguments for the message
+ */
+module.exports = async (client, msg, args) => {
+    msg.reply(responses[Math.floor(Math.random() * responses.length)]);
 }

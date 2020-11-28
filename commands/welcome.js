@@ -1,12 +1,13 @@
-// Imports from local config files
-const config = require('../config/config.json');
-const targets = config.targets;
-
-// Imports from dependencies
+const { welcome } = require('../config/messages.json');
 const log = require('log4js').getLogger('amy');
 
-// Handler for running welcome command
-module.exports = async (bot, msg, args) => {
-    config.welcome.forEach(wText => msg.channel.send(wText));
+/**
+ * Responds with the server about messages
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Arguments
+ */
+module.exports = async (client, msg, args) => {
+    welcome.forEach(wText => msg.channel.send(wText));
     log.info(`${msg.author.tag} ${msg.author} triggered the welcome message in ${msg.channel}`);
 }

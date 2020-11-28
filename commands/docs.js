@@ -1,11 +1,11 @@
-// Imports from local config files
-const config = require('../config/config.json');
+const link = 'https://github.com/gideontong/Amy/blob/master/docs/README.md';
 
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-
-// Handler for running docs command
-module.exports = async (bot, msg, args) => {
-    msg.channel.send(config.links.docs);
-    log.info(`${msg.author.tag} ${msg.author} requested the documentation`);
+/**
+ * Sends a link for the Discord app docs
+ * @param {Client} client Discord server client
+ * @param {Message} msg Message to execute
+ * @param {Array} args Arguments to execute
+ */
+module.exports = async (client, msg, args) => {
+    msg.channel.send(`You can read Amy's documentation here: ${link}`);
 }

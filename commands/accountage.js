@@ -1,6 +1,5 @@
 const { timeSinceSnowflake } = require('../lib/Today');
 const { validSnowflake } = require('../lib/Validation');
-const { prefix } = require('../config/config.json');
 const log = require('log4js').getLogger('amy')
 
 /**

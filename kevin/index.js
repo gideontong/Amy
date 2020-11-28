@@ -11,7 +11,7 @@ const client = new Discord.Client();
 require('./event.js')(client);
 
 client.on('ready', () => {
-    log.info(`Starting up as ${client.user.tag} with prefix ${prefix}`);
+    log.info(`Starting up as ${client.user.tag} with prefix ${prefix.kevin}`);
     setInterval(() => {
         let index = Math.floor(Mat.random() * activities.length);
         client.user.setActivity(activities.kevin[index].text, activities.kevin[index].options)

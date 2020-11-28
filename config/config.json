@@ -1,5 +1,8 @@
 {
-    "prefix": "~",
+    "prefix": {
+        "amy": "~",
+        "kevin": "?"
+    },
     "activities": {
         "interval": 10,
         "amy": [
@@ -55,5 +58,8 @@
         "yikes": "699414631822786630",
         "yes": "729594115989176332",
         "no": "729594117017042964"
+    },
+    "probabilities": {
+        "kevinReply": 0.03
     }
 }

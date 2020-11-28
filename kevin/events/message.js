@@ -1,17 +1,18 @@
 // Imports from local config files
-const responses = require('../../config/responses.json');
-const config = require('../../config/config.json');
-const targets = config.targets;
-const sarcasm = responses.sarcasticKevin;
+const { prefix, probabilities } = require('../../config/config.json');
+const { sarcasm } = require('../../config/responses.json');
+const permissions = require('../config/permissions.json');
 
 // Imports from dependencies
-const log = require('log4js').getLogger('kevin');
 const { isIgnored } = require('../../lib/Validation');
-const { getStatistic, setStatistic } = require('../../lib/Achievement');
+const log = require('log4js').getLogger('kevin');
 
-// Handler for a sent message
+/**
+ * Handles messages for newly sent messages, parsing for commands and actions
+ * @param {Message} message Message that was newly sent
+ */
 module.exports = async message => {
-    if (isIgnored(message, config.targets.ignores, "?")) return;
+    if (isIgnored(message, prefix)) return;
     if (message.author == targets.kevin || message.author == targets.gideon) {
         if (message.content[0] == "?") {
             commands = message.content.split(" ");

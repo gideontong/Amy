@@ -7,7 +7,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} message Message that was deleted
  */
 module.exports = async message => {
-    if (message.author.bot || message.content.startsWith(config.prefix)) return;
+    if (message.author.bot || message.content.startsWith(config.prefix.amy)) return;
     log.info(`${message.author.tag} deleted ${message.id} from ${message.guild.name} (${message.channel.name})`);
     try {
         for (channelID of logging) {

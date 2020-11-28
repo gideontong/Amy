@@ -10,16 +10,17 @@ const helpEmbed = {
     }
 };
 
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-
-// Handler for help command
-module.exports = async (bot, msg, args) => {
+/**
+ * Returns the help screen
+ * @param {Client} client Discord client
+ * @param {Message} msg Command
+ * @param {Array} args Command arguments
+ */
+module.exports = async (client, msg, args) => {
     let repeat = Math.floor(Math.random() * 11);
     let embed = {
         "content": helpText.repeat(repeat),
         "embed": helpEmbed
     };
     msg.channel.send(embed);
-    log.info(`${msg.author.tag} ${msg.author} requested the help page`);
 }

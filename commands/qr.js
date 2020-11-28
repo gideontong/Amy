@@ -1,30 +1,24 @@
-// Imports from local config files
-const config = require('../config/config.json');
-const strings = config.strings.qr;
-const constants = config.constants;
-
-// Imports from dependencies
 const { MessageAttachment } = require('discord.js');
 const QRCode = require('qrcode');
 const log = require('log4js').getLogger('amy');
 
-// Handler for running qr command
-module.exports = async (bot, msg, args) => {
+/**
+ * Create a QR code
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Command arguments
+ */
+module.exports = async (client, msg, args) => {
     if (args < 2) {
-        msg.reply(strings.empty);
+        msg.reply('uh... your QR code can not be empty.');
         log.info(`${msg.author.tag} ${msg.author} tried to make an empty QR code`);
         return;
     }
     var text = msg.content.substring(args[0].length + 1);
     if (text.length > 512) {
-        msg.reply(strings.tooLarge);
+        msg.reply("I can't fit that much data into a QR code! Try asking <@756208954031341688> instead.");
         log.info(`${msg.author.tag} ${msg.author} tried to make a big QR code`);
         return;
-    }
-    if (Math.random() < constants.trollProbability) {
-        text = config.links.troll;
-        require('./grantachievement')(bot, msg, ['qrRickroll']);
-        log.info(`${msg.author.tag} ${msg.author} activated troll mode in generating QR code for ${msg.id}`)
     }
     QRCode.toDataURL(text, function (err, url) {
         const data = url.replace(/^data:image\/png;base64,/, '');

@@ -1,77 +1,4 @@
 {
-    "prefix": "~",
-    "activity": {
-        "amy": {
-            "type": "LISTENING",
-            "activity": "Andrew"
-        },
-        "kevin": {
-            "type": "WATCHING",
-            "activity": "your mom"
-        }
-    },
-    "snowflakes": {
-        "guilds": {
-            "logging": "548523285172715550"
-        },
-        "users": {
-        },
-        "channels": {
-            "logging": "735272343773118504",
-            "disabled": [
-                "698357411706306701",
-                "727649976766693416"
-            ]
-        },
-        "emotes": {
-            "yikes": "699414631822786630",
-            "yes": "729594115989176332",
-            "no": "729594117017042964"
-        }
-    },
-    "targets": {
-        "general": "698351596089901126",
-        "bots": "725163528729657365",
-        "gideon": "132525049977503744",
-        "amy": "209114126503378944",
-        "leo": "578715287491182595",
-        "kevin": "257613641698902016",
-        "disabledChannels": [
-            "698357411706306701",
-            "727649976766693416"
-        ],
-        "ignores": ["-", "pls", "!", "?", ".", "~"]
-    },
-    "strings": {
-        "notAdmin": "don't you tell me what to do!",
-        "isValorantTime": "it's time to play Valorant!",
-        "notValorantTime": "it's not time to play Valorant...",
-        "qr": {
-            "empty": "you want me to make a QR code with nothing in it?",
-            "tooLarge": "I'm not advanced enough to make a QR code that big, try asking Leo..."
-        }
-    },
-    "constants": {
-        "clearHistory": 100,
-        "trollProbability": 0.01,
-        "kevinSarcastic": 0.03,
-        "uniqueCommands": 16
-    },
-    "links": {
-        "website": "https://amyhelps.ml",
-        "github": "https://www.github.com/gideontong/Amy",
-        "docs": "https://www.github.com/gideontong/Amy/tree/master/docs",
-        "troll": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "asylum": "https://www.youtube.com/playlist?list=PL3q1l2_RQCr7fk0jyOmNwiUp9F6CaDyQd",
-        "youtube": "https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA",
-        "donate": "https://ko-fi.com/gideontong",
-        "changelog": "https://github.com/gideontong/amy/releases"
-    },
-    "emoji": {
-        "pepeYikes": "699414631822786630",
-        "yes": "729594115989176332",
-        "no": "729594117017042964"
-    },
     "welcome": [
         {
             "content": "Welcome to the **Dudes of 708** Discord server! We are Sixth College students at UCSD creating content that we enjoy. Subscribe to our YouTube channel and comment on what you want to see next. <:leoFoot:712427304587886603>?",
@@ -106,7 +33,7 @@
                 "color": 11933597,
                 "author": {
                     "name": "Who am I?",
-                    "icon_url": "https://cdn.discordapp.com/avatars/721503241531162707/e04f2a03baf23be92a9c937e79e973d0.png"
+                    "icon_url": "https://amyhelps.ml/images/bg_1.jpg"
                 },
                 "footer": {
                     "text": "2020 Major Release"
@@ -124,7 +51,7 @@
             "color": 14684947,
             "footer": {
                 "text": "Questions? Ask an admin!",
-                "icon_url": "https://leoz.me/images/Selfie%202.jpeg"
+                "icon_url": "https://amyhelps.ml/images/bg_1.jpg"
             }
         }
     }

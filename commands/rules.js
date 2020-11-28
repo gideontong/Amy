@@ -1,11 +1,11 @@
-// Imports from local config files
-const config = require('../config/config.json');
+const { rules } = require('../config/messages.json');
 
-// Imports from dependencies
-const log = require('log4js').getLogger('amy');
-
-// Handler for running rules command
-module.exports = async (bot, msg, args) => {
-    msg.channel.send(config.rules);
-    log.info(`${msg.author.tag} ${msg.author} asked for the ruels in ${msg.channel}`);
+/**
+ * Returns 708 server rules
+ * @param {Client} client Discord server client
+ * @param {Message} msg Command
+ * @param {Array} args Arguments
+ */
+module.exports = async (client, msg, args) => {
+    msg.channel.send(rules);
 }

@@ -6,7 +6,8 @@
             "generateachievement",
             "grantachievement",
             "revokeachievement",
-            "countreactions"
+            "countreactions",
+            "tell"
         ],
         "unreleased": [
             "valorant",

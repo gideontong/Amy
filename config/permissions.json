@@ -6,7 +6,6 @@
             "generateachievement",
             "grantachievement",
             "revokeachievement",
-            "printemoji",
             "countreactions"
         ],
         "unreleased": [
@@ -17,7 +16,8 @@
             "achievements",
             "qr",
             "registergithub",
-            "sudo"
+            "sudo",
+            "poll"
         ]
     },
     "users": {

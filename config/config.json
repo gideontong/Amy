@@ -18,6 +18,18 @@
                     "type": "STREAMING",
                     "url": "https://twitch.tv/dudesof708"
                 }
+            },
+            {
+                "text": "teach boyfriend coding",
+                "options": {
+                    "type": "PLAYING"
+                }
+            },
+            {
+                "text": "handholding",
+                "options": {
+                    "type": "COMPETING"
+                }
             }
         ],
         "kevin": [
@@ -32,6 +44,12 @@
                 "options": {
                     "type": "STREAMING",
                     "url": "https://twitch.tv/dudesof708"
+                }
+            },
+            {
+                "text": "longest porn video",
+                "options": {
+                    "type": "COMPETING"
                 }
             }
         ]

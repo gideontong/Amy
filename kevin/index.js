@@ -1,9 +1,8 @@
-// Imports from local config files
-const secrets = require('../config/secrets.json');
-const config = require('../config/config.json');
-const activity = config.activity.kevin;
+// Local imports
+const { kevin } = require('../config/secrets.json');
+const { prefix, activities } = require('../config/config.json');
 
-// Logger
+// Dependency imports
 const Discord = require('discord.js');
 const log = require('log4js').getLogger('kevin');
 const client = new Discord.Client();
@@ -12,11 +11,12 @@ const client = new Discord.Client();
 require('./event.js')(client);
 
 client.on('ready', () => {
-    log.info(`Starting up as ${client.user.tag}`);
-    client.user.setActivity(activity.activity, { type: activity.type })
-        .then(presence => log.info(`Successfully set current presence as ${presence.activities[0].type} ${presence.activities.toString()}`))
-        .catch(log.error);
-    log.info('Discord subclient is now online');
+    log.info(`Starting up as ${client.user.tag} with prefix ${prefix}`);
+    setInterval(() => {
+        let index = Math.floor(Mat.random() * activities.length);
+        client.user.setActivity(activities.kevin[index].text, activities.kevin[index].options)
+            .catch(log.error);
+    }, activities.interval * 1000);
 });
 
-client.login(secrets.token2);
+client.login(kevin);

@@ -26,7 +26,7 @@ const responses = [
 ]
 
 // Imports from local config files
-const tips = require('../config/loading.json').messages;
+// const tips = require('../config/loading.json').messages;
 
 // Imports from dependencies
 const log = require('log4js').getLogger('amy');
@@ -34,7 +34,7 @@ const { selectN } = require('../lib/Today');
 
 // Handler for 8ball command
 module.exports = async (bot, msg, args) => {
-    const messages = selectN(tips, 3);
+    const messages = "";
     const ask = msg.content.substring(args[0].length + 1);
     msg.channel.send(`Loading...`)
         .then(msg => {

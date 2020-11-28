@@ -1,22 +1,17 @@
-// Imports from local config files
-const config = require('../config/config.json');
-const targets = config.targets;
-
-// Imports from dependencies
+const { trolled } = require('../config/snowflakes.json');
 const { MessageAttachment } = require('discord.js');
-const log = require('log4js').getLogger('amy');
 
-// Handler for running locate command
+/**
+ * Easter egg to respond with a map when Leo is tagged
+ * @param {Client} client Discord client
+ * @param {Message} msg Command
+ * @param {Array} args Arguments
+ */
 module.exports = async (client, msg, args) => {
     let searchString = msg.content.substring(args[0].length + 1).toLowerCase();
     function isLeo(string) {
-        let search = [
-            targets.leo,
-            msg.guild.members.fetch(targets.leo).nickname,
-            "leo"
-        ];
-        for (var i = 0; i < search.length; i++) {
-            if (string.includes(search[i])) return true;
+        for (var i = 0; i < trolled.length; i++) {
+            if (string.includes(trolled[i])) return true;
         }
         return false;
     }

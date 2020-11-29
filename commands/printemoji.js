@@ -10,7 +10,7 @@ module.exports = async (client, msg, args) => {
     var emoji;
     if (isNaN(args[1])) {
         let search = args[1].toLowerCase();
-        let emojis = client.emoji.cache.array();
+        let emojis = client.emojis.cache.array();
         for (potential of emojis) {
             if (search == potential.name.toLowerCase()) {
                 emoji = potential;

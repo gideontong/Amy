@@ -46,14 +46,18 @@ module.exports = async message => {
         }
         return;
     }
-    if (Math.random() < probabilities.kevinReply && !channels.disabled.includes(message.channel.id)) {
-        if (Math.random() < 0.5) {
-            let pick = Math.floor(Math.random() * sarcasm.length);
-            message.reply(sarcasm[pick]);
-        } else {
-            message.react(message.guild.emojis.cache.get(emotes.yikes))
-                .catch(log.error);
+    try {
+        if (Math.random() < probabilities.kevinReply && !channels.disabled.includes(message.channel.id)) {
+            if (Math.random() < 0.5) {
+                let pick = Math.floor(Math.random() * sarcasm.length);
+                message.reply(sarcasm[pick]);
+            } else {
+                message.react(message.guild.emojis.cache.get(emotes.yikes))
+                    .catch(log.error);
+            }
+            log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
         }
-        log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
+    } catch (err) {
+        log.error(`Something... happened? Error was: ${err}`);
     }
 }

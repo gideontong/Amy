@@ -39,11 +39,15 @@ module.exports = async message => {
         }
         return;
     }
-    let sanitizedMessage = message.content.toLowerCase();
-    if (sanitizedMessage.includes(' of leo')) {
-        response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
-            + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
-        message.reply(response);
-        log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
+    try {
+        let sanitizedMessage = message.content.toLowerCase();
+        if (sanitizedMessage.includes(' of leo')) {
+            response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
+                + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
+            message.reply(response);
+            log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
+        }
+    } catch (err) {
+        log.error(`Something... happened? Error: ${err}`);
     }
 }

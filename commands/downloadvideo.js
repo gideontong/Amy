@@ -1,3 +1,4 @@
+const { prefix } = require('../config/config.json');
 const log = require('log4js').getLogger('amy');
 const { getInfo } = require('youtube-dl');
 
@@ -8,7 +9,9 @@ const { getInfo } = require('youtube-dl');
  * @param {Array} args Command arguments
  */
 module.exports = async (client, msg, args) => {
-    if (args.length != 2) return;
+    if (args.length != 2) {
+        msg.channel.send(`To download a video, use ${prefix.amy}downloadvideo [URL]`);
+    }
     let url = args[1];
     getInfo(url, [], function (err, data) {
         if (err) {

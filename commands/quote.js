@@ -13,8 +13,8 @@ module.exports = async (client, msg, args) => {
     const color = Math.floor(Math.random() * colors);
     const quote = new MessageEmbed()
         .setColor(color)
-        .setDescription(`*${quote[index].text}*`)
-        .setFooter(`- ${quote[index].author}`)
+        .setDescription(`*${quotes[index].text}*`)
+        .setFooter(`- ${quotes[index].author}`)
         .setTitle(`Random Quote #${index + 1}`);
     msg.channel.send(quote);
 }

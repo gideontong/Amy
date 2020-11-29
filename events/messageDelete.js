@@ -1,4 +1,4 @@
-const { logging } = require('../config/config.json').channels;
+const { prefix, channels } = require('../config/config.json').channels;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -7,10 +7,10 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} message Message that was deleted
  */
 module.exports = async message => {
-    if (message.author.bot || message.content.startsWith(config.prefix.amy)) return;
+    if (message.author.bot || message.content.startsWith(prefix.amy)) return;
     log.info(`${message.author.tag} deleted ${message.id} from ${message.guild.name} (${message.channel.name})`);
     try {
-        for (channelID of logging) {
+        for (channelID of channels.logging) {
             let channel = message.client.channels.cache.get(channelID);
             if (channel && channel.type == 'text') {
                 const deletedComment = new MessageEmbed()

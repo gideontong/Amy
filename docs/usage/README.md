@@ -19,14 +19,16 @@ Users have access to the following commands:
 | Command                     | Description                                                      |
 |-----------------------------|------------------------------------------------------------------|
 | `8ball [question]`          | Find out your future!                                            |
+| `about`                     | Get an animated help screen that takes you to this page.         |
 | `accountage (user)`         | See how old you (or your friends') account is.                   |
-| `achievement [achievement]` | See details about an achievement (non-secret achievements only). |
-| `achievements (user)`       | See your (or your friends') achievements.                        |
 | `annoy [user]`              | Annoy someone.                                                   |
 | `changelog`                 | See the most recent changes to Amy.                              |
+| `dice`                      | Do a dice roll!                                                  |
+| `diceroll`                  | Do a dice roll!                                                  |
 | `docs`                      | Learn to use Amy.                                                |
 | `donate`                    | Get a donate link to support the devs.                           |
 | `downloadvideo [link]`      | Get a direct link to download* a video.                          |
+| `emoji [name]`              | Print any emoji from any server, even animated ones.             |
 | `github`                    | See how Amy runs?                                                |
 | `help`                      | Get an animated help screen that takes you to this page.         |
 | `howold (user)`             | See how old you (or your friends') account is.                   |
@@ -35,9 +37,9 @@ Users have access to the following commands:
 | `locate [user] (zoom)`      | Find a Discord member on the world wide map.                     |
 | `ping`                      | Pong!                                                            |
 | `qr [data]`                 | Make a QR code.                                                  |
-| `registergithub [username]` | Register your GitHub username with Amy.                          |
+| `roll`                      | Do a dice roll!                                                  |
 | `rules`                     | See the server rules.                                            |
-| `sudo (command)`            | Make a sandwich.                                                 |
+| `twitch`                    | Watch the Dudes of 708 on Twitch!                                |
 | `website`                   | Find out more about Amy.                                         |
 | `youtube`                   | See what Amy is sharing with the world? If you're into that?     |
 
@@ -51,10 +53,5 @@ On top of normal user permissions, admins also get access to the following comma
 |---------------------------------|---------------------------------------------------------------------|
 | `clear (number)`                | Clear a certain number of messages (default: 100).                  |
 | `countreactions`                | Generates an admin-only Map of all server-wide reactions (beta!).   |
-| `generateachievement (text)`    | Make a fake achievement banner using the given text.                |
-| `grantachievement [id] (user)`  | Grant an achievement to yourself or another user.                   |
-| `loadingscreentips`             | Show some loading screen tips.                                      |
-| `printemoji [snowflake]`        | Print any emoji from any server, even animated ones.                |
-| `revokeachievement [id] (user)` | Revoke an achievement from yourself or another user.                |
 | `tell (channel) [message]`      | Make Amy repeat after you. Sends in the given channel if specified. |
 | `welcome`                       | Prints the welcome message.                                         |

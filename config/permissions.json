@@ -8,7 +8,8 @@
             "revokeachievement",
             "countreactions",
             "tell",
-            "say"
+            "say",
+            "repeat"
         ],
         "unreleased": [
             "achievement",

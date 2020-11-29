@@ -1,4 +1,4 @@
-const { memes } = require('../config/images.json');
+const { memes } = require('../config/fun.json');
 
 /**
  * Returns a random meme

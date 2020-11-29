@@ -14,12 +14,12 @@ module.exports = async message => {
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {
-            if (!permissions.users.admin.includes(message.author)) {
+            if (!permissions.users.admin.includes(message.author.id)) {
                 if (permissions.commands.unreleased.includes(toRun)) {
                     message.reply('Command coming soon!');
                     log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
                     return;
-                } else if (permissions.admin.includes(toRun)) {
+                } else if (permissions.commands.admin.includes(toRun)) {
                     message.reply("You don't have permission to do that!");
                     log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
                     return;

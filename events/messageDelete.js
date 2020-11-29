@@ -1,4 +1,4 @@
-const { prefix, channels } = require('../config/config.json').channels;
+const { prefix, channels } = require('../config/config.json');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

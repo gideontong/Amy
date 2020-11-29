@@ -35,7 +35,7 @@ require('./kevin/index.js');
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag} with prefix ${prefix.amy}`);
     setInterval(() => {
-        let index = Math.floor(Math.random() * activities.length);
+        let index = Math.floor(Math.random() * activities.amy.length);
         client.user.setActivity(activities.amy[index].text, activities.amy[index].options)
             .catch(log.error);
     }, activities.interval * 1000);

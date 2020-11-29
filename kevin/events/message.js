@@ -21,7 +21,7 @@ module.exports = async message => {
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {
-            if (!permissions.users.admin.includes(message.author.idw)) {
+            if (!permissions.users.admin.includes(message.author.id)) {
                 if (permissions.commands.unreleased.includes(toRun)) {
                     message.reply('Command coming soon!');
                     log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);

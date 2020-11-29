@@ -9,12 +9,20 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    const index = Math.floor(Math.random() * quotes.length);
+    let index = Math.floor(Math.random() * quotes.length);
     const color = Math.floor(Math.random() * colors);
     const quote = new MessageEmbed()
         .setColor(color)
-        .setDescription(`*${quotes[index].text}*`)
         .setFooter(`- ${quotes[index].author}`)
+    if (args[1] && !isNaN(args[1])) {
+        let idx = parseInt(args[1]) - 1;
+        if (idx < quotes.length) {
+            index = idx;
+        } else {
+            quote.addField('Error', `There are only ${quotes.length} quotes in the database, so a random one was used.`);
+        }
+    }
+    quote.setDescription(`*${quotes[index].text}*`)
         .setTitle(`Random Quote #${index + 1}`);
     msg.channel.send(quote);
 }

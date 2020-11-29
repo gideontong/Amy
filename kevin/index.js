@@ -13,7 +13,7 @@ require('./event.js')(client);
 client.on('ready', () => {
     log.info(`Starting up as ${client.user.tag} with prefix ${prefix.kevin}`);
     setInterval(() => {
-        let index = Math.floor(Mat.random() * activities.length);
+        let index = Math.floor(Math.random() * activities.length);
         client.user.setActivity(activities.kevin[index].text, activities.kevin[index].options)
             .catch(log.error);
     }, activities.interval * 1000);

@@ -19,7 +19,7 @@ module.exports = async (client, msg, args) => {
             }
         } else {
             msg.channel.send(msg.content.substring(args[0].length + 1));
-            msg.delete();
+            msg.delete().catch();
             log.info(`${msg.author.tag} ${msg.author} told me to send a message in #${msg.channel.name}`);
         }
     }

@@ -1,5 +1,5 @@
 const host = 'api.mymemory.translated.net';
-const endpoint = 'get';
+const endpoint = '/get';
 
 const { request } = require('../lib/Internet');
 const log = require('log4js').getLogger('amy');

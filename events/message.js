@@ -1,3 +1,5 @@
+const interdasting = 'https://i.imgur.com/9h7eFti.png';
+
 const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const { isIgnored } = require('../lib/Validation');
@@ -46,6 +48,8 @@ module.exports = async message => {
                 + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
             message.reply(response);
             log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
+        } else if (sanitizedMessage.includes('interdasting')) {
+            message.channel.send(interdasting);
         }
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);

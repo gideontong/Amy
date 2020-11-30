@@ -8,7 +8,10 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text') {
-        let member = msg.channel.members.random();
+        let member;
+        do {
+            member = msg.channel.members.random();
+        } while (member.user.bot);
         if (member) {
             msg.channel.send(`${member.toString()}, you have been chosen!`);
         } else {

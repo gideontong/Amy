@@ -44,7 +44,6 @@ module.exports = async message => {
     }
     try {
         let sanitizedMessage = message.cleanContent.toLowerCase();
-        log.info(sanitizedMessage);
         if (sanitizedMessage.includes(' of leo')) {
             response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
                 + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];

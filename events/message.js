@@ -2,6 +2,7 @@ const interdasting = 'https://i.imgur.com/9h7eFti.png';
 
 const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
+const responses = require('../config/responses.json');
 const { isIgnored } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
@@ -39,6 +40,7 @@ module.exports = async message => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
         }
+        return;
     }
     try {
         let sanitizedMessage = message.cleanContent.toLowerCase();

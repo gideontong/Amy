@@ -14,9 +14,10 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (args.length > 1) {
+        args.shift();
         try {
             request(host, endpoint, 'GET', {
-                'term': args.shift().join(' ')
+                'term': args.join(' ')
             }, function(data) {
                 if (data.list.length > 0) {
                     let definition = new MessageEmbed()

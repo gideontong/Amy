@@ -1,4 +1,5 @@
-const endpoint = 'https://api.urbandictionary.com/v0/define';
+const host = 'api.urbandictionary.com'
+const endpoint = '/v0/define';
 const colors = 0xFFFFFF;
 
 const { request } = require('../lib/Internet');
@@ -14,7 +15,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (client, msg, args) => {
     if (args.length > 1) {
         try {
-            request(endpoint + args[1], 'GET', {
+            request(host, endpoint, 'GET', {
                 'term': args[1]
             }, function(data) {
                 if (data.list.length > 0) {

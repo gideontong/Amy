@@ -39,7 +39,6 @@ module.exports = async message => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
         }
-        return;
     }
     try {
         let sanitizedMessage = message.cleanContent.toLowerCase();

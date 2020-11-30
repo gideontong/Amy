@@ -16,8 +16,10 @@ module.exports = async (client, msg, args) => {
     request(host, endpoint, 'GET', {
         'q': string,
         'langpair': 'en|es'
-    }, function(data) {
-        log.info(data);
-        // msg.channel.send(data.responseData.translatedText);
+    }, function (data) {
+        try {
+            msg.channel.send(data.responseData.translatedText);
+        } catch {
+        }
     });
 }

@@ -13,6 +13,13 @@ module.exports = async (client, msg, args) => {
         msg.channel.send(`To download a video, use ${prefix.amy}downloadvideo [URL]`);
     }
     let url = args[1];
+    try {
+        new URL(url);
+    } catch (_) {
+        msg.channel.send('Are you sent me a link to a video?');
+        log.warn(`Tried to download ${url}, failed.`)
+        return;
+    }
     getInfo(url, [], function (err, data) {
         if (err) {
             msg.channel.send('Something went wrong, call Gideon for help.');

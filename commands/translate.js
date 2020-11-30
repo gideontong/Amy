@@ -9,7 +9,7 @@ const { request } = require('../lib/Internet');
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) {
+module.exports = async (client, msg, args) => {
     if (args.length < 2) return;
     let string = msg.cleanContent.substr(args[0].length + 1);
     request(host, endpoint, 'GET', {

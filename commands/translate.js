@@ -16,6 +16,7 @@ module.exports = async (client, msg, args) => {
         'q': string,
         'langpair': 'en|es'
     }, function(data) {
-        msg.channel.send(data.responseData.translatedText);
+        log.info(data);
+        // msg.channel.send(data.responseData.translatedText);
     });
 }

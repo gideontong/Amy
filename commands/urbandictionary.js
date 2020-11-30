@@ -16,7 +16,7 @@ module.exports = async (client, msg, args) => {
     if (args.length > 1) {
         try {
             request(host, endpoint, 'GET', {
-                'term': args[1]
+                'term': args.shift().join(' ')
             }, function(data) {
                 if (data.list.length > 0) {
                     let definition = new MessageEmbed()

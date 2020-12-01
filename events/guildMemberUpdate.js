@@ -20,7 +20,7 @@ module.exports = async (oldMember, newMember) => {
             } else {
                 message.setDescription(`A new nickname was added, which was ${newMember.nickname}.`);
             }
-            for (channelID of channels.alert) {
+            for (channelID of channels.alerts) {
                 let channel = newMember.client.channels.cache.get(channelID);
                 if (channel && channel.type == 'text') {
                     channel.send(message);

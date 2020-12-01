@@ -18,14 +18,22 @@ module.exports = async (client, msg, args) => {
         try {
             request(host, endpoint, 'GET', {
                 'term': args.join(' ')
-            }, function(data) {
+            }, function (data) {
                 if (data.list && data.list.length > 0) {
-                    const description = data.list[0].definition.length > 3000 ? data.list[0].definition.substr(0, 3000) : data.list[0].definition;
+                    var description, word;
+                    let likes = 0;
+                    for (item of data.list) {
+                        if (item.thumbs_up > likes) {
+                            likes = item.thumbs_up;
+                            word = item.word;
+                            description = item.definition.length > 3000 ? item.definition.substr(0, 3000) : item.definition;
+                        }
+                    }
                     let definition = new MessageEmbed()
                         .setColor(Math.floor(Math.random() * colors))
                         .setDescription(description)
-                        .setFooter(`${data.list[0].thumbs_up} likes`)
-                        .setTitle(data.list[0].word);
+                        .setFooter(`${likes} likes`)
+                        .setTitle(word);
                     msg.channel.send(definition);
                 } else {
                     msg.channel.send("There aren't any definitions for this word!");

@@ -20,9 +20,10 @@ module.exports = async (client, msg, args) => {
                 'term': args.join(' ')
             }, function(data) {
                 if (data.list.length > 0) {
+                    const definition = data.list[0].definition.length > 3000 ? data.list[0].definition.substr(0, 3000) : data.list[0].definition;
                     let definition = new MessageEmbed()
                         .setColor(Math.floor(Math.random() * colors))
-                        .setDescription(data.list[0].definition)
+                        .setDescription(definition)
                         .setFooter(`${data.list[0].thumbs_up} likes`)
                         .setTitle(data.list[0].word);
                     msg.channel.send(definition);

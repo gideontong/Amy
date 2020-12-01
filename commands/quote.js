@@ -15,7 +15,7 @@ module.exports = async (client, msg, args) => {
         .setColor(color);
     if (args[1] && !isNaN(args[1])) {
         let idx = parseInt(args[1]) - 1;
-        if (idx < quotes.length) {
+        if (idx < quotes.length && idx > 0) {
             index = idx;
         } else {
             quote.addField('Error', `There are only ${quotes.length} quotes in the database, so a random one was used.`);

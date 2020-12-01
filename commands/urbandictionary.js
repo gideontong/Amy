@@ -26,7 +26,7 @@ module.exports = async (client, msg, args) => {
                         if (item.thumbs_up > likes) {
                             likes = item.thumbs_up;
                             word = item.word;
-                            description = item.definition.length > 3000 ? item.definition.substr(0, 3000) : item.definition;
+                            description = item.definition.length > 1750 ? item.definition.substr(0, 1750) : item.definition;
                         }
                     }
                     let definition = new MessageEmbed()

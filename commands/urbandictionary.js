@@ -19,7 +19,7 @@ module.exports = async (client, msg, args) => {
             request(host, endpoint, 'GET', {
                 'term': args.join(' ')
             }, function(data) {
-                if (data.list.length > 0) {
+                if (data.list && data.list.length > 0) {
                     const description = data.list[0].definition.length > 3000 ? data.list[0].definition.substr(0, 3000) : data.list[0].definition;
                     let definition = new MessageEmbed()
                         .setColor(Math.floor(Math.random() * colors))

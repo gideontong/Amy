@@ -1,3 +1,5 @@
+const colors = 0xFFFFFF;
+
 const { logging } = require('../config/config.json').channels;
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
@@ -13,6 +15,7 @@ module.exports = async guild => {
         if (guild.available) {
             const notification = new MessageEmbed()
                 .setAuthor(guild.owner.user.tag, guild.owner.user.displayAvatarURL())
+                .setColor(Math.floor(Math.random() * colors))
                 .setTitle(`Joined new server ${guild.name}`)
                 .setDescription(`Has ${guild.memberCount} members and was originally created on ${guild.createdAt}`)
                 .setFooter(`Joined at ${guild.joinedAt}`);

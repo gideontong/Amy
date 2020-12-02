@@ -1,4 +1,8 @@
-const { setups } = require('../config/fun.json');
+const host = 'oauth.reddit.com';
+const endpoint = '/r/battlestations/random.json'
+
+const { authenticatedGet } = require('../lib/Internet');
+const log = require('log4js').getLogger('amy');
 
 /**
  * Returns a random battlestation
@@ -7,5 +11,11 @@ const { setups } = require('../config/fun.json');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    msg.channel.send(setups[Math.floor(Math.random() * setups.length)]);
+    try {
+        authenticatedGet(function (data) {
+            msg.channel.send(data);
+        }, host, endpoint);
+    } catch (err) {
+        log.error(`While trying to grab a Reddit battlestation I got ${err}`);
+    }
 }

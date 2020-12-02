@@ -39,7 +39,7 @@ module.exports = async (client, msg, args) => {
     try {
         getRedditImage(function (data = 'Loading...') {
             msg.channel.send(data);
-        }, subreddits));
+        }, subreddits);
     } catch (err) {
         log.error(`While trying to grab a Reddit food picture I got ${err}`);
     }

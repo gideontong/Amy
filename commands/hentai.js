@@ -17,6 +17,10 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
+    if (Math.random() < 0.7) {
+        msg.channel.send('Yikes... this photo? You need help.');
+        return;
+    }
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
         try {
             getRedditImage(function (data = 'Loading...') {

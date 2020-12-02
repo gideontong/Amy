@@ -7,5 +7,9 @@ const link = 'https://tenor.com/view/xqc-xqcsuck-sucking-suck-mr-cow-gif-1844403
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    msg.channel.send(link);
+    if (msg.channel.type == 'text' && msg.channel.nsfw) {
+        msg.channel.send(link);
+    } else {
+        msg.channel.send('You want to what?');
+    }
 }

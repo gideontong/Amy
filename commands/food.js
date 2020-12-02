@@ -38,7 +38,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (client, msg, args) => {
     try {
         getRedditImage(function (data = 'Loading...') {
-            log.info('welp it calling');
+            log.info('calling with ' + data);
             msg.channel.send(data);
         }, subreddits);
     } catch (err) {

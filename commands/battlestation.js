@@ -1,4 +1,4 @@
-const host = 'oauth.reddit.com';
+const host = 'www.reddit.com';
 const endpoint = '/r/battlestations/random.json'
 
 const { authenticatedGet } = require('../lib/Internet');

@@ -18,7 +18,7 @@ module.exports = async (client, msg, args) => {
         if (idx < quotes.length && idx > 0) {
             index = idx;
         } else {
-            quote.addField('Error', `There are only ${quotes.length} quotes in the database, so a random one was used.`);
+            msg.channel.send(`Error: there are only ${quotes.length} quotes in the database, so a random one was used.`);
         }
     }
     quote.setDescription(`*${quotes[index].text}*`)

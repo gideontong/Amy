@@ -21,7 +21,12 @@ module.exports = async (client, msg, args) => {
                 && data[0].data.children.length > 0
                 && data[0].data.children[0].data
                 && data[0].data.children[0].data.url_overridden_by_dest) {
-                    msg.channel.send(data[0].data.children[0].data.url_overridden_by_dest);
+                const link = data[0].data.children[0].data.url_overridden_by_dest;
+                if (link.startsWith('https://www.reddit.com')) {
+                    msg.channel.send(`Check out this Reddit gallery (auto-gallery coming soon!): ${link}`);
+                } else {
+                    msg.channel.send(link);
+                }
             } else {
                 msg.channel.send("That didn't work... try again?");
             }

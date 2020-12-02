@@ -1,4 +1,3 @@
-const host = 'www.reddit.com';
 // Have a suggestion? File a pull request or contact Gideon#5433!
 const subreddits = [
     'beerandpizza',
@@ -38,7 +37,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     try {
-        msg.channel.send(getRedditImage(function (data = 'Loading...') {
+        getRedditImage(function (data = 'Loading...') {
             msg.channel.send(data);
         }, subreddits));
     } catch (err) {

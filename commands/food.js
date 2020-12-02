@@ -38,8 +38,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     try {
-        msg.channel.send(getRedditImage(function (data) {
-            log.info('attempting to send' + data);
+        msg.channel.send(getRedditImage(function (data = 'Loading...') {
             msg.channel.send(data);
         }, subreddits));
     } catch (err) {

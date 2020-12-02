@@ -15,7 +15,7 @@ module.exports = async (oldMember, newMember) => {
                 .setAuthor(newMember.user.tag, newMember.user.displayAvatarURL())
                 .setColor('GOLD')
                 .setTitle('Nickname was updated!');
-            if (oldMember.nickname) {
+            if (oldMember.nickname && oldMember.nickname != newMember.nickname) {
                 message.setDescription(`Nickname was changed from ${oldMember.nickname} to ${newMember.nickname}.`);
             } else {
                 message.setDescription(`A new nickname was added, which was ${newMember.nickname}.`);

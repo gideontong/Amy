@@ -13,7 +13,18 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (client, msg, args) => {
     try {
         authenticatedGet(function (data) {
-            msg.channel.send(data);
+            if (data
+                && data.length > 0
+                && data[0]
+                && data[0].data
+                && data[0].data.children
+                && data[0].data.children.length > 0
+                && data[0].data.children[0].data
+                && data[0].data.children[0].data.url_overridden_by_dest) {
+                    msg.channel.send(data[0].data.children[0].data.url_overridden_by_dest);
+            } else {
+                msg.channel.send("That didn't work... try again?");
+            }
         }, host, endpoint, {}, {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
         });

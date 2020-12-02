@@ -38,7 +38,9 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     try {
-        msg.channel.send(getRedditImage(subreddits));
+        msg.channel.send(getRedditImage(function (data) {
+            msg.channel.send(data);
+        }, subreddits));
     } catch (err) {
         log.error(`While trying to grab a Reddit food picture I got ${err}`);
     }

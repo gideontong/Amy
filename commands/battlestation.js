@@ -14,7 +14,9 @@ module.exports = async (client, msg, args) => {
     try {
         authenticatedGet(function (data) {
             msg.channel.send(data);
-        }, host, endpoint);
+        }, host, endpoint, {}, {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
+        });
     } catch (err) {
         log.error(`While trying to grab a Reddit battlestation I got ${err}`);
     }

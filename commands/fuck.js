@@ -4,6 +4,7 @@ const subreddits = [
     '18_19',
     'asianhotties',
     'asiansgonewild',
+    'carsfuckingdragons',
     'collegesluts',
     'celebnsfw',
     'girlsinyogapants',
@@ -23,7 +24,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
-        if (Math.random() < 0.85) {
+        if (Math.random() < 0.65) {
             msg.channel.send('Yikes... this photo? You need help.');
             return;
         }

@@ -38,7 +38,7 @@ module.exports = async (client, msg, args) => {
             msg.channel.send(embed);
             return;
         } else {
-            msg.channel.send("That isn't a stock ticker or something happened! Try again?");
+            msg.channel.send("That isn't a currency or something happened! Try again?");
             return;
         }
     }, host, endpoint, query);

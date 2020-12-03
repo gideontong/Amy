@@ -34,6 +34,7 @@ module.exports = async (client, msg, args) => {
                 .addField('%', quote['10. change percent'] ? quote['10. change percent'] : 'Unknown', true)
                 .setAuthor("Amy's Trading Account", 'https://i.imgur.com/t9cmLXd.png')
                 .setColor(Math.floor(Math.random() * colors))
+                .setTimestamp()
                 .setTitle(`Current Stock Price for ${quote['01. symbol']}`);
             msg.channel.send(embed);
             return;

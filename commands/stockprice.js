@@ -1,5 +1,5 @@
 const host = 'www.alphavantage.co';
-const endpoint = 'query';
+const endpoint = '/query';
 const colors = 0xFFFFFF;
 
 const { prefix } = require('../config/config.json');

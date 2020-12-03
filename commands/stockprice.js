@@ -32,7 +32,7 @@ module.exports = async (client, msg, args) => {
                 .addField('Current Price', quote['05. price'] ? quote['05. price'] : 'Unknown', true)
                 .addField('Change', quote['09. change'] ? quote['09. change'] : 'Unknown', true)
                 .addField('%', quote['10. change percent'] ? quote['10. change percent'] : 'Unknown', true)
-                .setAuthor('The Stonks Master', 'https://i.imgur.com/t9cmLXd.png')
+                .setAuthor("Amy's Trading Account", 'https://i.imgur.com/t9cmLXd.png')
                 .setColor(Math.floor(Math.random() * colors))
                 .setTitle(`Current Stock Price for ${quote['01. symbol']}`);
             msg.channel.send(embed);

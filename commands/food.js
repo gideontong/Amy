@@ -10,7 +10,6 @@ const subreddits = [
     'foodporn',
     'knightsofpineapple',
     'pizza',
-    'putaneggonit',
     'ramen',
     'salsasnobs',
     'sexypizza',

@@ -2,7 +2,6 @@
 const subreddits = [
     'beerandpizza',
     'beerfood',
-    'beerporn',
     'bobsburgerscreations',
     'burgers',
     'cheeseburgers',

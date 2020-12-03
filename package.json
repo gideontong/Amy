@@ -1,6 +1,6 @@
 {
     "name": "amy",
-    "version": "3.1.4",
+    "version": "3.1.5",
     "description": "Your personal assisstant, reimagined",
     "author": "Gideon Tong <gideon@gideontong.com>",
     "main": "index.js",

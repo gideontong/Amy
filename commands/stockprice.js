@@ -24,7 +24,7 @@ module.exports = async (client, msg, args) => {
         'symbol': args[1],
         'apikey': stocks
     };
-    log.info(`Requesting the stock price of ${args[1]}`);
+    log.info(`${msg.author.tag} requested the stock price of ${args[1]}`);
     authenticatedGet(function (data) {
         if (data && data['Global Quote'] && data['Global Quote']['01. symbol']) {
             quote = data['Global Quote']

@@ -6,6 +6,7 @@ const { prefix } = require('../config/config.json');
 const { stocks } = require('../config/secrets.json');
 const { authenticatedGet } = require('../lib/Internet');
 const { MessageEmbed } = require('discord.js');
+const log = require('log4js').getLogger('amy');
 
 /**
  * Get a stock price
@@ -23,8 +24,9 @@ module.exports = async (client, msg, args) => {
         'symbol': args[1],
         'apikey': stocks
     };
+    log.info(`Requesting the stock price of ${args[1]}`);
     authenticatedGet(function (data) {
-        if (data['Global Quote'] && data['Global Quote']['01. symbol']) {
+        if (data && data['Global Quote'] && data['Global Quote']['01. symbol']) {
             quote = data['Global Quote']
             const embed = new MessageEmbed()
                 .addField('Current Price', quote['05. price'] ? quote['05. price'] : 'Unknown', true)
@@ -36,7 +38,7 @@ module.exports = async (client, msg, args) => {
             msg.channel.send(embed);
             return;
         } else {
-            msg.channel.send("That isn't a stock ticker! Try again?");
+            msg.channel.send("That isn't a stock ticker or something happened! Try again?");
             return;
         }
     }, host, endpoint, query);

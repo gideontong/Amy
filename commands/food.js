@@ -7,17 +7,13 @@ const subreddits = [
     'cheeseburgers',
     'food',
     'foodporn',
-    'knightsofpineapple',
     'pizza',
     'ramen',
-    'salsasnobs',
-    'sexypizza',
     'streeteats',
     'streetfoodartists',
     'sushi',
     'swedishfood',
-    'tacos',
-    'wings'
+    'tacos'
 ];
 
 const { getRedditImage } = require('../lib/Internet');

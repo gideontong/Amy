@@ -4,6 +4,8 @@ const subreddits = [
     'hentai',
     'ecchi',
     'awwnime',
+    'carsfuckingdragons',
+    'clopclop',
     'hentaimemes'
 ];
 
@@ -18,7 +20,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
-        if (Math.random() < 0.65) {
+        if (Math.random() < 0.5) {
             msg.channel.send('Yikes... this photo? You need help.');
             return;
         }

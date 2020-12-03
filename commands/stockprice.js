@@ -34,7 +34,7 @@ module.exports = async (client, msg, args) => {
                 .addField('%', quote['10. change percent'] ? quote['10. change percent'] : 'Unknown', true)
                 .setAuthor('The Stonks Master', 'https://i.imgur.com/t9cmLXd.png')
                 .setColor(Math.floor(Math.random() * colors))
-                .setTitle(`Current Stock Price for ${data['01. symbol']}`);
+                .setTitle(`Current Stock Price for ${quote['01. symbol']}`);
             msg.channel.send(embed);
             return;
         } else {

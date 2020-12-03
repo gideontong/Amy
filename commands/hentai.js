@@ -17,7 +17,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    if (Math.random() < 0.7) {
+    if (Math.random() < 0.85) {
         msg.channel.send('Yikes... this photo? You need help.');
         return;
     }

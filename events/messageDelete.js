@@ -1,4 +1,5 @@
 const { prefix, channels } = require('../config/config.json');
+const { exclusive } = require('../config/snowflakes.json');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -25,13 +26,11 @@ module.exports = async message => {
     } catch (err) {
         log.error(`While trying to emite a messageDelete I got ${err}`);
     }
-    /*
-    if (message.author.id == targets.leo && message.attachments.keyArray().length > 0) {
+    if (message.author.id == exclusive.leo && message.attachments.keyArray().length > 0) {
         response = new MessageEmbed()
             .setTitle('Leo, wait a second!')
             .setDescription('Do you remember that time we were together?')
             .setImage("https://amyhelps.ml/leo/" + Math.floor(Math.random() * 16) + ".jpg");
         message.channel.send(response);
     }
-    */
 }

@@ -8,9 +8,7 @@ const subreddits = [
     'cheeseburgers',
     'food',
     'foodporn',
-    'friedchicken',
     'knightsofpineapple',
-    'microwavepics',
     'pizza',
     'putaneggonit',
     'ramen',
@@ -21,8 +19,6 @@ const subreddits = [
     'sushi',
     'swedishfood',
     'tacos',
-    'tonightsdinner',
-    'tonightsvegdinner',
     'wings'
 ];
 

@@ -10,6 +10,6 @@ module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
         msg.channel.send(link);
     } else {
-        msg.channel.send('You want to what?');
+        msg.channel.send("You want to what? This isn't a NSFW channel.");
     }
 }

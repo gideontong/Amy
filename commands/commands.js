@@ -27,7 +27,7 @@ module.exports = async (client, msg, args) => {
         .setColor(Math.floor(Math.random() * colors))
         .setFooter(`Page ${page} of ${Math.floor(commands.length / perPage) + 1}`);
     let end = start + perPage;
-    for (var i = start; i < end > commands.length ? commands.length : end; i++) {
+    for (var i = start; i < (end > commands.length ? commands.length : end); i++) {
         description += `**${commands[i].command}**: ${commands[i].description}\n`
     }
     embed.setDescription(description);

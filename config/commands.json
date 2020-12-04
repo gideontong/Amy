@@ -118,6 +118,12 @@
             ]
         },
         {
+            "name": "Life is Futile",
+            "command": "futile",
+            "description": "Life is futile, deal with it (and feel bad).",
+            "alias": []
+        },
+        {
             "name": "Source Code",
             "command": "github",
             "description": "See my source code!",

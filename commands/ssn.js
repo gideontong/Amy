@@ -1,5 +1,5 @@
 const host = 'www.ssn-check.org';
-const endpoint = '/api/generate';
+const endpoint = '/generate';
 
 const { authenticatedPost } = require('../lib/Internet');
 

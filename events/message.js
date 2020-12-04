@@ -1,7 +1,6 @@
 const interdasting = 'https://i.imgur.com/9h7eFti.png';
-const parrotChance = 0.05;
 
-const { prefix, emotes } = require('../config/config.json');
+const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
 const { isIgnored } = require('../lib/Validation');
@@ -53,7 +52,7 @@ module.exports = async message => {
         } else if (sanitizedMessage.includes('interdasting')) {
             message.channel.send(interdasting);
         }
-        if (Math.random() < parrotChance) {
+        if (Math.random() < probabilities.parrotChance) {
             message.react(`<a:maskParrot:${emotes.maskParrot}>`);
         }
     } catch (err) {

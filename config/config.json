@@ -97,6 +97,7 @@
         "maskParrot": "739617852402827305"
     },
     "probabilities": {
-        "kevinReply": 0.03
+        "kevinReply": 0.03,
+        "parrotChance": 0.05
     }
 }

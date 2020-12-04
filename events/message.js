@@ -1,5 +1,5 @@
 const interdasting = 'https://i.imgur.com/9h7eFti.png';
-const parrotChance = 0.05;
+const parrotChance = 0.9;
 
 const { prefix, emotes } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
@@ -54,7 +54,7 @@ module.exports = async message => {
             message.channel.send(interdasting);
         }
         if (Math.random() < parrotChance) {
-            message.react(message.guild.emojis.cache.get(emotes.maskParrot));
+            message.react(`<a:maskParrot:${emotes.maskParrot}>`);
         }
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);

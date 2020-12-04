@@ -12,6 +12,7 @@ const subreddits = [
     'realgirls'
 ];
 
+const { antinsfw } = require('../config/responses.json');
 const { getRedditImage } = require('../lib/Internet');
 const log = require('log4js').getLogger('amy');
 
@@ -23,8 +24,8 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
-        if (Math.random() < 0.65) {
-            msg.channel.send('Yikes... this photo? You need help.');
+        if (Math.random() < 0.75) {
+            msg.channel.send(antinsfw[Math.floor(Math.random() * antinsfw.length)]);
             return;
         }
         try {

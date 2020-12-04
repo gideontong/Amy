@@ -52,7 +52,7 @@ module.exports = async message => {
                 let pick = Math.floor(Math.random() * sarcasm.length);
                 message.reply(sarcasm[pick]);
             } else {
-                message.react(message.guild.emojis.cache.get(emotes.yikes))
+                message.react(`<:yikes:${emotes.yikes}>`)
                     .catch(log.error);
             }
             log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);

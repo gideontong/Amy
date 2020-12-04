@@ -1,5 +1,5 @@
 const interdasting = 'https://i.imgur.com/9h7eFti.png';
-const parrotChance = 0.9;
+const parrotChance = 0.05;
 
 const { prefix, emotes } = require('../config/config.json');
 const permissions = require('../config/permissions.json');

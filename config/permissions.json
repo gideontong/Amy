@@ -15,7 +15,8 @@
             "achievement",
             "achievements",
             "sudo",
-            "poll"
+            "poll",
+            "commands"
         ]
     },
     "users": {

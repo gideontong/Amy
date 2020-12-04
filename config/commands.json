@@ -156,6 +156,12 @@
             "alias": []
         },
         {
+            "name": "Dad Joke",
+            "command": "joke",
+            "description": "Tell me a joke!",
+            "alias": []
+        },
+        {
             "name": "Leo GPS Tracker",
             "command": "locate",
             "description": "See where in the world a user is!",

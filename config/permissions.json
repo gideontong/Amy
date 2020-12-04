@@ -9,7 +9,8 @@
             "revokeachievement",
             "say",
             "tell",
-            "welcome"
+            "welcome",
+            "joinvoice"
         ],
         "unreleased": [
             "achievement",

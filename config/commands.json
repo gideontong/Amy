@@ -1,0 +1,270 @@
+{
+    "commands": [
+        {
+            "name": "8 Ball",
+            "command": "8ball",
+            "description": "Get a fortune told with magic 8 ball!",
+            "alias": []
+        },
+        {
+            "name": "Account Age",
+            "command": "accountage",
+            "description": "See how old yours, or someone else's account is.",
+            "alias": [
+                "howold"
+            ]
+        },
+        {
+            "name": "Be Annoying",
+            "command": "annoy",
+            "description": "Annoy your friends!",
+            "alias": []
+        },
+        {
+            "name": "/r/awww",
+            "command": "awww",
+            "description": "Get a cute floofy photo!",
+            "alias": [
+                "aw",
+                "aww",
+                "awwww"
+            ]
+        },
+        {
+            "name": "Setup Inpsiration",
+            "command": "battlestation",
+            "description": "Find a cool picture of someone's setup.",
+            "alias": [
+                "bs",
+                "setup",
+                "station"
+            ]
+        },
+        {
+            "name": "Latest Changes",
+            "command": "changelog",
+            "description": "See the latest changes to Amy.",
+            "alias": []
+        },
+        {
+            "name": "Commands List",
+            "command": "commands",
+            "description": "Get a list of the commands I support.",
+            "alias": []
+        },
+        {
+            "name": "Flip a Coin",
+            "command": "coinflip",
+            "description": "Gives you a coinflip.",
+            "alias": [
+                "flip"
+            ]
+        },
+        {
+            "name": "Roll a Dice",
+            "command": "diceroll",
+            "description": "Rolls a normal dice for you (should be fair).",
+            "alias": [
+                "dice",
+                "roll"
+            ]
+        },
+        {
+            "name": "Documentation",
+            "command": "docs",
+            "description": "See the full help pages.",
+            "alias": []
+        },
+        {
+            "name": "Donate",
+            "command": "donate",
+            "description": "Support the developer with a small donation!",
+            "alias": []
+        },
+        {
+            "name": "Video Downloader",
+            "command": "downloadvideo",
+            "description": "Download a YouTube video!",
+            "alias": [
+                "download",
+                "dl"
+            ]
+        },
+        {
+            "name": "Wonders of Earth",
+            "command": "earthpictures",
+            "description": "See an amazing wonder of God!",
+            "alias": [
+                "earthporn"
+            ]
+        },
+        {
+            "name": "Currency Exchange Rate",
+            "command": "exchangerate",
+            "description": "Get the current currency exchange rates.",
+            "alias": [
+                "currency",
+                "currencyexchange",
+                "exchange",
+                "forex"
+            ]
+        },
+        {
+            "name": "Foodie Time",
+            "command": "food",
+            "description": "See a yummy photo of the day (or the second).",
+            "alias": [
+                "foodporn"
+            ]
+        },
+        {
+            "name": "Source Code",
+            "command": "github",
+            "description": "See my source code!",
+            "alias": []
+        },
+        {
+            "name": "Help Screen",
+            "command": "help",
+            "description": "Get some help and info about this bot.",
+            "alias": [
+                "about"
+            ]
+        },
+        {
+            "name": "Dr. Leo",
+            "command": "howgay",
+            "description": "Check how gay you and your friends are.",
+            "alias": []
+        },
+        {
+            "name": "Not Dr. Leo",
+            "command": "howstraight",
+            "description": "Check how straight you and your friends are.",
+            "alias": []
+        },
+        {
+            "name": "Insane Asylum",
+            "command": "insaneasylum",
+            "description": "Check yourself into a mental hospital.",
+            "alias": []
+        },
+        {
+            "name": "Discord Birthday",
+            "command": "joined",
+            "description": "See the day you joined Discord.",
+            "alias": []
+        },
+        {
+            "name": "Leo GPS Tracker",
+            "command": "locate",
+            "description": "See where in the world a user is!",
+            "alias": []
+        },
+        {
+            "name": "Meme of the Day",
+            "command": "meme",
+            "description": "Get a random meme (but not in real-time).",
+            "alias": []
+        },
+        {
+            "name": "Patreon",
+            "command": "patreon",
+            "description": "Support us on Patreon with this simple link.",
+            "alias": []
+        },
+        {
+            "name": "Perhaps Cow",
+            "command": "perhaps",
+            "description": "Need a perhaps cow in your life? Perhaps.",
+            "alias": []
+        },
+        {
+            "name": "Roulette, but People",
+            "command": "pickperson",
+            "description": "Pick a person in the current channel.",
+            "alias": [
+                "pick"
+            ]
+        },
+        {
+            "name": "Pong!",
+            "command": "ping",
+            "description": "Get the current server status of Amy.",
+            "alias": []
+        },
+        {
+            "name": "Discord Kitro",
+            "command": "printemoji",
+            "description": "See a Discord server emote or even animated ones.",
+            "alias": [
+                "emoji"
+            ]
+        },
+        {
+            "name": "QR Code",
+            "command": "qr",
+            "description": "Generate a QR code!",
+            "alias": []
+        },
+        {
+            "name": "You're Famous",
+            "command": "quote",
+            "description": "Get a random quote from a famous person.",
+            "alias": []
+        },
+        {
+            "name": "Server Rules",
+            "command": "rules",
+            "description": "Get the server rules!",
+            "alias": []
+        },
+        {
+            "name": "Live Tickers",
+            "command": "stockprice",
+            "description": "Stonks? See the current stock price of your favorite company.",
+            "alias": [
+                "ticker"
+            ]
+        },
+        {
+            "name": "xQc is Happy",
+            "command": "suck",
+            "description": "See a cool xQc GIF.",
+            "alias": []
+        },
+        {
+            "name": "Google Translate",
+            "command": "translate",
+            "description": "Use ghetto Google Translate right in chat.",
+            "alias": []
+        },
+        {
+            "name": "Professional Streamer",
+            "command": "twitch",
+            "description": "See our Twitch channel!",
+            "alias": []
+        },
+        {
+            "name": "Best Dictionary",
+            "command": "urbandictionary",
+            "description": "Get a cool definition from the only Urban Dictionary.",
+            "alias": [
+                "ud",
+                "urban"
+            ]
+        },
+        {
+            "name": "Homepage",
+            "command": "website",
+            "description": "Get a link to my home website.",
+            "alias": []
+        },
+        {
+            "name": "Professional Vlogger",
+            "command": "youtube",
+            "description": "Subscribe to the best YouTube channel.",
+            "alias": []
+        }
+    ]
+}

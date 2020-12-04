@@ -2,14 +2,14 @@
     "commands": {
         "admin": [
             "clear",
-            "welcome",
+            "countreactions",
             "generateachievement",
             "grantachievement",
+            "repeat",
             "revokeachievement",
-            "countreactions",
-            "tell",
             "say",
-            "repeat"
+            "tell",
+            "welcome"
         ],
         "unreleased": [
             "achievement",

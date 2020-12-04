@@ -5,7 +5,7 @@
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    if (Message.member.voice.channel) {
+    if (msg.member.voice.channel) {
         await msg.member.voice.channel.join();
     }
 }

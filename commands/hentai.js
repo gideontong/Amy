@@ -9,6 +9,7 @@ const subreddits = [
     'hentaimemes'
 ];
 
+const { probabilities } = require('../config/config.json');
 const { antinsfw } = require('../config/responses.json');
 const { getRedditImage } = require('../lib/Internet');
 const log = require('log4js').getLogger('amy');
@@ -21,7 +22,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
-        if (Math.random() < 0.65) {
+        if (Math.random() < probabilities.antinsfw) {
             msg.channel.send(antinsfw[Math.floor(Math.random() * antinsfw.length)]);
             return;
         }

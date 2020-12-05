@@ -25,7 +25,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
-        if (Math.random() < probabilities.antinsfw) {
+        if (Math.random() < probabilities.blockNSFW) {
             msg.channel.send(antinsfw[Math.floor(Math.random() * antinsfw.length)]);
             return;
         }

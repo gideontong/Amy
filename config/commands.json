@@ -210,7 +210,8 @@
             "command": "printemoji",
             "description": "See a Discord server emote or even animated ones.",
             "alias": [
-                "emoji"
+                "emoji",
+                "emote"
             ]
         },
         {

@@ -51,11 +51,11 @@ module.exports = async message => {
             if (Math.random() < 0.5) {
                 let pick = Math.floor(Math.random() * sarcasm.length);
                 message.reply(sarcasm[pick]);
+                log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
             } else {
                 message.react(`<:yikes:${emotes.yikes}>`)
                     .catch(log.error);
             }
-            log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
         }
     } catch (err) {
         log.error(`Something... happened? Error was: ${err}`);

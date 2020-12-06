@@ -247,6 +247,12 @@
             "alias": []
         },
         {
+            "name": "Free Tips",
+            "command": "tip",
+            "description": "Get a free tip on life.",
+            "alias": []
+        },
+        {
             "name": "Google Translate",
             "command": "translate",
             "description": "Use ghetto Google Translate right in chat.",

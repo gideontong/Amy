@@ -19,7 +19,7 @@ module.exports = async (client, msg, args) => {
             index = idx;
         }
     }
-    quote.setDescription(`*${tips[index].text}*`)
+    quote.setDescription(`*${tips[index]}*`)
         .setFooter(`Try asking me for another tip!`)
         .setTitle(`Random Tip #${index + 1}`);
     msg.channel.send(quote);

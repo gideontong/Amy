@@ -1,9 +1,10 @@
 {
     "domain": "example.com",
-    "ads": {
-        "shortlink": {
+    "ads": [
+        {
             "name": "Example",
+            "link": "shortlink",
             "description": "Example"
         }
-    }
+    ]
 }

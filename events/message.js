@@ -73,7 +73,7 @@ module.exports = async message => {
                 `Random value: ${random}`,
                 `Advertisement ID: ${idx}`,
                 `Campaign: Active, Tracked`,
-                `This ad auto-deletes in 15 seconds and is automatically logged to the testing server.`
+                `This ad auto-deletes in 60 seconds and is automatically logged to the testing server.`
             ].join('\n');
             const ad = new MessageEmbed()
                 .addField('Beta Mode Debug Info', debug)
@@ -82,7 +82,7 @@ module.exports = async message => {
                 .setFooter('Ads are in beta! Issue? Please contact Gideon to get it resolved.')
                 .setTitle('Advertisement (Beta)');
             message.channel.send(ad)
-                .then(msg => msg.delete({ timeout: 15000 }));
+                .then(msg => msg.delete({ timeout: 60000 }));
             log.warn(`Played ad ${idx} of name ${pick.name}`);
         }
     } catch (err) {

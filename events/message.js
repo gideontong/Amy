@@ -1,9 +1,12 @@
 const interdasting = 'https://i.imgur.com/9h7eFti.png';
+const colors = 0xFFFFFF;
 
 const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
+const { domain, ads } = require('../config/ads.json');
 const { isIgnored } = require('../lib/Validation');
+const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -42,6 +45,7 @@ module.exports = async message => {
         }
         return;
     }
+    // Memes and fun
     try {
         let sanitizedMessage = message.cleanContent.toLowerCase();
         if (sanitizedMessage.includes(' of leo')) {
@@ -57,5 +61,28 @@ module.exports = async message => {
         }
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);
+    }
+    // Advertising
+    try {
+        const random = Math.random();
+        if (random < probabilities.ads) {
+            const idx = Math.floor(Math.random() * ads.length);
+            const pick = ads[idx];
+            const debug = [
+                `Probability of getting an ad: ${probabilities.ads}`,
+                `Random value: ${random}`,
+                `Advertisement ID: ${idx}`,
+                `Campaign: Active, Tracked`
+            ].join('\n');
+            const ad = new MessageEmbed()
+                .addField('Beta Mode Debug Info', debug)
+                .setColor(Math.floor(Math.random() * colors))
+                .setDescription(`${pick.text} [Click here to get ${pick.name}](${pick.link})`)
+                .setFooter('Ads are in beta! Issue? Please contact Gideon to get it resolved.')
+                .setTitle('Advertisement (Beta)');
+            message.channel.send(ad);
+        }
+    } catch (err) {
+        log.error(`While trying to display ads, I got: ${err}`);
     }
 }

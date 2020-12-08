@@ -98,7 +98,8 @@
     },
     "probabilities": {
         "kevinReply": 0.03,
-        "parrotChance": 0.05,
-        "blockNSFW": 0.8
+        "parrotChance": 0.01,
+        "blockNSFW": 0.8,
+        "ads": 0.005
     }
 }

@@ -72,7 +72,8 @@ module.exports = async message => {
                 `Probability of getting an ad: ${probabilities.ads}`,
                 `Random value: ${random}`,
                 `Advertisement ID: ${idx}`,
-                `Campaign: Active, Tracked`
+                `Campaign: Active, Tracked`,
+                `This ad auto-deletes in 15 seconds and is automatically logged to the testing server.`
             ].join('\n');
             const ad = new MessageEmbed()
                 .addField('Beta Mode Debug Info', debug)
@@ -80,7 +81,8 @@ module.exports = async message => {
                 .setDescription(`${pick.text} [Click here to get ${pick.name}](${pick.link})`)
                 .setFooter('Ads are in beta! Issue? Please contact Gideon to get it resolved.')
                 .setTitle('Advertisement (Beta)');
-            message.channel.send(ad);
+            message.channel.send(ad)
+                .then(msg => msg.delete({ timeout: 15000 }));
         }
     } catch (err) {
         log.error(`While trying to display ads, I got: ${err}`);

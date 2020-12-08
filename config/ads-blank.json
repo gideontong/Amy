@@ -6,5 +6,6 @@
             "link": "shortlink",
             "description": "Example"
         }
-    ]
+    ],
+    "disabled": []
 }

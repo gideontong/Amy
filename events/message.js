@@ -78,7 +78,7 @@ module.exports = async message => {
             const ad = new MessageEmbed()
                 .addField('Beta Mode Debug Info', debug)
                 .setColor(Math.floor(Math.random() * colors))
-                .setDescription(`${pick.text} [Click here to get ${pick.name}](https://gidx.us/${pick.link})`)
+                .setDescription(`${pick.text} [Click here to get ${pick.name}](https://${domain}/${pick.link})`)
                 .setFooter('Ads are in beta! Issue? Please contact Gideon to get it resolved.')
                 .setTitle('Advertisement (Beta)');
             message.channel.send(ad)

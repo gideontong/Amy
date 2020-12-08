@@ -83,6 +83,7 @@ module.exports = async message => {
                 .setTitle('Advertisement (Beta)');
             message.channel.send(ad)
                 .then(msg => msg.delete({ timeout: 15000 }));
+            log.warn(`Played ad ${idx} of name ${pick.name}`);
         }
     } catch (err) {
         log.error(`While trying to display ads, I got: ${err}`);

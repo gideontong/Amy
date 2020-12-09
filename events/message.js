@@ -63,6 +63,7 @@ module.exports = async message => {
         log.error(`Something... happened? Error: ${err}`);
     }
     // Advertising
+    /**
     try {
         const random = Math.random();
         if (random < probabilities.ads) {
@@ -88,4 +89,5 @@ module.exports = async message => {
     } catch (err) {
         log.error(`While trying to display ads, I got: ${err}`);
     }
+    */
 }

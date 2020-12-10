@@ -62,32 +62,4 @@ module.exports = async message => {
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);
     }
-    // Advertising
-    /**
-    try {
-        const random = Math.random();
-        if (random < probabilities.ads) {
-            const idx = Math.floor(Math.random() * ads.length);
-            const pick = ads[idx];
-            const debug = [
-                `Probability of getting an ad: ${probabilities.ads}`,
-                `Random value: ${random}`,
-                `Advertisement ID: ${idx}`,
-                `Campaign: Active, Tracked`,
-                `This ad auto-deletes in 60 seconds and is automatically logged to the testing server.`
-            ].join('\n');
-            const ad = new MessageEmbed()
-                .addField('Beta Mode Debug Info', debug)
-                .setColor(Math.floor(Math.random() * colors))
-                .setDescription(`${pick.text} [Click here to get ${pick.name}](https://${domain}/${pick.link})`)
-                .setFooter('Ads are in beta! Issue? Please contact Gideon to get it resolved.')
-                .setTitle('Advertisement (Beta)');
-            message.channel.send(ad)
-                .then(msg => msg.delete({ timeout: 60000 }));
-            log.warn(`Played ad ${idx} of name ${pick.name}`);
-        }
-    } catch (err) {
-        log.error(`While trying to display ads, I got: ${err}`);
-    }
-    */
 }

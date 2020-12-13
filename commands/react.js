@@ -31,7 +31,7 @@ module.exports = async (client, message, args) => {
             const target = messages.keyArray()[messages.size - 2];
             log.info(target);
             try {
-                const targetMessage = messages[target];
+                const targetMessage = messages.get(target);
                 log.info(targetMessage);
                 if (targetMessage) {
                     targetMessage.react(emoji.toString());

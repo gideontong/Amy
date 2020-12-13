@@ -29,10 +29,8 @@ module.exports = async (client, message, args) => {
         let messages = message.channel.messages.cache;
         if (messages.size > 1) {
             const target = messages.keyArray()[messages.size - 2];
-            log.info(target);
             try {
                 const targetMessage = messages.get(target);
-                log.info(targetMessage);
                 if (targetMessage) {
                     targetMessage.react(emoji.toString());
                 }

@@ -24,9 +24,22 @@ module.exports = async (client, message, args) => {
         emoji = client.emojis.resolve(args[1]);
     }
     if (emoji) {
-        message.delete();
+        message.delete()
+            .catch(err => log.warn(`Tried to delete a message but got ${err}`));
         let messages = message.channel.messages.cache;
-        message.channel.send(messages.keyArray());
+        if (messages.size() > 2) {
+            const target = messages.keyArray()[messages.size() - 2];
+            try {
+                const targetMessage = messages[target];
+                if (targetMessage) {
+                    targetMessage.react(emoji);
+                }
+            } catch (err) {
+                log.error(`While trying to react I got ${err}`);
+            }
+        } else {
+            message.channel.send("I couldn't find any messages in this channel to react to. Either I'm still loading or there actually isn't any messages here.");
+        }
     } else {
         message.channel.send("I couldn't find that emote...");
         log.warn(`User tried to react with ${args[1]}`)

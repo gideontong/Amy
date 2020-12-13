@@ -227,6 +227,12 @@
             "alias": []
         },
         {
+            "name": "Discord Kitro 2",
+            "command": "react",
+            "description": "React to the last message in a server with any emote.",
+            "alias": []
+        },
+        {
             "name": "Server Rules",
             "command": "rules",
             "description": "Get the server rules!",

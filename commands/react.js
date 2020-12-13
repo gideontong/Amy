@@ -27,12 +27,12 @@ module.exports = async (client, message, args) => {
         message.delete()
             .catch(err => log.warn(`Tried to delete a message but got ${err}`));
         let messages = message.channel.messages.cache;
-        if (messages.size > 2) {
+        if (messages.size > 1) {
             const target = messages.keyArray()[messages.size - 2];
             try {
                 const targetMessage = messages[target];
                 if (targetMessage) {
-                    targetMessage.react(emoji);
+                    targetMessage.react(emoji.toString());
                 }
             } catch (err) {
                 log.error(`While trying to react I got ${err}`);

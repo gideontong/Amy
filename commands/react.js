@@ -27,7 +27,7 @@ module.exports = async (client, message, args) => {
         message.delete()
             .catch(err => log.warn(`Tried to delete a message but got ${err}`));
         let messages = message.channel.messages.cache;
-        if (messages.size() > 2) {
+        if (messages.size > 2) {
             const target = messages.keyArray()[messages.size() - 2];
             try {
                 const targetMessage = messages[target];

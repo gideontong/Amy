@@ -2,6 +2,7 @@ const colors = 0xFFFFFF;
 const host = 'api.mymemory.translated.net';
 const endpoint = '/get';
 const error = 'Hmm... something went wrong. Ping Gideon for help.';
+const help = 'To use this command, type translate <language> <statement>, like translate Spanish Hello!';
 
 const { pairs, names } = require('../config/languages.json');
 const { request } = require('../lib/Internet');
@@ -15,7 +16,10 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    if (args.length < 3) return;
+    if (args.length < 3) {
+        msg.channel.send(help);
+        return;
+    }
     const string = msg.cleanContent.substr(args[0].length + args[1].length + 2);
     try {
         const language = args[1].toLowerCase();
@@ -37,7 +41,7 @@ module.exports = async (client, msg, args) => {
                 }
             });
         } else {
-            // do something
+            msg.channel.send(help);
         }
     } catch (err) {
         msg.channel.send(error);

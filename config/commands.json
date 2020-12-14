@@ -53,6 +53,12 @@
             "alias": []
         },
         {
+            "name": "Learn to Be Creepy",
+            "command": "creepy",
+            "description": "Use this command to learn how to be creepy to girls!",
+            "alias": []
+        },
+        {
             "name": "Flip a Coin",
             "command": "coinflip",
             "description": "Gives you a coinflip.",

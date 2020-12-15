@@ -29,7 +29,7 @@ log4js.configure({
 });
 const log = log4js.getLogger('amy');
 
-const dbURI = `mongodb+srv://${mongodb.username}:${mongodb.password}@${mongodb.domain}/${mongodb.database}?retryWrties=true&w=majority`;
+const uri = `mongodb+srv://${mongodb.username}:${mongodb.password}@${mongodb.domain}/${mongodb.database}?retryWrties=true&w=majority`;
 const database = new Mongo(uri, { useNewUrlParser: true });
 database.connect(err => {
   const collection = database.db('test').collection('devices');

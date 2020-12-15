@@ -192,6 +192,14 @@
             "alias": []
         },
         {
+            "name": "Yikes, Dawg",
+            "command": "osha",
+            "description": "See something that makes you say yikes.",
+            "alias": [
+                "yikes"
+            ]
+        },
+        {
             "name": "Patreon",
             "command": "patreon",
             "description": "Support us on Patreon with this simple link.",

@@ -22,7 +22,7 @@ const characters = ["\u1511",
     "\u234a",
     "\u2234",
     " \u0307\/",
-    "||",
+    "\\|\\|",
     "\u2a05"];
 
 const log = require('log4js').getLogger('amy');

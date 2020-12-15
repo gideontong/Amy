@@ -241,6 +241,12 @@
             ]
         },
         {
+            "name": "About Me",
+            "command": "profile",
+            "description": "See your information and rank on Amy!",
+            "alias": []
+        },
+        {
             "name": "QR Code",
             "command": "qr",
             "description": "Generate a QR code!",

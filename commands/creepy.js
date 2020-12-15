@@ -12,7 +12,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (client, msg, args) => {
     try {
         getRedditImage(function (data = 'Loading...') {
-            msg.channel.send('A quick tutorial on how to be creepy:')
+            msg.channel.send('A quick tutorial on how to be creepy:');
             msg.channel.send(data);
         }, subreddit);
     } catch (err) {

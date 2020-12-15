@@ -6,9 +6,9 @@ The following table shows which versions still recieve security updates. As alwa
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 3.2.x   | :white_check_mark: |
 | 3.1.x   | :white_check_mark: |
-| 3.0.x   | :white_check_mark: |
-| < 3.0   | :x:                |
+| < 3.1   | :x:                |
 
 As 1.3.x is considered end of life, it will no longer recieve feature or security updates.
 

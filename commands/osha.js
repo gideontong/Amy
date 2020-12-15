@@ -16,6 +16,6 @@ module.exports = async (client, msg, args) => {
             msg.channel.send(data);
         }, subreddit);
     } catch (err) {
-        log.error(`While trying to grab a Reddit battlestation picture I got ${err}`);
+        log.error(`While trying to grab a Reddit /r/OSHA picture I got ${err}`);
     }
 }

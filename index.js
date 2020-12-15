@@ -1,11 +1,10 @@
 // Local imports
-const { amy, mongodb } = require('./config/secrets.json');
+const { amy } = require('./config/secrets.json');
 const { prefix, activities } = require('./config/config.json');
 const { generateLogName } = require('./lib/MagicNumbers');
 
 // Dependency imports
 const Discord = require('discord.js');
-const Mongo = require('mongodb').MongoClient;
 const log4js = require('log4js');
 const client = new Discord.Client();
 
@@ -28,14 +27,6 @@ log4js.configure({
     }
 });
 const log = log4js.getLogger('amy');
-
-const uri = `mongodb+srv://${mongodb.username}:${mongodb.password}@${mongodb.domain}/${mongodb.database}?retryWrties=true&w=majority`;
-const database = new Mongo(uri, { useNewUrlParser: true });
-database.connect(err => {
-  const collection = database.db('test').collection('devices');
-  // perform actions on the collection object
-  database.close();
-});
 
 // Client setup
 require('./event.js')(client);

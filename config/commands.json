@@ -59,6 +59,12 @@
             "alias": []
         },
         {
+            "name": "Ah, Middle School",
+            "command": "cringe",
+            "description": "Cringe at other people in this world.",
+            "alias": []
+        },
+        {
             "name": "Flip a Coin",
             "command": "coinflip",
             "description": "Gives you a coinflip.",

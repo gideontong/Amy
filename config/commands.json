@@ -130,6 +130,12 @@
             "alias": []
         },
         {
+            "name": "Minecraft Text Generator",
+            "command": "galactic",
+            "description": "Become Obi-Wan Kenobi with this text generator!",
+            "alias": []
+        },
+        {
             "name": "Source Code",
             "command": "github",
             "description": "See my source code!",

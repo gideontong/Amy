@@ -31,8 +31,8 @@ module.exports = async message => {
                 }
             }
             cmdFile = require(`../commands/${toRun}.js`);
-        } catch {
-            log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
+        } catch (err) {
+            log.warn(`${message.author.tag} tried to run invalid command ${message.content} but I got ${err}`);
             return;
         }
         if (!cmdFile) {

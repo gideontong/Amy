@@ -14,30 +14,33 @@ const { MessageEmbed } = require('discord.js');
  */
 module.exports = async (client, msg, args) => {
     // TODO: Have loading message while it loads
-    await getProfile(msg.author.id, function (data) {
-        if (data) {
-            const [level, xp, progress] = calculateLevel(data.statistics.messages,
-                data.statistics.reactions,
-                data.statistics.commands.count);
-            const money = data.economy && data.economy.money ? data.economy.money : 0;
-            const profile = new MessageEmbed()
-                .addField('Favorite Command', getFavoriteCommand(data))
-                .addField('Level', level, true)
-                .addField(`${xp} XP`, buildProgressString(progress), true)
-                .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
-                .addField('Money', `$${money}`, true)
-                .addField('Server Rank', getRank(level), true)
-                .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
-                .setColor(Math.floor(Math.random() * colors))
-                .setDescription(getRandomDescription(data))
-                .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
-                .setTimestamp()
-                .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
-            msg.channel.send(profile);
-        } else {
-            msg.channel.send('Hmm... something went wrong. Either your profile does not exist or something worse. Ping an admin for help?');
-        }
-    });
+    msg.channel.send('Looking for a profile, please wait...')
+        .then(sent => {
+            await getProfile(msg.author.id, function (data) {
+                if (data) {
+                    const [level, xp, progress] = calculateLevel(data.statistics.messages,
+                        data.statistics.reactions,
+                        data.statistics.commands.count);
+                    const money = data.economy && data.economy.money ? data.economy.money : 0;
+                    const profile = new MessageEmbed()
+                        .addField('Favorite Command', getFavoriteCommand(data))
+                        .addField('Level', level, true)
+                        .addField(`${xp} XP`, buildProgressString(progress), true)
+                        .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
+                        .addField('Money', `$${money}`, true)
+                        .addField('Server Rank', getRank(level), true)
+                        .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
+                        .setColor(Math.floor(Math.random() * colors))
+                        .setDescription(getRandomDescription(data))
+                        .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
+                        .setTimestamp()
+                        .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
+                    sent.edit(profile);
+                } else {
+                    sent.edit('Hmm... something went wrong. Either your profile does not exist or something worse. Ping an admin for help?');
+                }
+            });
+        });
 }
 
 /**

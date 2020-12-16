@@ -39,7 +39,8 @@ module.exports = async (client, msg, args) => {
             }
         });
         if (err) {
-            msg.channel.send(err);
+            msg.channel.send(err)
+                .catch(err => {});
             return;
         }
     } else {

@@ -24,9 +24,9 @@ module.exports = async (client, msg, args) => {
                 .addField('Favorite Command', getFavoriteCommand(data))
                 .addField('Level', level, true)
                 .addField(`${xp} XP`, buildProgressString(progress), true)
-                .addField('Achievements', 'placeholder')
+                .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
                 .addField('Money', `$${money}`, true)
-                .addField('Server Rank', 'placeholder', true)
+                .addField('Server Rank', 'coming soon', true)
                 .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
                 .setColor(Math.floor(Math.random() * colors))
                 .setDescription(getRandomDescription(data))
@@ -84,5 +84,5 @@ function buildProgressString(progress) {
  */
 function getRandomDescription(data) {
     // TODO: Return an ad sometimes if the user is not a premium user
-    return 'placeholder';
+    return 'description or fun fact coming soon';
 }

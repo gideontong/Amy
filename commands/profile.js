@@ -5,6 +5,7 @@ const colors = 0xFFFFFF;
 const { getProfile } = require('../lib/Member');
 const { calculateLevel, getRank } = require('../lib/Achievement');
 const { MessageEmbed } = require('discord.js');
+const log = require('log4js').getLogger('amy');
 
 /**
  * Show the profile of the user
@@ -13,9 +14,9 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Array of arguments
  */
 module.exports = async (client, msg, args) => {
-    // TODO: Have loading message while it loads
+    log.info(`Attempting to get profile for ${msg.author.tag}`);
     msg.channel.send('Looking for a profile, please wait...')
-        .then(sent => {
+        .then(async sent => {
             await getProfile(msg.author.id, function (data) {
                 if (data) {
                     const [level, xp, progress] = calculateLevel(data.statistics.messages,
@@ -35,7 +36,7 @@ module.exports = async (client, msg, args) => {
                         .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
                         .setTimestamp()
                         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
-                    sent.edit(profile);
+                    sent.edit('', profile);
                 } else {
                     sent.edit('Hmm... something went wrong. Either your profile does not exist or something worse. Ping an admin for help?');
                 }

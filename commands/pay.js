@@ -1,3 +1,5 @@
+const { transferBalance } = require('../lib/Member');
+
 /**
  * Pay another user
  * @param {Client} client Discord server client

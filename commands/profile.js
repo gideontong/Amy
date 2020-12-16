@@ -23,6 +23,6 @@ module.exports = async (client, msg, args) => {
         .setDescription('placeholder')
         .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
         .setTimestamp()
-        .setTitle(`${msg.member.nickname}'s Public Profile`);
+        .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
     msg.channel.send(profile);
 }

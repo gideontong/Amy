@@ -4,7 +4,6 @@ const colors = 0xFFFFFF;
 const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
-const { domain, ads } = require('../config/ads.json');
 const { isIgnored } = require('../lib/Validation');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
@@ -19,7 +18,7 @@ module.exports = async message => {
         commands = message.content.split(' ');
         toRun = commands[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
-        try {
+        // try {
             if (!permissions.users.admin.includes(message.author.id)) {
                 if (permissions.commands.unreleased.includes(toRun)) {
                     message.reply('Command coming soon!');
@@ -32,10 +31,10 @@ module.exports = async message => {
                 }
             }
             cmdFile = require(`../commands/${toRun}.js`);
-        } catch {
-            log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
-            return;
-        }
+        // } catch {
+        //     log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
+        //     return;
+        // }
         if (!cmdFile) {
             log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
         } else {

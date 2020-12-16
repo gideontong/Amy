@@ -74,7 +74,7 @@ function getFavoriteCommand(data) {
  */
 function buildProgressString(progress) {
     const percentage = Math.floor(progress * 10);
-    const bars = Math.floor(percent / 8);
+    const bars = Math.floor(percentage / 8);
     return `${filled.repeat(bars)}${unfilled.repeat(8 - bars)} ${percentage}%`;
 }
 

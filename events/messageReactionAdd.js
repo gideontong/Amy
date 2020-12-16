@@ -8,7 +8,7 @@ module.exports = async (reaction, user) => {
     //     updateExistingPoll(reaction);
     // }
     try {
-        countAction(user.id, 'react');
+        if (!user.bot) countAction(user.id, 'react');
     } catch (err) {
         log.error(`While trying to update database I got ${err}`);
     }

@@ -21,6 +21,10 @@ module.exports = async (client, msg, args) => {
         if (msg.mentions.members && msg.mentions.members.size > 0) {
             snowflake = msg.mentions.members.firstKey();
             member = msg.mentions.members.first();
+            if (member.user.bot) {
+                msg.channel.send("Bots aren't allowed to have profiles!");
+                return;
+            }
         }
     }
     msg.channel.send('Looking for a profile, please wait...')

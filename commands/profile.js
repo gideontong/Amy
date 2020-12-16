@@ -3,6 +3,7 @@ const unfilled = '▱';
 const colors = 0xFFFFFF;
 
 const { getProfile } = require('../lib/Member');
+const { calculateLevel } = require('../lib/Achievement');
 const { MessageEmbed } = require('discord.js');
 
 /**
@@ -12,13 +13,17 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Array of arguments
  */
 module.exports = async (client, msg, args) => {
+    // TODO: Have loading message while it loads
     await getProfile(msg.author.id, function (data) {
         if (data) {
+            const [level, xp, progress] = calculateLevel(data.statistics.messages,
+                data.statistics.reactions,
+                data.statistics.commands.count);
             const money = data.economy && data.economy.money ? data.economy.money : 0;
             const profile = new MessageEmbed()
                 .addField('Favorite Command', 'placeholder')
-                .addField('Level', 'placeholder', true)
-                .addField('placeholder XP', 'placeholder placeholder', true)
+                .addField('Level', level, true)
+                .addField(`${xp} XP`, progress, true)
                 .addField('Achievements', 'placeholder')
                 .addField('Money', `$${money}`, true)
                 .addField('Server Rank', 'placeholder', true)

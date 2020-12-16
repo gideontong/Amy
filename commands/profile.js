@@ -36,7 +36,7 @@ module.exports = async (client, msg, args) => {
                         .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
                         .setTimestamp()
                         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
-                    sent.edit('', profile);
+                    sent.edit(getRandomContent(), profile);
                 } else {
                     sent.edit('Hmm... something went wrong. Either your profile does not exist or something worse. Ping an admin for help?');
                 }
@@ -88,5 +88,22 @@ function buildProgressString(progress) {
  */
 function getRandomDescription(data) {
     // TODO: Return an ad sometimes if the user is not a premium user
-    return 'description or fun fact coming soon';
+    const roll = Math.floor(Math.random() * 3);
+    if (roll == 0) {
+        return `You have deleted ${data.statistics.deleted} messages so far!`;
+    } else if (roll == 1) {
+        return `You have earned $${data.economy.earned} so far!`;
+    } else if (roll == 2) {
+        return `You have spent $${data.economy.spent} so far!`;
+    } else {
+        return "I don't have any fun facts about you yet.";
+    }
+}
+
+/**
+ * Gets a random edit message
+ * @param {Boolean} adsEnabled Ads enabled
+ */
+function getRandomContent(adsEnabled = true) {
+    return 'This feature is in heavy development. Submit feature requests with the `github` command.'
 }

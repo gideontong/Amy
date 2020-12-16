@@ -36,6 +36,12 @@
                 "options": {
                     "type": "PLAYING"
                 }
+            },
+            {
+                "text": "for ~help",
+                "options": {
+                    "type": "LISTENING"
+                }
             }
         ],
         "kevin": [

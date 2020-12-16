@@ -4,7 +4,6 @@ const colors = 0xFFFFFF;
 
 const { getProfile } = require('../lib/Member');
 const { calculateLevel, getRank } = require('../lib/Achievement');
-const { extractSnowflake } = require('../lib/Validation');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -17,9 +16,11 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (client, msg, args) => {
     log.info(`Attempting to get profile for ${msg.author.tag}`);
     let snowflake = msg.author.id;
+    let member = msg.member;
     if (args.length > 1) {
         if (msg.mentions.members && msg.mentions.members.size > 0) {
             snowflake = msg.mentions.members.firstKey();
+            member = msg.mentions.members.first();
         }
     }
     msg.channel.send('Looking for a profile, please wait...')
@@ -37,12 +38,12 @@ module.exports = async (client, msg, args) => {
                         .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
                         .addField('Money', `$${money}`, true)
                         .addField('Server Rank', getRank(level), true)
-                        .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
+                        .setAuthor(member.user.tag, member.user.displayAvatarURL())
                         .setColor(Math.floor(Math.random() * colors))
                         .setDescription(getRandomDescription(data))
                         .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
                         .setTimestamp()
-                        .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
+                        .setTitle(`${member.nickname ? member.nickname : member.user.username}'s Public Profile`);
                     sent.edit(getRandomContent(), profile);
                 } else {
                     sent.edit('Hmm... something went wrong. Either your profile does not exist or something worse. Ping an admin for help?');

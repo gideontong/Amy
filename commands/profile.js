@@ -21,15 +21,15 @@ module.exports = async (client, msg, args) => {
                 data.statistics.commands.count);
             const money = data.economy && data.economy.money ? data.economy.money : 0;
             const profile = new MessageEmbed()
-                .addField('Favorite Command', 'placeholder')
+                .addField('Favorite Command', getFavoriteCommand(data))
                 .addField('Level', level, true)
-                .addField(`${xp} XP`, progress, true)
+                .addField(`${xp} XP`, buildProgressString(progress), true)
                 .addField('Achievements', 'placeholder')
                 .addField('Money', `$${money}`, true)
                 .addField('Server Rank', 'placeholder', true)
                 .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
                 .setColor(Math.floor(Math.random() * colors))
-                .setDescription('placeholder')
+                .setDescription(getRandomDescription(data))
                 .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
                 .setTimestamp()
                 .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Public Profile`);
@@ -40,6 +40,49 @@ module.exports = async (client, msg, args) => {
     });
 }
 
+/**
+ * Finds and maps the favorite command
+ * @param {Object} data Profile document
+ */
+function getFavoriteCommand(data) {
+    const error = 'Could not find favorite command!';
+    if (data
+        && data.statistics
+        && data.statistics.commands
+        && data.statistics.commands.usage) {
+            let command = '';
+            let high = 0;
+            Object.entries(data.statistics.commands.usage).forEach(([key, value]) => {
+                if (value > high) {
+                    command = key;
+                    high = value;
+                }
+            })
+            if (command && high) {
+                return command;
+            } else {
+                return error;
+            }
+    } else {
+        return error;
+    }
+}
+
+/**
+ * Builds a progress string
+ * @param {Number} progress Progress value
+ */
+function buildProgressString(progress) {
+    const percentage = Math.floor(progress * 10);
+    const bars = Math.floor(percent / 8);
+    return `${filled.repeat(bars)}${unfilled.repeat(8 - bars)} ${percentage}%`;
+}
+
+/**
+ * Gets a random description for the user
+ * @param {Object} data Profile document
+ */
 function getRandomDescription(data) {
     // TODO: Return an ad sometimes if the user is not a premium user
+    return 'placeholder';
 }

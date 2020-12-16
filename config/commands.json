@@ -212,6 +212,12 @@
             "alias": []
         },
         {
+            "name": "Pay a Friend",
+            "command": "pay",
+            "description": "Pay your friends using your balance!",
+            "alias": []
+        },
+        {
             "name": "Perhaps Cow",
             "command": "perhaps",
             "description": "Need a perhaps cow in your life? Perhaps.",

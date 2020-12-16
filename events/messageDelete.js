@@ -1,6 +1,7 @@
 const { prefix, channels } = require('../config/config.json');
 const { exclusive } = require('../config/snowflakes.json');
 const { MessageEmbed } = require('discord.js');
+const { countAction } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -23,6 +24,7 @@ module.exports = async message => {
                 channel.send(deletedComment);
             }
         }
+        countAction(message.author.id, 'delete');
     } catch (err) {
         log.error(`While trying to emite a messageDelete I got ${err}`);
     }

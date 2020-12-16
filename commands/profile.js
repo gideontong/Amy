@@ -4,6 +4,7 @@ const colors = 0xFFFFFF;
 
 const { getProfile } = require('../lib/Member');
 const { calculateLevel, getRank } = require('../lib/Achievement');
+const { extractSnowflake } = require('../lib/Validation');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -15,9 +16,15 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     log.info(`Attempting to get profile for ${msg.author.tag}`);
+    let snowflake = msg.author.id;
+    if (args.length > 1) {
+        if (msg.mentions.members && msg.mentions.members.size > 0) {
+            snowflake = msg.mentions.members.firstKey();
+        }
+    }
     msg.channel.send('Looking for a profile, please wait...')
         .then(async sent => {
-            await getProfile(msg.author.id, function (data) {
+            await getProfile(snowflake, function (data) {
                 if (data) {
                     const [level, xp, progress] = calculateLevel(data.statistics.messages,
                         data.statistics.reactions,

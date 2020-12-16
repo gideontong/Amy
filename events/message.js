@@ -1,11 +1,10 @@
 const interdasting = 'https://i.imgur.com/9h7eFti.png';
-const colors = 0xFFFFFF;
 
 const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
 const { isIgnored } = require('../lib/Validation');
-const { MessageEmbed } = require('discord.js');
+const { countAction, countCommand } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -42,6 +41,12 @@ module.exports = async message => {
                 log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
         }
+        // Statistics
+        try {
+            countCommand(message.author.id, toRun);
+        } catch (err) {
+            log.error(`Error with database: ${err}`);
+        }
         return;
     }
     // Memes and fun
@@ -60,5 +65,11 @@ module.exports = async message => {
         }
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);
+    }
+    // Statistics
+    try {
+        countAction(message.author.id, 'message');
+    } catch (err) {
+        log.error(`Error with database: ${err}`);
     }
 }

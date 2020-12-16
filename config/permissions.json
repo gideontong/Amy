@@ -5,19 +5,20 @@
             "countreactions",
             "generateachievement",
             "grantachievement",
-            "repeat",
             "revokeachievement",
-            "say",
-            "tell",
             "welcome",
-            "joinvoice"
+            "joinvoice",
+            "createprofile"
         ],
         "unreleased": [
             "achievement",
             "achievements",
             "sudo",
             "poll",
-            "profile"
+            "profile",
+            "repeat",
+            "say",
+            "tell"
         ]
     },
     "users": {

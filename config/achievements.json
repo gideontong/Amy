@@ -1,6 +1,34 @@
 {
-    "all": ["runSudo", "failSudo", "newIssue", "newBug", "pullRequest", "useCommandsAll", "annoying", "leoGay", "allKevinResponses", "leoStatus", "qrRickroll", "breakAmy", "rulebreaker", "becomeAmy", "selfAnnoy"],
-    "visible": ["runSudo", "failSudo", "newIssue", "newBug", "pullRequest", "useCommandsAll", "annoying", "leoGay", "allKevinResponses", "leoStatus", "qrRickroll"],
+    "all": [
+        "runSudo",
+        "failSudo",
+        "newIssue",
+        "newBug",
+        "pullRequest",
+        "useCommandsAll",
+        "annoying",
+        "leoGay",
+        "allKevinResponses",
+        "leoStatus",
+        "qrRickroll",
+        "breakAmy",
+        "rulebreaker",
+        "becomeAmy",
+        "selfAnnoy"
+    ],
+    "visible": [
+        "runSudo",
+        "failSudo",
+        "newIssue",
+        "newBug",
+        "pullRequest",
+        "useCommandsAll",
+        "annoying",
+        "leoGay",
+        "allKevinResponses",
+        "leoStatus",
+        "qrRickroll"
+    ],
     "public": [
         {
             "id": "runSudo",

@@ -3,7 +3,7 @@ const unfilled = '▱';
 const colors = 0xFFFFFF;
 
 const { getProfile } = require('../lib/Member');
-const { calculateLevel } = require('../lib/Achievement');
+const { calculateLevel, getRank } = require('../lib/Achievement');
 const { MessageEmbed } = require('discord.js');
 
 /**
@@ -26,7 +26,7 @@ module.exports = async (client, msg, args) => {
                 .addField(`${xp} XP`, buildProgressString(progress), true)
                 .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
                 .addField('Money', `$${money}`, true)
-                .addField('Server Rank', 'coming soon', true)
+                .addField('Server Rank', getRank(level), true)
                 .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
                 .setColor(Math.floor(Math.random() * colors))
                 .setDescription(getRandomDescription(data))

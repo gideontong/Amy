@@ -24,10 +24,19 @@ module.exports = async (client, msg, args) => {
         msg.channel.send(error);
         return;
     }
+    if (payor == payee) {
+        msg.reply("You can't pay yourself...");
+        return;
+    }
     if (payor && payee && amount) {
         const err = transferBalance(payor, payee, amount, false, function (data) {
+            if (data) {
             msg.channel.send(`Successfully transferred $${amount} to <@${payee}>!`);
             log.info(`${msg.author.tag} transferred ${amount} to ${msg.mentions.members.first().user.tag}`);
+            }
+            else {
+                msg.channel.send("Couldn't send money. Maybe you don't have enough?");
+            }
         });
         if (err) {
             msg.channel.send(err);

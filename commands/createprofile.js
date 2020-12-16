@@ -7,6 +7,6 @@ const { createProfile } = require('../lib/Member');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    createProfile(msg.author.id);
+    await createProfile(msg.author.id);
     msg.channel.send(`Created profile with ${msg.author.id}`);
 }

@@ -31,14 +31,14 @@ module.exports = async message => {
             }
             cmdFile = require(`../commands/${toRun}.js`);
         } catch (err) {
-            log.warn(`${message.author.tag} tried to run invalid command ${message.content} but I got ${err}`);
+            log.warn(`${message.author.tag} failed to run ${message.content}`);
             return;
         }
         if (!cmdFile) {
-            log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
+            log.warn(`${message.author.tag} tried to run nonexistent command ${message.content}`);
         } else {
             cmdFile(message.client, message, commands).catch(err => {
-                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+                log.error(`${message.author.tag} ran ${message.content} that resulted in error ${err}`);
             })
         }
         // Statistics
@@ -56,7 +56,7 @@ module.exports = async message => {
             response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
                 + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
             message.reply(response);
-            log.info(`${message.author.tag} ${message.author} requested a picture of Leo`);
+            log.info(`${message.author.tag} requested a picture of Leo`);
         } else if (sanitizedMessage.includes('interdasting')) {
             message.channel.send(interdasting);
         }

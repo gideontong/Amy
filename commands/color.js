@@ -12,7 +12,7 @@ module.exports = async (client, msg, args) => {
         return;
     }
     color = getColor(args[1]);
-    msg.channel.send(`${!args[2] ? 'Approximately ' : ''}${color[1]}`);
+    msg.channel.send(color[1]);
 }
 
 /**
@@ -43,6 +43,7 @@ function getColor(color) {
         ndf1 = Math.pow(r - colors[i][2], 2) + Math.pow(g - colors[i][3], 2) + Math.pow(b - colors[i][4], 2);
         ndf2 = Math.pow(h - colors[i][5], 2) + Math.pow(s - colors[i][6], 2) + Math.pow(l - colors[i][7], 2);
         ndf = ndf1 + ndf2 * 2;
+        console.log(ndf, colors[i])
         if (df < 0 || df > ndf) {
             df = ndf;
             cl = i;

@@ -30,7 +30,7 @@ module.exports = async (client, msg, args) => {
  * @param {Array} current Current array of rolls
  * @returns {Array} New array of rolls
  */
-function generateSlotString(current = [], values = Array.from({ length: rolls }.fill(0))) {
+function generateSlotString(current = [], values = Array.from({ length: rolls }).fill(0)) {
     if (current.length) {
         const idx = current.indexOf(loading);
         if (idx == -1) {

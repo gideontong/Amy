@@ -17,9 +17,19 @@ module.exports = async (client, msg, args) => {
         .addField('Hex Color', `#${color[0]}`)
         .addField('Exact Match', `${color[2] ? 'Yes': 'No'}`)
         .setColor(color[0])
+        .setDescription(getDescription(msg.author.id))
         .setTitle(color[1])
         .setThumbnail(`https://singlecolorimage.com/get/${color[0]}/400x400`);
     msg.channel.send(embed);
+}
+
+/**
+ * Sometimes returns an ad if the user is non-premium
+ * @param {String} snowflake Discord user snowflake
+ */
+function getDescription(snowflake) {
+    // Perfect potential advertising space?
+    return '';
 }
 
 /**

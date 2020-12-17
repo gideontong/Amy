@@ -4,6 +4,7 @@ const right = '<a:goleft:788932776875130880>';
 const good = ['<a:partycorgi:788925997344358441>'];
 const normal = ['🪙', '🎁', '🧧', '✨'];
 const bad = ['<a:amongusparty:788925073498177546>', '🪵', '🌿'];
+const minimum = 5;
 const rolls = 5;
 const lowerOdds = 0.4;
 const upperOdds = 0.9;
@@ -42,6 +43,10 @@ module.exports = async (client, msg, args) => {
         }
     } else {
         msg.channel.send(invalidBet);
+    }
+    if (bet < minimum) {
+        msg.channel.send(`The minimum bet is $${minimum}. Try again!`);
+        return;
     }
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))

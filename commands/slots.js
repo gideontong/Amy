@@ -8,6 +8,7 @@ const rolls = 5;
 const lowerOdds = 0.4;
 const upperOdds = 0.9;
 
+const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -26,9 +27,11 @@ module.exports = async (client, msg, args) => {
                     msg.edit(generateSlotString(current));
                 }, i * 500);
             }
+            const embed = new MessageEmbed()
+                .setDescription('you won something text goes here');
             setTimeout(() => {
-                msg.edit('test');
-            }, rolls * 500 + 500);
+                msg.edit(embed);
+            }, 500);
         });
 }
 
@@ -73,3 +76,14 @@ function generateSlots(current = [], values = Array.from({ length: rolls }).fill
         }).fill(loading), values];
     }
 };
+
+/**
+ * Determines the slots values
+ * @param {Array} current The slots values
+ * @param {Array} values Values of the function
+ * @returns {Array} [Winnings, spoiler string]
+ */
+function calculateValue(current, values) {
+    const slotSet = new Set(current);
+    const valueSet = new Set(values);
+}

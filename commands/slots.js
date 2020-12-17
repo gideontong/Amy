@@ -21,6 +21,7 @@ const warnings = [
     'Invest your college tuition into gambling.',
     'If you can gamble for free, it is actually a contest.'
 ];
+const invalidBet = "You didn't provide a valid bet, so we've automatically used $5.";
 
 const { MessageEmbed, RichPresenceAssets } = require('discord.js');
 const log = require('log4js').getLogger('amy');
@@ -32,6 +33,16 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
+    let bet = 5;
+    if (args.length > 1) {
+        try {
+            bet = parseInt(args[1]);
+        } catch {
+            msg.channel.send(invalidBet);
+        }
+    } else {
+        msg.channel.send(invalidBet);
+    }
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))
         .then(msg => {
@@ -41,8 +52,11 @@ module.exports = async (client, msg, args) => {
                     msg.edit(generateSlotString(current));
                     if (i == rolls) {
                         [modifier, spoiler] = calculateValue(current, values);
+                        const winnings = modifier > 0 ? Math.floor(modifier * bet) : 0;
+                        const losses = modifier < 0 ? Math.abs(Math.floor(modifier * bet)) : 0;
                         const embed = new MessageEmbed()
-                            .addField('Winnings', modifier)
+                            .addField('Winnings', `$${winnings}`, true)
+                            .addField('Losses', `$${losses}`, true)
                             .setColor(Math.floor(Math.random() * colors))
                             .setDescription(spoiler)
                             .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
@@ -111,11 +125,11 @@ function calculateValue(current, values) {
     let spoiler = '';
     if (slotSet.size > 1) {
         modifier += slotSet.size / rolls;
-        spoiler += `You got ${slotSet.size} of a kind! `;
+        spoiler += `You got ${rolls - slotSet.size} of a kind! `;
     }
     if (score == rolls * 2) {
         modifier *= 2;
-        spoiler += 'JACKPOT! ';
+        spoiler += 'JACKPOT! This is the best you could have done. ';
     } else if (score > rolls) {
         modifier *= 1.25;
     } else if (score > 0) {

@@ -7,6 +7,20 @@ const bad = ['<a:amongusparty:788925073498177546>', '🪵', '🌿'];
 const rolls = 5;
 const lowerOdds = 0.4;
 const upperOdds = 0.9;
+const colors = 0xFFFFFF;
+const warnings = [
+    '40% of gambling addicts have an anxiety disorder.',
+    '50% of gambling addicts have a mood disorder.',
+    '60% of gambling addicts have a personality disorder.',
+    'Gamble safe and responsibly.',
+    'When the fun stops, STOP.',
+    'Call 1-800-GAMBLER to get help with a gambling addiction.',
+    'Text SUPPORT to 53342 to get help with a gambling addiction.',
+    'Your chances of a jackpot are 1 in 100,000.',
+    'You must be 18 to gamble in California.',
+    'Invest your college tuition into gambling.',
+    'If you can gamble for free, it is actually a contest.'
+];
 
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
@@ -28,10 +42,12 @@ module.exports = async (client, msg, args) => {
                 }, i * 500);
             }
             const embed = new MessageEmbed()
-                .setDescription('you won something text goes here');
+                .setColor(Math.floor(Math.random() * colors))
+                .setDescription('you won something text goes here')
+                .setFooter(warnings[Math.floor(Math.random() * warnings.length)]);
             setTimeout(() => {
                 msg.edit(embed);
-            }, 500);
+            }, (rolls + 1) * 500);
         });
 }
 

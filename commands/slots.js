@@ -51,11 +51,11 @@ module.exports = async (client, msg, args) => {
         return;
     }
     if (!debug) {
-        await getBalance(msg.author.id, async function (data) {
+        await getBalance(msg.author.id, function (data) {
             if (bet > data) {
                 msg.channel.send("You don't have enough money for this!");
             } else {
-                await main(msg, bet, debug);
+                main(msg, bet, debug);
             }
         });
     } else {
@@ -92,7 +92,7 @@ async function main(msg, bet, debug) {
                         if (!debug) {
                             const change = winnings - losses;
                             log.info(`Slots was not in debug, so ${msg.author.tag}'s balance is changing by ${change}`);
-                            await updateBalance(msg.author.id, change);
+                            updateBalance(msg.author.id, change);
                         }
                     }
                 }, i * 500);

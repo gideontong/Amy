@@ -124,7 +124,7 @@ function calculateValue(current, values) {
     let modifier = 1;
     let spoiler = '';
     if (slotSet.size > 1) {
-        modifier += slotSet.size / rolls;
+        modifier += (rolls - slotSet.size) / rolls;
         spoiler += `You got a ${rolls - slotSet.size}x kind modifier bonus! `;
     } else {
         modifier = 2;

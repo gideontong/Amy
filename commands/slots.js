@@ -8,6 +8,8 @@ const rolls = 5;
 const lowerOdds = 0.4;
 const upperOdds = 0.9;
 
+const log = require('log4js').getLogger('amy');
+
 /**
  * Play the slots machine
  * @param {Client} client Discord server client
@@ -18,12 +20,15 @@ module.exports = async (client, msg, args) => {
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))
         .then(msg => {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= rolls; i++) {
                 setTimeout(() => {
                     [current, values] = generateSlots(current, values);
                     msg.edit(generateSlotString(current));
                 }, i * 500);
             }
+            setTimeout(() => {
+                msg.edit('test');
+            }, rolls * 500 + 500);
         });
 }
 

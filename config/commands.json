@@ -31,6 +31,12 @@
             ]
         },
         {
+            "name": "My Bank Account",
+            "command": "balance",
+            "description": "Check your wallets!",
+            "alias": []
+        },
+        {
             "name": "Setup Inpsiration",
             "command": "battlestation",
             "description": "Find a cool picture of someone's setup.",

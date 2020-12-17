@@ -104,9 +104,7 @@ function generateSlots(current = [], values = Array.from({ length: rolls }).fill
  */
 function calculateValue(current, values) {
     const slotSet = new Set(current);
-    const score = values.reduce((acc, curr) => {
-        return acc + curr;
-    });
+    const score = values.reduce((acc, curr) => acc + curr);
     let modifier = 1;
     let spoiler = '';
     if (slotSet.size > 1) {

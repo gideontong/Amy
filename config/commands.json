@@ -83,6 +83,12 @@
             ]
         },
         {
+            "name": "Name of Color",
+            "command": "color",
+            "description": "Get the name of any color you want!",
+            "alias": []
+        },
+        {
             "name": "Roll a Dice",
             "command": "diceroll",
             "description": "Rolls a normal dice for you (should be fair).",

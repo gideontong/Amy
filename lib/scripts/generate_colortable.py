@@ -1627,4 +1627,9 @@ def main():
     with open('colortable.json', 'w') as file:
         dump(table, file)
 
-main()
+def printTable():
+    parseTable()
+    with open('colortable.json', 'w') as file:
+        dump(colors, file)
+
+printTable()

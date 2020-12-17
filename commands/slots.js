@@ -25,6 +25,7 @@ const warnings = [
 const invalidBet = "You didn't provide a valid bet, so we've automatically used $5.";
 
 const { MessageEmbed } = require('discord.js');
+const { updateBalance, getBalance } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -34,6 +35,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
+    const debug = args[0] == '~debugslots';
     let bet = 5;
     if (args.length > 1) {
         try {
@@ -44,10 +46,19 @@ module.exports = async (client, msg, args) => {
     } else {
         msg.channel.send(invalidBet);
     }
-    msg.channel.send(args);
     if (bet < minimum) {
         msg.channel.send(`The minimum bet is $${minimum}. Try again!`);
         return;
+    }
+    if (!debug) {
+        let flag = false;
+        await getBalance(msg.author.id, function (data) {
+            if (bet > data) {
+                msg.channel.send("You don't have enough money for this!");
+                flag = true;
+            }
+        });
+        if (flag) return;
     }
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))
@@ -68,7 +79,11 @@ module.exports = async (client, msg, args) => {
                             .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
                             .setTitle('🥳 You are a winner! 🥳');
                         msg.edit(embed);
-                        const change = winnings - losses;
+                        if (!debug) {
+                            const change = winnings - losses;
+                            log.info(`Slots was not in debug, so ${msg.author.tag}'s balance is changing by ${change}`);
+                            updateBalance(msg.author.id, change);
+                        }
                     }
                 }, i * 500);
             }

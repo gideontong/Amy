@@ -3,23 +3,24 @@
         "admin": [
             "clear",
             "countreactions",
+            "createprofile",
+            "debugslots",
             "generateachievement",
             "grantachievement",
-            "revokeachievement",
-            "welcome",
             "joinvoice",
-            "createprofile",
-            "setbalance",
+            "repeat",
+            "revokeachievement",
             "say",
+            "setbalance",
             "tell",
-            "repeat"
+            "welcome"
         ],
         "unreleased": [
             "achievement",
             "achievements",
-            "sudo",
             "poll",
-            "slots"
+            "slots",
+            "sudo"
         ]
     },
     "users": {

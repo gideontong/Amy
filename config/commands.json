@@ -34,7 +34,11 @@
             "name": "My Bank Account",
             "command": "balance",
             "description": "Check your wallets!",
-            "alias": []
+            "alias": [
+                "bal",
+                "bank",
+                "wallet"
+            ]
         },
         {
             "name": "Setup Inpsiration",

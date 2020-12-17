@@ -18,8 +18,7 @@
             "poll",
             "repeat",
             "say",
-            "tell",
-            "balance"
+            "tell"
         ]
     },
     "users": {

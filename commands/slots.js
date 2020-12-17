@@ -92,7 +92,7 @@ async function main(msg, user, bet, debug) {
                         msg.edit(embed);
                         if (!debug) {
                             const change = winnings - losses;
-                            log.info(`Slots was not in debug, so ${user.tag}'s balance is changing by ${change}`);
+                            log.info(`Slots ran normally, and ${user.tag}'s balance is changing by ${change}`);
                             updateBalance(user.id, change);
                         }
                     }

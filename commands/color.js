@@ -14,8 +14,8 @@ module.exports = async (client, msg, args) => {
     }
     const color = getColor(args[1]);
     const embed = new MessageEmbed()
-        .addField('Hex Color', `#${color[0]}`)
-        .addField('Exact Match', `${color[2] ? 'Yes': 'No'}`)
+        .addField('Hex Color', `#${color[0]}`, true)
+        .addField('Exact Match', `${color[2] ? 'Yes': 'No'}`, true)
         .setColor(color[0])
         .setDescription(getDescription(msg.author.id))
         .setTitle(color[1])

@@ -11,7 +11,8 @@ module.exports = async (client, msg, args) => {
         msg.channel.send('Get a color by providing a Hex value! Usage: `color #000000`');
         return;
     }
-    msg.channel.send(getColor(args[1])[1]);
+    color = getColor(args[1]);
+    msg.channel.send(`${!args[2] ? 'Approximately ' : ''}${color[1]}`);
 }
 
 /**
@@ -45,6 +46,7 @@ function getColor(color) {
         if (df < 0 || df > ndf) {
             df = ndf;
             cl = i;
+            log.info(df, cl);
         }
     }
 

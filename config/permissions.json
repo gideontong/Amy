@@ -9,16 +9,17 @@
             "welcome",
             "joinvoice",
             "createprofile",
-            "setbalance"
+            "setbalance",
+            "say",
+            "tell",
+            "repeat"
         ],
         "unreleased": [
             "achievement",
             "achievements",
             "sudo",
             "poll",
-            "repeat",
-            "say",
-            "tell"
+            "slots"
         ]
     },
     "users": {

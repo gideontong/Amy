@@ -287,6 +287,12 @@
             "alias": []
         },
         {
+            "name": "Slots Machine",
+            "command": "slots",
+            "description": "Try your hand at electronic gambling.",
+            "alias": []
+        },
+        {
             "name": "Live Tickers",
             "command": "stockprice",
             "description": "Stonks? See the current stock price of your favorite company.",

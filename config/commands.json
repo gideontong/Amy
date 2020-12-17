@@ -307,6 +307,12 @@
             "alias": []
         },
         {
+            "name": "Not Alone",
+            "command": "suicide",
+            "description": "You are not alone. Get help if you are in a crisis.",
+            "alias": []
+        },
+        {
             "name": "Free Tips",
             "command": "tip",
             "description": "Get a free tip on life.",

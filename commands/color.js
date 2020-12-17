@@ -14,6 +14,8 @@ module.exports = async (client, msg, args) => {
     }
     const color = getColor(args[1]);
     const embed = new MessageEmbed()
+        .addField('Hex Color', `#${color[0]}`)
+        .addField('Exact Match', `${color[2] ? 'Yes': 'No'}`)
         .setColor(color[0])
         .setTitle(color[1])
         .setThumbnail(`https://singlecolorimage.com/get/${color[0]}/400x400`);

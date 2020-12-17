@@ -53,7 +53,7 @@ module.exports = async (client, msg, args) => {
                     if (i == rolls) {
                         [modifier, spoiler] = calculateValue(current, values);
                         const winnings = modifier > 0 ? Math.floor(modifier * bet) : 0;
-                        const losses = modifier < 0 ? Math.abs(Math.floor(modifier * bet)) : 0;
+                        const losses = bet + (modifier < 0 ? Math.abs(Math.floor(modifier * bet)) : 0);
                         const embed = new MessageEmbed()
                             .addField('Winnings', `$${winnings}`, true)
                             .addField('Losses', `$${losses}`, true)
@@ -125,7 +125,7 @@ function calculateValue(current, values) {
     let spoiler = '';
     if (slotSet.size > 1) {
         modifier += slotSet.size / rolls;
-        spoiler += `You got ${rolls - slotSet.size} of a kind! `;
+        spoiler += `You got ${rolls - slotSet.size}x kind modifier bonus! `;
     }
     if (score == rolls * 2) {
         modifier *= 2;

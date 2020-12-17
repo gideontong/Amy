@@ -7,7 +7,6 @@ module.exports = async (reaction, user) => {
     // if (run) {
     //     updateExistingPoll(reaction);
     // }
-    if (user.id == '756208954031341688') reaction.remove();
     try {
         if (!user.bot) countAction(user.id, 'react');
     } catch (err) {

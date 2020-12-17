@@ -41,10 +41,13 @@ module.exports = async (client, msg, args) => {
                     msg.edit(generateSlotString(current));
                 }, i * 500);
             }
+            [modifier, spoiler] = calculateValue(current, values);
             const embed = new MessageEmbed()
+                .addField('Winnings', modifier)
                 .setColor(Math.floor(Math.random() * colors))
-                .setDescription('you won something text goes here')
-                .setFooter(warnings[Math.floor(Math.random() * warnings.length)]);
+                .setDescription(spoiler)
+                .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
+                .setTitle('🥳 You are a winner! 🥳');
             setTimeout(() => {
                 msg.edit(embed);
             }, (rolls + 1) * 500);
@@ -101,5 +104,29 @@ function generateSlots(current = [], values = Array.from({ length: rolls }).fill
  */
 function calculateValue(current, values) {
     const slotSet = new Set(current);
-    const valueSet = new Set(values);
+    const score = values.reduce((acc, curr) => {
+        return acc + curr;
+    });
+    let modifier = 1;
+    let spoiler = '';
+    if (slotSet.size > 1) {
+        modifier += slotSet.size / rolls;
+        spoiler += `You got ${slotSet.size} of a kind! `;
+    }
+    if (score == rolls * 2) {
+        modifier *= 2;
+        spoiler += 'JACKPOT! ';
+    } else if (score > rolls) {
+        modifier *= 1.25;
+    } else if (score > 0) {
+        modifier *= 1.05;
+    } else {
+        modifier = -1;
+        spoiler += 'How did you manage to get so many bad rolls? ';
+    }
+    if (score < 0 && slotSet.size == 1) {
+        modifier *= 2;
+        spoiler += 'You got the unluckiest roll. '
+    }
+    return [modifier, spoiler];
 }

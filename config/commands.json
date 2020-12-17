@@ -178,6 +178,12 @@
             "alias": []
         },
         {
+            "name": "Softie",
+            "command": "hug",
+            "description": "Hug your friends. Go on.",
+            "alias": []
+        },
+        {
             "name": "Insane Asylum",
             "command": "insaneasylum",
             "description": "Check yourself into a mental hospital.",

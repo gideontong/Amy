@@ -51,7 +51,7 @@ module.exports = async (client, msg, args) => {
         return;
     }
     if (!debug) {
-        await getBalance(msg.author.id, function (data) {
+        await getBalance(msg.author.id, async function (data) {
             if (bet > data) {
                 msg.channel.send("You don't have enough money for this!");
             } else {

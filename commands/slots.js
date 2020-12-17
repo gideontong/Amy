@@ -126,21 +126,22 @@ function calculateValue(current, values) {
     if (slotSet.size > 1) {
         modifier += slotSet.size / rolls;
         spoiler += `You got a ${rolls - slotSet.size}x kind modifier bonus! `;
+    } else {
+        modifier = 2;
+        spoiler += 'FIVE of a kind!? You need some insane luck for that. '
     }
     if (score == rolls * 2) {
         modifier *= 2;
-        spoiler += 'JACKPOT! This is the best you could have done. ';
+        spoiler += 'JACKPOT! This is the best you could have done.';
     } else if (score > rolls) {
-        modifier *= 1.25;
-    } else if (score > 0) {
         modifier *= 1.05;
-    } else {
+    } else if (score < 0) {
         modifier = -1;
         spoiler += 'This one was a bit unlucky. Try again? ';
-    }
-    if (score < 0 && slotSet.size == 1) {
-        modifier *= 2;
-        spoiler += 'You got the unluckiest roll. '
+        if (slotSet.size == 1) {
+            modifier *= 2;
+            spoiler += 'No denying it, this was the unluckiest roll.'
+        }
     }
     return [modifier, spoiler];
 }

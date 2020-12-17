@@ -46,7 +46,7 @@ function getColor(color) {
         if (df < 0 || df > ndf) {
             df = ndf;
             cl = i;
-            log.info(df, cl);
+            console.log(df, cl);
         }
     }
 

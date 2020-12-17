@@ -133,8 +133,10 @@ function calculateValue(current, values) {
     if (score == rolls * 2) {
         modifier *= 2;
         spoiler += 'JACKPOT! This is the best you could have done.';
+    } else if (score > (rolls + 1)) {
+        modifier *= 1.5;
     } else if (score > rolls) {
-        modifier *= 1.05;
+        modifier *= 1.1
     } else if (score < 0) {
         modifier = -1;
         spoiler += 'This one was a bit unlucky. Try again? ';

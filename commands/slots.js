@@ -39,15 +39,11 @@ module.exports = async (client, msg, args) => {
     const user = msg.author;
     let bet = 5;
     if (args.length > 1) {
-        try {
-            bet = parseInt(args[1]);
-        } catch {
-            msg.channel.send(invalidBet);
-        }
+        bet = parseInt(args[1]);
     } else {
         msg.channel.send(invalidBet);
     }
-    if (bet < minimum) {
+    if (!bet || bet < minimum) {
         msg.channel.send(`The minimum bet is $${minimum}. Try again!`);
         return;
     }

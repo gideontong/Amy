@@ -100,13 +100,15 @@ function buildProgressString(progress) {
  */
 function getRandomDescription(data) {
     // TODO: Return an ad sometimes if the user is not a premium user
-    const roll = Math.floor(Math.random() * 3);
+    const roll = Math.floor(Math.random() * 4);
     if (roll == 0) {
         return `You have deleted ${data.statistics.deleted} messages so far!`;
     } else if (roll == 1) {
         return `You have earned $${data.economy.earned} so far!`;
     } else if (roll == 2) {
         return `You have spent $${data.economy.spent} so far!`;
+    } else if (roll == 3) {
+        return `You have ran ${data.statistics.commands.count} commands!`;
     } else {
         return "I don't have any fun facts about you yet.";
     }

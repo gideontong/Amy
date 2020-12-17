@@ -92,7 +92,7 @@ function generateSlots(current = [], values = Array.from({ length: rolls }).fill
             let pick;
             if (rand < lowerOdds) {
                 pick = bad[Math.floor(Math.random() * bad.length)];
-                values[idx] = -1;
+                values[idx] = -1.5;
             } else if (rand < upperOdds) {
                 pick = normal[Math.floor(Math.random() * normal.length)];
                 values[idx] = 1;

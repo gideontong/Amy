@@ -340,6 +340,12 @@
             "alias": []
         },
         {
+            "name": "Comic of the Day",
+            "command": "xkcd",
+            "description": "Get today's comic from XKCD.",
+            "alias": []
+        },
+        {
             "name": "Professional Vlogger",
             "command": "youtube",
             "description": "Subscribe to the best YouTube channel.",

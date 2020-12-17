@@ -25,7 +25,8 @@ module.exports = async (client, msg, args) => {
                 .setColor(Math.floor(Math.random() * colors))
                 .setFooter(data.alt ? data.alt : 'No caption.')
                 .setImage(data.img ? data.img : fallback)
-                .setTitle(data.safe_title ? data.safe_title : 'No title.', data.link);
+                .setTitle(data.safe_title ? data.safe_title : 'No title.')
+                .setURL(data.link);
             msg.channel.send(embed);
         } else {
             msg.channel.send('Hmm... something went wrong. Try again?');

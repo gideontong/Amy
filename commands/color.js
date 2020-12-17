@@ -1,4 +1,4 @@
-const colors = require('../config/colortable.json');
+const { colors } = require('../config/colortable.json');
 
 /**
  * Gets a color name given a color

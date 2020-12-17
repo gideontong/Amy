@@ -107,7 +107,7 @@ function calculateValue(current, values) {
     const score = values.reduce(function (acc, curr) {
         return acc + curr
     });
-    log.info(score);
+    log.info(values, score);
     let modifier = 1;
     let spoiler = '';
     if (slotSet.size > 1) {

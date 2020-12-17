@@ -310,7 +310,10 @@
             "name": "Not Alone",
             "command": "suicide",
             "description": "You are not alone. Get help if you are in a crisis.",
-            "alias": []
+            "alias": [
+                "kms",
+                "selfharm"
+            ]
         },
         {
             "name": "Free Tips",

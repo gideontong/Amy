@@ -36,6 +36,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     const debug = args[0] == '~debugslots';
+    const user = msg.author;
     let bet = 5;
     if (args.length > 1) {
         try {
@@ -55,11 +56,11 @@ module.exports = async (client, msg, args) => {
             if (bet > data) {
                 msg.channel.send("You don't have enough money for this!");
             } else {
-                main(msg, bet, debug);
+                main(msg, user, bet, debug);
             }
         });
     } else {
-        await main(msg, bet, debug);
+        await main(msg, user, bet, debug);
     }
 }
 
@@ -69,7 +70,7 @@ module.exports = async (client, msg, args) => {
  * @param {Number} bet Amount bet
  * @param {Boolean} debug Whether or not to debug
  */
-async function main(msg, bet, debug) {
+async function main(msg, user, bet, debug) {
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))
         .then(msg => {
@@ -91,8 +92,8 @@ async function main(msg, bet, debug) {
                         msg.edit(embed);
                         if (!debug) {
                             const change = winnings - losses;
-                            log.info(`Slots was not in debug, so ${msg.author.tag}'s balance is changing by ${change}`);
-                            updateBalance(msg.author.id, change);
+                            log.info(`Slots was not in debug, so ${user.tag}'s balance is changing by ${change}`);
+                            updateBalance(user.id, change);
                         }
                     }
                 }, i * 500);

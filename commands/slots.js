@@ -138,10 +138,10 @@ function calculateValue(current, values) {
     } else if (score > rolls) {
         modifier *= 1.1
     } else if (score < 0) {
-        modifier = -1;
+        modifier = 0;
         spoiler += 'This one was a bit unlucky. Try again? ';
         if (slotSet.size == 1) {
-            modifier *= 2;
+            modifier *= -1;
             spoiler += 'No denying it, this was the unluckiest roll.'
         }
     }

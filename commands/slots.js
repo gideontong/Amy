@@ -51,15 +51,25 @@ module.exports = async (client, msg, args) => {
         return;
     }
     if (!debug) {
-        let flag = false;
         await getBalance(msg.author.id, function (data) {
             if (bet > data) {
                 msg.channel.send("You don't have enough money for this!");
-                flag = true;
+            } else {
+                await main(msg, bet, debug);
             }
         });
-        if (flag) return;
+    } else {
+        await main(msg, bet, debug);
     }
+}
+
+/**
+ * Main routine
+ * @param {Message} msg Message
+ * @param {Number} bet Amount bet
+ * @param {Boolean} debug Whether or not to debug
+ */
+async function main(msg, bet, debug) {
     let [current, values] = generateSlots();
     msg.channel.send(generateSlotString(current))
         .then(msg => {
@@ -82,7 +92,7 @@ module.exports = async (client, msg, args) => {
                         if (!debug) {
                             const change = winnings - losses;
                             log.info(`Slots was not in debug, so ${msg.author.tag}'s balance is changing by ${change}`);
-                            updateBalance(msg.author.id, change);
+                            await updateBalance(msg.author.id, change);
                         }
                     }
                 }, i * 500);

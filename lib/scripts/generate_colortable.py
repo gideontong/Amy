@@ -1574,13 +1574,17 @@ def getRGB(number: int):
     return (number & 0xFF0000) >> 16, (number & 0xFF00) >> 8, number & 0xFF
 
 def getHSL(red: int, green: int, blue: int):
+    red, green, blue = red / 255, green / 255, blue / 255
     i_min = min(red, green, blue)
     i_max = max(red, green, blue)
     delta = i_max - i_min
     luminance = (i_min + i_max) / 2
     saturation = 0
     if luminance > 0 and luminance < 1:
-        saturation = delta / ((2 * luminance) if luminance < 0.5 else (2 - 2 * luminance))
+        if luminance < 0.5:
+            saturation = delta / (2 * luminance)
+        else:
+            saturation = delta / (2 - 2 * luminance)
     hue = 0
     if delta > 0:
         if i_max == red and max != green:
@@ -1590,7 +1594,7 @@ def getHSL(red: int, green: int, blue: int):
         if i_max == blue and i_max != red:
             hue += 4 + (red - green) / delta
         hue /= 6
-    return hue * 255, saturation * 255, luminance * 255
+    return int(hue * 255), int(saturation * 255), int(luminance * 255)
 
 def parseTable():
     for i in range(len(colors)):

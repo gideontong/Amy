@@ -24,7 +24,7 @@ const warnings = [
 ];
 const invalidBet = "You didn't provide a valid bet, so we've automatically used $5.";
 
-const { MessageEmbed, RichPresenceAssets } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -44,6 +44,7 @@ module.exports = async (client, msg, args) => {
     } else {
         msg.channel.send(invalidBet);
     }
+    msg.channel.send(args);
     if (bet < minimum) {
         msg.channel.send(`The minimum bet is $${minimum}. Try again!`);
         return;
@@ -67,6 +68,7 @@ module.exports = async (client, msg, args) => {
                             .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
                             .setTitle('🥳 You are a winner! 🥳');
                         msg.edit(embed);
+                        const change = winnings - losses;
                     }
                 }, i * 500);
             }

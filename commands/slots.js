@@ -22,7 +22,7 @@ const warnings = [
     'If you can gamble for free, it is actually a contest.'
 ];
 
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, RichPresenceAssets } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -39,18 +39,18 @@ module.exports = async (client, msg, args) => {
                 setTimeout(() => {
                     [current, values] = generateSlots(current, values);
                     msg.edit(generateSlotString(current));
+                    if (i == rolls) {
+                        [modifier, spoiler] = calculateValue(current, values);
+                        const embed = new MessageEmbed()
+                            .addField('Winnings', modifier)
+                            .setColor(Math.floor(Math.random() * colors))
+                            .setDescription(spoiler)
+                            .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
+                            .setTitle('🥳 You are a winner! 🥳');
+                        msg.edit(embed);
+                    }
                 }, i * 500);
             }
-            [modifier, spoiler] = calculateValue(current, values);
-            const embed = new MessageEmbed()
-                .addField('Winnings', modifier)
-                .setColor(Math.floor(Math.random() * colors))
-                .setDescription(spoiler)
-                .setFooter(warnings[Math.floor(Math.random() * warnings.length)])
-                .setTitle('🥳 You are a winner! 🥳');
-            setTimeout(() => {
-                msg.edit(embed);
-            }, (rolls + 1) * 500);
         });
 }
 
@@ -107,7 +107,6 @@ function calculateValue(current, values) {
     const score = values.reduce(function (acc, curr) {
         return acc + curr
     });
-    log.info(values, score);
     let modifier = 1;
     let spoiler = '';
     if (slotSet.size > 1) {

@@ -293,6 +293,12 @@
             "alias": []
         },
         {
+            "name": "Snowball Fight",
+            "command": "snowball",
+            "description": "Throw a snowball at a friend!",
+            "alias": []
+        },
+        {
             "name": "Live Tickers",
             "command": "stockprice",
             "description": "Stonks? See the current stock price of your favorite company.",

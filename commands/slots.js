@@ -1,4 +1,6 @@
 const loading = '<a:loading:788925074052612121>';
+const left = '<a:goright:788932776908947466>';
+const right = '<a:goleft:788932776875130880>';
 const good = ['<a:partycorgi:788925997344358441>'];
 const normal = ['🪙', '🎁', '🧧', '✨'];
 const bad = ['<a:amongusparty:788925073498177546>', '🪵', '🌿'];
@@ -13,16 +15,25 @@ const upperOdds = 0.9;
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    let [current, values] = generateSlotString();
-    msg.channel.send(current.join(' '))
+    let [current, values] = generateSlots();
+    msg.channel.send(generateSlotString(current))
         .then(msg => {
             for (let i = 1; i <= 5; i++) {
                 setTimeout(() => {
-                    [current, values] = generateSlotString(current, values);
-                    msg.edit(current.join(' '));
+                    [current, values] = generateSlots(current, values);
+                    msg.edit(generateSlotString(current));
                 }, i * 500);
             }
         });
+}
+
+/**
+ * Generates a slot string
+ * @param {Array} current Current slots
+ * @returns {String} Slots string
+ */
+function generateSlotString(current) {
+    return `${left} ${current.join(' ')} ${right}`;
 }
 
 /**
@@ -30,7 +41,7 @@ module.exports = async (client, msg, args) => {
  * @param {Array} current Current array of rolls
  * @returns {Array} New array of rolls
  */
-function generateSlotString(current = [], values = Array.from({ length: rolls }).fill(0)) {
+function generateSlots(current = [], values = Array.from({ length: rolls }).fill(0)) {
     if (current.length) {
         const idx = current.indexOf(loading);
         if (idx == -1) {

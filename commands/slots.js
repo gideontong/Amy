@@ -125,7 +125,7 @@ function calculateValue(current, values) {
     let spoiler = '';
     if (slotSet.size > 1) {
         modifier += slotSet.size / rolls;
-        spoiler += `You got ${rolls - slotSet.size}x kind modifier bonus! `;
+        spoiler += `You got a ${rolls - slotSet.size}x kind modifier bonus! `;
     }
     if (score == rolls * 2) {
         modifier *= 2;
@@ -136,7 +136,7 @@ function calculateValue(current, values) {
         modifier *= 1.05;
     } else {
         modifier = -1;
-        spoiler += 'How did you manage to get so many bad rolls? ';
+        spoiler += 'This one was a bit unlucky. Try again? ';
     }
     if (score < 0 && slotSet.size == 1) {
         modifier *= 2;

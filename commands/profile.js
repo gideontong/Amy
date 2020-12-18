@@ -2,6 +2,7 @@ const filled = '▰';
 const unfilled = '▱';
 const colors = 0xFFFFFF;
 
+const { currency } = require('../config/economy.json');
 const { getProfile } = require('../lib/Member');
 const { calculateLevel, getRank } = require('../lib/Achievement');
 const { MessageEmbed } = require('discord.js');
@@ -40,7 +41,7 @@ module.exports = async (client, msg, args) => {
                         .addField('Level', level, true)
                         .addField(`${xp} XP`, buildProgressString(progress), true)
                         .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
-                        .addField('Money', `$${money}`, true)
+                        .addField('Money', `${currency}${money}`, true)
                         .addField('Server Rank', getRank(level), true)
                         .setAuthor(member.user.tag, member.user.displayAvatarURL())
                         .setColor(Math.floor(Math.random() * colors))
@@ -104,9 +105,9 @@ function getRandomDescription(data) {
     if (roll == 0) {
         return `You have deleted ${data.statistics.deleted} messages so far!`;
     } else if (roll == 1) {
-        return `You have earned $${data.economy.earned} so far!`;
+        return `You have earned ${currency}${data.economy.earned} so far!`;
     } else if (roll == 2) {
-        return `You have spent $${data.economy.spent} so far!`;
+        return `You have spent ${currency}${data.economy.spent} so far!`;
     } else if (roll == 3) {
         return `You have ran ${data.statistics.commands.count} commands!`;
     } else {

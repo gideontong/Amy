@@ -9,7 +9,19 @@
     "jobs": {
         "Janitor": {
             "salary": 1,
-            "level": 1
+            "level": 1,
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0
+            }
+        },
+        "Cashier": {
         }
     }
 }

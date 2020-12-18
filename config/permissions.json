@@ -21,11 +21,7 @@
             "poll",
             "sudo",
             "work",
-            "vote",
-            "daily",
-            "weekly",
-            "monthly",
-            "yearly"
+            "vote"
         ]
     },
     "users": {

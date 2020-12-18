@@ -1,0 +1,11 @@
+{
+    "currency": "$",
+    "work": {
+    },
+    "passives": {
+        "daily": 10,
+        "weekly": 20,
+        "monthly": 50,
+        "yearly": 100
+    }
+}

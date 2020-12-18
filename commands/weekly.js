@@ -9,7 +9,7 @@ const { checkCooldown, updateBalance } = require("../lib/Member");
  */
 module.exports = async (client, msg, args) => {
     let expiry = new Date();
-    expiry.getDate(expiry.getDate() + 7);
+    expiry.setDate(expiry.getDate() + 7);
     checkCooldown(msg.author.id, 'weekly', function (err = null) {
         if (err) {
             msg.channel.send('You must wait 7 days to get your next weekly!');

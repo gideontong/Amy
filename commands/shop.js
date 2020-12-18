@@ -1,4 +1,4 @@
-const currency = '<a:currency:789567509736456203>'
+const currency = '<:currency:789567509736456203>'
 
 const { MessageEmbed } = require("discord.js")
 

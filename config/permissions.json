@@ -21,7 +21,9 @@
             "poll",
             "sudo",
             "work",
-            "vote"
+            "vote",
+            "job",
+            "shop"
         ]
     },
     "users": {

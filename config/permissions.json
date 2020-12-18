@@ -19,7 +19,13 @@
             "achievement",
             "achievements",
             "poll",
-            "sudo"
+            "sudo",
+            "work",
+            "vote",
+            "daily",
+            "weekly",
+            "monthly",
+            "yearly"
         ]
     },
     "users": {

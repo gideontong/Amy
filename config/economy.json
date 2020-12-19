@@ -7,9 +7,57 @@
         "yearly": 100
     },
     "jobs": {
-        "Janitor": {
-            "salary": 1,
+        "animecritic": {
+            "name": "Anime Critic",
+            "level": 0,
+            "salary": 0,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 1,
+                "chance": 0.01
+            },
+            "description": "Living in your mom's basement but too smart to be a simp? Watch 2D girls instead."
+        },
+        "pokisimp": {
+            "name": "Poki Simp",
+            "level": 0,
+            "salary": -5,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Still in your mom's basement? Live out your 10 year old dreams!"
+        },
+        "janitor": {
+            "name": "Janitor",
             "level": 1,
+            "salary": 1,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
             "shift": {
                 "type": "24hr",
                 "weekdays": true,
@@ -18,10 +66,870 @@
             "bonus": {
                 "enabled": false,
                 "max": 0,
-                "chance": 0
-            }
+                "chance": 0.0
+            },
+            "description": "You clean and provide upkeep for spaces and buildings, repair things, and make sure things are presentable."
         },
-        "Cashier": {
+        "securityguard": {
+            "name": "Security Guard",
+            "level": 2,
+            "salary": 4,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Ensure the health of your company by monitoring the security cameras and falling asleep to the buzz of the TV."
+        },
+        "cashier": {
+            "name": "Cashier",
+            "level": 3,
+            "salary": 3,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 10,
+                "chance": 0.1
+            },
+            "description": "Take money from people, yet you still can't keep them. At least you can earn tips."
+        },
+        "cook": {
+            "name": "Cook",
+            "level": 3,
+            "salary": 3,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Cook food for customers, but servers take the tips. Spit in the food, there are no consequences."
+        },
+        "laborer": {
+            "name": "Laborer",
+            "level": 4,
+            "salary": 3,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Incredibly good at being a ditchdigger? This job is for you."
+        },
+        "electrician": {
+            "name": "Electrician",
+            "level": 5,
+            "salary": 4,
+            "req": {
+                "enabled": true,
+                "job": "Laborer",
+                "hours": 5
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Wiring's gotta get fixed. It won't do to have it any other way. Otherwise, you blow up the transformer."
+        },
+        "marketer": {
+            "name": "Marketer",
+            "level": 5,
+            "salary": 4,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Good at annoying people? Good! Annoy people by writing annoying ads! Like this one!"
+        },
+        "mechanic": {
+            "name": "Mechanic",
+            "level": 5,
+            "salary": 4,
+            "req": {
+                "enabled": true,
+                "job": "Laborer",
+                "hours": 5
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "The car's a-fixin. Or maybe you're doin' the a-fixin. Either way, wheels go brrr."
+        },
+        "deliverydriver": {
+            "name": "Delivery Driver",
+            "level": 6,
+            "salary": 3,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 1,
+                "chance": 0.1
+            },
+            "description": "Mechanics make wheels go brrr... you do the brrr-ing. Get food where it needs to go, stat."
+        },
+        "receptionist": {
+            "name": "Receptionist",
+            "level": 6,
+            "salary": 4,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Become the first point of contact for potential job hires and you might move up the ladder."
+        },
+        "salesperson": {
+            "name": "Salesperson",
+            "level": 6,
+            "salary": 1,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 5,
+                "chance": 0.35
+            },
+            "description": "Marketing your jam? Looking to move up in the world? Check out this job."
+        },
+        "secretary": {
+            "name": "Secretary",
+            "level": 6,
+            "salary": 4,
+            "req": {
+                "enabled": true,
+                "job": "Receptionist",
+                "hours": 5
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 2,
+                "chance": 0.1
+            },
+            "description": "Most of the time you'll be filing boring paperwork, but sometimes you'll get a bonus for providing happy endings."
+        },
+        "trashcollector": {
+            "name": "Trash Collector",
+            "level": 6,
+            "salary": 6,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Either take your leftovers to the landfill, or take your girl out. It's the same either way."
+        },
+        "truckdriver": {
+            "name": "Truck Driver",
+            "level": 6,
+            "salary": 3,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 1,
+                "chance": 0.1
+            },
+            "description": "You provide the backbone of large nations, and that's why we call you essential."
+        },
+        "accountant": {
+            "name": "Accountant",
+            "level": 7,
+            "salary": 5,
+            "req": {
+                "enabled": true,
+                "job": "Cashier",
+                "hours": 10
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 15,
+                "chance": 0.05
+            },
+            "description": "We hate taxes! Down with all taxes! Fudge the books so we pay no taxes!"
+        },
+        "firefighter": {
+            "name": "Firefighter",
+            "level": 7,
+            "salary": 4,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 40,
+                "chance": 0.01
+            },
+            "description": "True fact: firemen in Fahrenheit 451 start fires rather than put out fires. Try that instead."
+        },
+        "policeofficer": {
+            "name": "Police Officer",
+            "level": 7,
+            "salary": 5,
+            "req": {
+                "enabled": true,
+                "job": "Security Guard",
+                "hours": 10
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 20,
+                "chance": 0.01
+            },
+            "description": "Crime happens at night, so to keep yourself safe, work only during the day. With a gun."
+        },
+        "storemanager": {
+            "name": "Store Manager",
+            "level": 7,
+            "salary": 11,
+            "req": {
+                "enabled": true,
+                "job": "Cashier",
+                "hours": 5
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 5,
+                "chance": 0.1
+            },
+            "description": "Watch your employees be utterly incompetent at their job and complain about it while simultaneously underpaying them."
+        },
+        "teacher": {
+            "name": "Teacher",
+            "level": 7,
+            "salary": 5,
+            "req": {
+                "enabled": true,
+                "job": "Receptionist",
+                "hours": 5
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "The apple falls not far from the tree. In this case, be the tree, not the apple."
+        },
+        "techsupportagent": {
+            "name": "Tech Support Agent",
+            "level": 7,
+            "salary": 2,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 3,
+                "chance": 0.5
+            },
+            "description": "(In an Indian voice) Hello, how may I help you today with your DoorStar Premium iDevice?"
+        },
+        "medicalassistant": {
+            "name": "Medical Assistant",
+            "level": 8,
+            "salary": 4,
+            "req": {
+                "enabled": true,
+                "job": "Secretary",
+                "hours": 1
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "You get paid nothing, you get to help people. And hopefully start your career eventually as well."
+        },
+        "registerednurse": {
+            "name": "Registered Nurse",
+            "level": 9,
+            "salary": 10,
+            "req": {
+                "enabled": true,
+                "job": "Medical Assisstant",
+                "hours": 20
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "You still get paid nothing, but it's better than the alternative. Residency is hard."
+        },
+        "entrepreneur": {
+            "name": "Entrepreneur",
+            "level": 10,
+            "salary": -1,
+            "req": {
+                "enabled": true,
+                "job": "Marketer",
+                "hours": 5
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 2000,
+                "chance": 0.001
+            },
+            "description": "Try to build the next Big Thing while bleading through all the money you have in cash reserves!"
+        },
+        "financialanalyst": {
+            "name": "Financial Analyst",
+            "level": 12,
+            "salary": 7,
+            "req": {
+                "enabled": true,
+                "job": "Accountant",
+                "hours": 10
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 30,
+                "chance": 0.03
+            },
+            "description": "Wall Street Money Printer go brrr..."
+        },
+        "chemist": {
+            "name": "Chemist",
+            "level": 13,
+            "salary": 4,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 30,
+                "chance": 0.03
+            },
+            "description": "I tell bad chemistry jokes because all the good ones Argon!"
+        },
+        "scientist": {
+            "name": "Scientist",
+            "level": 13,
+            "salary": 12,
+            "req": {
+                "enabled": true,
+                "job": "Chemist",
+                "hours": 20
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 30,
+                "chance": 0.2
+            },
+            "description": "You can identify scientists by the fact that they wear lab coats. It's a fact."
+        },
+        "robloxdeveloper": {
+            "name": "Roblox Developer",
+            "level": 14,
+            "salary": 0,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 50,
+                "chance": 0.2
+            },
+            "description": "This ain't no traditional job. You only make money when your game makes money. Get crackin'!"
+        },
+        "softwareengineer": {
+            "name": "Software Engineer",
+            "level": 14,
+            "salary": 12,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 65,
+                "chance": 0.5
+            },
+            "description": "Why'd you go to a 4-year university for a CS degree when you could've went to a 6 month bootcamp?"
+        },
+        "chemicalengineer": {
+            "name": "Chemical Engineer",
+            "level": 15,
+            "salary": 15,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 65,
+                "chance": 0.5
+            },
+            "description": "This is the job you take when you want a fancier name than scientist."
+        },
+        "civilengineer": {
+            "name": "Civil Engineer",
+            "level": 15,
+            "salary": 15,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 20,
+                "chance": 0.8
+            },
+            "description": "Bridge construction go brrr... road construction go brrr... automatic calculations go brrr..."
+        },
+        "electricalengineer": {
+            "name": "Electrical Engineer",
+            "level": 15,
+            "salary": 15,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 65,
+                "chance": 0.5
+            },
+            "description": "Why do you want to have no life? Spend all your years studying? Have no girlfriend?"
+        },
+        "lawyer": {
+            "name": "Lawyer",
+            "level": 15,
+            "salary": 20,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 50,
+                "chance": 0.85
+            },
+            "description": "In order to pass the bar, you have to memorize everything. Once you're in the field, you can use Google."
+        },
+        "mechanicalengineer": {
+            "name": "Mechanical Engineer",
+            "level": 15,
+            "salary": 15,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 65,
+                "chance": 0.5
+            },
+            "description": "Why do you want to have no life? Spend all your years studying? Have no girlfriend?"
+        },
+        "balletdancer": {
+            "name": "Ballet Dancer",
+            "level": 16,
+            "salary": 10,
+            "req": {
+                "enabled": false,
+                "job": null,
+                "hours": 0
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 1000,
+                "chance": 0.05
+            },
+            "description": "That was a beautiful pirouette... and those years of practice have finally allowed you to succeed."
+        },
+        "stripper": {
+            "name": "Stripper",
+            "level": 16,
+            "salary": 1,
+            "req": {
+                "enabled": true,
+                "job": "Secretary",
+                "hours": 15
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 250,
+                "chance": 0.35
+            },
+            "description": "The pay sucks, but hey, it's fun, and sometimes it has a happy ending."
+        },
+        "kgbagent": {
+            "name": "KGB Agent",
+            "level": 17,
+            "salary": 5,
+            "req": {
+                "enabled": true,
+                "job": "Police Officer",
+                "hours": 10
+            },
+            "shift": {
+                "type": "evening",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 200,
+                "chance": 0.1
+            },
+            "description": "\u0412\u0430\u043c \u043f\u043b\u0430\u0442\u044f\u0442 \u0442\u043e\u043b\u044c\u043a\u043e \u0442\u043e\u0433\u0434\u0430, \u043a\u043e\u0433\u0434\u0430 \u043c\u044b \u0441\u043d\u043e\u0432\u0430 \u0434\u0435\u043b\u0430\u0435\u043c \u0420\u043e\u0441\u0441\u0438\u044e \u0432\u0435\u043b\u0438\u043a\u043e\u0439."
+        },
+        "veterinarian": {
+            "name": "Veterinarian",
+            "level": 17,
+            "salary": 20,
+            "req": {
+                "enabled": true,
+                "job": "Medical Assisstant",
+                "hours": 25
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 20,
+                "chance": 0.01
+            },
+            "description": "It's fun to play with pets, but not when they come into your office like THIS."
+        },
+        "therapist": {
+            "name": "Therapist",
+            "level": 18,
+            "salary": 25,
+            "req": {
+                "enabled": true,
+                "job": "Medical Assisstant",
+                "hours": 10
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Therapist with a space is the rapist... fun job? Up to you to decide. The kids come crying."
+        },
+        "doctor": {
+            "name": "Doctor",
+            "level": 20,
+            "salary": 25,
+            "req": {
+                "enabled": true,
+                "job": "Registered Nurse",
+                "hours": 10
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "After all those hard years in residency, you've finally made it. Now you get to work in a practice."
+        },
+        "surgeon": {
+            "name": "Surgeon",
+            "level": 22,
+            "salary": 45,
+            "req": {
+                "enabled": true,
+                "job": "Doctor",
+                "hours": 10
+            },
+            "shift": {
+                "type": "morning",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "Doctor wasn't enough for you? Now you have the ability to control people's lives. Get malpractice insurance!"
+        },
+        "drugdealer": {
+            "name": "Drug Dealer",
+            "level": 50,
+            "salary": -5,
+            "req": {
+                "enabled": true,
+                "job": "Entrepreneur",
+                "hours": 10
+            },
+            "shift": {
+                "type": "24hr",
+                "weekdays": true,
+                "weekends": true
+            },
+            "bonus": {
+                "enabled": true,
+                "max": 1000000,
+                "chance": 1e-05
+            },
+            "description": "You better hope there's no police officers in town today. Smuggle it quick across the border!"
+        },
+        "uspresident": {
+            "name": "US President",
+            "level": 69,
+            "salary": 45,
+            "req": {
+                "enabled": true,
+                "job": "Drug Dealer",
+                "hours": 24
+            },
+            "shift": {
+                "type": "day",
+                "weekdays": true,
+                "weekends": false
+            },
+            "bonus": {
+                "enabled": false,
+                "max": 0,
+                "chance": 0.0
+            },
+            "description": "The US president has an important job of being the most powerful* president in the world. Use it wisely."
         }
     }
 }

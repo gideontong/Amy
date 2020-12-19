@@ -317,6 +317,12 @@
             "alias": []
         },
         {
+            "name": "Angry Throw Shruggie",
+            "command": "shrugflip",
+            "description": "Forget tables, flip shruggies!",
+            "alias": []
+        },
+        {
             "name": "Slots Machine",
             "command": "slots",
             "description": "Try your hand at electronic gambling.",

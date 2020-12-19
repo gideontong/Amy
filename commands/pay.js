@@ -19,7 +19,7 @@ module.exports = async (client, msg, args) => {
     let amount;
     try {
         payee = msg.mentions.members.firstKey();
-        amount = parseInt(args[2]);
+        amount = parseInt(args[args.length - 1]);
     } catch (err) {
         msg.channel.send(error);
         return;

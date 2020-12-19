@@ -1,4 +1,10 @@
 const colors = 0xFFFFFF;
+const shiftStrings = {
+    '24hr': '24-Hour Cycle',
+    'morning': '9 AM to Noon',
+    'evening': '9 PM to Midnight',
+    'day': 'Standard 9-5'
+}
 
 const { currency, jobs } = require('../config/economy.json');
 const { MessageEmbed } = require('discord.js');
@@ -22,6 +28,9 @@ module.exports = async (client, msg, args) => {
             .addField('Min. Level', job.level, true)
             .addField('Hourly Pay', `${currency}${job.salary}`, true)
             .addField('Required Experience', job.req.enabled ? `${job.req.hours} Hours of ${job.req.job}` : 'None', true)
+            .addField('Work Schedule', shiftStrings[job.shift.type], true)
+            .addField('Days', `${job.shift.weekends ? 'Sun' : ''}${job.shift.weekdays ? 'MTuWThF' : ''}${job.shift.weekends ? 'Sat' : ''}`)
+            .addField('Bonuses', `${job.bonus.enabled ? 'Eligible to Earn' : 'Ineligible'}`)
             .setColor(Math.floor(Math.random() * colors))
             .setDescription(job.description)
             .setThumbnail(job.image)

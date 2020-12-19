@@ -10,6 +10,7 @@ with open('jobs.csv', encoding='utf-8') as file, open('jobs.json', 'w') as out:
             'name': row['Job'],
             'level': int(row['Level']),
             'salary': int(row['Salary']),
+            'image': row['Image'],
             'req': {
                 'enabled': row['HireReq'] != 'None',
                 'job': row['HireReq'] if row['HireReq'] != 'None' else None,

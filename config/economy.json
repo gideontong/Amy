@@ -11,6 +11,7 @@
             "name": "Anime Critic",
             "level": 0,
             "salary": 0,
+            "image": "https://i.imgur.com/xeC2xe7.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -32,6 +33,7 @@
             "name": "Poki Simp",
             "level": 0,
             "salary": -5,
+            "image": "https://i.imgur.com/RuP7euu.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -53,6 +55,7 @@
             "name": "Janitor",
             "level": 1,
             "salary": 1,
+            "image": "https://i.imgur.com/2AcLkuH.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -74,6 +77,7 @@
             "name": "Security Guard",
             "level": 2,
             "salary": 4,
+            "image": "https://i.imgur.com/CULfj7N.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -95,6 +99,7 @@
             "name": "Cashier",
             "level": 3,
             "salary": 3,
+            "image": "https://i.imgur.com/GhfpIuu.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -116,6 +121,7 @@
             "name": "Cook",
             "level": 3,
             "salary": 3,
+            "image": "https://i.imgur.com/8fz2BHJ.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -137,6 +143,7 @@
             "name": "Laborer",
             "level": 4,
             "salary": 3,
+            "image": "https://i.imgur.com/kOyRoGG.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -158,6 +165,7 @@
             "name": "Electrician",
             "level": 5,
             "salary": 4,
+            "image": "https://i.imgur.com/21Mybdn.jpg",
             "req": {
                 "enabled": true,
                 "job": "Laborer",
@@ -179,6 +187,7 @@
             "name": "Marketer",
             "level": 5,
             "salary": 4,
+            "image": "https://i.imgur.com/KPFbVCL.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -200,6 +209,7 @@
             "name": "Mechanic",
             "level": 5,
             "salary": 4,
+            "image": "https://i.imgur.com/EnIHRqu.png",
             "req": {
                 "enabled": true,
                 "job": "Laborer",
@@ -221,6 +231,7 @@
             "name": "Delivery Driver",
             "level": 6,
             "salary": 3,
+            "image": "https://i.imgur.com/03bvT1D.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -242,6 +253,7 @@
             "name": "Receptionist",
             "level": 6,
             "salary": 4,
+            "image": "https://i.imgur.com/e2CKgoW.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -263,6 +275,7 @@
             "name": "Salesperson",
             "level": 6,
             "salary": 1,
+            "image": "https://i.imgur.com/2jEHHSG.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -284,6 +297,7 @@
             "name": "Secretary",
             "level": 6,
             "salary": 4,
+            "image": "https://i.imgur.com/4Jxh94U.jpg",
             "req": {
                 "enabled": true,
                 "job": "Receptionist",
@@ -305,6 +319,7 @@
             "name": "Trash Collector",
             "level": 6,
             "salary": 6,
+            "image": "https://i.imgur.com/6f8tzF9.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -326,6 +341,7 @@
             "name": "Truck Driver",
             "level": 6,
             "salary": 3,
+            "image": "https://i.imgur.com/m8FHeUI.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -347,6 +363,7 @@
             "name": "Accountant",
             "level": 7,
             "salary": 5,
+            "image": "https://i.imgur.com/sWYGV7L.png",
             "req": {
                 "enabled": true,
                 "job": "Cashier",
@@ -368,6 +385,7 @@
             "name": "Firefighter",
             "level": 7,
             "salary": 4,
+            "image": "https://i.imgur.com/5ZIR0BJ.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -389,6 +407,7 @@
             "name": "Police Officer",
             "level": 7,
             "salary": 5,
+            "image": "https://i.imgur.com/DgVLgbh.png",
             "req": {
                 "enabled": true,
                 "job": "Security Guard",
@@ -410,6 +429,7 @@
             "name": "Store Manager",
             "level": 7,
             "salary": 11,
+            "image": "https://i.imgur.com/YvCoDjX.jpg",
             "req": {
                 "enabled": true,
                 "job": "Cashier",
@@ -431,6 +451,7 @@
             "name": "Teacher",
             "level": 7,
             "salary": 5,
+            "image": "https://i.imgur.com/glmQm71.png",
             "req": {
                 "enabled": true,
                 "job": "Receptionist",
@@ -452,6 +473,7 @@
             "name": "Tech Support Agent",
             "level": 7,
             "salary": 2,
+            "image": "https://i.imgur.com/iuPQxhS.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -473,6 +495,7 @@
             "name": "Medical Assistant",
             "level": 8,
             "salary": 4,
+            "image": "https://i.imgur.com/glJRhYN.jpg",
             "req": {
                 "enabled": true,
                 "job": "Secretary",
@@ -494,6 +517,7 @@
             "name": "Registered Nurse",
             "level": 9,
             "salary": 10,
+            "image": "https://i.imgur.com/3OdSefp.jpg",
             "req": {
                 "enabled": true,
                 "job": "Medical Assisstant",
@@ -515,6 +539,7 @@
             "name": "Entrepreneur",
             "level": 10,
             "salary": -1,
+            "image": "https://i.imgur.com/FREKssq.jpg",
             "req": {
                 "enabled": true,
                 "job": "Marketer",
@@ -536,6 +561,7 @@
             "name": "Financial Analyst",
             "level": 12,
             "salary": 7,
+            "image": "https://i.imgur.com/ZuIyTTr.png",
             "req": {
                 "enabled": true,
                 "job": "Accountant",
@@ -557,6 +583,7 @@
             "name": "Chemist",
             "level": 13,
             "salary": 4,
+            "image": "https://i.imgur.com/0S561yY.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -578,6 +605,7 @@
             "name": "Scientist",
             "level": 13,
             "salary": 12,
+            "image": "https://i.imgur.com/wwfvKLN.png",
             "req": {
                 "enabled": true,
                 "job": "Chemist",
@@ -599,6 +627,7 @@
             "name": "Roblox Developer",
             "level": 14,
             "salary": 0,
+            "image": "https://i.imgur.com/8tsaeI4.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -620,6 +649,7 @@
             "name": "Software Engineer",
             "level": 14,
             "salary": 12,
+            "image": "https://i.imgur.com/hgXJJvt.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -641,6 +671,7 @@
             "name": "Chemical Engineer",
             "level": 15,
             "salary": 15,
+            "image": "https://i.imgur.com/FRyDd7v.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -662,6 +693,7 @@
             "name": "Civil Engineer",
             "level": 15,
             "salary": 15,
+            "image": "https://i.imgur.com/5Vo2uXV.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -683,6 +715,7 @@
             "name": "Electrical Engineer",
             "level": 15,
             "salary": 15,
+            "image": "https://i.imgur.com/n1vzXCw.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -704,6 +737,7 @@
             "name": "Lawyer",
             "level": 15,
             "salary": 20,
+            "image": "https://i.imgur.com/DOUWtEz.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -725,6 +759,7 @@
             "name": "Mechanical Engineer",
             "level": 15,
             "salary": 15,
+            "image": "https://i.imgur.com/W3a5AdD.jpg",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -746,6 +781,7 @@
             "name": "Ballet Dancer",
             "level": 16,
             "salary": 10,
+            "image": "https://i.imgur.com/qeQdMmo.png",
             "req": {
                 "enabled": false,
                 "job": null,
@@ -767,6 +803,7 @@
             "name": "Stripper",
             "level": 16,
             "salary": 1,
+            "image": "https://i.imgur.com/vPqtzKD.jpg",
             "req": {
                 "enabled": true,
                 "job": "Secretary",
@@ -788,6 +825,7 @@
             "name": "KGB Agent",
             "level": 17,
             "salary": 5,
+            "image": "https://i.imgur.com/Qf4DP7M.png",
             "req": {
                 "enabled": true,
                 "job": "Police Officer",
@@ -809,6 +847,7 @@
             "name": "Veterinarian",
             "level": 17,
             "salary": 20,
+            "image": "https://i.imgur.com/D0onpmE.jpg",
             "req": {
                 "enabled": true,
                 "job": "Medical Assisstant",
@@ -830,6 +869,7 @@
             "name": "Therapist",
             "level": 18,
             "salary": 25,
+            "image": "https://i.imgur.com/ccR5VfV.jpg",
             "req": {
                 "enabled": true,
                 "job": "Medical Assisstant",
@@ -851,6 +891,7 @@
             "name": "Doctor",
             "level": 20,
             "salary": 25,
+            "image": "https://i.imgur.com/JLFmNjl.png",
             "req": {
                 "enabled": true,
                 "job": "Registered Nurse",
@@ -872,6 +913,7 @@
             "name": "Surgeon",
             "level": 22,
             "salary": 45,
+            "image": "https://i.imgur.com/TWreSHG.jpg",
             "req": {
                 "enabled": true,
                 "job": "Doctor",
@@ -893,6 +935,7 @@
             "name": "Drug Dealer",
             "level": 50,
             "salary": -5,
+            "image": "https://i.imgur.com/uaNvHRk.jpg",
             "req": {
                 "enabled": true,
                 "job": "Entrepreneur",
@@ -914,6 +957,7 @@
             "name": "US President",
             "level": 69,
             "salary": 45,
+            "image": "https://i.imgur.com/7u6CZvA.jpg",
             "req": {
                 "enabled": true,
                 "job": "Drug Dealer",

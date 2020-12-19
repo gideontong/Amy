@@ -23,6 +23,7 @@ module.exports = async (client, msg, args) => {
             .addField('Hourly Pay', `${currency}${job.salary}`, true)
             .setColor(Math.floor(Math.random() * colors))
             .setDescription(job.description)
+            .setThumbnail(job.image)
             .setTitle(job.name);
         msg.channel.send(embed);
     } else {

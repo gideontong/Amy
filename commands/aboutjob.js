@@ -21,6 +21,7 @@ module.exports = async (client, msg, args) => {
         const embed = new MessageEmbed()
             .addField('Min. Level', job.level, true)
             .addField('Hourly Pay', `${currency}${job.salary}`, true)
+            .addField('Required Experience', job.req.enabled ? `${job.req.hours} Hours of ${job.req.job}` : 'None', true)
             .setColor(Math.floor(Math.random() * colors))
             .setDescription(job.description)
             .setThumbnail(job.image)

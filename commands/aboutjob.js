@@ -19,10 +19,10 @@ module.exports = async (client, msg, args) => {
     if (search in jobs) {
         const job = jobs[search];
         const embed = new MessageEmbed()
-            .addField('Min. Level', jobs.level, true)
-            .addField('Hourly Pay', `${currency}${jobs.salary}`, true)
+            .addField('Min. Level', job.level, true)
+            .addField('Hourly Pay', `${currency}${job.salary}`, true)
             .setColor(Math.floor(Math.random() * colors))
-            .setDescription(jobs.description)
+            .setDescription(job.description)
             .setTitle(job.name);
         msg.channel.send(embed);
     } else {

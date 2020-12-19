@@ -89,6 +89,12 @@
             "alias": []
         },
         {
+            "name": "Daily Bonus",
+            "command": "daily",
+            "description": "Get your daily allowance!",
+            "alias": []
+        },
+        {
             "name": "Roll a Dice",
             "command": "diceroll",
             "description": "Rolls a normal dice for you (should be fair).",
@@ -217,6 +223,12 @@
             "name": "Meme of the Day",
             "command": "meme",
             "description": "Get a random meme (but not in real-time).",
+            "alias": []
+        },
+        {
+            "name": "Monthly Bonus",
+            "command": "monthly",
+            "description": "Get a monthly bonus for no reason...",
             "alias": []
         },
         {
@@ -367,9 +379,21 @@
             "alias": []
         },
         {
+            "name": "Weekly Pay",
+            "command": "weekly",
+            "description": "Normally we get paid bi-weekly, but...",
+            "alias": []
+        },
+        {
             "name": "Comic of the Day",
             "command": "xkcd",
             "description": "Get today's comic from XKCD.",
+            "alias": []
+        },
+        {
+            "name": "My Salary",
+            "command": "yearly",
+            "description": "Get your yearly salary bonus here!",
             "alias": []
         },
         {

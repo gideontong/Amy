@@ -23,7 +23,8 @@
             "work",
             "vote",
             "job",
-            "shop"
+            "shop",
+            "aboutjob"
         ]
     },
     "users": {

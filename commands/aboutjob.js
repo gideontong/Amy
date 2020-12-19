@@ -14,7 +14,8 @@ module.exports = async (client, msg, args) => {
         msg.channel.send('To get info about a job, use `aboutjob <job name>`!');
         return;
     }
-    const search = args.shift().join('').toLowerCase();
+    args.shift();
+    const search = args.join('').toLowerCase();
     if (search in jobs) {
         const job = jobs[search];
         const embed = new MessageEmbed()

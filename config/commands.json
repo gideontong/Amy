@@ -7,6 +7,12 @@
             "alias": []
         },
         {
+            "name": "Indeed Wikipedia",
+            "command": "aboutjob",
+            "description": "Learn about a job!",
+            "alias": []
+        },
+        {
             "name": "Account Age",
             "command": "accountage",
             "description": "See how old yours, or someone else's account is.",

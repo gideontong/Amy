@@ -305,6 +305,14 @@
             "alias": []
         },
         {
+            "name": "Rank Image",
+            "command": "rank",
+            "description": "See information about a rank!",
+            "alias": [
+                "aboutrank"
+            ]
+        },
+        {
             "name": "Discord Kitro 2",
             "command": "react",
             "description": "React to the last message in a server with any emote.",

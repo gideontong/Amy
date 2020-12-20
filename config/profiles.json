@@ -1,76 +1,392 @@
 {
     "ranks": {
-        "0": "Wood I",
-        "1": "Wood II",
-        "2": "Wood III",
-        "3": "Wood IV",
-        "4": "Wood V",
-        "5": "Stone I",
-        "6": "Stone II",
-        "7": "Stone III",
-        "8": "Stone IV",
-        "9": "Stone V",
-        "10": "Classical I",
-        "11": "Classical II",
-        "12": "Classical III",
-        "13": "Classical IV",
-        "14": "Classical V",
-        "15": "Bronze I",
-        "16": "Bronze II",
-        "17": "Bronze III",
-        "18": "Bronze IV",
-        "19": "Bronze V",
-        "20": "Iron I",
-        "21": "Iron II",
-        "22": "Iron III",
-        "23": "Iron IV",
-        "24": "Iron V",
-        "25": "Renaissance I",
-        "26": "Renaissance II",
-        "27": "Renaissance III",
-        "28": "Renaissance IV",
-        "29": "Renaissance V",
-        "30": "Industrial I",
-        "31": "Industrial II",
-        "32": "Industrial III",
-        "33": "Industrial IV",
-        "34": "Industrial V",
-        "35": "Oil I",
-        "36": "Oil II",
-        "37": "Oil III",
-        "38": "Oil IV",
-        "39": "Oil V",
-        "40": "Machine I",
-        "41": "Machine II",
-        "42": "Life Master",
-        "43": "Machine III",
-        "44": "Machine IV",
-        "45": "Machine V",
-        "46": "Jet I",
-        "47": "Jet II",
-        "48": "Jet III",
-        "49": "Jet IV",
-        "50": "Jet V",
-        "51": "Nuclear I",
-        "52": "Nuclear II",
-        "53": "Nuclear III",
-        "54": "Nuclear IV",
-        "55": "Nuclear V",
-        "56": "Space I",
-        "57": "Space II",
-        "58": "Space III",
-        "59": "Space IV",
-        "60": "Space V",
-        "61": "Digital I",
-        "62": "Digital II",
-        "63": "Digital III",
-        "64": "Digital IV",
-        "65": "Digital V",
-        "66": "Information I",
-        "67": "Information II",
-        "68": "Information III",
-        "69": "( \u00cd\u00a1\u00c2\u00b0 \u00cd\u0153\u00ca\u2013 \u00cd\u00a1\u00c2\u00b0)",
-        "70": "Information IV",
-        "71": "Information V"
+        "0": {
+            "name": "Wood I",
+            "image": "https://amyhelps.ml/images/ranks/000-wood-1.png"
+        },
+        "1": {
+            "name": "Wood II",
+            "image": "https://amyhelps.ml/images/ranks/001-wood-2.png"
+        },
+        "2": {
+            "name": "Wood III",
+            "image": "https://amyhelps.ml/images/ranks/002-wood-3.png"
+        },
+        "3": {
+            "name": "Wood IV",
+            "image": "https://amyhelps.ml/images/ranks/003-wood-4.png"
+        },
+        "4": {
+            "name": "Wood V",
+            "image": "https://amyhelps.ml/images/ranks/004-wood-5.png"
+        },
+        "5": {
+            "name": "Stone I",
+            "image": "https://amyhelps.ml/images/ranks/005-stone-1.png"
+        },
+        "6": {
+            "name": "Stone II",
+            "image": "https://amyhelps.ml/images/ranks/006-stone-2.png"
+        },
+        "7": {
+            "name": "Stone III",
+            "image": "https://amyhelps.ml/images/ranks/007-stone-3.png"
+        },
+        "8": {
+            "name": "Stone IV",
+            "image": "https://amyhelps.ml/images/ranks/008-stone-4.png"
+        },
+        "9": {
+            "name": "Stone V",
+            "image": "https://amyhelps.ml/images/ranks/009-stone-5.png"
+        },
+        "10": {
+            "name": "Classical I",
+            "image": "https://amyhelps.ml/images/ranks/010-classical-1.png"
+        },
+        "11": {
+            "name": "Classical II",
+            "image": "https://amyhelps.ml/images/ranks/011-classical-2.png"
+        },
+        "12": {
+            "name": "Classical III",
+            "image": "https://amyhelps.ml/images/ranks/012-classical-3.png"
+        },
+        "13": {
+            "name": "Classical IV",
+            "image": "https://amyhelps.ml/images/ranks/013-classical-4.png"
+        },
+        "14": {
+            "name": "Classical V",
+            "image": "https://amyhelps.ml/images/ranks/014-clasical-5.png"
+        },
+        "15": {
+            "name": "Bronze I",
+            "image": "https://amyhelps.ml/images/ranks/015-bronze-1.png"
+        },
+        "16": {
+            "name": "Bronze II",
+            "image": "https://amyhelps.ml/images/ranks/016-bronze-2.png"
+        },
+        "17": {
+            "name": "Bronze III",
+            "image": "https://amyhelps.ml/images/ranks/017-bronze-3.png"
+        },
+        "18": {
+            "name": "Bronze IV",
+            "image": "https://amyhelps.ml/images/ranks/018-bronze-4.png"
+        },
+        "19": {
+            "name": "Bronze V",
+            "image": "https://amyhelps.ml/images/ranks/019-bronze-5.png"
+        },
+        "20": {
+            "name": "Silver I",
+            "image": "https://amyhelps.ml/images/ranks/020-silver-1.png"
+        },
+        "21": {
+            "name": "Silver II",
+            "image": "https://amyhelps.ml/images/ranks/021-silver-2.png"
+        },
+        "22": {
+            "name": "Silver III",
+            "image": "https://amyhelps.ml/images/ranks/022-silver-3.png"
+        },
+        "23": {
+            "name": "Silver IV",
+            "image": "https://amyhelps.ml/images/ranks/023-silver-4.png"
+        },
+        "24": {
+            "name": "Silver V",
+            "image": "https://amyhelps.ml/images/ranks/024-silver-5.png"
+        },
+        "25": {
+            "name": "Iron I",
+            "image": "https://amyhelps.ml/images/ranks/025-iron-1.png"
+        },
+        "26": {
+            "name": "Iron II",
+            "image": "https://amyhelps.ml/images/ranks/026-iron-2.png"
+        },
+        "27": {
+            "name": "Iron III",
+            "image": "https://amyhelps.ml/images/ranks/027-iron-3.png"
+        },
+        "28": {
+            "name": "Iron IV",
+            "image": "https://amyhelps.ml/images/ranks/028-iron-4.png"
+        },
+        "29": {
+            "name": "Iron V",
+            "image": "https://amyhelps.ml/images/ranks/029-iron-5.png"
+        },
+        "30": {
+            "name": "Gold I",
+            "image": "https://amyhelps.ml/images/ranks/030-gold-1.png"
+        },
+        "31": {
+            "name": "Gold II",
+            "image": "https://amyhelps.ml/images/ranks/031-gold-2.png"
+        },
+        "32": {
+            "name": "Gold III",
+            "image": "https://amyhelps.ml/images/ranks/032-gold-3.png"
+        },
+        "33": {
+            "name": "Gold IV",
+            "image": "https://amyhelps.ml/images/ranks/033-gold-4.png"
+        },
+        "34": {
+            "name": "Gold V",
+            "image": "https://amyhelps.ml/images/ranks/034-gold-5.png"
+        },
+        "35": {
+            "name": "Renaissance I",
+            "image": "https://amyhelps.ml/images/ranks/035-renaissance-1.png"
+        },
+        "36": {
+            "name": "Renaissance II",
+            "image": "https://amyhelps.ml/images/ranks/036-renaissance-2.png"
+        },
+        "37": {
+            "name": "Renaissance III",
+            "image": "https://amyhelps.ml/images/ranks/037-renaissance-3.png"
+        },
+        "38": {
+            "name": "Renaissance IV",
+            "image": "https://amyhelps.ml/images/ranks/038-renaissance-4.png"
+        },
+        "39": {
+            "name": "Renaissance V",
+            "image": "https://amyhelps.ml/images/ranks/039-renaissance-5.png"
+        },
+        "40": {
+            "name": "Industrial I",
+            "image": "https://amyhelps.ml/images/ranks/040-industrial-1.png"
+        },
+        "41": {
+            "name": "Industrial II",
+            "image": "https://amyhelps.ml/images/ranks/041-industrial-2.png"
+        },
+        "42": {
+            "name": "Life Master",
+            "image": "https://amyhelps.ml/images/ranks/042-life.png"
+        },
+        "43": {
+            "name": "Industrial III",
+            "image": "https://amyhelps.ml/images/ranks/043-industrial-3.png"
+        },
+        "44": {
+            "name": "Industrial IV",
+            "image": "https://amyhelps.ml/images/ranks/044-industrial-4.png"
+        },
+        "45": {
+            "name": "Industrial V",
+            "image": "https://amyhelps.ml/images/ranks/045-industrial-5.png"
+        },
+        "46": {
+            "name": "Oil I",
+            "image": "https://amyhelps.ml/images/ranks/046-oil-1.png"
+        },
+        "47": {
+            "name": "Oil II",
+            "image": "https://amyhelps.ml/images/ranks/047-oil-2.png"
+        },
+        "48": {
+            "name": "Oil III",
+            "image": "https://amyhelps.ml/images/ranks/048-oil-3.png"
+        },
+        "49": {
+            "name": "Oil IV",
+            "image": "https://amyhelps.ml/images/ranks/049-oil-4.png"
+        },
+        "50": {
+            "name": "Oil V",
+            "image": "https://amyhelps.ml/images/ranks/050-oil-5.png"
+        },
+        "51": {
+            "name": "Machine I",
+            "image": "https://amyhelps.ml/images/ranks/051-machine-1.png"
+        },
+        "52": {
+            "name": "Machine II",
+            "image": "https://amyhelps.ml/images/ranks/052-machine-2.png"
+        },
+        "53": {
+            "name": "Machine III",
+            "image": "https://amyhelps.ml/images/ranks/053-machine-3.png"
+        },
+        "54": {
+            "name": "Machine IV",
+            "image": "https://amyhelps.ml/images/ranks/054-machine-4.png"
+        },
+        "55": {
+            "name": "Machine V",
+            "image": "https://amyhelps.ml/images/ranks/055-machine-5.png"
+        },
+        "56": {
+            "name": "Jet I",
+            "image": "https://amyhelps.ml/images/ranks/056-jet-1.png"
+        },
+        "57": {
+            "name": "Jet II",
+            "image": "https://amyhelps.ml/images/ranks/057-jet-2.png"
+        },
+        "58": {
+            "name": "Jet III",
+            "image": "https://amyhelps.ml/images/ranks/058-jet-3.png"
+        },
+        "59": {
+            "name": "Jet IV",
+            "image": "https://amyhelps.ml/images/ranks/059-jet-4.png"
+        },
+        "60": {
+            "name": "Jet V",
+            "image": "https://amyhelps.ml/images/ranks/060-jet-5.png"
+        },
+        "61": {
+            "name": "Nuclear I",
+            "image": "https://amyhelps.ml/images/ranks/061-nuclear-1.png"
+        },
+        "62": {
+            "name": "Nuclear II",
+            "image": "https://amyhelps.ml/images/ranks/062-nuclear-2.png"
+        },
+        "63": {
+            "name": "Nuclear III",
+            "image": "https://amyhelps.ml/images/ranks/063-nuclear-3.png"
+        },
+        "64": {
+            "name": "Nuclear IV",
+            "image": "https://amyhelps.ml/images/ranks/064-nuclear-4.png"
+        },
+        "65": {
+            "name": "Nuclear V",
+            "image": "https://amyhelps.ml/images/ranks/065-nuclear-5.png"
+        },
+        "66": {
+            "name": "Space I",
+            "image": "https://amyhelps.ml/images/ranks/066-space-1.png"
+        },
+        "67": {
+            "name": "Space II",
+            "image": "https://amyhelps.ml/images/ranks/067-space-2.png"
+        },
+        "68": {
+            "name": "Space III",
+            "image": "https://amyhelps.ml/images/ranks/068-space-3.png"
+        },
+        "69": {
+            "name": "( \u00cd\u00a1\u00c2\u00b0 \u00cd\u0153\u00ca\u2013 \u00cd\u00a1\u00c2\u00b0)",
+            "image": "https://amyhelps.ml/images/ranks/069-lenny.png"
+        },
+        "70": {
+            "name": "Space IV",
+            "image": "https://amyhelps.ml/images/ranks/070-space-4.png"
+        },
+        "71": {
+            "name": "Space V",
+            "image": "https://amyhelps.ml/images/ranks/071-space-5.png"
+        },
+        "72": {
+            "name": "Digital I",
+            "image": "https://amyhelps.ml/images/ranks/072-digital-1.png"
+        },
+        "73": {
+            "name": "Digital II",
+            "image": "https://amyhelps.ml/images/ranks/073-digital-2.png"
+        },
+        "74": {
+            "name": "Digital III",
+            "image": "https://amyhelps.ml/images/ranks/074-digital-3.png"
+        },
+        "75": {
+            "name": "Digital IV",
+            "image": "https://amyhelps.ml/images/ranks/075-digital-4.png"
+        },
+        "76": {
+            "name": "Digital V",
+            "image": "https://amyhelps.ml/images/ranks/076-digital-5.png"
+        },
+        "77": {
+            "name": "Information I",
+            "image": "https://amyhelps.ml/images/ranks/077-information-1.png"
+        },
+        "78": {
+            "name": "Information II",
+            "image": "https://amyhelps.ml/images/ranks/078-information-2.png"
+        },
+        "79": {
+            "name": "Information III",
+            "image": "https://amyhelps.ml/images/ranks/079-information-3.png"
+        },
+        "80": {
+            "name": "Information IV",
+            "image": "https://amyhelps.ml/images/ranks/080-information-4.png"
+        },
+        "81": {
+            "name": "Information V",
+            "image": "https://amyhelps.ml/images/ranks/081-information-5.png"
+        },
+        "82": {
+            "name": "Light I",
+            "image": "https://amyhelps.ml/images/ranks/082-light-1.png"
+        },
+        "83": {
+            "name": "Light II",
+            "image": "https://amyhelps.ml/images/ranks/083-light-2.png"
+        },
+        "84": {
+            "name": "Light III",
+            "image": "https://amyhelps.ml/images/ranks/084-light-3.png"
+        },
+        "85": {
+            "name": "Light IV",
+            "image": "https://amyhelps.ml/images/ranks/085-light-4.png"
+        },
+        "86": {
+            "name": "Light V",
+            "image": "https://amyhelps.ml/images/ranks/086-light-5.png"
+        },
+        "87": {
+            "name": "Galactic I",
+            "image": "https://amyhelps.ml/images/ranks/087-galactic-1.png"
+        },
+        "88": {
+            "name": "Galactic II",
+            "image": "https://amyhelps.ml/images/ranks/088-galactic-2.png"
+        },
+        "89": {
+            "name": "Galactic III",
+            "image": "https://amyhelps.ml/images/ranks/089-galactic-3.png"
+        },
+        "90": {
+            "name": "Galactic IV",
+            "image": "https://amyhelps.ml/images/ranks/090-galactic-4.png"
+        },
+        "91": {
+            "name": "Galactic V",
+            "image": "https://amyhelps.ml/images/ranks/091-galactic-5.png"
+        },
+        "92": {
+            "name": "Quantum I",
+            "image": "https://amyhelps.ml/images/ranks/092-quantum-1.png"
+        },
+        "93": {
+            "name": "Quantum II",
+            "image": "https://amyhelps.ml/images/ranks/093-quantum-2.png"
+        },
+        "94": {
+            "name": "Quantum III",
+            "image": "https://amyhelps.ml/images/ranks/094-quantum-3.png"
+        },
+        "95": {
+            "name": "Quantum IV",
+            "image": "https://amyhelps.ml/images/ranks/095-quantum-4.png"
+        },
+        "96": {
+            "name": "Quantum V",
+            "image": "https://amyhelps.ml/images/ranks/096-quantum-5.png"
+        }
     }
 }

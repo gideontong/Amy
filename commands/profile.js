@@ -36,17 +36,18 @@ module.exports = async (client, msg, args) => {
                         data.statistics.reactions,
                         data.statistics.commands.count);
                     const money = data.economy && data.economy.money ? data.economy.money : 0;
+                    const rank = getRank(level);
                     const profile = new MessageEmbed()
                         .addField('Favorite Command', getFavoriteCommand(data))
                         .addField('Level', level, true)
                         .addField(`${xp} XP`, buildProgressString(progress), true)
                         .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
                         .addField('Money', `${currency}${money}`, true)
-                        .addField('Server Rank', getRank(level), true)
+                        .addField('Server Rank', rank[1].name, true)
                         .setAuthor(member.user.tag, member.user.displayAvatarURL())
                         .setColor(Math.floor(Math.random() * colors))
                         .setDescription(getRandomDescription(data))
-                        .setThumbnail('https://tabstats.com/images/r6/ranks/?rank=19')
+                        .setThumbnail(rank[0] ? rank[1].image : '')
                         .setTimestamp()
                         .setTitle(`${member.nickname ? member.nickname : member.user.username}'s Public Profile`);
                     sent.edit(getRandomContent(), profile);

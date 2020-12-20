@@ -1,8 +1,12 @@
+from csv import DictReader as reader
 from json import dump
 
 data = {}
-with open('ranks.txt') as file, open('ranks.json', 'w') as out:
-    ranks = [x.strip() for x in file]
-    for (i, rank) in enumerate(ranks):
-        data[i] = rank
+with open('ranks.csv') as file, open('ranks.json', 'w') as out:
+    i_reader = reader(file)
+    for row in i_reader:
+        data[row['Rank']] = {
+            'name': row['Name'],
+            'image': row['ImageURL']
+        }
     dump(data, out)

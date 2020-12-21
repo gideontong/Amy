@@ -42,7 +42,7 @@ module.exports = async (client, msg, args) => {
             message.react(emotes.no);
             message.awaitReactions(filter, { time: time, errors: ['time'] })
                 .then(collected => {
-                    // Update the embed
+                    msg.channel.send(collected.size);
                 })
                 .catch(collected => {
                     embed.setFooter('This poll has expired, and is no longer taking responses.');

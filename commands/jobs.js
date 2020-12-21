@@ -15,7 +15,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = async (client, msg, args) => {
     var page = 1;
     var start = 0;
-    let end = start + perPage;
+    var end = start + perPage;
     let description = '';
     let embed = new MessageEmbed()
         .setColor(Math.floor(Math.random() * colors))

@@ -121,5 +121,5 @@ function getRandomDescription(data) {
  * @param {Boolean} adsEnabled Ads enabled
  */
 function getRandomContent(adsEnabled = true) {
-    return 'This feature is in heavy development. Submit feature requests with the `github` command.'
+    return 'Use the `github` command to request a feature.'
 }

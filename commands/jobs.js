@@ -13,8 +13,8 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    let page = 1;
-    let start = 0;
+    var page = 1;
+    var start = 0;
     let end = start + perPage;
     let description = '';
     let embed = new MessageEmbed()

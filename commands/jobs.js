@@ -19,7 +19,6 @@ module.exports = async (client, msg, args) => {
     let description = '';
     let embed = new MessageEmbed()
         .setColor(Math.floor(Math.random() * colors))
-        .setDescription('Use `~aboutjob <job name>` to find out more about a job!')
         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Available Jobs`);
     getLevel(msg.author.id, function (level) {
         const jobs = getJobs(level);
@@ -32,10 +31,10 @@ module.exports = async (client, msg, args) => {
             }
         }
         for (var i = start; i < (end > jobs.length ? jobs.length : end); i++) {
-            description += `**${jobs[i].name}** ${currency}${jobs[i].salary}/Hour\n`
+            description += `**${jobs[i].name}** ${currency}${jobs[i].salary}/Hour\n`;
         }
         embed
-            .addField('My Jobs', description)
+            .setDescription('Use `~aboutjob <job name>` to find out more about a job!\n' + description)
             .setFooter(`Page ${page} of ${Math.floor(jobs.length / perPage) + 1}`);
         msg.channel.send(embed);
     });

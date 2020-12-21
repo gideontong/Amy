@@ -311,6 +311,12 @@
             "alias": []
         },
         {
+            "name": "You're Fired!",
+            "command": "quitjob",
+            "description": "Quit your job without 2 weeks needed!",
+            "alias": []
+        },
+        {
             "name": "You're Famous",
             "command": "quote",
             "description": "Get a random quote from a famous person.",

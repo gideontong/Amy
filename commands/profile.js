@@ -32,9 +32,7 @@ module.exports = async (client, msg, args) => {
         .then(async sent => {
             await getProfile(snowflake, function (data) {
                 if (data) {
-                    const [level, xp, progress] = calculateLevel(data.statistics.messages,
-                        data.statistics.reactions,
-                        data.statistics.commands.count);
+                    const [level, xp, progress] = calculateLevel(data);
                     const money = data.economy && data.economy.money ? data.economy.money : 0;
                     const rank = getRank(level);
                     const profile = new MessageEmbed()

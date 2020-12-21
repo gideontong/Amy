@@ -435,6 +435,12 @@
             "alias": []
         },
         {
+            "name": "Go to Work",
+            "command": "work",
+            "description": "Get paid for going to work!",
+            "alias": []
+        },
+        {
             "name": "Comic of the Day",
             "command": "xkcd",
             "description": "Get today's comic from XKCD.",

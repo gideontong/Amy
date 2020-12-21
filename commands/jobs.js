@@ -15,11 +15,10 @@ const { MessageEmbed } = require('discord.js');
 module.exports = async (client, msg, args) => {
     var page = 1;
     var start = 0;
-    var end = start + perPage;
     let description = '';
     let embed = new MessageEmbed()
-        .setColor(Math.floor(Math.random() * colors))
-        .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Available Jobs`);
+    .setColor(Math.floor(Math.random() * colors))
+    .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Available Jobs`);
     getLevel(msg.author.id, function (level) {
         const jobs = getJobs(level);
         if (args.length > 1 && !isNaN(args[1])) {
@@ -30,6 +29,7 @@ module.exports = async (client, msg, args) => {
                 start = begin;
             }
         }
+        let end = start + perPage;
         for (var i = start; i < (end > jobs.length ? jobs.length : end); i++) {
             description += `**${jobs[i].name}**: Requires level ${jobs[i].level} and pays ${currency}${jobs[i].salary}/Hour\n`;
         }

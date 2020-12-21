@@ -14,9 +14,10 @@
         "url": "https://github.com/gideontong/Amy.git"
     },
     "keywords": [
+        "artificial intelligence",
         "bot",
-        "digital assisstant",
-        "artificial intelligence"
+        "communication",
+        "digital assisstant"
     ],
     "license": "MIT",
     "bugs": "https://github.com/gideontong/Amy/issues",

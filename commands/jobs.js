@@ -30,6 +30,7 @@ module.exports = async (client, msg, args) => {
                 start = begin;
             }
         }
+        msg.channel.send(args[1], value, begin, page);
         for (var i = start; i < (end > jobs.length ? jobs.length : end); i++) {
             description += `**${jobs[i].name}**: Requires level ${jobs[i].level} and pays ${currency}${jobs[i].salary}/Hour\n`;
         }

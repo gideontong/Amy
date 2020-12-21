@@ -36,7 +36,7 @@ module.exports = async (client, msg, args) => {
         }
         embed
             .setDescription('Use `~aboutjob <job name>` to find out more about a job!\n' + description)
-            .setFooter(`Page ${page} of ${Math.floor(jobs.length / perPage) + 1}`);
+            .setFooter(`Page ${page} of ${Math.ceil(jobs.length / perPage)}`);
         msg.channel.send(embed);
     });
 }

@@ -25,7 +25,7 @@ module.exports = async (client, msg, args) => {
     let embed = new MessageEmbed()
         .setAuthor(msg.member.nickname ? msg.member.nickname : client.user.username, client.user.displayAvatarURL())
         .setColor(Math.floor(Math.random() * colors))
-        .setFooter(`Page ${page} of ${Math.floor(commands.length / perPage) + 1}`);
+        .setFooter(`Page ${page} of ${Math.ceil(commands.length / perPage)}`);
     let end = start + perPage;
     for (var i = start; i < (end > commands.length ? commands.length : end); i++) {
         description += `**${commands[i].command}**: ${commands[i].description}\n`

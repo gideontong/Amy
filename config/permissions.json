@@ -20,7 +20,8 @@
             "achievements",
             "poll",
             "vote",
-            "shop"
+            "shop",
+            "timezone"
         ]
     },
     "users": {

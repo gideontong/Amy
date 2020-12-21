@@ -42,6 +42,7 @@ module.exports = async (client, msg, args) => {
                         .addField('Level', level, true)
                         .addField(`${xp} XP`, buildProgressString(progress), true)
                         .addField('Achievements', `${data.achievements ? data.achievements.length : 0} unlocked`)
+                        .addField('Job', data.economy.job, true)
                         .addField('Money', `${currency}${money}`, true)
                         .addField('Server Rank', rank[1].name, true)
                         .setAuthor(member.user.tag, member.user.displayAvatarURL())

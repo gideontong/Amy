@@ -31,7 +31,7 @@ module.exports = async (client, msg, args) => {
                 start = begin;
             }
         }
-        for (var i = start; i < (end > jobs.length ? jobs.length : jobs); i++) {
+        for (var i = start; i < (end > jobs.length ? jobs.length : end); i++) {
             description += `**${jobs[i].name}** ${currency}${jobs[i].salary}/Hour\n`
         }
         embed

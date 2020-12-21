@@ -27,7 +27,7 @@ module.exports = async (client, msg, args) => {
     args.shift();
     const message = args.join(' ');
     var embed = new MessageEmbed()
-        .addField('Vote Tallies', 'coming soon')
+        .addField('Vote Tallies', 'No one has voted yet!')
         .setColor(Math.floor(Math.random() * colors))
         .setDescription(message)
         .setFooter(`This poll expires ~${Math.floor(hours)} hours after it starts.`)
@@ -40,13 +40,40 @@ module.exports = async (client, msg, args) => {
         .then(message => {
             message.react(emotes.yes);
             message.react(emotes.no);
-            message.awaitReactions(filter, { time: time, errors: ['time'] })
-                .then(collected => {
-                    msg.channel.send(collected.size);
-                })
-                .catch(collected => {
-                    embed.setFooter('This poll has expired, and is no longer taking responses.');
-                    message.edit(embed);
-                });
+            const collector = message.createReactionCollector(filter, { time: time });
+            let yes = 0, no = 0;
+            collector.on('collect', reaction => {
+                if (reaction.emoji.id == emotes.yes) {
+                    yes++;
+                } else if (reaction.emoji.id == emotes.no) {
+                    no++;
+                }
+                embed
+                    .spliceFields(0, 1)
+                    .addField('Vote Tallies', getTallies(yes, no));
+            });
+            collector.on('remove', reaction => {
+                if (reaction.emoji.id == emotes.yes) {
+                    yes--;
+                } else if (reaction.emoji.id == emotes.no) {
+                    no--;
+                }
+                embed
+                    .spliceFields(0, 1)
+                    .addField('Vote Tallies', getTallies(yes, no));
+            });
+            collector.on('end', collected => {
+                embed.setFooter('This poll has expired, and is no longer taking responses.');
+                message.edit(embed);
+            });
         });
+}
+
+function getTallies(yes, no) {
+    let percentage = Math.floor(100 * yes / (yes + no));
+    let strings = [
+        `<a:yes:${emotes.yes}> ${yes} Votes (${percentage}%)`,
+        `<a:no:${emotes.no}> ${no} Votes (${100 - percentage}%)`
+    ];
+    return strings.join('\n');
 }

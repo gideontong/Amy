@@ -40,7 +40,7 @@ module.exports = async (client, msg, args) => {
         .then(message => {
             message.react(emotes.yes);
             message.react(emotes.no);
-            const collector = message.createReactionCollector(filter, { time: time });
+            const collector = message.createReactionCollector(filter, { dispose: true, time: time });
             let yes = 0, no = 0;
             collector.on('collect', function (reaction, user) {
                 if (user.bot)

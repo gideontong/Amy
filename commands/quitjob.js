@@ -7,7 +7,7 @@ const { deleteJob } = require("../lib/Member")
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    deleteJob(snowflake, function() {
+    deleteJob(msg.author.id, function() {
         msg.reply('you have quit your job! Hopefully it was for a good cause.');
     });
 }

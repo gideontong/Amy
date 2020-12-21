@@ -12,7 +12,7 @@ module.exports = async (client, msg, args) => {
         return;
     }
     args.shift();
-    const search = args.join();
+    const search = args.join('');
     const job = isValidJob(search);
     if (job) {
         msg.channel.send('Your job has been set to ' + job)

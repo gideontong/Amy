@@ -290,6 +290,12 @@
             "alias": []
         },
         {
+            "name": "Survey Time",
+            "command": "poll",
+            "description": "Poll your friends to get answers!",
+            "alias": []
+        },
+        {
             "name": "Discord Kitro",
             "command": "printemoji",
             "description": "See a Discord server emote or even animated ones.",

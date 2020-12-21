@@ -42,7 +42,8 @@ module.exports = async (client, msg, args) => {
             message.react(emotes.no);
             const collector = message.createReactionCollector(filter, { time: time });
             let yes = 0, no = 0;
-            collector.on('collect', reaction => {
+            collector.on('collect', reaction, user => {
+                if (user.bot) return;
                 if (reaction.emoji.id == emotes.yes) {
                     yes++;
                 } else if (reaction.emoji.id == emotes.no) {
@@ -53,7 +54,8 @@ module.exports = async (client, msg, args) => {
                     .addField('Vote Tallies', getTallies(yes, no));
                 message.edit(embed);
             });
-            collector.on('remove', reaction => {
+            collector.on('remove', reaction, user => {
+                if (user.bot) return;
                 if (reaction.emoji.id == emotes.yes) {
                     yes--;
                 } else if (reaction.emoji.id == emotes.no) {
@@ -71,6 +73,11 @@ module.exports = async (client, msg, args) => {
         });
 }
 
+/**
+ * Get tallies string
+ * @param {Number} yes Number of yes
+ * @param {Number} no Number of no
+ */
 function getTallies(yes, no) {
     if (yes + no == 0) {
         return 'No one has voted yet!';

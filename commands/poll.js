@@ -48,9 +48,8 @@ module.exports = async (client, msg, args) => {
                 } else if (reaction.emoji.id == emotes.no) {
                     no++;
                 }
-                embed
-                    .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(yes, no));
+                embed.spliceFields(0, 1)
+                embed.addField('Vote Tallies', getTallies(yes, no));
             });
             collector.on('remove', reaction => {
                 if (reaction.emoji.id == emotes.yes) {
@@ -58,9 +57,8 @@ module.exports = async (client, msg, args) => {
                 } else if (reaction.emoji.id == emotes.no) {
                     no--;
                 }
-                embed
-                    .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(yes, no));
+                embed.spliceFields(0, 1)
+                embed.addField('Vote Tallies', getTallies(yes, no));
             });
             collector.on('end', collected => {
                 embed.setFooter('This poll has expired, and is no longer taking responses.');
@@ -70,6 +68,9 @@ module.exports = async (client, msg, args) => {
 }
 
 function getTallies(yes, no) {
+    if (yes + no == 0) {
+        return 'No one has voted yet!';
+    }
     let percentage = Math.floor(100 * yes / (yes + no));
     let strings = [
         `<a:yes:${emotes.yes}> ${yes} Votes (${percentage}%)`,

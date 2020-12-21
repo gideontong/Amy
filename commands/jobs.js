@@ -21,9 +21,7 @@ module.exports = async (client, msg, args) => {
         .setColor(Math.floor(Math.random() * colors))
         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username}'s Available Jobs`);
     getLevel(msg.author.id, function (level) {
-        console.log(level);
         const jobs = getJobs(level);
-        console.log(jobs);
         if (args.length > 1 && !isNaN(args[1])) {
             let value = parseInt(args[1]);
             let begin = (value - 1) * perPage;

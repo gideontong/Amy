@@ -357,6 +357,12 @@
             "alias": []
         },
         {
+            "name": "I am your master",
+            "command": "sudo",
+            "description": "make me a sandwich!",
+            "alias": []
+        },
+        {
             "name": "Not Alone",
             "command": "suicide",
             "description": "You are not alone. Get help if you are in a crisis.",

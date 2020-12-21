@@ -19,11 +19,11 @@
             "achievement",
             "achievements",
             "poll",
-            "sudo",
             "work",
             "vote",
             "job",
-            "shop"
+            "shop",
+            "jobs"
         ]
     },
     "users": {

@@ -208,6 +208,12 @@
             "alias": []
         },
         {
+            "name": "Get Hired",
+            "command": "job",
+            "description": "Apply for a job!",
+            "alias": []
+        },
+        {
             "name": "My Job Board",
             "command": "jobs",
             "description": "See the jobs you can work at!",

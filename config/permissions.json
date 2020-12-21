@@ -21,8 +21,8 @@
             "poll",
             "work",
             "vote",
-            "job",
-            "shop"
+            "shop",
+            "quitjob"
         ]
     },
     "users": {

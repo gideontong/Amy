@@ -1,4 +1,5 @@
 const colors = 0xFFFFFF;
+const msHours = 3600000;
 
 const { emotes } = require('../config/config.json');
 const { MessageEmbed } = require("discord.js");
@@ -14,8 +15,8 @@ module.exports = async (client, msg, args) => {
         msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>');
         return;
     }
-    const hours = parseInt(args[1]);
-    if (hours < 0) {
+    const hours = parseFloat(args[1]);
+    if (hours < 1) {
         msg.channel.send('Your poll has to expire in the future! Try again?');
         return;
     } else if (hours > 24) {
@@ -25,15 +26,27 @@ module.exports = async (client, msg, args) => {
     args.shift();
     args.shift();
     const message = args.join(' ');
-    const embed = new MessageEmbed()
+    var embed = new MessageEmbed()
         .addField('Vote Tallies', 'coming soon')
         .setColor(Math.floor(Math.random() * colors))
         .setDescription(message)
-        .setFooter(`This poll expires ${hours} hours after it starts.`)
+        .setFooter(`This poll expires ~${Math.floor(hours)} hours after it starts.`)
         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username} is starting a new poll!`);
+    const filter = (reaction, user) => {
+        return reaction.emoji.id == emotes.yes || reaction.emoji.id == emotes.no;
+    }
+    const time = Math.floor(hours * msHours);
     msg.channel.send(embed)
         .then(message => {
             message.react(emotes.yes);
             message.react(emotes.no);
+            message.awaitReactions(filter, { time: time, errors: ['time'] })
+                .then(collected => {
+                    // Update the embed
+                })
+                .catch(collected => {
+                    embed.setFooter('This poll has expired, and is no longer taking responses.');
+                    message.edit(embed);
+                });
         });
 }

@@ -16,7 +16,7 @@ module.exports = async (client, msg, args) => {
         return;
     }
     const hours = parseFloat(args[1]);
-    if (hours < 1) {
+    if (hours < 0.01) {
         msg.channel.send('Your poll has to expire in the future! Try again?');
         return;
     } else if (hours > 24) {

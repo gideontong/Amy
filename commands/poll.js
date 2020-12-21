@@ -10,8 +10,7 @@ const { MessageEmbed } = require("discord.js");
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
-    msg.channel.send(args.length + ' ' +  args[1] + ' ' + !isNaN(args[1]))
-    if (args.length < 3 || !isNaN(args[1])) {
+    if (args.length < 3 || isNaN(args[1])) {
         msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>');
         return;
     }

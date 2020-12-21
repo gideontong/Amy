@@ -31,7 +31,7 @@ module.exports = async (client, msg, args) => {
             }
         }
         for (var i = start; i < (end > jobs.length ? jobs.length : end); i++) {
-            description += `**${jobs[i].name}** ${currency}${jobs[i].salary}/Hour\n`;
+            description += `**${jobs[i].name}**: Requires level ${job[i].level} and pays ${currency}${jobs[i].salary}/Hour\n`;
         }
         embed
             .setDescription('Use `~aboutjob <job name>` to find out more about a job!\n' + description)

@@ -48,8 +48,10 @@ module.exports = async (client, msg, args) => {
                 } else if (reaction.emoji.id == emotes.no) {
                     no++;
                 }
-                embed.spliceFields(0, 1)
-                embed.addField('Vote Tallies', getTallies(yes, no));
+                embed
+                    .spliceFields(0, 1)
+                    .addField('Vote Tallies', getTallies(yes, no));
+                message.edit(embed);
             });
             collector.on('remove', reaction => {
                 if (reaction.emoji.id == emotes.yes) {
@@ -57,8 +59,10 @@ module.exports = async (client, msg, args) => {
                 } else if (reaction.emoji.id == emotes.no) {
                     no--;
                 }
-                embed.spliceFields(0, 1)
-                embed.addField('Vote Tallies', getTallies(yes, no));
+                embed
+                    .spliceFields(0, 1)
+                    .addField('Vote Tallies', getTallies(yes, no));
+                message.edit(embed);
             });
             collector.on('end', collected => {
                 embed.setFooter('This poll has expired, and is no longer taking responses.');

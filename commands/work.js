@@ -17,7 +17,7 @@ module.exports = async (client, msg, args) => {
         if (award) {
             let embed = new MessageEmbed()
                 .setColor(Math.floor(Math.random() * colors))
-                .setDescription(`While working, you earned a total of ${currnecy}${award}!`)
+                .setDescription(`While working, you earned a total of ${currency}${award}!`)
                 .setTitle('👩‍🏭 Work Complete!')
             if (Math.random() < 0.2) {
                 embed

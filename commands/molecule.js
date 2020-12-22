@@ -58,6 +58,7 @@ module.exports = async (client, msg, args) => {
  * @returns {Array<EmbedFieldData>} Embeds to add to the embed
  */
 function separateFields(sections) {
+    log.info(sections);
     let fields = [];
     var identifiers, properties, uses;
     sections.forEach(section => {
@@ -72,7 +73,7 @@ function separateFields(sections) {
         }
     });
     // Names and Identifiers
-    if (identifiers) {
+    if (identifiers && identifiers) {
         var formula;
         identifiers.Section.forEach(section => {
             if (section.TOCHeading) {

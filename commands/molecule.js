@@ -94,7 +94,7 @@ function separateFields(sections) {
     // Chemical and Physical Properties
     if (properties) {
         var computed, experimental;
-        peropties.forEach(section => {
+        properties.forEach(section => {
             if (section.TOCHeading) {
                 if (section.TOCHeading == 'Computed Properties') {
                     computed = section;

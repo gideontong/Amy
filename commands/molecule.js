@@ -84,7 +84,7 @@ function separateFields(sections) {
         if (formula) {
             try {
                 const field = {
-                    name: 'Formula',
+                    name: '👩‍🔬 Formula',
                     value: formula.Information[0].Value.StringWithMarkup[0].String,
                     inline: true
                 };

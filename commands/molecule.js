@@ -33,10 +33,10 @@ module.exports = async (client, msg, args) => {
                                     .setDescription(getDescription(molecule))
                                     .setFooter('Powered by the U.S. National Institute of Health')
                                     .setTitle(`${molecule.RecordTitle}`)
+                                message.edit(embed);
                             } catch (err) {
                                 log.error(`While trying to grab molecule ${key} I got ${err}`);
                             }
-                            message.edit(embed);
                         }, host, endpoint + queryData.IdentifierList.CID[0] + '/JSON');
                     } else {
                         message.edit(`Something weird happened while looking for ${key}. It appears we found it, but couldn't load it. File a bug report with \`github\`!`);

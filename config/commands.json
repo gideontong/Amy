@@ -57,6 +57,12 @@
             ]
         },
         {
+            "name": "Binary Convertor",
+            "command": "binary",
+            "description": "I convert stuff to 0101010 beep beep.",
+            "alias": []
+        },
+        {
             "name": "Bold Cursive",
             "command": "boldcursive",
             "description": "𝓑𝓸𝓵𝓭 𝓒𝓾𝓻𝓼𝓲𝓿𝓮",

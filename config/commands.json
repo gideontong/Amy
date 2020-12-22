@@ -429,6 +429,12 @@
             ]
         },
         {
+            "name": "The Useless Web",
+            "command": "uselessweb",
+            "description": "Get a random useless website... why.",
+            "alias": []
+        },
+        {
             "name": "Homepage",
             "command": "website",
             "description": "Get a link to my home website.",

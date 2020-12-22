@@ -12,7 +12,7 @@ const { MessageEmbed } = require("discord.js");
  */
 module.exports = async (client, msg, args) => {
     if (args.length < 3 || isNaN(args[1])) {
-        msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>');
+        msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
         return;
     }
     const hours = parseFloat(args[1]);

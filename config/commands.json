@@ -355,6 +355,12 @@
             "alias": []
         },
         {
+            "name": "Shakespearify",
+            "command": "shakespeare",
+            "description": "Turn your words into poetry... Shakespeare style.",
+            "alias": []
+        },
+        {
             "name": "Angry Throw Shruggie",
             "command": "shrugflip",
             "description": "Forget tables, flip shruggies!",

@@ -63,7 +63,7 @@ function translate(text) {
         text = removeDoneTokens(text);
         text = text.split(doneToken).join('');
         text = text.trim();
-        text = regexReplace(map.regex.input, map.regex.output, text);w
+        text = regexReplace(map.regex.input, map.regex.output, text);
         text = text.split(' 985865568NEWLINETOKEN98758659 ').join('\n');
         text = text.split(' 985865568NEWLINETOKEN98758659').join('\n');
         text = text.split('985865568NEWLINETOKEN98758659').join('\n');

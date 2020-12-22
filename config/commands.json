@@ -95,6 +95,12 @@
             "alias": []
         },
         {
+            "name": "Cursive Generator",
+            "command": "cursive",
+            "description": "Back to third grade yet?",
+            "alias": []
+        },
+        {
             "name": "Daily Bonus",
             "command": "daily",
             "description": "Get your daily allowance!",

@@ -229,6 +229,10 @@ const { characterReplace } = require('../lib/MagicText');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
+    if (args.length < 2) {
+        msg.channel.send('You need to provide me something to convert!');
+        return;
+    }
     const text = msg.content.substring(args[0].length + 1);
     msg.channel.send(characterReplace(text, map));
 }

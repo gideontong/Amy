@@ -135,7 +135,7 @@ function separateFields(sections) {
             if (weight) {
                 try {
                     const field = {
-                        name = '💺 Molecular Mass',
+                        name: '💺 Molecular Mass',
                         value: `${weight.Information.Value.Number[0]} ${weight.Information.Value.Number.Unit}`,
                         inline: true
                     };

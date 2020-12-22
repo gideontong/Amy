@@ -28,7 +28,7 @@ module.exports = async(client, msg, args) => {
             const bin = text[i].charCodeAt().toString(2);
             output.push(Array(8 - bin.length + 1).join('0') + bin);
         }
-        message.channel.send(output.join(' '));
+        msg.channel.send(output.join(' '));
         return;
     }
 }

@@ -208,6 +208,12 @@
             "alias": []
         },
         {
+            "name": "Server Invite",
+            "command": "invite",
+            "description": "Get a link to the 708 server.",
+            "alias": []
+        },
+        {
             "name": "Get Hired",
             "command": "job",
             "description": "Apply for a job!",

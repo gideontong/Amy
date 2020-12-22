@@ -58,7 +58,7 @@ module.exports = async (client, msg, args) => {
  * @returns {Array<EmbedFieldData>} Embeds to add to the embed
  */
 function separateFields(sections) {
-    log.info(sections);
+    log.info(sections.keys());
     let fields = [];
     var identifiers, properties, uses;
     sections.forEach(section => {

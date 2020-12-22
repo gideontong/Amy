@@ -30,10 +30,10 @@ module.exports = async message => {
                 }
             }
             cmdFile = require(`../commands/${toRun}.js`);
-        } catch (err) {
+        } /*catch (err) {
             log.warn(`${message.author.tag} failed to run ${message.content}`);
             return;
-        }
+        }*/
         if (!cmdFile) {
             log.warn(`${message.author.tag} tried to run nonexistent command ${message.content}`);
         } else {

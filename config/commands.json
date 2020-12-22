@@ -57,6 +57,12 @@
             ]
         },
         {
+            "name": "Bold Cursive",
+            "command": "boldcursive",
+            "description": "𝓑𝓸𝓵𝓭 𝓒𝓾𝓻𝓼𝓲𝓿𝓮",
+            "alias": []
+        },
+        {
             "name": "Latest Changes",
             "command": "changelog",
             "description": "See the latest changes to Amy.",

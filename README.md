@@ -14,6 +14,11 @@ Amy currently runs on [Gideon Tong's Server Network](https://me.gideontong.com) 
 
 -----
 
+## Testimonals
+
+> this is a sickass command
+*Jayy from Discord*
+
 ## Features
 
 * Custom welcome, about, join, and help messages tailored to communities

@@ -58,24 +58,21 @@ module.exports = async (client, msg, args) => {
  * @returns {Array<EmbedFieldData>} Embeds to add to the embed
  */
 function separateFields(sections) {
-    log.info(sections.keys());
     let fields = [];
-    var identifiers, properties, uses;
+    var identifiers, properties;
     sections.forEach(section => {
         if (section.TOCHeading) {
             if (section.TOCHeading == 'Names and Identifiers') {
                 identifiers = section.Section;
             } else if (section.TOCHeading == 'Chemical and Physical Properties') {
                 properties = section.Section;
-            } else if (section.TOCHeading == 'Use and Manufacturing') {
-                uses = section.Section;
             }
         }
     });
     // Names and Identifiers
-    if (identifiers && identifiers) {
+    if (identifiers) {
         var formula;
-        identifiers.Section.forEach(section => {
+        identifiers.forEach(section => {
             if (section.TOCHeading) {
                 if (section.TOCHeading == 'Molecular Formula') {
                     formula = section;
@@ -97,7 +94,7 @@ function separateFields(sections) {
     // Chemical and Physical Properties
     if (properties) {
         var computed, experimental;
-        peropties.Section.forEach(section => {
+        peropties.forEach(section => {
             if (section.TOCHeading) {
                 if (section.TOCHeading == 'Computed Properties') {
                     computed = section;

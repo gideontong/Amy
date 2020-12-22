@@ -25,7 +25,7 @@ module.exports = async (client, msg, args) => {
                 if ('IdentifierList' in queryData) {
                     if (queryData.IdentifierList.CID && queryData.IdentifierList.CID.length > 0) {
                         authenticatedGet(function (moleculeData) {
-                            try {
+                            // try {
                                 const molecule = moleculeData.Record;
                                 const embed = new MessageEmbed()
                                     .addFields(separateFields(molecule.Section))
@@ -33,9 +33,9 @@ module.exports = async (client, msg, args) => {
                                     .setDescription(getDescription(molecule))
                                     .setFooter('Powered by the U.S. National Institute of Health')
                                     .setTitle(`${molecule.RecordTitle}`)
-                            } catch (err) {
+                            /*} catch (err) {
                                 log.error(`While trying to grab molecule ${key} I got ${err}`);
-                            }
+                            }*/
                         }, host, endpoint + queryData.IdentifierList.CID[0] + '/JSON');
                     } else {
                         message.edit(`Something weird happened while looking for ${key}. It appears we found it, but couldn't load it. File a bug report with \`github\`!`);

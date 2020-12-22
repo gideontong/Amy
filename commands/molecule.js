@@ -33,7 +33,8 @@ module.exports = async (client, msg, args) => {
                                     .setDescription(getDescription(molecule))
                                     .setFooter('Powered by the U.S. National Institute of Health')
                                     .setTitle(`${molecule.RecordTitle}`)
-                                message.edit(embed);
+                                message.edit('Found! Here is a bit of info:', embed);
+                                log.info(`Requested a molecule using query of ${key}`);
                             } catch (err) {
                                 log.error(`While trying to grab molecule ${key} I got ${err}`);
                             }

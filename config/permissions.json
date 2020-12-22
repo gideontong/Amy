@@ -20,7 +20,8 @@
             "achievements",
             "vote",
             "shop",
-            "timezone"
+            "timezone",
+            "molecule"
         ]
     },
     "users": {

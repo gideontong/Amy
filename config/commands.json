@@ -274,6 +274,12 @@
             "alias": []
         },
         {
+            "name": "Chemistry Info",
+            "command": "molecule",
+            "description": "Get accurate information about molecules",
+            "alias": []
+        },
+        {
             "name": "Monthly Bonus",
             "command": "monthly",
             "description": "Get a monthly bonus for no reason...",

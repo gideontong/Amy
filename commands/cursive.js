@@ -76,6 +76,6 @@ module.exports = async(client, msg, args) => {
         msg.channel.send('You need to provide me something to convert!');
         return;
     }
-    const text = msg.content.substring(args[1].length + 1);
+    const text = msg.content.substring(args[0].length + 1);
     msg.channel.send(characterReplace(text, map));
 }

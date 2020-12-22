@@ -250,6 +250,12 @@
             "alias": []
         },
         {
+            "name": "Mirror Text",
+            "command": "mirror",
+            "description": "Mirror your text for a small fee of zero?",
+            "alias": []
+        },
+        {
             "name": "Monthly Bonus",
             "command": "monthly",
             "description": "Get a monthly bonus for no reason...",

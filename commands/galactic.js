@@ -1,4 +1,4 @@
-const characters = ["\u1511",
+const map = ["\u1511",
     "\u0296",
     "\u14f5",
     "\u21b8",
@@ -23,7 +23,8 @@ const characters = ["\u1511",
     "\u2234",
     " \u0307\/",
     "\\|\\|",
-    "\u2a05"];
+    "\u2a05"
+];
 
 const log = require('log4js').getLogger('amy');
 
@@ -43,7 +44,7 @@ module.exports = async (client, msg, args) => {
     string.split('').forEach(letter => {
         const code = letter.charCodeAt(0);
         if (0x61 <= code && code <= 0x7A) {
-            result += characters[code - 0x61];
+            result += map[code - 0x61];
         } else {
             result += letter;
         }

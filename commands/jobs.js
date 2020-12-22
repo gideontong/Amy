@@ -24,7 +24,7 @@ module.exports = async (client, msg, args) => {
         if (args.length > 1 && !isNaN(args[1])) {
             let value = parseInt(args[1]);
             let begin = (value - 1) * perPage;
-            if (begin < jobs.length) {
+            if (begin < jobs.length && value > 0) {
                 page = value;
                 start = begin;
             }

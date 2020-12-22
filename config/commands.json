@@ -459,6 +459,12 @@
             "alias": []
         },
         {
+            "name": "Wingdings",
+            "command": "wingdings",
+            "description": "🕈︎✋︎☠︎☝︎👎︎✋︎☠︎☝︎💧︎",
+            "alias": []
+        },
+        {
             "name": "Go to Work",
             "command": "work",
             "description": "Get paid for going to work!",

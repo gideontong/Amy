@@ -17,7 +17,7 @@ module.exports = async (client, msg, args) => {
     const command = getCommand({ command: args[1] });
     if (command) {
         const embed = new MessageEmbed()
-            .addField('Aliases', command.alias ? command.alias.join() : 'No aliases for this command.')
+            .addField('Aliases', command.alias.length ? command.alias.join() : 'No aliases for this command.')
             .setColor(Math.floor(Math.random() * colors))
             .setDescription(command.description)
             .setTitle(`${command.command}: ${command.name}`);

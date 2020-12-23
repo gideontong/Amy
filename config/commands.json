@@ -513,6 +513,16 @@
             "alias": []
         },
         {
+            "name": "U MAD BRO?",
+            "command": "youmad",
+            "description": "U MAD BRO? U DEFINITELY MAD",
+            "alias": [
+                "umad",
+                "umadbro",
+                "youmadbro"
+            ]
+        },
+        {
             "name": "Professional Vlogger",
             "command": "youtube",
             "description": "Subscribe to the best YouTube channel.",

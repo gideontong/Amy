@@ -21,7 +21,8 @@ module.exports = async (client, msg, args) => {
                 color: 14366683,
                 thumbnail: {
                     url: `https://amyhelps.ml/images/achievements/${data.id}.png`
-                }
+                },
+                footer: 'Like achievements? There are secret ones that you aren\'t allowed to view!'
             },
         };
         msg.channel.send(embed);

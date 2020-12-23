@@ -23,7 +23,7 @@ module.exports = async (client, msg, args) => {
         msg.channel.send(embed);
         return;
     } else {
-        const suggestion = msg.substring(args[0].length + 1);
+        const suggestion = msg.content.substring(args[0].length + 1);
         const url = new URL('https://github.com/gideontong/Amy/issues/new');
         url.searchParams.append('body', suggestion);
         const embed = new MessageEmbed()

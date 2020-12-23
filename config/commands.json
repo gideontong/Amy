@@ -435,6 +435,12 @@
             "alias": []
         },
         {
+            "name": "Suggestion Box",
+            "command": "suggest",
+            "description": "How to get new bot features?",
+            "alias": []
+        },
+        {
             "name": "Not Alone",
             "command": "suicide",
             "description": "You are not alone. Get help if you are in a crisis.",

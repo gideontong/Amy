@@ -9,7 +9,7 @@
 <p><u>Your estimated timezone</u></p>
 <p id="item">Loading...</p>
 <button onclick="copy()">copy</button>
-<input type="text" value="" id="copy" style="visibility:hidden;">
+<input type="text" value="" id="copy" style="display:none;">
 <script>
 let item = "Loading...";
 if (!Intl || !Intl.DateTimeFormat().resolvedOptions().timeZone) item = "This browser does not support this feature. Try update to a modern browser like Chrome or Firefox.";

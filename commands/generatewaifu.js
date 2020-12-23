@@ -13,9 +13,9 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     authenticatedPost(function (data) {
+        const image = data.newGirls[0].image;
+        log.info(image);
         try {
-            const image = data.newGirls[0].image;
-            log.info(image);
             const stream = new Buffer.from(image, 'base64');
             const attachment = new MessageAttachment(stream);
             msg.channel.send(attachment);

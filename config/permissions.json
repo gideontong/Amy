@@ -3,7 +3,6 @@
         "admin": [
             "clear",
             "countreactions",
-            "createprofile",
             "debugslots",
             "generateachievement",
             "grantachievement",

@@ -81,6 +81,12 @@
             "alias": []
         },
         {
+            "name": "Command Info",
+            "command": "command",
+            "description": "Get info about a command!",
+            "alias": []
+        },
+        {
             "name": "Commands List",
             "command": "commands",
             "description": "Get a list of the commands I support.",

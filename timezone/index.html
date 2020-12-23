@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Timezone | Amy</title>
+</head>
+<body>
+<h1>Timezone Detector</h1>
+<p>A simple website by Gideon Tong to detect your TZ timezone.</p>
+<p>If it says loading forever, your browser may not support this feature. Side note: unlike most of my websites, this was built in 10 seconds to help to figure out your timezone. It has no fancy features or tracking. Feel free to share it.</p>
+<p><u>Your estimated timezone</u></p>
+<p id="item">Loading...</p>
+<script>
+let item = "Loading...";
+if (!Intl || !Intl.DateTimeFormat().resolvedOptions().timeZone) item = "This browser does not support this feature. Try update to a modern browser like Chrome or Firefox.";
+try { item = Intl.DateTimeFormat().resolvedOptions().timeZone; }
+catch { item = "Looks like it failed to load. Your browser seems to support it, but maybe something is broken?"; }
+document.getElementById("item").innerHTML = item;
+</script>
+</body>
+</html>

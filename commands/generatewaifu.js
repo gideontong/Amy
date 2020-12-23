@@ -13,12 +13,11 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (client, msg, args) => {
     authenticatedPost(function (data) {
-        const image = data.newGirls[0].image;
-        log.info(image);
         try {
-            // const stream = new Buffer.from(image, 'base64');
-            // const attachment = new MessageAttachment(stream);
-            // msg.channel.send(attachment);
+            const image = data.newGirls[0].image;
+            const stream = new Buffer.from(image, 'base64');
+            const attachment = new MessageAttachment(stream);
+            msg.channel.send(attachment);
         } catch (err) {
             log.error(`While trying to get a waifu I got: ${err}`);
             msg.channel.send('Something went wrong! Ask Gideon for help.');

@@ -16,13 +16,13 @@ module.exports = async (client, msg, args) => {
         const embed = {
             embed:
             {
-                title: data.name
+                title: data.name,
+                description: data.description,
+                color: 14366683,
+                thumbnail: {
+                    url: `https://amyhelps.ml/images/achievements/${data.id}.png`
+                }
             },
-            description: data.description,
-            color: 14366683,
-            thumbnail: {
-                url: `https://amyhelps.ml/images/achievements/${data.id}.png`
-            }
         };
         msg.channel.send(embed);
     } else {

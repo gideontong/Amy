@@ -188,6 +188,12 @@
             "alias": []
         },
         {
+            "name": "Random Waifu",
+            "command": "generatewaifu",
+            "description": "Get a random AI-generated waifu",
+            "alias": []
+        },
+        {
             "name": "Source Code",
             "command": "github",
             "description": "See my source code!",

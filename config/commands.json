@@ -21,6 +21,12 @@
             ]
         },
         {
+            "name": "About Achievement",
+            "command": "achievements",
+            "description": "Learn about an achievement and get data!",
+            "alias": []
+        },
+        {
             "name": "Be Annoying",
             "command": "annoy",
             "description": "Annoy your friends!",

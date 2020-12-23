@@ -17,7 +17,11 @@ const helpEmbed = {
  * @param {Array} args Command arguments
  */
 module.exports = async (client, msg, args) => {
-    let repeat = Math.floor(Math.random() * 11);
+    if (args.length > 1) {
+        require('./command')(client, msg, args);
+        return;
+    }
+    let repeat = Math.floor(Math.random() * 10);
     let embed = {
         "content": helpText.repeat(repeat),
         "embed": helpEmbed

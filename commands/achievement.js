@@ -7,6 +7,10 @@ const { getAchievement } = require('../lib/Achievement');
  * @param {Array} args Arguments
  */
 module.exports = async (client, msg, args) => {
+    if (args.length < 2) {
+        msg.channel.send('You need to provide me with an achievement!');
+        return;
+    }
     const data = getAchievement(args[1]);
     if (data) {
         const embed = {

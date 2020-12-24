@@ -435,6 +435,12 @@
             ]
         },
         {
+            "name": "/r/AmyBot",
+            "command": "subreddit",
+            "description": "Get a link to the subreddit.",
+            "alias": []
+        },
+        {
             "name": "xQc is Happy",
             "command": "suck",
             "description": "See a cool xQc GIF.",

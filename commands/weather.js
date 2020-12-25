@@ -1,14 +1,6 @@
 const host = 'api.openweathermap.org';
 const endpoint = '/data/2.5/weather';
 const colors = 0xFFFFFF;
-const descriptions = {
-    2: 'It is currently thundering outside, so you should try to stay safe. You may want to bring an umbrella just in case.',
-    3: 'Currently, it is drizzling outside, so you could get away with just a raincoat, or even a normal jacket. An umbrella may be safe anyways.',
-    5: 'It is raining outside. You need an umbrella for sure. Based on your tolerance for weather, you may also want a jacket or heavy raincoat.',
-    6: 'Snow! Be careful of ice that may form on the roads, creating slicks or black ice that is impossible to be safe on. Wear enough clothing to stay warm.',
-    7: 'There is currently limited visibility outside. You may want to consider not leaving unless absolutely necessary as there is a higher risk of car accidents.',
-    8: 'It\'s nice outside today. Go have some fun!'
-}
 
 const { weather: key } = require('../config/secrets.json');
 const { authenticatedGet } = require('../lib/Internet');
@@ -32,7 +24,7 @@ module.exports = async (client, msg, args) => {
         appid: key
     };
     authenticatedGet(function (weather) {
-        log.info(weather);
+        log.info(`Weather information retrieved for: ${search}`);
         if (weather.cod == 200) {
             const embed = generateEmbed(weather, false);
             msg.channel.send(embed);
@@ -56,19 +48,18 @@ module.exports = async (client, msg, args) => {
 function generateEmbed(weather, celsius = true) {
     const flag = celsius ? 'C' : 'F';
     const icon = weather.weather && weather.weather[0] && weather.weather[0].icon ? weather.weather[0].icon : '01d';
-    const temperature = Math.floor(convertTemperature(weather.main.temp, celsius));
-    const low = Math.floor(convertTemperature(weather.main.temp_min, celsius));
-    const high = Math.floor(convertTemperature(weather.main.temp_max, celsius));
-    let weatherIDs = [];
-    weather.weather.forEach(value => {
-        weatherIDs.push(value.id);
-    });
+    const temperature = convertTemperature(weather.main.temp, celsius);
+    const low = convertTemperature(weather.main.temp_min, celsius);
+    const high = convertTemperature(weather.main.temp_max, celsius);
     const embed = new MessageEmbed()
         .addField('Temperature', `${temperature}°${flag}`, true)
         .addField('⛄ Low', `${low}°${flag}`, true)
         .addField('🔥 High', `${high}°${flag}`, true)
+        .addField('Visibility', `${convertLength(weather.visibility)} mi`, true)
+        .addField('Wind', `${convertSpeed(weather.wind.speed)} mph`, true)
+        .addField('Cloudiness', `${weather.clouds.all}%`, true)
         .setColor(getColor(weather.sys.sunrise, weather.sys.sunset))
-        .setDescription(getDescriptions(weatherIDs))
+        .setDescription(getDescription(weather.weather))
         .setThumbnail(`https://openweathermap.org/img/wn/${icon}@4x.png`)
         .setTitle(`🌡 ${temperature}°${flag} at ${weather.name ? weather.name : 'Unknown City'}`);
     return embed;
@@ -76,14 +67,21 @@ function generateEmbed(weather, celsius = true) {
 
 /**
  * Gets a description
- * @param {Array} id ID of weather codes from server
+ * @param {Array} weather Weather to analyze
+ * @returns {String} Weather string description
  */
-function getDescriptions(id = [800]) {
-    strings = [];
-    id.forEach(value => {
-        strings.push(descriptions[Math.floor(value / 100)]);
-    })
-    return strings.join(' ');
+function getDescription(weather = []) {
+    let currently;
+    if (weather.length == 2) {
+        currently = `${weather[0].description} and ${weather[1].description}`;
+    } else {
+        let appending = [];
+        weather.forEach(item => {
+            appending.push(item.description);
+        });
+        currently = appending.join();
+    }
+    return `There is currently ${currently} outside.`;
 }
 
 /**
@@ -117,8 +115,26 @@ function getColor(sunrise, sunset) {
  */
 function convertTemperature(temperature, celsius = true) {
     if (celsius) {
-        return temperature - 273;
+        return Math.floor(temperature - 273);
     } else {
-        return celsius * 9 / 5 + 32;
+        return Math.floor(celsius * 9 / 5 + 32);
     }
+}
+
+/**
+ * Get a distance in miles
+ * @param {Number} distance Distance in meters
+ * @returns {Number} Distance in miles
+ */
+function convertLength(distance) {
+    return Math.floor(distance / 1609);
+}
+
+/**
+ * Convert a distance to mph
+ * @param {Number} speed Speed in m/s
+ * @returns {Number} Speed in mph
+ */
+function convertSpeed(speed) {
+    return Math.floor(speed / 2.237);
 }

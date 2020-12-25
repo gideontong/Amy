@@ -32,6 +32,7 @@ module.exports = async (client, msg, args) => {
         appid: key
     };
     authenticatedGet(function (weather) {
+        log.info(weather);
         if (weather.cod == 200) {
             const embed = generateEmbed(weather, false);
             msg.channel.send(embed);

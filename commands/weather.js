@@ -11,6 +11,7 @@ const descriptions = {
 }
 
 const { weather: key } = require('../config/secrets.json');
+const { authenticatedGet } = require('../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

@@ -63,6 +63,7 @@ function generateEmbed(weather, celsius = true) {
     weather.weather.forEach(value => {
         weatherIDs.push(value.id);
     });
+    log.info(weatherIDs);
     const embed = new MessageEmbed()
         .addField('Temperature', `${temperature}°${flag}`, true)
         .addField('⛄ Low', `${low}°${flag}`, true)

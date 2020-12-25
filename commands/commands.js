@@ -23,7 +23,7 @@ module.exports = async (client, msg, args) => {
     }
     let description = '';
     let embed = new MessageEmbed()
-        .setAuthor(msg.member.nickname ? msg.member.nickname : client.user.username, client.user.displayAvatarURL())
+        .setAuthor(msg.member.nickname ? msg.member.nickname : client.user.username, msg.author.displayAvatarURL())
         .setColor(Math.floor(Math.random() * colors))
         .setFooter(`Page ${page} of ${Math.ceil(commands.length / perPage)}`);
     let end = start + perPage;

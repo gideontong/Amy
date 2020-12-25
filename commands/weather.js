@@ -27,7 +27,18 @@ module.exports = async (client, msg, args) => {
         log.info(`Weather information retrieved for: ${search}`);
         if (weather.cod == 200) {
             const embed = generateEmbed(weather, false);
-            msg.channel.send(embed);
+            msg.channel.send(embed)
+                .then(message => {
+                    const filter = (reaction, user) => {
+                        return reaction.emoji.name == '💡' && user.id == message.author.id;
+                    }
+                    message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                        .then(collected => {
+                            const celsiusEmbed = generateEmbed(weather);
+                            message.edit(celsiusEmbed);
+                        })
+                        .catch(collected => { });
+                });
         } else if (weather.cod == 404) {
             msg.channel.send(`Are you sure that is a city? If you think \`${search}\` should be a city, please let me know with the \`suggest\` command. Thanks!`);
             return;

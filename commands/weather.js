@@ -72,6 +72,7 @@ function generateEmbed(weather, celsius = true) {
         .addField('Cloudiness', `${weather.clouds.all}%`, true)
         .setColor(getColor(weather.sys.sunrise, weather.sys.sunset))
         .setDescription(getDescription(weather.weather))
+        .setFooter(celsius ? 'You cannot go back after seeing the superior temperature system.' : 'Click the lightbulb to see me in Celsius!')
         .setThumbnail(`https://openweathermap.org/img/wn/${icon}@4x.png`)
         .setTitle(`🌡 ${temperature}°${flag} at ${weather.name ? weather.name : 'Unknown City'}`);
     return embed;

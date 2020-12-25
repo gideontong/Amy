@@ -21,11 +21,13 @@ module.exports = async message => {
             if (!permissions.users.admin.includes(message.author.id)) {
                 if (permissions.commands.unreleased.includes(toRun)) {
                     message.reply('Command coming soon!');
-                    log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
                     return;
                 } else if (permissions.commands.admin.includes(toRun)) {
                     message.reply("You don't have permission to do that!");
-                    log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
+                    return;
+                } else if (permissions.commands.premium.includes(toRun)) {
+                    // TODO: Implement premium
+                    message.reply('You need premium to do that! (Premium tiers are coming soon.)');
                     return;
                 }
             }

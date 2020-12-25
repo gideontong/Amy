@@ -19,6 +19,9 @@
             "vote",
             "shop",
             "timezone"
+        ],
+        "premium": [
+            "search"
         ]
     },
     "users": {

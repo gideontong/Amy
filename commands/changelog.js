@@ -1,4 +1,4 @@
-const link = 'https://github.com/gideontong/Amy/blob/master/docs/CHANGELOG.md';
+const link = 'https://github.com/gideontong/Amy/releases';
 
 /**
  * Returns the changelog

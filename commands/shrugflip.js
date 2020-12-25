@@ -1,4 +1,4 @@
-const message = '(╯°□°）╯︵¯\_(ツ)_/¯     ノ( ゜-゜ノ)';
+const message = '(╯°□°）╯︵¯\\_(ツ)_/¯     ノ( ゜-゜ノ)';
 
 /**
  * Flip a shruggie

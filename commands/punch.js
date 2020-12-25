@@ -1,3 +1,5 @@
+const pleading = '<:pleading:792119409551867925>';
+
 /**
  * Punch someone
  * @param {Client} client Discord server client
@@ -7,6 +9,10 @@
 module.exports = async (client, msg, args) => {
     if (msg.mentions.users.size > 0) {
         const snowflake = msg.mentions.users.firstKey();
+        if (snowflake == client.user.id) {
+            msg.reply(`Why are you trying to punch me? ${pleading} ${pleading}`);
+            return;
+        }
         msg.channel.send(`<@${msg.author.id}> 🤜💥 punched <@${snowflake}> hard! React with 👊 in 5 seconds to retaliate!`)
             .then(message => {
                 message.react('👊');

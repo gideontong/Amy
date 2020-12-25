@@ -63,7 +63,6 @@ function generateEmbed(weather, celsius = true) {
     weather.weather.forEach(value => {
         weatherIDs.push(value.id);
     });
-    log.info(weatherIDs);
     const embed = new MessageEmbed()
         .addField('Temperature', `${temperature}°${flag}`, true)
         .addField('⛄ Low', `${low}°${flag}`, true)
@@ -82,7 +81,7 @@ function generateEmbed(weather, celsius = true) {
 function getDescriptions(id = [800]) {
     strings = [];
     id.forEach(value => {
-        strings.push(descriptions[Math.floor(id / 100)]);
+        strings.push(descriptions[Math.floor(value / 100)]);
     })
     return strings.join(' ');
 }

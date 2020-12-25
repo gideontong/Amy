@@ -365,6 +365,12 @@
             "alias": []
         },
         {
+            "name": "Punch",
+            "command": "punch",
+            "description": "Punch your enemies (or your friends, I won't judge).",
+            "alias": []
+        },
+        {
             "name": "QR Code",
             "command": "qr",
             "description": "Generate a QR code!",

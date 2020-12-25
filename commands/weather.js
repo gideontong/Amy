@@ -30,7 +30,7 @@ module.exports = async (client, msg, args) => {
             msg.channel.send(embed)
                 .then(message => {
                     const filter = (reaction, user) => {
-                        return reaction.emoji.name == '💡' && user.id == message.author.id;
+                        return reaction.emoji.name == '💡' && user.id == msg.author.id;
                     }
                     message.react('💡');
                     message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })

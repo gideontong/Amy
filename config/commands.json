@@ -501,6 +501,12 @@
             "alias": []
         },
         {
+            "name": "Weather",
+            "command": "weather",
+            "description": "Get the weather for a city so you know whether or not to go outside.",
+            "alias": []
+        },
+        {
             "name": "Homepage",
             "command": "website",
             "description": "Get a link to my home website.",

@@ -130,7 +130,7 @@ function convertTemperature(temperature, celsius = true) {
     if (celsius) {
         return Math.floor(temperature - 273);
     } else {
-        return Math.floor(celsius * 9 / 5 + 32);
+        return Math.floor((temperature - 273) * 9 / 5 + 32);
     }
 }
 

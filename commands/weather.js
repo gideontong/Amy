@@ -32,6 +32,7 @@ module.exports = async (client, msg, args) => {
                     const filter = (reaction, user) => {
                         return reaction.emoji.name == '💡' && user.id == message.author.id;
                     }
+                    message.react('💡');
                     message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
                         .then(collected => {
                             const celsiusEmbed = generateEmbed(weather);

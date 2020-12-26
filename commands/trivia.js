@@ -40,7 +40,7 @@ module.exports = async (client, msg, args) => {
             mainMenu.react('👥');
             mainMenu.awaitReactions(filter, { max: 1, time: timeout * 1000, errors: ['time']})
                 .then(collected => {
-                    msg.channel.send(collected.first().emoji);
+                    msg.channel.send(collected.first().emoji.toString());
                 })
                 .catch (collected => {
                     const failure = {

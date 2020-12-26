@@ -16,9 +16,10 @@
         ],
         "unreleased": [
             "achievements",
-            "vote",
             "shop",
-            "timezone"
+            "timezone",
+            "trivia",
+            "vote"
         ],
         "premium": [],
         "premium_soon": [
@@ -29,6 +30,10 @@
             "search",
             "stockprice",
             "ticker"
+        ],
+        "vote": [],
+        "vote_soon": [
+            "galactic"
         ]
     },
     "users": {

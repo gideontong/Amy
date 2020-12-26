@@ -491,6 +491,12 @@
             "alias": []
         },
         {
+            "name": "Trivia Game",
+            "command": "trivia",
+            "description": "Play trivia by yourself, OR against your friends. And win money.",
+            "alias": []
+        },
+        {
             "name": "Professional Streamer",
             "command": "twitch",
             "description": "See our Twitch channel!",

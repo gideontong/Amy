@@ -22,8 +22,13 @@
         ],
         "premium": [],
         "premium_soon": [
+            "exchange",
+            "exchangerate",
+            "forex",
+            "molecule",
             "search",
-            "molecule"
+            "stockprice",
+            "ticker"
         ]
     },
     "users": {

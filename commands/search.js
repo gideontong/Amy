@@ -19,7 +19,8 @@ module.exports = async (client, msg, args) => {
         var embed = new MessageEmbed()
             .addFields(coalesceResults(results.results))
             .setColor(googleBlue)
-            .setFooter('Amy\'s Search Engine Powered by Google');
+            .setFooter(`Powered by Google (Got ${results.count} results in ${results.time} seconds)`)
+            .setTitle(`Search Results for ${query}`);
         if (results.corrected) embed.setDescription(`*Did you mean: ${results.corrected}?*`);
         msg.channel.send(embed);
     }, query);
@@ -46,7 +47,7 @@ function coalesceResults(results) {
 function renderResult(result) {
     const field = {
         name: result.title,
-        value: `[Click here to view](${result.link}): ${result.snippet}`
+        value: `[Click here to view](${result.link}): ${result.snippet.split('\n').join('')}`
     }
     return field;
 }

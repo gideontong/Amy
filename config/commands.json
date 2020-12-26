@@ -409,6 +409,12 @@
             "alias": []
         },
         {
+            "name": "Google",
+            "command": "search",
+            "description": "Do a barrel roll? Or just search on the internet.",
+            "alias": []
+        },
+        {
             "name": "Shakespearify",
             "command": "shakespeare",
             "description": "Turn your words into poetry... Shakespeare style.",

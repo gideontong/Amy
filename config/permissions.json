@@ -18,17 +18,19 @@
             "achievements",
             "vote",
             "shop",
-            "timezone"
-        ],
-        "premium": [
+            "timezone",
             "search"
+        ],
+        "premium": [],
+        "premium_soon": [
+            "search",
+            "molecule"
         ]
     },
     "users": {
         "admin": [
             "132525049977503744"
         ],
-        "moderators": [
-        ]
+        "moderators": []
     }
 }

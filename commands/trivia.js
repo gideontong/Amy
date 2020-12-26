@@ -18,6 +18,7 @@ const genericFailure = {
     }
 };
 
+const { shuffle } = require('../lib/MagicNumbers');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -48,7 +49,7 @@ module.exports = async (client, msg, args) => {
                 .then(collected => {
                     const multiplayer = collected.first().emoji.name == '👥';
                     menu.color = colors[color % colors.length];
-                    menu.footer = `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`; 
+                    menu.footer = `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`;
                     color++;
                     mainMenu.edit(menu);
                     play(msg.author, msg.channel, color, multiplayer);
@@ -90,7 +91,7 @@ function play(starter, channel, color = 0, multiplayer = false) {
         .then(questionMenu => {
             const questionOptions = {
                 '🤠': 3,
-                '🥳': 5, 
+                '🥳': 5,
                 '🤓': 7,
                 '🤯': 10
             };
@@ -102,12 +103,66 @@ function play(starter, channel, color = 0, multiplayer = false) {
             });
             questionMenu.awaitreactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
+                    const questions = questionOptions[collected.first().emoji.name];
+                    const players = {};
+                    // TODO
                 })
                 .catch(collected => {
                     questionMenu.edit({ embed: genericFailure });
                     log.warn("Couldn't start trivia game due to timeout");
                     return;
                 });
+        })
+        .catch(err => { });
+}
+
+function releaseQuestion(channel, color, question, multiplayer, update, player) {
+    if (!(player || multiplayer)) {
+        log.error('trivia.releaseQuestion is missing player in singleplayer mode');
+        return;
+    }
+    let answers = ['True', 'False'];
+    const isMultiple = question.type == 'multiple';
+    const emojis = isMultiple ? ['📀', '📌', '🔑', '🛡️'] : ['🟢', '🔴'];
+    let answer = '🟢';
+    if (isMultiple) {
+        answers = question.incorrect_answers;
+        answers.push(question.correct_answer);
+        answer = emojis[answers.indexOf(question.correct_answer)];
+        for (let i = 0; i < answers.length; i++) {
+            answers[i] = `${emojis[i]} ${decodeURIComponent(answers[i])}`;
+        }
+    }
+    const parts = [
+        `${decodeURIComponent(question.question)}\n`,
+        '__Answer Choices__'
+    ].concat(answers);
+    const embed = {
+        title: `${isMultiple ? 'Multiple Choice' : 'True/False'} Trivia Question`,
+        description: parts.join('\n'),
+        footer: `Category: ${decodeURIComponent(question.category)}`
+    };
+    channel.send(embed)
+        .then(questionBox => {
+            emojis.forEach(emoji => {
+                questionBox.react(emoji);
+            });
+            const filter = (reaction, user) => {
+                return emojis.includes(reaction.emoji.name) && (multiplayer ? !user.bot : user.id == player.id);
+            }
+            const collector = questionBox.createReactionCollector(filter, { time: timeout * 1000 });
+            let answerMap = {};
+            collector.on('collect', (reaction, user) => {
+                answerMap[user.id] = reaction.emoji.name == answer;
+            });
+            collector.on('remove', (reaction, user) => {
+                if (answerMap[user.id] && reaction.emoji.name != answer) {
+                    delete answerMap[user.id];
+                }
+            });
+            collector.on('end', collected => {
+                // TODO
+            });
         })
         .catch(err => { });
 }

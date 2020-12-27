@@ -122,8 +122,8 @@ function play(starter, channel, color = 0, multiplayer = false) {
                             }
                         }
                         if (multiplayer) {
-                            let description = '__Wins__\n\n';
-                            Object.entries(([userID, points]) => {
+                            let description = '__Points__\n\n';
+                            Object.entries(points).forEach(([userID, points]) => {
                                 description += `<@${userID}>: ${points} points\n`;
                             });
                             wins.description = description;

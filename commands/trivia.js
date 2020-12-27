@@ -114,23 +114,23 @@ function play(starter, channel, color = 0, multiplayer = false) {
                     };
                     questionMenu.edit({ embed: questionEmbed });
                     doQuestions(channel, ++color, questions, multiplayer, function (points) {
+                        let wins = {
+                            title: 'End of Trivia Game',
+                            color: colors[color % colors.length],
+                            footer: {
+                                text: 'Hope you had fun playing!'
+                            }
+                        }
                         if (multiplayer) {
                             let description = '__Wins__\n\n';
                             Object.entries(([userID, points]) => {
                                 description += `<@${userID}>: ${points} points\n`;
                             });
-                            const wins = {
-                                title: 'Answers Correct',
-                                description: description
-                            }
-                            channel.send({ embed: wins });
+                            wins.description = description;
                         } else {
-                            const win = {
-                                title: 'Answers Correct',
-                                description: points
-                            };
-                            channel.send({ embed: win });
+                            wins.description = `You got ${points} questions correct!`;
                         }
+                        channel.send({ embed: wins });
                     }, starter);
                 })
                 .catch(collected => {

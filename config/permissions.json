@@ -16,12 +16,14 @@
         ],
         "unreleased": [
             "achievements",
+            "balancereaction",
             "shop",
             "timezone",
             "vote"
         ],
         "premium": [],
         "premium_soon": [
+            "balancereaction",
             "exchange",
             "exchangerate",
             "forex",

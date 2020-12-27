@@ -53,6 +53,12 @@
             ]
         },
         {
+            "name": "Chemical Reaction Solver",
+            "command": "balancereaction",
+            "description": "Balance a chemical reaction with this automatic solver.",
+            "alias": []
+        },
+        {
             "name": "Setup Inpsiration",
             "command": "battlestation",
             "description": "Find a cool picture of someone's setup.",

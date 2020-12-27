@@ -1,6 +1,6 @@
 const host = 'opentdb.com';
 const endpoint = '/api.php';
-const timeout = 15;
+const timeout = 30;
 const colors = [
     0xC17E9B,
     0xCDAB81,
@@ -163,7 +163,7 @@ function doQuestions(channel, color, questions, multiplayer, update, player) {
             const error = {
                 title: 'Error Getting Trivia Questions',
                 description: 'There is a possibility that the trivia server is currently down. Please wait a few minutes. If the problem persists, please contact Gideon for more support.',
-                color: colors[color & colors.length],
+                color: colors[color % colors.length],
                 timestamp: new Date().toISOString()
             };
             channel.send({ embed: error });
@@ -233,10 +233,13 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
     let embed = {
         title: `${decodeURIComponent(question.category)} Question`,
         description: parts.join('\n'),
-        color: colors[color % color.length],
+        color: colors[color % colors.length],
         footer: {
-            text: `${isMultiple ? 'Multiple Choice' : 'True/False'} Trivia`
+            text: `You have ${timeout} seconds to answer this ${isMultiple ? 'Multiple Choice' : 'True/False'} trivia!`
         }
+    };
+    const endFooter = {
+        text: 'The timer has expired and you can no longer answer this question.'
     };
     channel.send({ embed: embed })
         .then(questionBox => {
@@ -264,6 +267,10 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
                             correct.push(user);
                         }
                     });
+                    const newDescription = [parts[0], `${correct.length} of you answered correctly!`].join('\n');
+                    embed.description = newDescription;
+                    embed.footer = endFooter;
+                    questionBox.edit({ embed: embed });
                     update(correct);
                     return;
                 });
@@ -273,12 +280,14 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
                         const correct = answer == collected.first().emoji.name;
                         const newDescription = [parts[0], `You answered ${correct ? 'correctly' : 'incorrectly'}!`].join('\n');
                         embed.description = newDescription;
+                        embed.footer = endFooter;
                         questionBox.edit({ embed: embed });
                         update(correct);
                         return;
                     })
                     .catch(collected => {
                         embed.description = 'You failed to answer in time! Moving on to the next question.';
+                        embed.footer = endFooter;
                         questionBox.edit({ embed: embed });
                         update(false);
                         return;

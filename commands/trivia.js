@@ -50,7 +50,9 @@ module.exports = async (client, msg, args) => {
                 .then(collected => {
                     const multiplayer = collected.first().emoji.name == '👥';
                     menu.color = colors[color % colors.length];
-                    menu.footer = `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`;
+                    menu.footer = {
+                        footer: `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`
+                    };
                     color++;
                     mainMenu.edit({ embed: menu });
                     play(msg.author, msg.channel, color, multiplayer);
@@ -81,11 +83,13 @@ module.exports = async (client, msg, args) => {
  * @param {Boolean} multiplayer Whether or not to play the game in multiplayer
  */
 function play(starter, channel, color = 0, multiplayer = false) {
-    const questionEmbed = {
+    let questionEmbed = {
         title: 'How many questions of trivia?',
         description: `How many questions of trivia do you want to play? You ${multiplayer ? 'and your friends ' : ''}will be given ${timeout} seconds per question.\n\n🤠 3 Questions\n🥳 5 Questions\n🤓 7 Questions\n🤯 10 Questions`,
         color: colors[color % colors.length],
-        footer: `You have ${timeout} seconds to choose.`
+        footer: {
+            footer: `You have ${timeout} seconds to choose.`
+        }
     };
     color++;
     channel.send({ embed: questionEmbed })
@@ -105,6 +109,10 @@ function play(starter, channel, color = 0, multiplayer = false) {
             questionMenu.awaitreactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
                     const questions = questionOptions[collected.first().emoji.name];
+                    questionEmbed.footer = {
+                        footer: `You have selected ${questions} questions.`
+                    };
+                    questionMenu.edit({ embed: questionEmbed });
                     doQuestions(channel, ++color, questions, multiplayer, function (points) {
                         if (multiplayer) {
                             let description = '__Wins__\n\n';
@@ -144,6 +152,7 @@ function play(starter, channel, color = 0, multiplayer = false) {
  * @param {User} player Player data for singleplayer mode
  */
 function doQuestions(channel, color, questions, multiplayer, update, player) {
+    log.info('Beginning question loop');
     if (!(player || multiplayer)) {
         log.error('trivia.doQuestions is missing player in singleplayer mode');
         return;

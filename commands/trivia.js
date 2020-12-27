@@ -51,7 +51,7 @@ module.exports = async (client, msg, args) => {
                     const multiplayer = collected.first().emoji.name == '👥';
                     menu.color = colors[color % colors.length];
                     menu.footer = {
-                        footer: `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`
+                        text: `You have selected ${multiplayer ? 'multiplayer' : 'singleplayer'} and this menu is no longer active.`
                     };
                     color++;
                     mainMenu.edit({ embed: menu });
@@ -88,7 +88,7 @@ function play(starter, channel, color = 0, multiplayer = false) {
         description: `How many questions of trivia do you want to play? You ${multiplayer ? 'and your friends ' : ''}will be given ${timeout} seconds per question.\n\n🤠 3 Questions\n🥳 5 Questions\n🤓 7 Questions\n🤯 10 Questions`,
         color: colors[color % colors.length],
         footer: {
-            footer: `You have ${timeout} seconds to choose.`
+            text: `You have ${timeout} seconds to choose.`
         }
     };
     color++;
@@ -106,11 +106,11 @@ function play(starter, channel, color = 0, multiplayer = false) {
             Object.keys(questionOptions).forEach(emoji => {
                 questionMenu.react(emoji);
             });
-            questionMenu.awaitreactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
+            questionMenu.awaitReactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
                     const questions = questionOptions[collected.first().emoji.name];
                     questionEmbed.footer = {
-                        footer: `You have selected ${questions} questions.`
+                        text: `You have selected ${questions} questions.`
                     };
                     questionMenu.edit({ embed: questionEmbed });
                     doQuestions(channel, ++color, questions, multiplayer, function (points) {

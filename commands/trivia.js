@@ -110,7 +110,7 @@ function play(starter, channel, color = 0, multiplayer = false) {
                 .then(collected => {
                     const questions = questionOptions[collected.first().emoji.name];
                     questionEmbed.footer = {
-                        text: `You have selected ${questions} questions.`
+                        text: `You have selected ${questions} questions and this menu is no longer active.`
                     };
                     questionMenu.edit({ embed: questionEmbed });
                     doQuestions(channel, ++color, questions, multiplayer, function (points) {
@@ -152,7 +152,7 @@ function play(starter, channel, color = 0, multiplayer = false) {
  * @param {User} player Player data for singleplayer mode
  */
 function doQuestions(channel, color, questions, multiplayer, update, player) {
-    log.info('Beginning question loop');
+    log.info('Beginning question loop for trivia game');
     if (!(player || multiplayer)) {
         log.error('trivia.doQuestions is missing player in singleplayer mode');
         return;
@@ -187,7 +187,7 @@ function doQuestions(channel, color, questions, multiplayer, update, player) {
                 return;
             }
             const singleQuestionData = questionData.results[index];
-            releaseQuestion(channel, color++, singleQuestionData, multiplayer, doNextQuestion, player);
+            releaseQuestion(channel, ++color, singleQuestionData, multiplayer, doNextQuestion, player);
             index++;
         }
         if (index == 0) {
@@ -231,11 +231,11 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
         '__Answer Choices__'
     ].concat(answers);
     let embed = {
-        title: `${isMultiple ? 'Multiple Choice' : 'True/False'} Trivia Question`,
+        title: `${decodeURIComponent(question.category)} Question`,
         description: parts.join('\n'),
         color: colors[color % color.length],
         footer: {
-            text: `Category: ${decodeURIComponent(question.category)}`
+            text: `${isMultiple ? 'Multiple Choice' : 'True/False'} Trivia`
         }
     };
     channel.send({ embed: embed })
@@ -270,15 +270,11 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
             } else {
                 questionBox.awaitReactions(filter, { max : 1, time: timeout * 1000, errors: ['time'] })
                     .then(collected => {
-                        if (answer == collected.first().emoji.name) {
-                            embed.description = 'You answered correctly!';
-                            questionBox.edit({ embed: embed });
-                            update(true);
-                        } else {
-                            embed.description = 'You answered incorrectly!'
-                            questionBox.edit({ embed: embed });
-                            update(false);
-                        }
+                        const correct = answer == collected.first().emoji.name;
+                        const newDescription = [parts[0], `You answered ${correct ? 'correctly' : 'incorrectly'}!`].join('\n');
+                        embed.description = newDescription;
+                        questionBox.edit({ embed: embed });
+                        update(correct);
                         return;
                     })
                     .catch(collected => {

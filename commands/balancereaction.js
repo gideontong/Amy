@@ -32,6 +32,31 @@ class Atom {
 }
 
 /**
+ * Node of an expression tree
+ * @class
+ */
+class Node {
+    constructor(count, operator) {
+        this.operator = operator;
+        this.left = null;
+        this.right = null;
+        this.count = count;
+    }
+
+    sum() {
+        if (this.count == '*') {
+            return this.left.sum() * this.right.sum();
+        } else {
+            if (this.count == '+') {
+                return this.left.sum() + this.right.sum();
+            } else {
+                return this.count;
+            }
+        }
+    }
+}
+
+/**
  * Checks whether or not a string has uppercase characters
  * @param {String} string String to test
  * @returns {Boolean} Whether or not it is Upper
@@ -86,12 +111,30 @@ function startsOpenBrace(string) {
 }
 
 /**
+ * Checks whether or not it has a closed brace
+ * @param {String} string String to test
+ * @returns {Boolean} True if valid
+ */
+function endsClosedBrace(string) {
+    return [']', ')'].includes(string.charAt(string.length - 1));
+}
+
+/**
  * Check whether or not string was valid molecule
  * @param {String} string String to test
  * @returns {Boolean} True if valid
  */
 function isValidMolecule(string) {
     return (isUpper(string.charAt(0)) || startsOpenBrace(string)) && !isInvalid(string);
+}
+
+/**
+ * Checks whether or not structure has error
+ * @param {String} string String to test
+ * @returns {Boolean} True if error
+ */
+function hasError(string) {
+    return /[\(\[][a-z0-9]/.test(string) || /[0-9][a-z]/.test(string);
 }
 
 /**
@@ -152,6 +195,100 @@ function calculateCharge(molecule) {
 }
 
 /**
+ * Count atoms in molecule string
+ * @param {String} name Name of molecule string
+ * @param {Set} atomSet Set of atoms
+ * @returns {Array} Number of atoms
+ */
+function countAtoms(name, atomSet) {
+    var atoms = new Array(atomSet.size).fill(0);
+    for (let i = 0; i < name.length; i++) {
+        var character = name.charAt(i);
+        if (isUpper(character)) {
+            var atom = character, flag = '';
+            for (i++; i < name.length && isLower(character = name.charAt(i)); ) {
+                atom += character;
+                i++;
+            }
+            if (!isNaN(character = name.charAt(i))) {
+                for ( ; i < name.length ; ) {
+                    if (isNaN(character = name.charAt(i))) {
+                        i--;
+                        break;
+                    }
+                    r += character;
+                    i++;
+                }
+            } else {
+                i--;
+                r = '1';
+                atoms[set.keys().find(atom)] += parseInt(r);
+            }
+        }
+    }
+    return atoms;
+}
+
+/**
+ * Create expression tree for molecule
+ * @param {String} name Name of molecule string
+ * @param {Set} atomSet Set of atoms
+ */
+function createExpression(name, atomSet) {
+    if (hasError(name)) return null;
+    const index1 = name.indexOf('(');
+    const index2 = name.indexOf('[');
+    if (index1 < 0 && index2 < 0) {
+        const count = countAtoms(name, atomSet);
+        var node = new Node('*', true);
+        node.left = new Node(count, false);
+        node.right = new Node(1, false);
+        return node;
+    }
+    if(isUpper(name.charAt(0))) {
+        var index;
+        if (index1 != -1 && index2 != -1) {
+            index = Math.min(index1, index2);
+        } else {
+            index = Math.max(index1, index2);
+        }
+        const prefix = name.slice(0, index);
+        const atom = name.slice(index);
+        const node = new Node('+', true);
+        node.left = createExpression(prefix);
+        node.right = createExpression(atom);
+        return node;
+    }
+    if (startsOpenBrace(name)) {
+        for (var size = 1, index = 1; index < name.length; index++) {
+            if (startsOpenBrace(name.charAt(index)) ? size++ : endsClosedBrace(name.charAt(index)) && size--, size == 0) {
+                var next = name.slice(1, index);
+                index++;
+                for (var left = ''; index < name.length && !isNaN(name.charAt(index)); ) {
+                    left += name.charAt(index);
+                    index++;
+                }
+                if (left == '') left = 1;
+                var right = name.slice(index);
+                if (right != '') {
+                    var node = new Node('+', true);
+                    node.left = new Node('*', true);
+                    node.left.left = createExpression(next);
+                    node.left.right = new Node(parseInt(left), false);
+                    node.right = createExpression(right);
+                    return node;
+                } else {
+                    var node = new Node('*', true);
+                    node.left = createExpression(next);
+                    node.right = new Node(parseInt(left), false);
+                    return node;
+                }
+            }
+        }
+    }
+}
+
+/**
  * Balances a chemical reaction
  * @param {Array} reaction Reaction to solve, split by a delimiter
  * @returns {String} Solved reaction or error string
@@ -187,6 +324,20 @@ function solve(reaction) {
         }
         if (isPlusMinus(molecule.name) && molecule.charge == 0) {
             return `Error: ${molecule.name} has a misplaced charge. Check your notation?`;
+        }
+        let brackets = 0;
+        molecule.name.split().forEach(character => {
+            startsOpenBrace(character) ? brackets++ : (endsClosedBrace(character) ? brakcets -- : null);
+            if (brackets < 0) return `Error: ${molecule.name} has incorrect bracket notation. Check your brackets?`;
+        });
+        if (brackets != 0) {
+            return `Error: ${molecule.name} doesn't have an equal number of brackets. Check your brackets?`;
+        }
+        const index = Math.min(molecule.name.lastIndexOf('['), molecule.name.lastIndexOf('('));
+        const name = molecule.name.slice(0, index);
+        molecule.expression = createExpression(name, atoms);
+        if (molecule.charge != 0 && molecule.expression == null) {
+            return `Error: ${molecule.name} was an invalid structure. Did you type it correctly?`
         }
     });
 }

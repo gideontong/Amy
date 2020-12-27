@@ -59,6 +59,15 @@ function isAlpha(string) {
 }
 
 /**
+ * Checks whether or not a string has a + or a -
+ * @param {String} string String to test
+ * @returns {Boolean} Whether or not it is PlusMinus
+ */
+function isPlusMinus(string) {
+    return /[\-\+]/.test(string);
+}
+
+/**
  * Checks whether or not it contains invalid characters
  * @param {String} string String to test
  * @returns {Boolean} True if invalid
@@ -109,6 +118,40 @@ function findAtoms(molecule, set) {
 }
 
 /**
+ * Check whether or not a molecule is charged
+ * @param {String} string String to test
+ * @returns {String} True if contains charge
+ */
+function isCharged(string) {
+    const postfix = /[\[\(]([0-9]+)[\+\-][\]\)]$/.exec(string);
+    const prefix = /[\[\(][\+\-]([0-9]+)[\]\)]$/.exec(string);
+    const infix = /[\[\(][\+\-][[\]\)]$/.exec(string);
+    return postfix || prefix || infix;
+}
+
+/**
+ * Check for a charge
+ * @param {Molecule} molecule Molecule to check
+ * @returns {Number} Charge
+ */
+function calculateCharge(molecule) {
+    const charged = isCharged(molecule.name);
+    if (!charged) return 0;
+    let factor = 1, charge = 1;
+    ['+', '-'].forEach(value => {
+        if (molecule.name.indexOf(value) != molecule.name.lastIndexOf(value)) return -1;
+    });
+    if (molecule.name.indexOf('-') > -1 && molecule.name.indexOf('+') > -1) {
+        return -1;
+    } else {
+        if (result[0].indexOf('-') > -1) factor = -1;
+        if (result.length == 2) charge = result[1];
+        molecule.charge = charge * factor;
+        return 1;
+    }
+}
+
+/**
  * Balances a chemical reaction
  * @param {Array} reaction Reaction to solve, split by a delimiter
  * @returns {String} Solved reaction or error string
@@ -130,14 +173,20 @@ function solve(reaction) {
     }
     molecules.forEach(molecule => {
         if (!isValidMolecule(molecule.name)) {
-            return `${molecule.name} was an invalid molecule!`;
+            return `Error: ${molecule.name} was an invalid molecule!`;
         }
         findAtoms(molecule.name, atoms);
     });
     if (molecules.size > atoms.size + 1) {
         return 'Error: There are an infinite number of reactions possible. The equation is potentially a combination of many reactions (try to remove a reagent).';
     }
-    let hasIons = false;
     molecules.forEach(molecule => {
+        const charge = calculateCharge(molecule);
+        if (charge == -1) {
+            return `Error: ${molecule.name} seems to have an incorrect ion. Did you put the right charge?`;
+        }
+        if (isPlusMinus(molecule.name) && molecule.charge == 0) {
+            return `Error: ${molecule.name} has a misplaced charge. Check your notation?`;
+        }
     });
 }

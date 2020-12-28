@@ -57,6 +57,27 @@ function play(channel, player1, player2, size = 3) {
     let color = 0;
     var board = new Array(size).fill(null).map(() => new Array(size).fill(null));
     // TODO
+    playTurn(channel, player1, player2, board);
+}
+
+/**
+ * Play out win UI
+ * @param {TextChannel} channel Channel to send winner in
+ * @param {Member} player Winner member
+ * @param {Array} matrix Board
+ * @param {Number} color Color index
+ */
+function winUI(player, matrix, color = 0) {
+    const board = generateBoard(matrix);
+    const embed = {
+        title: `${player.nickname ? player.nickname : player.user.username} has won!`,
+        description: `Congratulations ${player}, you have won the ultimate game of tic-tac-toe!\n\n${board}`,
+        color: colors[color % colors.length],
+        footer: {
+            text: 'Ultimate Tic-Tac-Toe'
+        }
+    };
+    channel.send({ embed: embed });
 }
 
 /**
@@ -69,7 +90,13 @@ function play(channel, player1, player2, size = 3) {
  * @param {Number} color Color index
  */
 function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0) {
+    color++;
     let embed = generateUI(player1, player2, matrix, isAttack, color);
+    let win = winExists(matrix);
+    if (win) {
+        winUI(isAttack ? player2 : player1, win, matrix, color);
+        return;
+    }
     channel.send({ embed: embed })
         .then(message => {
             const filter = response => {
@@ -84,8 +111,13 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
             channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
                     const move = collected.first().content.split(' ');
-                    const row = parseInt(move[1]), col = parseInt(move[2]);
-                    // TODO
+                    const row = parseInt(move[1]) - 1, col = parseInt(move[2]) - 1;
+                    if (row >= 0 && row < matrix.length && col >= 0 && col < matrix[0].length && !matrix[row][col]) {
+                        matrix[row][col] = isAttack ? 'O' : 'X';
+                        // TODO
+                    } else {
+                        channel.send(`That move wasn't valid, so you automatically conceded and ${isAttack ? player1 : player2} has won!`);
+                    }
                 })
                 .catch(collected => {
                     embed.footer = 'You ran out of time, so the game of tic-tac-toe has ended.';

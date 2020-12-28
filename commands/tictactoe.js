@@ -145,8 +145,6 @@ function winExists(matrix) {
         diagonal.push(matrix[i][i]);
         invDiagonal.push(transposed[i][i]);
     }
-    console.log(diagonal);
-    console.log(invDiagonal);
     if (new Set(diagonal).size == 1 && diagonal[0] != ' ') return diagonal[0];
     if (new Set(invDiagonal).size == 1 && invDiagonal[0] != ' ') return invDiagonal[0];
     // TODO: Board is full

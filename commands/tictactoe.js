@@ -196,7 +196,6 @@ function generateBoard(matrix) {
         board = board.substring(0, board.length - 3) + '\n';
         board += '--+' + new Array(row.length - 2).fill('---').join('+') + '+--\n';
     });
-    row.length * 4 - 1
-    board = board.substring(0, board.length - (row.length * 4 - 1));
+    board = board.substring(0, board.length - (board[0].length * 4 - 1));
     return board;
 }

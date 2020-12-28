@@ -266,8 +266,8 @@ function equsolve() {
     beingUsed_moleculesSet = new aClass_moleculeSet,
     beingUsed_equation = document.getElementById("chemeuqation").value;
     beingUsed_moleculesArray = beingUsed_equation.split(" ");
-    for (var e = 0; e < beingUsed_moleculesArray.length; e++) {
-        if ("" != (theMolecule = beingUsed_moleculesArray[e]) && !beingUsed_isJunkOnly(theMolecule)) {
+    for (var i = 0; i < beingUsed_moleculesArray.length; i++) {
+        if ("" != (theMolecule = beingUsed_moleculesArray[i]) && !beingUsed_isJunkOnly(theMolecule)) {
             for (; beingUsed_isDigit(theMolecule.charAt(0)); )
                 theMolecule = theMolecule.slice(1);
             beingUsed_moleculesSet.addOnce(new Molecule(theMolecule))
@@ -330,8 +330,8 @@ function equsolve() {
     }
     beingUsed_write("Not found.\n"),
     beingUsed_write("\n");
-    for (e = 0; e < beingUsed_moleculesSet.size(); e++) {
-        theMolecule = beingUsed_moleculesSet.itemAt(e);
+    for (i = 0; i < beingUsed_moleculesSet.size(); i++) {
+        theMolecule = beingUsed_moleculesSet.itemAt(i);
         var moleculeName = new String(theMolecule.name);
         if (0 != theMolecule.charge && (index1 = moleculeName.lastIndexOf("["),
         index2 = moleculeName.lastIndexOf("("),
@@ -388,65 +388,65 @@ function equsolve() {
         beingUsed_write("Fatal error during analysis " + nameString),
         null
     }
-    for (e = 0; e < beingUsed_moleculesSet.size(); e++) {
-        beingUsed_setStatus("Counting atoms in " + (theMolecule = beingUsed_moleculesSet.itemAt(e)).name),
+    for (i = 0; i < beingUsed_moleculesSet.size(); i++) {
+        beingUsed_setStatus("Counting atoms in " + (theMolecule = beingUsed_moleculesSet.itemAt(i)).name),
         theMolecule.sumuj()
     }
-    for (e = 0; e < beingUsed_atomSet.size(); e++) {
-        var l = beingUsed_atomSet.itemAt(e).name
-          , u = 0;
+    for (i = 0; i < beingUsed_atomSet.size(); i++) {
+        var atomName = beingUsed_atomSet.itemAt(i).name
+          , total = 0;
         for (o = 0; o < beingUsed_moleculesSet.size(); o++)
-            u += beingUsed_moleculesSet.itemAt(o).atomTable[e];
-        if (1 == u)
-            return document.getElementById("error").innerHTML = "PROBLEM: Only one atom " + l,
-            beingUsed_write("\nPROBLEM: Found only one atom " + l + ". "),
+            total += beingUsed_moleculesSet.itemAt(o).atomTable[i];
+        if (1 == total)
+            return document.getElementById("error").innerHTML = "PROBLEM: Only one atom " + atomName,
+            beingUsed_write("\nPROBLEM: Found only one atom " + atomName + ". "),
             void beingUsed_write("In each reaction any element must appear at least twice.\n")
     }
-    beingUsed_write("\n"),
-    uklad = new Matrix(beingUsed_moleculesSet.size() + 1,beingUsed_atomSet.size() + 1);
-    for (e = 0; e < beingUsed_moleculesSet.size(); e++) {
-        beingUsed_setStatus("Bulding matrix for " + (theMolecule = beingUsed_moleculesSet.itemAt(e)).name);
+    beingUsed_write("\n");
+    let systemOfEquations = new Matrix(beingUsed_moleculesSet.size() + 1,beingUsed_atomSet.size() + 1);
+    for (i = 0; i < beingUsed_moleculesSet.size(); i++) {
+        beingUsed_setStatus("Bulding matrix for " + (theMolecule = beingUsed_moleculesSet.itemAt(i)).name);
         for (o = 0; o < beingUsed_atomSet.size(); o++)
-            uklad.setElement(e + 1, o + 1, theMolecule.atomTable[o]);
-        uklad.setElement(e + 1, 0, theMolecule.charge)
+            systemOfEquations.setElement(i + 1, o + 1, theMolecule.atomTable[o]);
+        systemOfEquations.setElement(i + 1, 0, theMolecule.charge)
     }
-    uklad.setElement(0, 0, -1),
+    systemOfEquations.setElement(0, 0, -1),
     beingUsed_setStatus("Bulding column of free constituents " + (theMolecule = beingUsed_moleculesSet.itemAt(beingUsed_moleculesSet.size() - 1)).name),
     (d = new Array)[0] = theMolecule.charge;
     for (o = 0; o < beingUsed_atomSet.size(); o++)
         d[o + 1] = theMolecule.atomTable[o];
-    if (uklad.width != uklad.height + 1) {
+    if (systemOfEquations.width != systemOfEquations.height + 1) {
         for (t = 0; t < 100; t++) {
-            var h = uklad.copy().randomSubMatrix();
+            var h = systemOfEquations.copy().randomSubMatrix();
             if (0 != (f = h.copy().det())) {
                 var d = new Array;
                 for (o = 0; o < h.height; o++)
                     d[o] = h.getElement(h.width - 1, o);
                 for (m = new Array,
-                e = 0; e < beingUsed_moleculesSet.size(); e++) {
-                    (z = h.copy()).substituteColumn(e, d),
-                    m[e] = z.det()
+                i = 0; i < beingUsed_moleculesSet.size(); i++) {
+                    (z = h.copy()).substituteColumn(i, d),
+                    m[i] = z.det()
                 }
                 if (m[m.length] = -f,
                 f > 0)
-                    for (e = 0; e < m.length; e++)
-                        m[e] *= -1;
-                return beingUsed_checkFunction(m, uklad) ? void beingUsed_printToScreen(m = beingUsed_renderToScreen(m)) : (beingUsed_write("Contradictory equation. Such reaction will never happen.\n"),
+                    for (i = 0; i < m.length; i++)
+                        m[i] *= -1;
+                return beingUsed_checkFunction(m, systemOfEquations) ? void beingUsed_printToScreen(m = beingUsed_renderToScreen(m)) : (beingUsed_write("Contradictory equation. Such reaction will never happen.\n"),
                 void (document.getElementById("error").innerHTML = "Such reaction will never happen."))
             }
         }
         return beingUsed_write("Strange equation that cannot be solved.\n"),
         void (document.getElementById("error").innerHTML = "Strange equation that cannot be solved.")
     }
-    for (var f = (z = uklad.copy()).det(), m = new Array, e = 0; e < beingUsed_moleculesSet.size(); e++) {
+    for (var f = (z = systemOfEquations.copy()).det(), m = new Array, i = 0; i < beingUsed_moleculesSet.size(); i++) {
         var z;
-        (z = uklad.copy()).substituteColumn(e, d),
-        m[e] = z.det()
+        (z = systemOfEquations.copy()).substituteColumn(i, d),
+        m[i] = z.det()
     }
     if (m[m.length] = -f,
     f > 0)
-        for (var e = 0; e < m.length; e++)
-            m[e] *= -1;
+        for (var i = 0; i < m.length; i++)
+            m[i] *= -1;
     beingUsed_printToScreen(m = beingUsed_renderToScreen(m))
 }
 function elementRownania(e, t) {

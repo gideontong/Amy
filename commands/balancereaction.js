@@ -57,6 +57,94 @@ class Node {
 }
 
 /**
+ * Matrix to solve system of equations
+ * @class
+ */
+class Matrix {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+        this.matrix = new Array(width);
+        for (let i = 0; i < width; i++) {
+            this.matrix[i] = new Array(height);
+            for (let j = 0; j < height; j++) {
+                this.matrix[i][j] = 0;
+            }
+        }
+    }
+
+    copy() {
+        var matrix = new Matrix(this.width, this.height);
+        for (let i = 0; i < this.width; i++) {
+            matrix.matrix[i] = new Array(this.height);
+            for (let j = 0; j < this.height; j++) {
+                matrix.matrix[i][j] = this.matrix[i][j];
+            }
+        }
+        return matrix;
+    }
+
+    swap(row, data) {
+        for (let i = 0; i < this.height; i++) {
+            this.matrix[row][i] = data[i];
+        }
+    }
+
+    determinant() {
+        for (var lastDiv, lastRow, rowProduct = 1, offset = 1, rowOffset = 1, row = 0; row < this.height - 1; row++) {
+            for (var subRow = row + 1; subRow < this.height; subRow++) {
+                rowOffset = 1;
+                lambda: for (; 0 == this.matrix[row][row];) {
+                    if (row + rowOffset >= this.height) {
+                        offset = 0;
+                        break lambda;
+                    }
+                    for (var column = 0; column < this.height; column++) {
+                        lastRow = this.matrix[row][column];
+                        this.matrix[row][column] = this.matrix[row + rowOffset][column];
+                        this.matrix[row + rowOffset][column] = lastRow;
+                    }
+                    rowOffset++;
+                    offset *= -1;
+                }
+                if (0 != this.matrix[row][row]) {
+                    lastDiv = -this.matrix[subRow][row] / this.matrix[row][row];
+                    for (var subSubRow = row; subSubRow < this.height; subSubRow++) {
+                        this.matrix[subRow][subSubRow] = lastDiv * this.matrix[row][subSubRow] + this.matrix[subRow][subSubRow]
+                    }
+                }
+            }
+        }
+        for (var index = 0; index < this.height; index++) {
+            rowProduct *= this.matrix[index][index];
+        }
+        return rowProduct * offset;
+    }
+
+    random() {
+        var set = new Set();
+        var matrix = new Matrix(this.width, this.witdh - 1);
+        for (let i = 0; i < this.width; i++) {
+            matrix.matrix[i][0] = this.matrix[i][0];
+        }
+        set.add(0);
+        for (let i = 1; i < this.width - 1; i++) {
+            for (var j; ;) {
+                j = Math.ceil(Math.random() * this.height - 1);
+                if (!set.has(j)) {
+                    set.add(j);
+                    break;
+                }
+            }
+            for (let j = 0; j < this.width; j++) {
+                matrix.matrix[j][i] = this.matrix[j][i];
+            }
+        }
+        return matrix;
+    }
+}
+
+/**
  * Checks whether or not a string has uppercase characters
  * @param {String} string String to test
  * @returns {Boolean} Whether or not it is Upper
@@ -147,7 +235,7 @@ function findAtoms(molecule, set) {
         let character = molecule.charAt(i);
         if (isUpper(character)) {
             let atom = character;
-            for (i++; i < molecule.length; ) {
+            for (i++; i < molecule.length;) {
                 if (!isLower(character = molecule.charAt(i))) {
                     i--;
                     break;
@@ -206,12 +294,12 @@ function countAtoms(name, atomSet) {
         var character = name.charAt(i);
         if (isUpper(character)) {
             var atom = character, flag = '';
-            for (i++; i < name.length && isLower(character = name.charAt(i)); ) {
+            for (i++; i < name.length && isLower(character = name.charAt(i));) {
                 atom += character;
                 i++;
             }
             if (!isNaN(character = name.charAt(i))) {
-                for ( ; i < name.length ; ) {
+                for (; i < name.length;) {
                     if (isNaN(character = name.charAt(i))) {
                         i--;
                         break;
@@ -245,7 +333,7 @@ function createExpression(name, atomSet) {
         node.right = new Node(1, false);
         return node;
     }
-    if(isUpper(name.charAt(0))) {
+    if (isUpper(name.charAt(0))) {
         var index;
         if (index1 != -1 && index2 != -1) {
             index = Math.min(index1, index2);
@@ -264,7 +352,7 @@ function createExpression(name, atomSet) {
             if (startsOpenBrace(name.charAt(index)) ? size++ : endsClosedBrace(name.charAt(index)) && size--, size == 0) {
                 var next = name.slice(1, index);
                 index++;
-                for (var left = ''; index < name.length && !isNaN(name.charAt(index)); ) {
+                for (var left = ''; index < name.length && !isNaN(name.charAt(index));) {
                     left += name.charAt(index);
                     index++;
                 }
@@ -327,7 +415,7 @@ function solve(reaction) {
         }
         let brackets = 0;
         molecule.name.split().forEach(character => {
-            startsOpenBrace(character) ? brackets++ : (endsClosedBrace(character) ? brakcets -- : null);
+            startsOpenBrace(character) ? brackets++ : (endsClosedBrace(character) ? brakcets-- : null);
             if (brackets < 0) return `Error: ${molecule.name} has incorrect bracket notation. Check your brackets?`;
         });
         if (brackets != 0) {
@@ -339,5 +427,16 @@ function solve(reaction) {
         if (molecule.charge != 0 && molecule.expression == null) {
             return `Error: ${molecule.name} was an invalid structure. Did you type it correctly?`
         }
+    });
+    let i = 0;
+    atoms.forEach(atom => {
+        let total = 0;
+        molecules.forEach(molecule => {
+            total += molecule.atoms[i];
+        });
+        if (total == 1) {
+            return `Error: Found only one atom ${atom.name} and the atom must appear on both sides of the reaction.`;
+        }
+        i++;
     });
 }

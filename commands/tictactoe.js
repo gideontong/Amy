@@ -133,15 +133,13 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
  * @returns {String} Empty if no winner, otherwise square of winner
  */
 function winExists(matrix) {
-    matrix.forEach(row => {
-        console.log(row);
+    for (const row of matrix) {
         if (new Set(row).size == 1 && row[0] != ' ') return row[0];
-    });
+    }
     const transposed = matrix[0].map((_, col) => matrix.map(row => row[col]));
-    transposed.forEach(col => {
-        console.log(col);
+    for (const col of transposed) {
         if (new Set(col).size == 1 && col[0] != ' ') return col[0];
-    });
+    }
     var diagonal = new Array(), invDiagonal = new Array();
     for (let i = 0; i < matrix.length; i++) {
         diagonal.push(matrix[i][i]);

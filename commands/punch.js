@@ -2,14 +2,13 @@ const pleading = '<:pleading:792119409551867925>';
 
 /**
  * Punch someone
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (msg.mentions.users.size > 0) {
         const snowflake = msg.mentions.users.firstKey();
-        if (snowflake == client.user.id) {
+        if (snowflake == msg.client.user.id) {
             msg.reply(`Why are you trying to punch me? ${pleading} ${pleading}`);
             return;
         }

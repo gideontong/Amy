@@ -4,11 +4,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Alerts if you want to see the suicide message, adapted from Dank Memer
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async(client, msg, args) => {
+module.exports = async (msg, args) => {
     const embed = new MessageEmbed()
         .addField('You can call the national suicide prevention lifeline.', '+1 (800) 273-TALK (8255)')
         .addField('You can also text the crisis hotline.', 'Text **HELLO** to 741741')

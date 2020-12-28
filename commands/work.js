@@ -8,11 +8,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Command to work for money
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     workJob(msg.author.id, msg.channel, function (award = 0, bonus = 0) {
         let embed = new MessageEmbed()
             .setColor(Math.floor(Math.random() * colors))

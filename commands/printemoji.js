@@ -6,7 +6,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.delete()
         .catch(err => {});
     var emoji;
@@ -16,14 +16,14 @@ module.exports = async (client, msg, args) => {
     }
     if (isNaN(args[1])) {
         let search = args[1].toLowerCase();
-        let emojis = client.emojis.cache.array();
+        let emojis = msg.client.emojis.cache.array();
         for (potential of emojis) {
             if (search == potential.name.toLowerCase()) {
                 emoji = potential;
             }
         }
     } else {
-        emoji = client.emojis.resolve(args[1]);
+        emoji = msg.client.emojis.resolve(args[1]);
     }
     if (emoji) {
         msg.channel.send(emoji.toString());

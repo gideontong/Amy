@@ -5,11 +5,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Pay another user
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length != 3) {
         msg.channel.send(error);
         return;

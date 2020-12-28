@@ -6,11 +6,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * List the commands avilable on the bot
- * @param {Client} client Discord server client
  * @param {Message} msg Message to act
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     var page = 1;
     var start = 0;
     if (args.length > 1 && !isNaN(args[1])) {
@@ -23,7 +22,7 @@ module.exports = async (client, msg, args) => {
     }
     let description = '';
     let embed = new MessageEmbed()
-        .setAuthor(msg.member.nickname ? msg.member.nickname : client.user.username, msg.author.displayAvatarURL())
+        .setAuthor(msg.member.nickname ? msg.member.nickname : msg.client.user.username, msg.author.displayAvatarURL())
         .setColor(Math.floor(Math.random() * colors))
         .setFooter(`Page ${page} of ${Math.ceil(commands.length / perPage)}`);
     let end = start + perPage;

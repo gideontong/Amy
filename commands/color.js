@@ -3,11 +3,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Gets a color name given a color
- * @param {Client} client Discord server client
  * @param {Message} msg Message
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('Get a color by providing a Hex value! Usage: `color #000000`');
         return;

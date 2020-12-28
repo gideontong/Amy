@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Create a QR code
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args < 2) {
         msg.reply('uh... your QR code can not be empty.');
         log.info(`${msg.author.tag} ${msg.author} tried to make an empty QR code`);

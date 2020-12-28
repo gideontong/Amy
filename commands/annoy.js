@@ -2,11 +2,10 @@ const { extractSnowflake } = require('../lib/Validation');
 
 /**
  * Pings a desired person with an annoying message
- * @param {Client} client Discord server client
  * @param {Message} msg Message to execute
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.reply('imagine not trying to annoy someone else? HAHAHA');
     } else {

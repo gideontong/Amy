@@ -24,11 +24,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Play a trivia game singleplayer or multiplayer!
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let color = 0;
     var menu = {
         title: "Welcome to Amy's Trivia Game!",

@@ -30,11 +30,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * An implementation of the standard galactic alphabet
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('You need to give me something to translate!');
         return;

@@ -7,11 +7,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Get a random AI-generated waifu
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     authenticatedPost(function (data) {
         try {
             const image = data.newGirls[0].image;

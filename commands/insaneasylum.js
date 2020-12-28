@@ -6,6 +6,6 @@ const link = 'https://www.youtube.com/playlist?list=PL3q1l2_RQCr7fk0jyOmNwiUp9F6
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.channel.send(`You want it, you got it: ${link}`);
 }

@@ -1,9 +1,8 @@
 /**
  * Alias for pickperson command
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
-    require('./pickperson')(client, msg, args);
+module.exports = async (msg, args) => {
+    require('./pickperson')(msg, args);
 }

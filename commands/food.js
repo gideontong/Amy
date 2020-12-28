@@ -21,11 +21,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Gets a random photo from a food subreddit
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     try {
         getRedditImage(function (data = 'Loading...') {
             msg.channel.send(data);

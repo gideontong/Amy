@@ -2,10 +2,9 @@ const link = 'https://steamuserimages-a.akamaihd.net/ugc/2442516864332869927/72C
 
 /**
  * Respond with the perhaps cow
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.channel.send(link);
 }

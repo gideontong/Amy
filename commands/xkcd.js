@@ -13,11 +13,10 @@ const { authenticatedGet } = require('../lib/Internet');
 
 /**
  * Get a random XKCD
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     authenticatedGet(function (data) {
         if (data) {
             const embed = new MessageEmbed()

@@ -3,11 +3,10 @@ const log = require('log4js').getLogger('kevin');
 
 /**
  * Repeats a message from a human
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     try {
         if (args.length > 2 && validChannel(args[1])) {
             const snowflake = extractSnowflake(args[1]);

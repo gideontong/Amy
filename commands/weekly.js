@@ -3,11 +3,10 @@ const { checkCooldown, updateBalance } = require("../lib/Member");
 
 /**
  * Get your weeklies!
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let expiry = new Date();
     expiry.setDate(expiry.getDate() + 7);
     checkCooldown(msg.author.id, 'weekly', function (err = null) {

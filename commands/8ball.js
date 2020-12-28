@@ -29,10 +29,9 @@ const responses = [
 
 /**
  * 8-ball command that responds with a random message
- * @param {Client} client Discord bot client
  * @param {Message} msg Message to execute command on
  * @param {Array} args Arguments for the message
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.reply(responses[Math.floor(Math.random() * responses.length)]);
 }

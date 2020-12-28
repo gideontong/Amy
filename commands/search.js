@@ -5,11 +5,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Search for something on the internet
- * @param {Client} client Discord server client
  * @param {Message} msg Commad
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('You have to give me something to search for!');
         return;

@@ -8,11 +8,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * See available jobs to you
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     var page = 1;
     var start = 0;
     let description = '';

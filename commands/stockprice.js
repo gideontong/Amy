@@ -10,11 +10,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Get a stock price
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send(`You need to provide a stock ticker to get the current price of! Example: ${prefix}stockprice AAPL`);
         return;

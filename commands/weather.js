@@ -9,11 +9,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Get the weather for a city
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('You need to provide me the name of a city, like `weather New York` in order to get a result!');
         return;

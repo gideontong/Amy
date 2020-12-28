@@ -3,11 +3,10 @@ const { checkCooldown, updateBalance } = require("../lib/Member");
 
 /**
  * You're really desperate, aren't you?
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let expiry = new Date();
     expiry.setFullYear(expiry.getFullYear() + 1);
     checkCooldown(msg.author.id, 'yearly', function (err = null) {

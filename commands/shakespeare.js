@@ -29,11 +29,10 @@ const { translate } = require('../lib/MagicText');
 
 /**
  * Shakespeare text generator
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     const text = msg.content.substring(args[0].length + 1);
     msg.channel.send(translate(text, map));
 }

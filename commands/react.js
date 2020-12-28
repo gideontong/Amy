@@ -2,11 +2,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Reacts to the last message with an emote of choice (if possible)
- * @param {Client} client Discord server client
  * @param {Message} message Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, message, args) => {
+module.exports = async (message, args) => {
     var emoji;
     if (args.length < 2) {
         message.channel.send('You need to provide an emote!');
@@ -14,14 +13,14 @@ module.exports = async (client, message, args) => {
     }
     if (isNaN(args[1])) {
         let search = args[1].toLowerCase();
-        let emojis = client.emojis.cache.array();
+        let emojis = msg.client.emojis.cache.array();
         for (potential of emojis) {
             if (search == potential.name.toLowerCase()) {
                 emoji = potential;
             }
         }
     } else {
-        emoji = client.emojis.resolve(args[1]);
+        emoji = msg.client.emojis.resolve(args[1]);
     }
     if (emoji) {
         message.delete()

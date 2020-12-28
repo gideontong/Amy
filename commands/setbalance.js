@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Set a user balance
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length != 3) {
         msg.channel.send('Command usage: `setbalance <user> <amount>`');
         return;

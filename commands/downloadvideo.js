@@ -4,11 +4,10 @@ const { getInfo } = require('youtube-dl');
 
 /**
  * Downloads an online video and provides a download link
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length != 2) {
         msg.channel.send(`To download a video, use ${prefix.amy}downloadvideo [URL]`);
     }

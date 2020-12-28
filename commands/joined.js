@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy')
 
 /**
  * Check when someone created a Discord account
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     var id = msg.author.id;
     if (args.length > 1) {
         if (args.length > 2) {

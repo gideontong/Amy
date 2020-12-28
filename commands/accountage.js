@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy')
 
 /**
  * Returns the account age of an account
- * @param {Client} client Discord bot client
  * @param {Message} msg Message emitted
  * @param {Array} args Arguments to parse
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     var id = msg.author.id;
     if (args.length > 1) {
         id = (!isNaN(args[1])) ? args[1] : args[1].substring(3, args[1].length - 1);

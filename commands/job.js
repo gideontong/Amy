@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Sets your current job
- * @param {Client} client Discord server client
  * @param {Message} msg Message
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('You can use this command to get a new job! Simply type `job <job name>`!');
         return;

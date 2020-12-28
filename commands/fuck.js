@@ -19,11 +19,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Undocumented command, returns a random NSFW image
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
         if (Math.random() < probabilities.blockNSFW) {
             msg.channel.send(antinsfw[Math.floor(Math.random() * antinsfw.length)]);

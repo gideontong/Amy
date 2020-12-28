@@ -8,11 +8,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Returns an urban dictionary definition
- * @param {Client} client Discord server client
  * @param {Message} msg Message
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length > 1) {
         args.shift();
         try {

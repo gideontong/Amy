@@ -7,7 +7,7 @@ const { MessageAttachment } = require('discord.js');
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let searchString = msg.content.substring(args[0].length + 1).toLowerCase();
     function isLeo(string) {
         for (var i = 0; i < trolled.length; i++) {

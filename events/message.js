@@ -39,7 +39,7 @@ module.exports = async message => {
         if (!cmdFile) {
             log.warn(`${message.author.tag} tried to run nonexistent command ${message.content}`);
         } else {
-            cmdFile(message.client, message, commands).catch(err => {
+            cmdFile(message, commands).catch(err => {
                 log.error(`${message.author.tag} ran ${message.content} that resulted in error ${err}`);
             });
         }

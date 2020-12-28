@@ -8,7 +8,7 @@ const { extractSnowflake } = require('../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running achievements command
-module.exports = async (bot, msg, args) => {
+module.exports = async (msg, args) => {
     let snowflake = msg.author.id;
     let who = "Your";
     if (args[1]) {

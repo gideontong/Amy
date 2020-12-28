@@ -16,7 +16,7 @@ const helpEmbed = {
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length > 1) {
         require('./command')(client, msg, args);
         return;

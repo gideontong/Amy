@@ -1,9 +1,8 @@
 /**
  * Alias for coinflip command
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
-    require('./coinflip')(client, msg, args);
+module.exports = async (msg, args) => {
+    require('./coinflip')(msg, args);
 }

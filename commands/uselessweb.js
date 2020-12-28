@@ -80,10 +80,9 @@ const sites = [
 
 /**
  * Get a useless website
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async(client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.channel.send(`Why do you want a useless website? Anyways, here you go: ${sites[Math.floor(Math.random() * sites.length)]}`);
 }

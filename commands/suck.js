@@ -2,11 +2,10 @@ const link = 'https://tenor.com/view/xqc-xqcsuck-sucking-suck-mr-cow-gif-1844403
 
 /**
  * Suck command returns xQc GIF
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (msg.channel.type == 'text' && msg.channel.nsfw) {
         msg.channel.send(link);
     } else {

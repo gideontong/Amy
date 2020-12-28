@@ -1,10 +1,9 @@
 /**
  * Easter egg
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (msg.content.toLowerCase().includes('make me a sandwich')) {
         msg.channel.send('https://imgs.xkcd.com/comics/sandwich.png');
     } else {

@@ -10,11 +10,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Grabs the exchange rate of a currency
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 3) {
         msg.channel.send(`You need to provide the two currencies you are trying to convert! Example: ${prefix}exchangerate USD TWD`);
         return;

@@ -8,11 +8,10 @@ const colors = [
 
 /**
  * Play 2 player tic tac toe
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let player1 = msg.member;
     let player2;
     if (msg.mentions.members.size == 0) {

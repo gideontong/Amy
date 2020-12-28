@@ -68,11 +68,10 @@ const { characterReplace } = require('../lib/MagicText');
 
 /**
  * Mirror text backwards
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('You need to provide me something to convert!');
         return;

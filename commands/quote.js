@@ -4,11 +4,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Returns a random quote
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     let index = Math.floor(Math.random() * quotes.length);
     const color = Math.floor(Math.random() * colors);
     const quote = new MessageEmbed()

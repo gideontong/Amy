@@ -4,7 +4,7 @@
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     msg.channel.send('🏓 Pinging...').then((message) => {
         const start = new Date().valueOf();
         const config = require('../config/config.json');

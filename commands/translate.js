@@ -11,11 +11,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Attempts a machine translation
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 3) {
         msg.channel.send(help);
         return;

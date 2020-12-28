@@ -1,9 +1,8 @@
 /**
  * Alias for printemoji command
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Command arguments
  */
-module.exports = async (client, msg, args) => {
-    require('./printemoji')(client, msg, args);
+module.exports = async (msg, args) => {
+    require('./printemoji')(msg, args);
 }

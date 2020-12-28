@@ -30,11 +30,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Play the slots machine
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     const debug = args[0] == '~debugslots';
     const user = msg.author;
     let bet = 5;

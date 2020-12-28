@@ -10,11 +10,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Show the profile of the user
- * @param {Client} client Discord server client
  * @param {Message} msg Message command
  * @param {Array} args Array of arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     log.info(`Attempting to get profile for ${msg.author.tag}`);
     let snowflake = msg.author.id;
     let member = msg.member;

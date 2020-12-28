@@ -2,11 +2,10 @@ const pleading = '<:pleading:792119409551867925>';
 
 /**
  * Slap someone
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (msg.mentions.users.size > 0) {
         const snowflake = msg.mentions.users.firstKey();
         if (snowflake == client.user.id) {

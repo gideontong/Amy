@@ -11,11 +11,10 @@ const { MessageEmbed } = require('discord.js');
 
 /**
  * Get information about a job!
- * @param {Client} client Discord server client
  * @param {Message} msg Message
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send('To get info about a job, use `aboutjob <job name>`!');
         return;

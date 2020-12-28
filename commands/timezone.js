@@ -4,11 +4,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Set your timezone!
- * @param {Client} client Discord server client
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     if (args.length < 2) {
         msg.channel.send(`You need to provide me a timezone in the TZ format in order to update your timezone! Don't know what that is? Use our auto-detector to find out yours: ${link}`);
         return;

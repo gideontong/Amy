@@ -2,11 +2,10 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Clear the specified last N messages
- * @param {Client} client Discord server client
  * @param {Message} msg Message to execute
  * @param {Array} args Arguments to execute
  */
-module.exports = async (client, msg, args) => {
+module.exports = async (msg, args) => {
     var toClear = 10;
     var reply = "Just"
     if (args.length >= 2) {

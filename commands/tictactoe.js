@@ -134,10 +134,12 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
  */
 function winExists(matrix) {
     matrix.forEach(row => {
+        console.log(row);
         if (new Set(row).size == 1 && row[0] != ' ') return row[0];
     });
     const transposed = matrix[0].map((_, col) => matrix.map(row => row[col]));
     transposed.forEach(col => {
+        console.log(col);
         if (new Set(col).size == 1 && col[0] != ' ') return col[0];
     });
     var diagonal = new Array(), invDiagonal = new Array();
@@ -145,6 +147,8 @@ function winExists(matrix) {
         diagonal.push(matrix[i][i]);
         invDiagonal.push(transposed[i][i]);
     }
+    console.log(diagonal);
+    console.log(invDiagonal);
     if (new Set(diagonal).size == 1 && diagonal[0] != ' ') return diagonal[0];
     if (new Set(invDiagonal).size == 1 && invDiagonal[0] != ' ') return invDiagonal[0];
     // TODO: Board is full

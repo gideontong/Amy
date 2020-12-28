@@ -26,6 +26,7 @@ module.exports = async (client, msg, args) => {
                         let reply = collected.first();
                         if (reply.mentions.members.size > 0) {
                             player2 = reply.mentions.members.firstKey();
+                            play(msg.channel, player1, player2);
                         } else {
                             msg.channel.send('You are supposed to tag a player to play against them!');
                         }
@@ -37,13 +38,8 @@ module.exports = async (client, msg, args) => {
             .catch(err => { });
     } else {
         player2 = msg.mentions.members.firstKey();
+        play(msg.channel, player1, player2);
     }
-    if (player2.user.bot) {
-        msg.channel.send('You aren\'t allowed to play against a bot...');
-        return;
-    }
-    if (!player2) return;
-    play(msg.channel, player1, player2);
 }
 
 /**
@@ -54,6 +50,11 @@ module.exports = async (client, msg, args) => {
  * @param {Number} size Rows and cols in board
  */
 function play(channel, player1, player2, size = 3) {
+    if (!player2) return;
+    if (player2.user.bot) {
+        msg.channel.send('You aren\'t allowed to play against a bot...');
+        return;
+    }
     var board = new Array(size).fill(null).map(() => new Array(size).fill(null));
     playTurn(channel, player1, player2, board);
 }
@@ -138,7 +139,7 @@ function winExists(matrix) {
         let checkRow = true;
         for (let col = 0; col < matrix[row].length; col++) {
             if (matrix[row][col] != matrix[row][0]) checkRow = false;
-            if (matrix[row][col] != checkCol[col]) checkCol[col] = false; 
+            if (matrix[row][col] != checkCol[col]) checkCol[col] = false;
             if (row == col && matrix[row][col] != matrix[0][0]) leftDiag = false;
             if (row == matrix[row].length - 1 - row && matrix[row][col] != matrix[0][matrix[0].length - 1]) rightDiag = false;
         }

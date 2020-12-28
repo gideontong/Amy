@@ -251,7 +251,7 @@
         {
             "name": "Server Invite",
             "command": "invite",
-            "description": "Get a link to the 708 server.",
+            "description": "Get a link to the support server.",
             "alias": []
         },
         {

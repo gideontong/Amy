@@ -111,6 +111,7 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
                 .then(collected => {
                     const move = collected.first().content.split(' ');
                     const row = parseInt(move[1]) - 1, col = parseInt(move[2]) - 1;
+                    console.log(row, col, matrix[row][col]);
                     if (row >= 0 && row < matrix.length && col >= 0 && col < matrix[0].length && matrix[row][col] != ' ') {
                         matrix[row][col] = isAttack ? 'O' : 'X';
                         playTurn(channel, player1, player2, matrix, !isAttack, color);

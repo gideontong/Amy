@@ -6,15 +6,11 @@ The following table shows which versions still recieve security updates. As alwa
 
 | Version | Supported          |
 | ------- | ------------------ |
+| 3.3.x   | :white_check_mark: |
 | 3.2.x   | :white_check_mark: |
-| 3.1.x   | :white_check_mark: |
-| < 3.1   | :x:                |
+| < 3.2   | :x:                |
 
-As 1.3.x is considered end of life, it will no longer recieve feature or security updates.
-
-2.x is also considered end of life, and will no longer recieve feature pdates, but will still recieve security patches.
-
-If you are looking to deploy, deploy the latest build of version 1.3.x with the expectation to deploy 2.0.x when it releases. They will be both backwards and forwards compatible in configuration and data storage, as the version jump is due to a large addition in features. Reverting versions without backup will not result in failure to run the software, but it may cause sluggish performance or console.log stdout spam.
+Versions before 3.2, up to and including 3.1, are considered end of life, it will no longer recieve feature or security updates. If you require a special feature request, consulting is available at [consulting@amyhelps.ml](mailto:consulting@amyhelps.ml).
 
 ## Reporting a Vulnerability
 

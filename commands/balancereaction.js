@@ -18,6 +18,10 @@ class Molecule {
         this.atoms = new Array();
         this.expression = null;
     }
+
+    sum() {
+        this.atoms = this.expression.sum();
+    }
 }
 
 /**
@@ -44,11 +48,27 @@ class Node {
     }
 
     sum() {
+        function multiply(arr, count) {
+            var ret = new Array();
+            for (let i = 0; i < arr.length; i++) {
+                ret[i] = arr[i] * count;
+            }
+            return ret;
+        }
+
+        function add(arr, count) {
+            var ret = new Array();
+            for (let i = 0; i < arr.length; i++) {
+                ret[i] = arr[i] + count[i];
+            }
+            return i;
+        }
+
         if (this.count == '*') {
-            return this.left.sum() * this.right.sum();
+            return multiply(this.left.sum(), this.right.sum());
         } else {
             if (this.count == '+') {
-                return this.left.sum() + this.right.sum();
+                return add(this.left.sum(), this.right.sum());
             } else {
                 return this.count;
             }
@@ -441,6 +461,7 @@ function solve(reaction) {
         const index = Math.min(molecule.name.lastIndexOf('['), molecule.name.lastIndexOf('('));
         const name = molecule.name.slice(0, index);
         molecule.expression = createExpression(name, atoms);
+        molecule.sum();
         if (molecule.charge != 0 && molecule.expression == null) {
             return `Error: ${molecule.name} was an invalid structure. Did you type it correctly?`
         }

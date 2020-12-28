@@ -73,11 +73,18 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
     channel.send({ embed: embed })
         .then(message => {
             const filter = response => {
+                if (isAttack) {
+                    if (player1.user.id != response.user.id) return false;
+                } else {
+                    if (player2.user.id != response.user.id) return false;
+                }
                 const values = response.content.split(' ');
                 return values.length == 3 && values[0] == 'move' && !isNaN(values[1]) && !isNaN(values[2]);
             };
             channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
+                    const move = collected.first().content.split(' ');
+                    const row = parseInt(move[1]), col = parseInt(move[2]);
                     // TODO
                 })
                 .catch(collected => {

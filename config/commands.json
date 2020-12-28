@@ -485,6 +485,12 @@
             ]
         },
         {
+            "name": "Tic Tac Toe",
+            "command": "tictactoe",
+            "description": "Play tic-tac-toe against your friends in a 1v1 battle to the death.",
+            "alias": []
+        },
+        {
             "name": "Free Tips",
             "command": "tip",
             "description": "Get a free tip on life.",

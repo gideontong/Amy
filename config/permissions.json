@@ -19,7 +19,8 @@
             "balancereaction",
             "shop",
             "timezone",
-            "vote"
+            "vote",
+            "tictactoe"
         ],
         "premium": [],
         "premium_soon": [

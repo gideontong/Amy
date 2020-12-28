@@ -54,9 +54,7 @@ module.exports = async (client, msg, args) => {
  * @param {Number} size Rows and cols in board
  */
 function play(channel, player1, player2, size = 3) {
-    let color = 0;
     var board = new Array(size).fill(null).map(() => new Array(size).fill(null));
-    // TODO
     playTurn(channel, player1, player2, board);
 }
 
@@ -114,10 +112,11 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
                     const row = parseInt(move[1]) - 1, col = parseInt(move[2]) - 1;
                     if (row >= 0 && row < matrix.length && col >= 0 && col < matrix[0].length && !matrix[row][col]) {
                         matrix[row][col] = isAttack ? 'O' : 'X';
-                        // TODO
+                        playTurn(channel, player1, player2, matrix, !isAttack, color);
                     } else {
                         channel.send(`That move wasn't valid, so you automatically conceded and ${isAttack ? player1 : player2} has won!`);
                     }
+                    return;
                 })
                 .catch(collected => {
                     embed.footer = 'You ran out of time, so the game of tic-tac-toe has ended.';

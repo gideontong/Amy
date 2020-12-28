@@ -432,6 +432,12 @@
             "alias": []
         },
         {
+            "name": "Backhand",
+            "command": "slap",
+            "description": "Slap someone! They probably deserve it...",
+            "alias": []
+        },
+        {
             "name": "Slots Machine",
             "command": "slots",
             "description": "Try your hand at electronic gambling.",

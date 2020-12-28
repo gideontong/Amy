@@ -93,7 +93,7 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
     let embed = generateUI(player1, player2, matrix, isAttack, color);
     let win = winExists(matrix);
     if (win) {
-        winUI(isAttack ? player2 : player1, win, matrix, color);
+        winUI(isAttack ? player2 : player1, matrix, color);
         return;
     }
     channel.send({ embed: embed })

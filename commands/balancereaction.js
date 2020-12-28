@@ -123,7 +123,7 @@ class Matrix {
 
     random() {
         var set = new Set();
-        var matrix = new Matrix(this.width, this.witdh - 1);
+        var matrix = new Matrix(this.width, this.width - 1);
         for (let i = 0; i < this.width; i++) {
             matrix.matrix[i][0] = this.matrix[i][0];
         }
@@ -377,13 +377,30 @@ function createExpression(name, atomSet) {
 }
 
 /**
+ * Verify a random answer
+ * @param {Array} answer Answer
+ * @param {Matrix} system System of equations
+ * @returns {Boolean} If correct
+ */
+function verify(answer, system) {
+    for (let i = 0; i < system.height; i++) {
+        let total = 0;
+        for (j = 0; j < system.width; j++) {
+            total += answer[j] * system.matrix[j][i];
+        }
+        if (total != 0) return false;
+    }
+    return true;
+}
+
+/**
  * Balances a chemical reaction
  * @param {Array} reaction Reaction to solve, split by a delimiter
  * @returns {String} Solved reaction or error string
  */
 function solve(reaction) {
     let atoms = new Set(), ions = new Set(), molecules = new Set();
-    reaction.forEach(item => {
+    reaction.split('').forEach(item => {
         if (item.length > 0 && isAlpha(item)) {
             while (!isNaN(item.charAt(0))) item = item.slice(1);
             molecules.add(new Molecule(item));
@@ -414,7 +431,7 @@ function solve(reaction) {
             return `Error: ${molecule.name} has a misplaced charge. Check your notation?`;
         }
         let brackets = 0;
-        molecule.name.split().forEach(character => {
+        molecule.name.split('').forEach(character => {
             startsOpenBrace(character) ? brackets++ : (endsClosedBrace(character) ? brakcets-- : null);
             if (brackets < 0) return `Error: ${molecule.name} has incorrect bracket notation. Check your brackets?`;
         });
@@ -439,4 +456,62 @@ function solve(reaction) {
         }
         i++;
     });
+    let system = new Matrix(molecules.size + 1, atoms.size + 1);
+    var lastMolecule;
+    i = 0;
+    molecules.forEach(molecule => {
+        let j = 0;
+        atoms.forEach(atom => {
+            system.matrix[i + 1][j + 1] = molecule.atoms[j];
+            j++;
+        });
+        system.matrix[i + 1][0] = molecule.charge;
+        i++;
+        lastMolecule = molecule;
+    });
+    system.matrix[0][0] = -1;
+    var table = new Array;
+    table[0] = lastMolecule.charge;
+    for (i = 0; i < atoms.size; i++) table[i + 1] = lastMolecule.atoms[i];
+    if (system.width != system.height + 1) {
+        for (i = 0; i < 100; i++) {
+            let matrix = system.copy().random();
+            let det = matrix.determinant();
+            if (det != 0) {
+                table = new Array();
+                for (let j = 0; j < matrix.height; j++) {
+                    table[j] = matrix.matrix[matrix.width - 1][j];
+                }
+                let ending = new Array();
+                for (let j = 0; j < molecules.size; j++) {
+                    let end = matrix.copy();
+                    end.swap(j, table);
+                    ending[i] = end.determinant();
+                }
+                ending.push(-det);
+                if (det > 0) {
+                    for (let j = 0; j < ending.length; j++) ending[j] *= -1;
+                }
+                if (verify(ending, system)) {
+                    return ending;
+                } else {
+                    return 'Error: Contradictory equation. The reaction will never happen.';
+                }
+            }
+        }
+        return 'Error: This strange reaction generated a strange solution set which I couldn\'t figure out.';
+    }
+    var end = system.copy(), ending = new Array();
+    let det = end.determinant();
+    for (i = 0; i < molecules.size(); i++) {
+        end = system.copy().swap(i, table);
+        ending[i] = end.determinant();
+    }
+    ending.push(-det);
+    if (det > 0) {
+        for (i = 0; i < ending.length; i++) {
+            ending[i] *= -1;
+        }
+    }
+    return ending;
 }

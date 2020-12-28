@@ -88,22 +88,22 @@ function add(e, t) {
         i[ii] = e[ii] + t[ii];
     return i
 }
-function Matrix(e, t) {
-    for (this.width = e,
-    this.height = t,
-    this.macierz = new Array(e),
+function Matrix(width, height) {
+    for (this.width = width,
+    this.height = height,
+    this.matrix = new Array(width),
     this.getElement = function(e, t) {
-        return this.macierz[e][t]
+        return this.matrix[e][t]
     }
     ,
     this.setElement = function(e, t, i) {
-        this.macierz[e][t] = i
+        this.matrix[e][t] = i
     }
     ,
     this.wypisz = function() {
-        for (ii = 0; ii < t; ii++) {
-            for (kk = 0; kk < e; kk++) {
-                var i = String(this.macierz[kk][ii]);
+        for (ii = 0; ii < height; ii++) {
+            for (kk = 0; kk < width; kk++) {
+                var i = String(this.matrix[kk][ii]);
                 1 == i.length ? beingUsed_write("  " + i) : 2 == i.length ? beingUsed_write(" " + i) : beingUsed_write(i),
                 beingUsed_write(" ")
             }
@@ -112,67 +112,67 @@ function Matrix(e, t) {
     }
     ,
     this.copy = function() {
-        var i = new Matrix(e,t);
-        for (ii = 0; ii < e; ii++)
-            for (i.macierz[ii] = new Array(t),
-            x = 0; x < t; x++)
-                i.macierz[ii][x] = this.macierz[ii][x];
+        var i = new Matrix(width,height);
+        for (ii = 0; ii < width; ii++)
+            for (i.matrix[ii] = new Array(height),
+            x = 0; x < height; x++)
+                i.matrix[ii][x] = this.matrix[ii][x];
         return i
     }
     ,
     this.substituteColumn = function(e, i) {
-        for (x = 0; x < t; x++)
-            this.macierz[e][x] = i[x]
+        for (x = 0; x < height; x++)
+            this.matrix[e][x] = i[x]
     }
     ,
     this.det = function() {
-        for (var e, i, n = 1, a = 1, r = 1, o = 0; o < t - 1; o++)
-            for (var s = o + 1; s < t; s++) {
-                r = 1;
-                e: for (; 0 == this.macierz[o][o]; ) {
-                    if (o + r >= t) {
+        for (var lastDiv, lastRow, rowProduct = 1, a = 1, rowOffset = 1, row = 0; row < height - 1; row++)
+            for (var subRow = row + 1; subRow < height; subRow++) {
+                rowOffset = 1;
+                e: for (; 0 == this.matrix[row][row]; ) {
+                    if (row + rowOffset >= height) {
                         a = 0;
                         break e
                     }
-                    for (var c = 0; c < t; c++)
-                        i = this.macierz[o][c],
-                        this.macierz[o][c] = this.macierz[o + r][c],
-                        this.macierz[o + r][c] = i;
-                    r++,
+                    for (var column = 0; column < height; column++)
+                        lastRow = this.matrix[row][column],
+                        this.matrix[row][column] = this.matrix[row + rowOffset][column],
+                        this.matrix[row + rowOffset][column] = lastRow;
+                    rowOffset++,
                     a *= -1
                 }
-                if (0 != this.macierz[o][o]) {
-                    e = -this.macierz[s][o] / this.macierz[o][o];
-                    for (var l = o; l < t; l++)
-                        this.macierz[s][l] = e * this.macierz[o][l] + this.macierz[s][l]
+                if (0 != this.matrix[row][row]) {
+                    lastDiv = -this.matrix[subRow][row] / this.matrix[row][row];
+                    for (var subSubRow = row; subSubRow < height; subSubRow++)
+                        this.matrix[subRow][subSubRow] = lastDiv * this.matrix[row][subSubRow] + this.matrix[subRow][subSubRow]
                 }
             }
-        for (var u = 0; u < t; u++)
-            n *= this.macierz[u][u];
-        return n * a
+        for (var u = 0; u < height; u++)
+            rowProduct *= this.matrix[u][u];
+        return rowProduct * a
     }
     ,
     this.randomSubMatrix = function() {
-        for (var i = new aClass_moleculeSet, n = new Matrix(e,e - 1), a = 0; a < e; a++)
-            n.macierz[a][0] = this.macierz[a][0];
-        i.add(0);
-        for (var r = 1; r < e - 1; r++) {
+        for (var set = new aClass_moleculeSet, mat = new Matrix(width,width - 1), a = 0; a < width; a++)
+            mat.matrix[a][0] = this.matrix[a][0];
+        set.add(0);
+        for (var i = 1; i < width - 1; i++) {
             for (var o; ; )
-                if (o = Math.ceil(Math.random() * t - 1),
-                !i.contains(o)) {
-                    i.add(o);
+                if (o = Math.ceil(Math.random() * height - 1),
+                !set.contains(o)) {
+                    set.add(o);
                     break
                 }
-            for (var a = 0; a < e; a++)
-                n.macierz[a][r] = this.macierz[a][o]
+            for (var a = 0; a < width; a++)
+                mat.matrix[a][i] = this.matrix[a][o]
         }
-        return n
+        return mat
     }
     ,
-    ii = 0; ii < e; ii++)
-        for (this.macierz[ii] = new Array(t),
-        x = 0; x < t; x++)
-            this.macierz[ii][x] = 0
+    ii = 0; ii < width; ii++)
+        for (this.matrix[ii] = new Array(height),
+        x = 0; x < height; x++)
+            this.matrix[ii][x] = 0
 }
 function Node(atoms, someboolean) {
     this.isOperator = someboolean,
@@ -273,8 +273,8 @@ function equsolve() {
             beingUsed_moleculesSet.addOnce(new Molecule(theMolecule))
         }
     }
-    for (var t = 0; t < beingUsed_moleculesSet.size(); t++) {
-        if (!isMolecule(theMolecule = beingUsed_moleculesSet.itemAt(t).name))
+    for (var loop_i = 0; loop_i < beingUsed_moleculesSet.size(); loop_i++) {
+        if (!isMolecule(theMolecule = beingUsed_moleculesSet.itemAt(loop_i).name))
             return beingUsed_write("Incorrect structure " + theMolecule + "\n"),
             void (document.getElementById("error").innerHTML = "Incorrect structure " + theMolecule)
     }
@@ -319,8 +319,8 @@ function equsolve() {
     beingUsed_setStatus("Searching for incorrect brackets..."),
     beingUsed_write("Searching for incorrect brackets...\n");
     for (i = 0; i < beingUsed_moleculesSet.size(); i++) {
-        for (var theMolecule = beingUsed_moleculesSet.itemAt(i).name, r = 0, o = 0; o < theMolecule.length; o++)
-            if (beingUsed_openBrace(theMolecule.charAt(o)) ? r++ : beingUsed_closesBrace(theMolecule.charAt(o)) && r--,
+        for (var theMolecule = beingUsed_moleculesSet.itemAt(i).name, r = 0, j = 0; j < theMolecule.length; j++)
+            if (beingUsed_openBrace(theMolecule.charAt(j)) ? r++ : beingUsed_closesBrace(theMolecule.charAt(j)) && r--,
             r < 0)
                 return beingUsed_write("Incorrect notation of brackets in " + theMolecule + "\n"),
                 void beingUsed_setStatus("Incorrect notation of brackets in " + theMolecule);
@@ -395,8 +395,8 @@ function equsolve() {
     for (i = 0; i < beingUsed_atomSet.size(); i++) {
         var atomName = beingUsed_atomSet.itemAt(i).name
           , total = 0;
-        for (o = 0; o < beingUsed_moleculesSet.size(); o++)
-            total += beingUsed_moleculesSet.itemAt(o).atomTable[i];
+        for (j = 0; j < beingUsed_moleculesSet.size(); j++)
+            total += beingUsed_moleculesSet.itemAt(j).atomTable[i];
         if (1 == total)
             return document.getElementById("error").innerHTML = "PROBLEM: Only one atom " + atomName,
             beingUsed_write("\nPROBLEM: Found only one atom " + atomName + ". "),
@@ -406,48 +406,48 @@ function equsolve() {
     let systemOfEquations = new Matrix(beingUsed_moleculesSet.size() + 1,beingUsed_atomSet.size() + 1);
     for (i = 0; i < beingUsed_moleculesSet.size(); i++) {
         beingUsed_setStatus("Bulding matrix for " + (theMolecule = beingUsed_moleculesSet.itemAt(i)).name);
-        for (o = 0; o < beingUsed_atomSet.size(); o++)
-            systemOfEquations.setElement(i + 1, o + 1, theMolecule.atomTable[o]);
+        for (j = 0; j < beingUsed_atomSet.size(); j++)
+            systemOfEquations.setElement(i + 1, j + 1, theMolecule.atomTable[j]);
         systemOfEquations.setElement(i + 1, 0, theMolecule.charge)
     }
     systemOfEquations.setElement(0, 0, -1),
     beingUsed_setStatus("Bulding column of free constituents " + (theMolecule = beingUsed_moleculesSet.itemAt(beingUsed_moleculesSet.size() - 1)).name),
-    (d = new Array)[0] = theMolecule.charge;
-    for (o = 0; o < beingUsed_atomSet.size(); o++)
-        d[o + 1] = theMolecule.atomTable[o];
+    (table = new Array)[0] = theMolecule.charge;
+    for (j = 0; j < beingUsed_atomSet.size(); j++)
+        table[j + 1] = theMolecule.atomTable[j];
     if (systemOfEquations.width != systemOfEquations.height + 1) {
-        for (t = 0; t < 100; t++) {
-            var h = systemOfEquations.copy().randomSubMatrix();
-            if (0 != (f = h.copy().det())) {
-                var d = new Array;
-                for (o = 0; o < h.height; o++)
-                    d[o] = h.getElement(h.width - 1, o);
-                for (m = new Array,
+        for (loop_i = 0; loop_i < 100; loop_i++) {
+            var matrix = systemOfEquations.copy().randomSubMatrix();
+            if (0 != (f = matrix.copy().det())) {
+                var table = new Array;
+                for (j = 0; j < matrix.height; j++)
+                    table[j] = matrix.getElement(matrix.width - 1, j);
+                for (possibleReturn = new Array,
                 i = 0; i < beingUsed_moleculesSet.size(); i++) {
-                    (z = h.copy()).substituteColumn(i, d),
-                    m[i] = z.det()
+                    (z = matrix.copy()).substituteColumn(i, table),
+                    possibleReturn[i] = z.det()
                 }
-                if (m[m.length] = -f,
+                if (possibleReturn[possibleReturn.length] = -f,
                 f > 0)
-                    for (i = 0; i < m.length; i++)
-                        m[i] *= -1;
-                return beingUsed_checkFunction(m, systemOfEquations) ? void beingUsed_printToScreen(m = beingUsed_renderToScreen(m)) : (beingUsed_write("Contradictory equation. Such reaction will never happen.\n"),
+                    for (i = 0; i < possibleReturn.length; i++)
+                        possibleReturn[i] *= -1;
+                return beingUsed_checkFunction(possibleReturn, systemOfEquations) ? void beingUsed_printToScreen(possibleReturn = beingUsed_renderToScreen(possibleReturn)) : (beingUsed_write("Contradictory equation. Such reaction will never happen.\n"),
                 void (document.getElementById("error").innerHTML = "Such reaction will never happen."))
             }
         }
         return beingUsed_write("Strange equation that cannot be solved.\n"),
         void (document.getElementById("error").innerHTML = "Strange equation that cannot be solved.")
     }
-    for (var f = (z = systemOfEquations.copy()).det(), m = new Array, i = 0; i < beingUsed_moleculesSet.size(); i++) {
+    for (var f = (z = systemOfEquations.copy()).det(), possibleReturn = new Array, i = 0; i < beingUsed_moleculesSet.size(); i++) {
         var z;
-        (z = systemOfEquations.copy()).substituteColumn(i, d),
-        m[i] = z.det()
+        (z = systemOfEquations.copy()).substituteColumn(i, table),
+        possibleReturn[i] = z.det()
     }
-    if (m[m.length] = -f,
+    if (possibleReturn[possibleReturn.length] = -f,
     f > 0)
-        for (var i = 0; i < m.length; i++)
-            m[i] *= -1;
-    beingUsed_printToScreen(m = beingUsed_renderToScreen(m))
+        for (var i = 0; i < possibleReturn.length; i++)
+            possibleReturn[i] *= -1;
+    beingUsed_printToScreen(possibleReturn = beingUsed_renderToScreen(possibleReturn))
 }
 function elementRownania(e, t) {
     this.molecule = e,
@@ -473,10 +473,10 @@ function elementRownania(e, t) {
         this.html += "</sup>")
     }
 }
-function beingUsed_checkFunction(e, t) {
-    for (var i = 0; i < t.height; i++) {
-        for (var n = 0, a = 0; a < t.width; a++)
-            n += e[a] * t.getElement(a, i);
+function beingUsed_checkFunction(answer, system) {
+    for (var i = 0; i < system.height; i++) {
+        for (var n = 0, a = 0; a < system.width; a++)
+            n += answer[a] * system.getElement(a, i);
         if (0 != n)
             return !1
     }
@@ -536,19 +536,19 @@ function beingUsed_printToScreen(e) {
     notAll && beingUsed_write("\n\nNot all molecules are necessary.\n"),
     beingUsed_write("\n")
 }
-function beingUsed_renderToScreen(e) {
-    var t = [2, 3, 5, 7, 11, 13, 17, 19, 23];
-    e: for (var i = 0; i < t.length; i++)
+function beingUsed_renderToScreen(inputArray) {
+    var primes = [2, 3, 5, 7, 11, 13, 17, 19, 23];
+    e: for (var i = 0; i < primes.length; i++)
         for (; ; ) {
-            for (var n = 0, a = 0; a < e.length; a++) {
-                if (0 == e[a] && n++,
-                Math.abs(Math.round(e[a])) % t[i] != 0 || n == e.length)
+            for (var n = 0, j = 0; j < inputArray.length; j++) {
+                if (0 == inputArray[j] && n++,
+                Math.abs(Math.round(inputArray[j])) % primes[i] != 0 || n == inputArray.length)
                     continue e
             }
-            for (a = 0; a < e.length; a++)
-                e[a] /= t[i]
+            for (j = 0; j < inputArray.length; j++)
+                inputArray[j] /= primes[i]
         }
-    return e
+    return inputArray
 }
 function findAtoms(molecule, atomset) {
     for (var i = 0; i < molecule.length; i++) {

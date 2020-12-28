@@ -25,7 +25,7 @@ module.exports = async (client, msg, args) => {
                     .then(collected => {
                         let reply = collected.first();
                         if (reply.mentions.members.size > 0) {
-                            player2 = reply.mentions.members.firstKey();
+                            player2 = reply.mentions.members.first();
                             play(msg.channel, player1, player2);
                         } else {
                             msg.channel.send('You are supposed to tag a player to play against them!');
@@ -37,7 +37,7 @@ module.exports = async (client, msg, args) => {
             })
             .catch(err => { });
     } else {
-        player2 = msg.mentions.members.firstKey();
+        player2 = msg.mentions.members.first();
         play(msg.channel, player1, player2);
     }
 }

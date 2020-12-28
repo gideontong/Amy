@@ -23,7 +23,7 @@ module.exports = async (client, msg, args) => {
             .setTitle(`Search Results for ${query}`);
         if (results.corrected) embed.setDescription(`*Did you mean: ${results.corrected}?*`);
         msg.channel.send(embed);
-    }, query);
+    }, query, !msg.channel.nsfw);
 }
 
 /**

@@ -66,7 +66,7 @@ function play(channel, player1, player2, size = 3) {
  * @param {Array} matrix Board
  * @param {Number} color Color index
  */
-function winUI(player, matrix, color = 0) {
+function winUI(channel, player, matrix, color = 0) {
     const board = generateBoard(matrix);
     const embed = {
         title: `${player.nickname ? player.nickname : player.user.username} has won!`,
@@ -93,7 +93,7 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
     let embed = generateUI(player1, player2, matrix, isAttack, color);
     let win = winExists(matrix);
     if (win) {
-        winUI(isAttack ? player2 : player1, matrix, color);
+        winUI(channel, isAttack ? player2 : player1, matrix, color);
         return;
     }
     channel.send({ embed: embed })
@@ -120,7 +120,6 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
                     return;
                 })
                 .catch(err => {
-                    console.log(err);
                     embed.footer.text = 'You ran out of time, so the game of tic-tac-toe has ended.';
                     message.edit({ embed: embed });
                 });

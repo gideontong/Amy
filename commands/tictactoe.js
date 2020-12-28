@@ -119,7 +119,8 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
                     }
                     return;
                 })
-                .catch(collected => {
+                .catch(err => {
+                    console.log(err);
                     embed.footer.text = 'You ran out of time, so the game of tic-tac-toe has ended.';
                     message.edit({ embed: embed });
                 });

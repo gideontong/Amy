@@ -55,7 +55,7 @@ function play(channel, player1, player2, size = 3) {
         msg.channel.send('You aren\'t allowed to play against a bot...');
         return;
     }
-    var board = new Array(size).fill('').map(() => new Array(size).fill(''));
+    var board = new Array(size).fill('').map(() => new Array(size).fill(' '));
     playTurn(channel, player1, player2, board);
 }
 
@@ -120,7 +120,7 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
                     return;
                 })
                 .catch(collected => {
-                    embed.footer = 'You ran out of time, so the game of tic-tac-toe has ended.';
+                    embed.footer.text = 'You ran out of time, so the game of tic-tac-toe has ended.';
                     message.edit({ embed: embed });
                 });
         })
@@ -143,17 +143,17 @@ function winExists(matrix) {
             if (row == col && matrix[row][col] != matrix[0][0]) leftDiag = false;
             if (row == matrix[row].length - 1 - row && matrix[row][col] != matrix[0][matrix[0].length - 1]) rightDiag = false;
         }
-        if (checkRow && matrix[row][0] && matrix[row][0].length > 0) {
+        if (checkRow && matrix[row][0] && matrix[row][0] != ' ' && matrix[row][0].length > 0) {
             return matrix[row][0];
         }
     }
     checkCol.forEach(col => {
-        if (col && col.length > 0) {
+        if (col && col != ' ' && col.length > 0) {
             return col;
         }
     });
-    if (leftDiag) return matrix[0][0];
-    else if (rightDiag) return matrix[0][matrix[0].length - 1];
+    if (leftDiag && matrix[0][0] != ' ') return matrix[0][0];
+    else if (rightDiag && matrix[0][matrix[0].length - 1] != ' ') return matrix[0][matrix[0].length - 1];
     else return false;
 }
 
@@ -167,9 +167,7 @@ function winExists(matrix) {
  * @returns {Object} MessageEmbed 
  */
 function generateUI(player1, player2, matrix, isAttack = true, color = 0) {
-    const player1Name = player1.nickname ? player1.nickname : player1.user.username;
-    const player2Name = player2.nickname ? player2.nickname : player2.user.username;
-    const description = `It's ${isAttack ? player1Name : player2Name}'s Turn.\n\nTo move, say \`move <row> <col>\`, for example, \`move 2 2\` marks the center square in a 3x3 grid.`;
+    const description = `It's ${isAttack ? player1 : player2}'s Turn.\n\nTo move, say \`move <row> <col>\`, for example, \`move 2 2\` marks the center square in a 3x3 grid.`;
     const board = `\`\`\`\n${generateBoard(matrix)}\`\`\``;
     const embed = {
         title: `${player1.nickname ? player1.nickname : player1.user.username} vs. ${player2.nickname ? player2.nickname : player2.user.username}`,

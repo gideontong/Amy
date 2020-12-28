@@ -100,9 +100,9 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
         .then(message => {
             const filter = response => {
                 if (isAttack) {
-                    if (player1.user.id != response.user.id) return false;
+                    if (player1.id != response.author.id) return false;
                 } else {
-                    if (player2.user.id != response.user.id) return false;
+                    if (player2.id != response.author.id) return false;
                 }
                 const values = response.content.split(' ');
                 return values.length == 3 && values[0] == 'move' && !isNaN(values[1]) && !isNaN(values[2]);

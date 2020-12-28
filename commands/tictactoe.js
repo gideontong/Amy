@@ -133,28 +133,13 @@ function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0)
  * @returns {String} Empty if no winner, otherwise square of winner
  */
 function winExists(matrix) {
-    let checkCol = matrix[0].slice();
-    let leftDiag = true, rightDiag = true;
-    for (let row = 0; row < matrix.length; row++) {
-        let checkRow = true;
-        for (let col = 0; col < matrix[row].length; col++) {
-            if (matrix[row][col] != matrix[row][0]) checkRow = false;
-            if (matrix[row][col] != checkCol[col]) checkCol[col] = false;
-            if (row == col && matrix[row][col] != matrix[0][0]) leftDiag = false;
-            if (row == matrix[row].length - 1 - row && matrix[row][col] != matrix[0][matrix[0].length - 1]) rightDiag = false;
-        }
-        if (checkRow && matrix[row][0] && matrix[row][0] != ' ' && matrix[row][0].length > 0) {
-            return matrix[row][0];
-        }
-    }
-    checkCol.forEach(col => {
-        if (col && col != ' ' && col.length > 0) {
-            return col;
-        }
+    matrix.forEach(row => {
+        if (new Set(row).size == 1 && row[0] != ' ') return row[0];
     });
-    if (leftDiag && matrix[0][0] != ' ') return matrix[0][0];
-    else if (rightDiag && matrix[0][matrix[0].length - 1] != ' ') return matrix[0][matrix[0].length - 1];
-    else return false;
+    const transposed = matrix[0].map((_, col) => matrix.map(row => row[col]));
+    transposed.forEach(col => {
+        if (new Set(col).size == 1 && col[0] != ' ') return col[0];
+    })
 }
 
 /**

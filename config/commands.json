@@ -408,6 +408,12 @@
             "alias": []
         },
         {
+            "name": "RPS Simulator",
+            "command": "rockpaperscissors",
+            "description": "Play rock, paper, scissors?",
+            "alias": []
+        },
+        {
             "name": "Server Rules",
             "command": "rules",
             "description": "Get the server rules!",

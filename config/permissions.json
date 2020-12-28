@@ -17,7 +17,8 @@
             "balancereaction",
             "shop",
             "timezone",
-            "vote"
+            "vote",
+            "rockpaperscissors"
         ],
         "premium": [],
         "premium_soon": [

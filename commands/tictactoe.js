@@ -139,7 +139,16 @@ function winExists(matrix) {
     const transposed = matrix[0].map((_, col) => matrix.map(row => row[col]));
     transposed.forEach(col => {
         if (new Set(col).size == 1 && col[0] != ' ') return col[0];
-    })
+    });
+    var diagonal = new Array(), invDiagonal = new Array();
+    for (let i = 0; i < matrix.length; i++) {
+        diagonal.push(matrix[i][i]);
+        invDiagonal.push(transposed[i][i]);
+    }
+    if (new Set(diagonal).size == 1 && diagonal[0] != ' ') return diagonal[0];
+    if (new Set(invDiagonal).size == 1 && invDiagonal[0] != ' ') return invDiagonal[0];
+    // TODO: Board is full
+    return false;
 }
 
 /**

@@ -70,7 +70,7 @@ function winUI(channel, player, matrix, color = 0) {
     const board = generateBoard(matrix);
     const embed = {
         title: `${player.nickname ? player.nickname : player.user.username} has won!`,
-        description: `Congratulations ${player}, you have won the ultimate game of tic-tac-toe!\n\n${board}`,
+        description: `Congratulations ${player}, you have won the ultimate game of tic-tac-toe!\n\n\`\`\`${board}\`\`\``,
         color: colors[color % colors.length],
         footer: {
             text: 'Ultimate Tic-Tac-Toe'

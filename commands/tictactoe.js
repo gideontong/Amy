@@ -1,4 +1,10 @@
 const timeout = 30;
+const colors = [
+    0x0A043C,
+    0x03406F,
+    0xBBBBBB,
+    0xFFE3D8
+];
 
 /**
  * Play 2 player tic tac toe
@@ -37,6 +43,7 @@ module.exports = async (client, msg, args) => {
         return;
     }
     if (!player2) return;
+    play(msg.channel, player1, player2);
 }
 
 /**
@@ -44,11 +51,60 @@ module.exports = async (client, msg, args) => {
  * @param {TextChannel} channel Channel to play Tic-Tac-Toe in
  * @param {Member} player1 Player 1
  * @param {Member} player2 Player 2
- * @param {Number} row Rows in board
- * @param {Number} col Columns in board
+ * @param {Number} size Rows and cols in board
  */
-function play(channel, player1, player2, row = 3, col = 3) {
-    var board = new Array(row).fill(null).map(() => new Array(col).fill(null));
+function play(channel, player1, player2, size = 3) {
+    let color = 0;
+    var board = new Array(size).fill(null).map(() => new Array(size).fill(null));
+    // TODO
+}
+
+/**
+ * Play a turn out
+ * @param {TextChannel} channel Channel to send turn move in
+ * @param {Member} player1 Player 1
+ * @param {Member} player2 Player 2
+ * @param {Array} matrix Board
+ * @param {Boolean} isAttack Is Player 1's turn
+ * @param {Number} color Color index
+ */
+function playTurn(channel, player1, player2, matrix, isAttack, color = 0) {
+    const embed = generateUI(player1, player2, matrix, isAttack, color);
+    channel.send({ embed: embed })
+        .then(message => {
+            // TODO
+        })
+        .catch(err => { });
+}
+
+/**
+ * Checks for a winning square in O(n) for arbitrary n=mxm board
+ * @param {Array} matrix Board
+ * @returns {String} Empty if no winner, otherwise square of winner
+ */
+function winExists(matrix) {
+    let checkCol = matrix[0].slice();
+    let leftDiag = true, rightDiag = true;
+    for (let row = 0; row < matrix.length; row++) {
+        let checkRow = true;
+        for (let col = 0; col < matrix[row].length; col++) {
+            if (matrix[row][col] != matrix[row][0]) checkRow = false;
+            if (matrix[row][col] != checkCol[col]) checkCol[col] = false; 
+            if (row == col && matrix[row][col] != matrix[0][0]) leftDiag = false;
+            if (row == matrix[row].length - 1 - row && matrix[row][col] != matrix[0][matrix[0].length - 1]) rightDiag = false;
+        }
+        if (checkRow && matrix[row][0] && matrix[row][0].length > 0) {
+            return matrix[row][0];
+        }
+    }
+    checkCol.forEach(col => {
+        if (col && col.length > 0) {
+            return col;
+        }
+    });
+    if (leftDiag) return matrix[0][0];
+    else if (rightDiag) return matrix[0][matrix[0].length - 1];
+    else return false;
 }
 
 /**
@@ -56,13 +112,22 @@ function play(channel, player1, player2, row = 3, col = 3) {
  * @param {Member} player1 Player 1
  * @param {Member} player2 Player 2
  * @param {Array} matrix Board
+ * @param {Boolean} isAttack Is player 1's turn
+ * @param {Number} color Color index
  * @returns {Object} MessageEmbed 
  */
-function generateUI(player1, player2, matrix) {
+function generateUI(player1, player2, matrix, isAttack = true, color = 0) {
+    const player1Name = player1.nickname ? player1.nickname : player1.user.username;
+    const player2Name = player2.nickname ? player2.nickname : player2.user.username;
+    const description = `It's ${isAttack ? player1Name : player2Name}'s Turn.\n\nTo move, say \`move <row> <col>\`, for example, \`move 2 2\` marks the center square in a 3x3 grid.`;
     const board = `\`\`\`\n${generateBoard(matrix)}\`\`\``;
     const embed = {
         title: `${player1.nickname ? player1.nickname : player1.user.username} vs. ${player2.nickname ? player2.nickname : player2.user.username}`,
-        description: board
+        description: `${description}\n\n${board}`,
+        color: colors[color % colors.length],
+        footer: {
+            text: 'Ultimate Tic-Tac-Toe by Amy'
+        }
     };
     return embed;
 }
@@ -70,6 +135,7 @@ function generateUI(player1, player2, matrix) {
 /**
  * Generates a board with a minimum size of 1x3
  * @param {Array} matrix Matrix of moves
+ * @returns {String} Board representation
  */
 function generateBoard(matrix) {
     var board = '';

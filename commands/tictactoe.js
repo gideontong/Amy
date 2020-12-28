@@ -55,7 +55,7 @@ function play(channel, player1, player2, size = 3) {
         msg.channel.send('You aren\'t allowed to play against a bot...');
         return;
     }
-    var board = new Array(size).fill(null).map(() => new Array(size).fill(null));
+    var board = new Array(size).fill('').map(() => new Array(size).fill(''));
     playTurn(channel, player1, player2, board);
 }
 
@@ -196,6 +196,6 @@ function generateBoard(matrix) {
         board = board.substring(0, board.length - 3) + '\n';
         board += '--+' + new Array(row.length - 2).fill('---').join('+') + '+--\n';
     });
-    board = board.substring(0, board.length - (board[0].length * 4 - 1));
+    board = board.substring(0, board.length - (matrix[0].length * 4 - 1));
     return board;
 }

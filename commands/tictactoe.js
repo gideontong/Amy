@@ -68,11 +68,22 @@ function play(channel, player1, player2, size = 3) {
  * @param {Boolean} isAttack Is Player 1's turn
  * @param {Number} color Color index
  */
-function playTurn(channel, player1, player2, matrix, isAttack, color = 0) {
-    const embed = generateUI(player1, player2, matrix, isAttack, color);
+function playTurn(channel, player1, player2, matrix, isAttack = true, color = 0) {
+    let embed = generateUI(player1, player2, matrix, isAttack, color);
     channel.send({ embed: embed })
         .then(message => {
-            // TODO
+            const filter = response => {
+                const values = response.content.split(' ');
+                return values.length == 3 && values[0] == 'move' && !isNaN(values[1]) && !isNaN(values[2]);
+            };
+            channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
+                .then(collected => {
+                    // TODO
+                })
+                .catch(collected => {
+                    embed.footer = 'You ran out of time, so the game of tic-tac-toe has ended.';
+                    message.edit({ embed: embed });
+                });
         })
         .catch(err => { });
 }

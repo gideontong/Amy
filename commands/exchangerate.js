@@ -15,7 +15,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (msg, args) => {
     if (args.length < 3) {
-        msg.channel.send(`You need to provide the two currencies you are trying to convert! Example: ${prefix}exchangerate USD TWD`);
+        msg.channel.send(`You need to provide the two currencies you are trying to convert! Example: ${prefix.amy}exchangerate USD TWD`);
         return;
     }
     let query = {

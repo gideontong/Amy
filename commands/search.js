@@ -1,3 +1,4 @@
+const timeout = 600;
 const googleBlue = 0x4C8BF5;
 
 const { getGoogleSearch } = require('../lib/Internet');
@@ -18,10 +19,25 @@ module.exports = async (msg, args) => {
         var embed = new MessageEmbed()
             .addFields(coalesceResults(results.results))
             .setColor(googleBlue)
-            .setFooter(`Powered by Google (Got ${results.count} results in ${results.time} seconds)`)
+            .setDescription(`Got ${results.count} results in ${results.time} seconds.${results.corrected ? '\n*Did you mean: ' + results.corrected + '?*' : ''}`)
+            .setFooter(`React 🗑 within 10 minutes to delete this search result.`)
             .setTitle(`Search Results for ${query}`);
-        if (results.corrected) embed.setDescription(`*Did you mean: ${results.corrected}?*`);
-        msg.channel.send(embed);
+        msg.channel.send(embed)
+            .then(searchResultBox => {
+                searchResultBox.react('🗑');
+                const filter = (reaction, user) => {
+                    return reaction.emoji.name == '🗑'  && user.id == msg.author.id;
+                };
+                searchResultBox.awaitReactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
+                    .then(collected => { 
+                        searchResultBox.delete();
+                    })
+                    .catch(collected => {
+                        embed.setFooter('This search result can no longer be deleteed.');
+                        searchResultBox.edit(embed);
+                    });
+            })
+            .catch(err => { });
     }, query, !msg.channel.nsfw);
 }
 

@@ -32,10 +32,11 @@ module.exports = async (msg, args) => {
             moves.forEach(move => {
                 gameMenu.react(move);
             });
-            const filter = (reaction, user) => moves.includes(reaction.emoji.name) && players.includes(user);
-            const collector = gameMenu.createReactionCollector(filter, { time: timeout * 1000 });
-            collector.on('collect', reaction => {
-                // TODO
+            const moves = new Map(players.map(player => [player, null]));
+            const filter = (reaction, user) => moves.includes(reaction.emoji.name) && players.includes(user) && moves[user] == null;
+            const collector = gameMenu.createReactionCollector(filter, { max: 2, time: timeout * 1000 });
+            collector.on('collect', (reaction, user) => {
+                moves[user] = reaction;
             });
             collector.on('end', collected => {
                 // TODO

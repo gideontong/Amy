@@ -29,7 +29,8 @@ module.exports = async (msg, args) => {
                     return reaction.emoji.name == '🗑'  && user.id == msg.author.id;
                 };
                 searchResultBox.awaitReactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
-                    .then(collected => { 
+                    .then(collected => {
+                        msg.delete();
                         searchResultBox.delete();
                     })
                     .catch(collected => {

@@ -29,7 +29,7 @@ module.exports = async (msg, args) => {
         .addField('Vote Tallies', 'No one has voted yet!')
         .setColor(Math.floor(Math.random() * colors))
         .setDescription(message)
-        .setFooter(`This poll expires ~${Math.floor(hours)} hours after it starts.`)
+        .setFooter(`This poll expires ~${hours < 1.5 ? Math.floor(hours * 60) : Math.round(hours)} ${hours < 1.5 ? 'minutes' : 'hours'} after it starts.`)
         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username} is starting a new poll!`);
     const filter = (reaction, user) => {
         return reaction.emoji.id == emotes.yes || reaction.emoji.id == emotes.no;

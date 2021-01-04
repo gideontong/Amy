@@ -18,7 +18,8 @@
             "shop",
             "timezone",
             "vote",
-            "rockpaperscissors"
+            "rockpaperscissors",
+            "chess"
         ],
         "premium": [],
         "premium_soon": [

@@ -8,7 +8,7 @@ const names = ['Rock', 'Paper', 'Scissors'];
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    if (msg.mentions.users.size > 0) {
+    if (msg.mentions.users.size < 1) {
         msg.channel.send('You need to tag someone to play rock, paper, scissors with!');
         return;
     }

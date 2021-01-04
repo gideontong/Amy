@@ -38,7 +38,7 @@ module.exports = async (msg, args) => {
             const collector = gameMenu.createReactionCollector(filter, { max: 2, time: timeout * 1000 });
             collector.on('collect', (reaction, user) => {
                 moves.set(user, reaction);
-                reaction.remove();
+                reaction.remove().catch(err => { });
             });
             collector.on('end', collected => {
                 const embed = generateEndUI(moves, players);
@@ -61,7 +61,7 @@ function generateEndUI(moves, players) {
     // doesn't matter that much as long as there aren't a lot of users playing.
     // The overall impact is small. If there is demand for a thousand-user version
     // of rock-paper-scissors, this algorithm could be optimized.
-    moves.entries().forEach(([attacker, attack]) => {
+    moves.forEach((attacker, attack) => {
         let attackIdx = options.findIndex(attack.emoji.name);
         let name = names[attackIdx];
         moveStrings.push(`${attacker} used ${attack} ${name}!`);

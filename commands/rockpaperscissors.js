@@ -38,9 +38,10 @@ module.exports = async (msg, args) => {
             const collector = gameMenu.createReactionCollector(filter, { max: 2, time: timeout * 1000 });
             collector.on('collect', (reaction, user) => {
                 moves.set(user, reaction);
+                reaction.remove();
             });
             collector.on('end', collected => {
-                const embed = generateEndUI(moves);
+                const embed = generateEndUI(moves, players);
                 msg.channel.send({ embed: embed });
             });
         })
@@ -50,9 +51,10 @@ module.exports = async (msg, args) => {
 /**
  * Figure out the win condition
  * @param {Map} moves Map of moves
+ * @param {Array} players Array of players
  * @returns {Object} UI of end screen
  */
-function generateEndUI(moves) {
+function generateEndUI(moves, players) {
     var moveStrings = new Array();
     var moveScores = new Map(players.map(player => [player, 0]));
     // There's a faster algorithm than one that is naive and uses O(n^2), but it

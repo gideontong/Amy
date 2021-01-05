@@ -1,4 +1,5 @@
 const { logging } = require('../config/config.json').channels;
+const { tracked } = require('../config/snowflakes.json');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 
@@ -8,6 +9,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} newMessage Message after it was edited
  */
 module.exports = async (oldMessage, newMessage) => {
+    if (!(message.guild && tracked.includes(message.guild.id))) return;
     if (newMessage.author.bot || !newMessage.editedAt) return;
     try {
         log.info(`${oldMessage.author.tag} edited ${newMessage.id} in ${oldMessage.guild.name} (${oldMessage.channel.name})`);

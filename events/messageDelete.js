@@ -1,5 +1,5 @@
 const { prefix, channels } = require('../config/config.json');
-const { exclusive } = require('../config/snowflakes.json');
+const { tracked, exclusive } = require('../config/snowflakes.json');
 const { MessageEmbed } = require('discord.js');
 const { countAction } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
@@ -9,6 +9,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} message Message that was deleted
  */
 module.exports = async message => {
+    if (!(message.guild && tracked.includes(message.guild.id))) return;
     if (message.author.bot || message.content.startsWith(prefix.amy)) return;
     log.info(`${message.author.tag} deleted ${message.id} from ${message.guild.name} (${message.channel.name})`);
     try {

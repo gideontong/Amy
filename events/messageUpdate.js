@@ -9,10 +9,9 @@ const log = require('log4js').getLogger('amy');
  * @param {Message} newMessage Message after it was edited
  */
 module.exports = async (oldMessage, newMessage) => {
-    if (!(message.guild && tracked.includes(message.guild.id))) return;
+    if (!(newMessage.guild && tracked.includes(newMessage.guild.id))) return;
     if (newMessage.author.bot || !newMessage.editedAt) return;
     try {
-        log.info(`${oldMessage.author.tag} edited ${newMessage.id} in ${oldMessage.guild.name} (${oldMessage.channel.name})`);
         let original = oldMessage.cleanContent;
         let updated = newMessage.cleanContent;
         if (original.length > 500) {

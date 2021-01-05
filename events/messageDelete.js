@@ -10,20 +10,24 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async message => {
     if (message.author.bot || message.content.startsWith(prefix.amy)) return;
-    log.info(`${message.author.tag} deleted ${message.id} from ${message.guild.name} (${message.channel.name})`);
     try {
         countAction(message.author.id, 'delete');
         if (!(message.guild && tracked.includes(message.guild.id))) return;
         for (channelID of channels.logging) {
             let channel = message.client.channels.cache.get(channelID);
             if (channel && channel.type == 'text') {
-                const deletedComment = new MessageEmbed()
-                    .setAuthor(message.author.tag, message.author.displayAvatarURL())
-                    .setTitle(`Message deleted in ${message.guild.name}!`)
-                    .setDescription(message.content)
-                    .setFooter(`Sent at ${message.createdAt} in ${message.channel.name} (${message.id})`)
-                    .attachFiles(message.attachments.array());
-                channel.send(deletedComment);
+                const deletedComment = {
+                    author: {
+                        name: message.author.tag,
+                        icon_url: message.author.displayAvatarURL()
+                    },
+                    title: `Message deleted in ${message.guild.name}!`,
+                    description: message.content,
+                    footer: {
+                        text: `Originally sent at ${message.createdAt} in ${message.channel.name}`
+                    }
+                };
+                channel.send({ embed: deletedComment });
             }
         }
     } catch (err) {

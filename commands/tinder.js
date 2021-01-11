@@ -1,4 +1,4 @@
-const subreddit = 'taiwanpics';
+const subreddit = 'tinder';
 
 const { getRedditImage } = require('../lib/Internet');
 const log = require('log4js').getLogger('amy');

@@ -53,7 +53,7 @@ function generateSortedLeaderboard(counter) {
                 last = user;
             }
         }
-        description += `${last}: ${count}\n`;
+        description += `${last}: ${high}\n`;
         counter.delete(last);
     }
     return description;

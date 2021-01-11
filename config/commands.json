@@ -187,6 +187,12 @@
             ]
         },
         {
+            "name": "See Egypt",
+            "command": "egypt",
+            "description": "One of two countries in the world with a canal and a land bridge.",
+            "alias": []
+        },
+        {
             "name": "Currency Exchange Rate",
             "command": "exchangerate",
             "description": "Get the current currency exchange rates.",
@@ -264,6 +270,12 @@
             "name": "Server Invite",
             "command": "invite",
             "description": "Get a link to the support server.",
+            "alias": []
+        },
+        {
+            "name": "See Japan",
+            "command": "japan",
+            "description": "Kamikaze: Give me all your money or I'll kill myself!",
             "alias": []
         },
         {

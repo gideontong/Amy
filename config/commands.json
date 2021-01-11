@@ -548,6 +548,12 @@
             ]
         },
         {
+            "name": "See USA",
+            "command": "usa",
+            "description": "The world revolves around America, so might as well see it.",
+            "alias": []
+        },
+        {
             "name": "The Useless Web",
             "command": "uselessweb",
             "description": "Get a random useless website... why.",

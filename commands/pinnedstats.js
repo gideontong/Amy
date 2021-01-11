@@ -9,7 +9,7 @@ module.exports = async (msg, args) => {
     pinned.forEach(message => {
         const author = message.author;
         const current = counter.get(author);
-        counter.set(author, counter.has(author) ? 1 : current + 1);
+        counter.set(author, counter.has(author) ? current + 1 : 1);
     });
     const description = generateLeaderboard(counter);
     const embed = {

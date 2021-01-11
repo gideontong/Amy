@@ -6,11 +6,12 @@
 module.exports = async (msg, args) => {
     const pinned = await msg.channel.messages.fetchPinned();
     let counter = new Map();
-    for (let message of pinned.values()) {
+    pinned.forEach(message => {
         const author = message.author;
         const current = counter.get(author);
         counter.set(author, Number.isNaN(current) ? 1 : current + 1);
-    }
+        console.log(author, current, counter.get(author));
+    });
     const description = generateLeaderboard(counter);
     const embed = {
         title: 'Pinned Leaderboard',

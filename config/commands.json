@@ -27,6 +27,12 @@
             "alias": []
         },
         {
+            "name": "See Algeria",
+            "command": "algeria",
+            "description": "Algeria is a country in Africa. Have you heard?",
+            "alias": []
+        },
+        {
             "name": "Be Annoying",
             "command": "annoy",
             "description": "Annoy your friends!",

@@ -1,7 +1,6 @@
 // Have a suggestion? File a pull request or contact Gideon#5433!
 const subreddits = [
     'beerandpizza',
-    'beerfood',
     'bobsburgerscreations',
     'burgers',
     'cheeseburgers',
@@ -10,9 +9,7 @@ const subreddits = [
     'pizza',
     'ramen',
     'streeteats',
-    'streetfoodartists',
     'sushi',
-    'swedishfood',
     'tacos'
 ];
 

@@ -545,6 +545,12 @@
             "alias": []
         },
         {
+            "name": "Tinder Browser",
+            "command": "tinder",
+            "description": "Tutorial on how to date online?",
+            "alias": []
+        },
+        {
             "name": "Free Tips",
             "command": "tip",
             "description": "Get a free tip on life.",

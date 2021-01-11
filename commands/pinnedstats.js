@@ -33,5 +33,5 @@ function generateLeaderboard(counter) {
     counter.forEach((count, user) => {
         description += `${user}: ${count}\n`;
     });
-    return warning + description;
+    return description;
 }

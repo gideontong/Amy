@@ -9,6 +9,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    return msg.channel.send('This command has been temporarily disabled due to high error rates.');
     try {
         getRedditImage(function (data = 'Loading...') {
             msg.channel.send(data);

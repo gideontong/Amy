@@ -315,6 +315,12 @@
             "alias": []
         },
         {
+            "name": "See North Korea",
+            "command": "northkorea",
+            "description": "You can almost see Pyeongyang from here.",
+            "alias": []
+        },
+        {
             "name": "Yikes, Dawg",
             "command": "osha",
             "description": "See something that makes you say yikes.",

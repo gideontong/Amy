@@ -1,4 +1,4 @@
-const subreddit = 'nothkoreapics';
+const subreddit = 'northkoreapics';
 
 const { getRedditImage } = require('../lib/Internet');
 const log = require('log4js').getLogger('amy');

@@ -385,6 +385,12 @@
             "alias": []
         },
         {
+            "name": "Big Flexing Time",
+            "command": "pinnedstats",
+            "description": "See how many times your message got pinned?",
+            "alias": []
+        },
+        {
             "name": "Survey Time",
             "command": "poll",
             "description": "Poll your friends to get answers!",

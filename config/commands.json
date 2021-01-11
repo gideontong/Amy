@@ -497,6 +497,12 @@
             ]
         },
         {
+            "name": "See Taiwan",
+            "command": "taiwan",
+            "description": "See the beauitful landscape and scenery of Taiwan!",
+            "alias": []
+        },
+        {
             "name": "Tic Tac Toe",
             "command": "tictactoe",
             "description": "Play tic-tac-toe against your friends in a 1v1 battle to the death.",

@@ -279,6 +279,12 @@
             "alias": []
         },
         {
+            "name": "See South Korea",
+            "command": "korea",
+            "description": "See pictures of Korea, but not Pyeongyang. Because yes.",
+            "alias": []
+        },
+        {
             "name": "Leo GPS Tracker",
             "command": "locate",
             "description": "See where in the world a user is!",

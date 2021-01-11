@@ -31,7 +31,7 @@ function generateLeaderboard(counter) {
     }
     const warning = 'More than 10 people on the leaderboard is currently unsupported, so it may look weird.\n\n';
     let description = new String();
-    counter.forEach(count, user => {
+    counter.forEach((count, user) => {
         description += `${user}: ${count}`;
     });
     return warning + description;

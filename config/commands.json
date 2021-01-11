@@ -111,6 +111,12 @@
             "alias": []
         },
         {
+            "name": "See China",
+            "command": "china",
+            "description": "The mainland exists?",
+            "alias": []
+        },
+        {
             "name": "Flip a Coin",
             "command": "coinflip",
             "description": "Gives you a coinflip.",

@@ -29,10 +29,9 @@ function generateLeaderboard(counter) {
     if (counter.size == 0) {
         return 'There are no pinned messages in this channel.';
     }
-    const warning = 'More than 10 people on the leaderboard is currently unsupported, so it may look weird.\n\n';
     let description = new String();
     counter.forEach((count, user) => {
-        description += `${user}: ${count}`;
+        description += `${user}: ${count}\n`;
     });
     return warning + description;
 }

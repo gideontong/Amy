@@ -193,6 +193,12 @@
             "alias": []
         },
         {
+            "name": "See Eritrea",
+            "command": "eritrea",
+            "description": "We always forget about East Africa.",
+            "alias": []
+        },
+        {
             "name": "Currency Exchange Rate",
             "command": "exchangerate",
             "description": "Get the current currency exchange rates.",

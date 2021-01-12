@@ -241,6 +241,12 @@
             "alias": []
         },
         {
+            "name": "See Ghana",
+            "command": "ghana",
+            "description": "You might've seen East Africa, but how about West Africa?",
+            "alias": []
+        },
+        {
             "name": "Source Code",
             "command": "github",
             "description": "See my source code!",

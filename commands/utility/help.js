@@ -18,7 +18,7 @@ const helpEmbed = {
  */
 module.exports = async (msg, args) => {
     if (args.length > 1) {
-        require('./command')(client, msg, args);
+        require('./command')(msg, args);
         return;
     }
     let repeat = Math.floor(Math.random() * 10);

@@ -2,9 +2,9 @@ const filled = '▰';
 const unfilled = '▱';
 const colors = 0xFFFFFF;
 
-const { currency } = require('../config/economy.json');
-const { getProfile } = require('../lib/Member');
-const { calculateLevel, getRank } = require('../lib/Achievement');
+const { currency } = require('../../config/economy.json');
+const { getProfile } = require('../../lib/Member');
+const { calculateLevel, getRank } = require('../../lib/Achievement');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

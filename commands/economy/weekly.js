@@ -1,5 +1,5 @@
-const { currency, passives } = require('../config/economy.json');
-const { checkCooldown, updateBalance } = require("../lib/Member");
+const { currency, passives } = require('../../config/economy.json');
+const { checkCooldown, updateBalance } = require('../../lib/Member');
 
 /**
  * Get your weeklies!

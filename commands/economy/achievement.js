@@ -1,4 +1,4 @@
-const { getAchievement } = require('../lib/Achievement');
+const { getAchievement } = require('../../lib/Achievement');
 
 /**
  * Look at an achievement

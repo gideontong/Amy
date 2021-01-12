@@ -1,10 +1,10 @@
 // Imports from local config files
-const config = require('../config/config.json');
+const config = require('../../config/config.json');
 const targets = config.targets;
 
 // Imports from dependencies
-const { generateAchievementProgress } = require('../lib/Achievement');
-const { extractSnowflake } = require('../lib/Validation');
+const { generateAchievementProgress } = require('../../lib/Achievement');
+const { extractSnowflake } = require('../../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running achievements command

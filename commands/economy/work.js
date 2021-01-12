@@ -1,8 +1,8 @@
 const colors = 0xFFFFFF;
 const icon = 'https://media1.giphy.com/media/cYy90i7ZuUjByBCqGU/giphy.gif';
 
-const { currency } = require('../config/economy.json');
-const { workJob } = require("../lib/MemberLoad")
+const { currency } = require('../../config/economy.json');
+const { workJob } = require("../../lib/MemberLoad")
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

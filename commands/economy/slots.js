@@ -25,7 +25,7 @@ const warnings = [
 const invalidBet = "You didn't provide a valid bet, so we've automatically used $5.";
 
 const { MessageEmbed } = require('discord.js');
-const { updateBalance, getBalance } = require('../lib/Member');
+const { updateBalance, getBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -34,7 +34,7 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    const debug = args[0] == '~debugslots';
+    const debug = false; // Reimplement debug function one day
     const user = msg.author;
     let bet = 5;
     if (args.length > 1) {

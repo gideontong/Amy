@@ -1,7 +1,7 @@
 const colors = 0xFFFFFF;
 
 const { MessageEmbed } = require("discord.js");
-const { getRank } = require("../lib/Achievement")
+const { getRank } = require("../../lib/Achievement")
 
 /**
  * Get a rank info

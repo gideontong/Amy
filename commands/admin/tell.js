@@ -1,4 +1,4 @@
-const { validChannel, extractSnowflake } = require('../lib/Validation');
+const { validChannel, extractSnowflake } = require('../../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 /**

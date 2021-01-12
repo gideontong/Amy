@@ -1,5 +1,5 @@
-const { setBalance } = require('../lib/Member');
-const { extractSnowflake } = require('../lib/Validation');
+const { setBalance } = require('../../lib/Member');
+const { extractSnowflake } = require('../../lib/Validation');
 const log = require('log4js').getLogger('amy');
 
 /**

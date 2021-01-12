@@ -1,4 +1,4 @@
-const { deleteJob } = require("../lib/Member")
+const { deleteJob } = require("../../lib/Member")
 
 /**
  * Quit your job!

@@ -1,9 +1,9 @@
 const colors = 0xFFFFFF;
 const perPage = 7;
 
-const { currency } = require('../config/economy.json');
-const { getJobs } = require("../lib/Economy");
-const { getLevel } = require("../lib/MemberLoad");
+const { currency } = require('../../config/economy.json');
+const { getJobs } = require("../../lib/Economy");
+const { getLevel } = require("../../lib/MemberLoad");
 const { MessageEmbed } = require('discord.js');
 
 /**

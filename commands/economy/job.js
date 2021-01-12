@@ -1,5 +1,5 @@
-const { isValidJob } = require('../lib/Economy');
-const { setJob } = require('../lib/MemberLoad');
+const { isValidJob } = require('../../lib/Economy');
+const { setJob } = require('../../lib/MemberLoad');
 const log = require('log4js').getLogger('amy');
 
 /**

@@ -1,5 +1,5 @@
-const { currency } = require('../config/economy.json');
-const { getBalance } = require('../lib/Member');
+const { currency } = require('../../config/economy.json');
+const { getBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**

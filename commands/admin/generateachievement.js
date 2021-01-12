@@ -1,10 +1,10 @@
 // Imports from local config files
-const config = require('../config/config.json');
+const config = require('../../config/config.json');
 const targets = config.targets;
 
 // Imports from dependencies
 const { MessageAttachment } = require('discord.js');
-const { generateAchievementBanner } = require('../lib/Achievement');
+const { generateAchievementBanner } = require('../../lib/Achievement');
 const log = require('log4js').getLogger('amy');
 
 // Handler for running generateachievement command

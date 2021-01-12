@@ -1,6 +1,6 @@
 const error = 'Send money to friends with `pay <user> <amount>`';
 
-const { transferBalance } = require('../lib/Member');
+const { transferBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**

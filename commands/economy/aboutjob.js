@@ -6,7 +6,7 @@ const shiftStrings = {
     'day': 'Standard 9-5'
 }
 
-const { currency, jobs } = require('../config/economy.json');
+const { currency, jobs } = require('../../config/economy.json');
 const { MessageEmbed } = require('discord.js');
 
 /**

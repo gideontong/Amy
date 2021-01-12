@@ -1,7 +1,7 @@
 const timeout = 600;
 const googleBlue = 0x4C8BF5;
 
-const { getGoogleSearch } = require('../lib/Internet');
+const { getGoogleSearch } = require('../../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 
 /**

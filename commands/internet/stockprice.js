@@ -2,9 +2,9 @@ const host = 'www.alphavantage.co';
 const endpoint = '/query';
 const colors = 0xFFFFFF;
 
-const { prefix } = require('../config/config.json');
-const { stocks } = require('../config/secrets.json');
-const { authenticatedGet } = require('../lib/Internet');
+const { prefix } = require('../../config/config.json');
+const { stocks } = require('../../config/secrets.json');
+const { authenticatedGet } = require('../../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

@@ -4,8 +4,8 @@ const endpoint = '/get';
 const error = 'Hmm... something went wrong. Ping Gideon for help.';
 const help = 'To use this command, type translate <language> <statement>, like translate Spanish Hello!';
 
-const { pairs, names } = require('../config/languages.json');
-const { request } = require('../lib/Internet');
+const { pairs, names } = require('../../config/languages.json');
+const { request } = require('../../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

@@ -1,7 +1,7 @@
 const host = 'icanhazdadjoke.com';
 const endpoint = '/';
 
-const { authenticatedGet } = require('../lib/Internet');
+const { authenticatedGet } = require('../../lib/Internet');
 
 /**
  * You aren't funny...

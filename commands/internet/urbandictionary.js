@@ -2,7 +2,7 @@ const host = 'api.urbandictionary.com'
 const endpoint = '/v0/define';
 const colors = 0xFFFFFF;
 
-const { request } = require('../lib/Internet');
+const { request } = require('../../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

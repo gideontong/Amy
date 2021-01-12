@@ -2,8 +2,8 @@ const host = 'api.openweathermap.org';
 const endpoint = '/data/2.5/weather';
 const colors = 0xFFFFFF;
 
-const { weather: key } = require('../config/secrets.json');
-const { authenticatedGet } = require('../lib/Internet');
+const { weather: key } = require('../../config/secrets.json');
+const { authenticatedGet } = require('../../lib/Internet');
 const { MessageEmbed } = require('discord.js');
 const log = require('log4js').getLogger('amy');
 

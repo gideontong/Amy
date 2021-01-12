@@ -9,7 +9,7 @@ const fallback = 'https://i.imgur.com/YoH3L58.png';
 const colors = 0xFFFFFF;
 
 const { MessageEmbed } = require('discord.js');
-const { authenticatedGet } = require('../lib/Internet');
+const { authenticatedGet } = require('../../lib/Internet');
 
 /**
  * Get a random XKCD

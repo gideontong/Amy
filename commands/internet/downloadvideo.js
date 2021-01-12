@@ -1,4 +1,4 @@
-const { prefix } = require('../config/config.json');
+const { prefix } = require('../../config/config.json');
 const log = require('log4js').getLogger('amy');
 const { getInfo } = require('youtube-dl');
 

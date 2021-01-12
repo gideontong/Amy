@@ -17,6 +17,7 @@ module.exports = async message => {
     if (message.content[0] == prefix.amy) {
         commands = message.content.split(' ');
         toRun = commands[0].slice(1).toLowerCase();
+        let cmdFile;
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {
             if (!permissions.users.admin.includes(message.author.id)) {
@@ -32,9 +33,10 @@ module.exports = async message => {
                     return;
                 }
             }
-            let cmdFile;
             if (toRun in foldermap) {
                 cmdFile = require(`../commands/${foldermap[toRun]}/${toRun}.js`);
+            } else {
+                return;
             }
         } catch (err) {
             log.warn(`${message.author.tag} failed to run ${message.content}`);

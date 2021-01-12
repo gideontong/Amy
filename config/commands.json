@@ -486,6 +486,12 @@
             "alias": []
         },
         {
+            "name": "See Russia",
+            "command": "russia",
+            "description": "Communism?",
+            "alias": []
+        },
+        {
             "name": "Google",
             "command": "search",
             "description": "Do a barrel roll? Or just search on the internet.",

@@ -3,6 +3,7 @@ const interdasting = 'https://i.imgur.com/9h7eFti.png';
 const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
+const foldermap = require('../config/foldermap.json');
 const { isIgnored } = require('../lib/Validation');
 const { countAction, countCommand } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
@@ -31,7 +32,9 @@ module.exports = async message => {
                     return;
                 }
             }
-            cmdFile = require(`../commands/${toRun}.js`);
+            if (toRun in foldermap) {
+                cmdFile = require(`../commands/${foldermap[toRun]}/${toRun}.js`);
+            }
         } catch (err) {
             log.warn(`${message.author.tag} failed to run ${message.content}`);
             return;

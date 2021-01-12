@@ -1,5 +1,5 @@
-const { timeSinceSnowflake } = require('../lib/Today');
-const { validSnowflake } = require('../lib/Validation');
+const { timeSinceSnowflake } = require('../../lib/Today');
+const { validSnowflake } = require('../../lib/Validation');
 const log = require('log4js').getLogger('amy')
 
 /**

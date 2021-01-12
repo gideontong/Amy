@@ -1,4 +1,4 @@
-const { rules } = require('../config/messages.json');
+const { rules } = require('../../config/messages.json');
 
 /**
  * Returns 708 server rules

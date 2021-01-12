@@ -1,7 +1,7 @@
 const colors = 0xFFFFFF;
 const perPage = 7;
 
-const { commands } = require('../config/commands.json');
+const { commands } = require('../../config/commands.json');
 const { MessageEmbed } = require('discord.js');
 
 /**

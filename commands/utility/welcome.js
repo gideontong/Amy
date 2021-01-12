@@ -1,4 +1,4 @@
-const { welcome } = require('../config/messages.json');
+const { welcome } = require('../../config/messages.json');
 const log = require('log4js').getLogger('amy');
 
 /**

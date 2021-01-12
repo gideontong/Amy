@@ -1,7 +1,7 @@
 const colors = 0xFFFFFF;
 const msHours = 3600000;
 
-const { emotes } = require('../config/config.json');
+const { emotes } = require('../../config/config.json');
 const { MessageEmbed } = require("discord.js");
 
 /**

@@ -1,6 +1,6 @@
 const colors = 0xFFFFFF;
 
-const { getCommand } = require('../lib/Help');
+const { getCommand } = require('../../lib/Help');
 const { MessageEmbed } = require('discord.js');
 
 /**

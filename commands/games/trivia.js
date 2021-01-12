@@ -18,8 +18,8 @@ const genericFailure = {
     }
 };
 
-const { authenticatedGet } = require('../lib/Internet');
-const { shuffle } = require('../lib/MagicNumbers');
+const { authenticatedGet } = require('../../lib/Internet');
+const { shuffle } = require('../../lib/MagicNumbers');
 const log = require('log4js').getLogger('amy');
 
 /**

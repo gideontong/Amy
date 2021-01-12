@@ -2,13 +2,13 @@ const log = require('log4js').getLogger('amy');
 
 /**
  * Reacts to the last message with an emote of choice (if possible)
- * @param {Message} message Command
+ * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (message, args) => {
+module.exports = async (msg, args) => {
     var emoji;
     if (args.length < 2) {
-        message.channel.send('You need to provide an emote!');
+        msg.channel.send('You need to provide an emote!');
         return;
     }
     if (isNaN(args[1])) {
@@ -23,9 +23,9 @@ module.exports = async (message, args) => {
         emoji = msg.client.emojis.resolve(args[1]);
     }
     if (emoji) {
-        message.delete()
+        msg.delete()
             .catch(err => log.warn(`Tried to delete a message but got ${err}`));
-        let messages = message.channel.messages.cache;
+        let messages = msg.channel.messages.cache;
         if (messages.size > 1) {
             const target = messages.keyArray()[messages.size - 2];
             try {
@@ -37,10 +37,10 @@ module.exports = async (message, args) => {
                 log.error(`While trying to react I got ${err}`);
             }
         } else {
-            message.channel.send("I couldn't find any messages in this channel to react to. Either I'm still loading or there actually isn't any messages here.");
+            msg.channel.send("I couldn't find any messages in this channel to react to. Either I'm still loading or there actually isn't any messages here.");
         }
     } else {
-        message.channel.send("I couldn't find that emote...");
+        msg.channel.send("I couldn't find that emote...");
         log.warn(`User tried to react with ${args[1]}`)
     }
 }

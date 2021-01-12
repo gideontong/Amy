@@ -32,7 +32,7 @@ module.exports = async message => {
                     return;
                 }
             }
-            let cmdFile = null;
+            let cmdFile;
             if (toRun in foldermap) {
                 cmdFile = require(`../commands/${foldermap[toRun]}/${toRun}.js`);
             }

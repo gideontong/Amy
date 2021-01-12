@@ -220,7 +220,7 @@ var map = {
     'ÿ': '◻︎'
 };
 
-const { characterReplace } = require('../lib/MagicText');
+const { characterReplace } = require('../../lib/MagicText');
 
 /**
  * Convert text to wingdings

@@ -25,7 +25,7 @@ const map = {
     }
 }
 
-const { translate } = require('../lib/MagicText');
+const { translate } = require('../../lib/MagicText');
 
 /**
  * Shakespeare text generator

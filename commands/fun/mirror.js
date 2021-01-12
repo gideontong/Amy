@@ -64,7 +64,7 @@ const map = {
     'Z': 'Z'
 };
 
-const { characterReplace } = require('../lib/MagicText');
+const { characterReplace } = require('../../lib/MagicText');
 
 /**
  * Mirror text backwards

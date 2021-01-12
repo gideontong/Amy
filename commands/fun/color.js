@@ -1,4 +1,4 @@
-const { colors } = require('../config/colortable.json');
+const { colors } = require('../../config/colortable.json');
 const { MessageEmbed } = require('discord.js');
 
 /**

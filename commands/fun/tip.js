@@ -1,5 +1,5 @@
 const colors = 0xFFFFFF;
-const { tips } = require('../config/fun.json');
+const { tips } = require('../../config/fun.json');
 const { MessageEmbed } = require('discord.js');
 
 /**

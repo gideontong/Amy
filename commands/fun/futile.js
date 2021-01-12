@@ -1,4 +1,4 @@
-const { sankeys } = require('../config/fun.json');
+const { sankeys } = require('../../config/fun.json');
 
 /**
  * Yes, life is futile

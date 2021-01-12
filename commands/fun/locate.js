@@ -1,4 +1,4 @@
-const { trolled } = require('../config/snowflakes.json');
+const { trolled } = require('../../config/snowflakes.json');
 const { MessageAttachment } = require('discord.js');
 
 /**

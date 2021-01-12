@@ -63,7 +63,7 @@ const map = {
     "Z": "𝓩"
 };
 
-const { characterReplace } = require('../lib/MagicText');
+const { characterReplace } = require('../../lib/MagicText');
 
 /**
  * Convert text to cursive

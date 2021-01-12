@@ -1,4 +1,4 @@
-const { extractSnowflake } = require('../lib/Validation');
+const { extractSnowflake } = require('../../lib/Validation');
 
 /**
  * Pings a desired person with an annoying message

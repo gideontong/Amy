@@ -3,7 +3,7 @@ const host = 'pubchem.ncbi.nlm.nih.gov';
 const endpoint = '/rest/pug_view/data/compound/';
 const search = '/rest/pug/compound/fastformula/';
 
-const { authenticatedGet } = require("../lib/Internet");
+const { authenticatedGet } = require("../../lib/Internet");
 const { MessageEmbed } = require("discord.js");
 const log = require('log4js').getLogger('amy');
 

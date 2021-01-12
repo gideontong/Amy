@@ -2,7 +2,7 @@ const host = 'api.waifulabs.com';
 const endpoint = '/generate';
 
 const { MessageAttachment } = require("discord.js");
-const { authenticatedPost } = require("../lib/Internet");
+const { authenticatedPost } = require("../../lib/Internet");
 const log = require('log4js').getLogger('amy');
 
 /**

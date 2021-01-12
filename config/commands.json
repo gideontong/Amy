@@ -321,6 +321,12 @@
             "alias": []
         },
         {
+            "name": "See Kenya",
+            "command": "kenya",
+            "description": "Forget scammers, see the beauitful country of Kenya.",
+            "alias": []
+        },
+        {
             "name": "See South Korea",
             "command": "korea",
             "description": "See pictures of Korea, but not Pyeongyang. Because yes.",

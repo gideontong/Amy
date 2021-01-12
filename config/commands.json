@@ -199,6 +199,12 @@
             "alias": []
         },
         {
+            "name": "See Ethiopia",
+            "command": "ethiopia",
+            "description": "If you want a bigger country than Eritrea in East Africa, this is for you.",
+            "alias": []
+        },
+        {
             "name": "Currency Exchange Rate",
             "command": "exchangerate",
             "description": "Get the current currency exchange rates.",

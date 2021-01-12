@@ -1,6 +1,6 @@
 const subreddit = 'creepypms';
 
-const { getRedditImage } = require('../lib/Internet');
+const { getRedditImage } = require('../../lib/Internet');
 const log = require('log4js').getLogger('amy');
 
 /**

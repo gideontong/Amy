@@ -1,6 +1,6 @@
 const subreddit = 'osha';
 
-const { getRandomPost } = require('../../lib/Reddit');
+const { postToImage, getRandomPost } = require('../../lib/Reddit');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -13,9 +13,11 @@ module.exports = async (msg, args) => {
     getRandomPost(subreddit, function (data) {
         try {
             const posts = data.data.children;
-            const post = posts[Math.floor(Math.random() * posts.length)];
-            const link = post.data.url_overridden_by_dest;
-            if (link) msg.channel.send(link);
+            const post = posts[Math.floor(Math.random() * posts.length)].data;
+            if (post) {
+                const link = postToImage(post);
+                msg.channel.send(link);
+            }
             else {
                 log.warn(`Failed to get /r/osha image, got: ${link}`);
                 msg.channel.send('Something strange happened, try again?');

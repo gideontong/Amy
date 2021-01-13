@@ -7,7 +7,7 @@
 module.exports = async (msg, args) => {
     msg.channel.send('🏓 Pinging...').then((message) => {
         const start = new Date().valueOf();
-        const config = require('../config/config.json');
+        const config = require('../../config/config.json');
         const end = new Date().valueOf();
         message.edit({
             content: "🏓 Successfully ponged!",

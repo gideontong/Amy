@@ -2,7 +2,7 @@ const colors = 0xFFFFFF;
 const msHours = 3600000;
 
 const { emotes } = require('../../config/config.json');
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require('discord.js');
 
 /**
  * Create a poll for people to answer!
@@ -10,11 +10,11 @@ const { MessageEmbed } = require("discord.js");
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    if (args.length < 3 || isNaN(args[1])) {
+    if (args.length < 3) {
         msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
         return;
     }
-    const hours = parseFloat(args[1]);
+    const hours = isNaN(args[1]) ? 1 : parseFloat(args[1]);
     if (hours < 0.01) {
         msg.channel.send('Your poll has to expire in the future! Try again?');
         return;

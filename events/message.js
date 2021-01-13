@@ -1,4 +1,4 @@
-const { prefix, emotes, probabilities } = require('../config/config.json');
+const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
 const foldermap = require('../config/foldermap.json');

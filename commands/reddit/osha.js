@@ -12,9 +12,9 @@ module.exports = async (msg, args) => {
     // Special handler due to random posts not working
     getRandomPost(subreddit, function (data) {
         try {
-            const posts = data[0].data.children;
+            const posts = data.data.children;
             const post = posts[Math.floor(Math.random() * posts.length)];
-            const link = post.url_overridden_by_dest;
+            const link = post.data.url_overridden_by_dest;
             if (link) msg.channel.send(link);
             else {
                 log.warn(`Failed to get /r/osha image, got: ${link}`);

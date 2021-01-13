@@ -1,5 +1,3 @@
-const interdasting = 'https://i.imgur.com/9h7eFti.png';
-
 const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const responses = require('../config/responses.json');
@@ -65,11 +63,6 @@ module.exports = async message => {
                 + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
             message.reply(response);
             log.info(`${message.author.tag} requested a picture of Leo`);
-        } else if (sanitizedMessage.includes('interdasting')) {
-            message.channel.send(interdasting);
-        }
-        if (Math.random() < probabilities.parrotChance) {
-            message.react(`<a:maskParrot:${emotes.maskParrot}>`);
         }
     } catch (err) {
         log.error(`Something... happened? Error: ${err}`);

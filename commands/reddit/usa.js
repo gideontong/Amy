@@ -1,6 +1,6 @@
 const subreddit = 'unitedstatesofamerica';
 
-const { getRedditImage } = require('../../lib/Reddit');
+const { getRandomImage } = require('../../lib/Reddit');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -10,7 +10,7 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (msg, args) => {
     try {
-        getRedditImage(function (data = 'Loading...') {
+        getRandomImage(function (data = 'Loading...') {
             msg.channel.send(data);
         }, subreddit);
     } catch (err) {

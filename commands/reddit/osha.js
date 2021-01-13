@@ -1,6 +1,6 @@
 const subreddit = 'osha';
 
-const { getRedditImage } = require('../../lib/Reddit');
+const { getRandomImage } = require('../../lib/Reddit');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -11,7 +11,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (msg, args) => {
     return msg.channel.send('This command has been temporarily disabled due to high error rates.');
     try {
-        getRedditImage(function (data = 'Loading...') {
+        getRandomImage(function (data = 'Loading...') {
             msg.channel.send(data);
         }, subreddit);
     } catch (err) {

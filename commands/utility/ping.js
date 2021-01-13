@@ -12,7 +12,7 @@ module.exports = async (msg, args) => {
         message.edit({
             content: "🏓 Successfully ponged!",
             embed: {
-                title: `📶 ${client.user.username} Service Availability`,
+                title: `📶 ${msg.client.user.username} Service Availability`,
                 description: `Currently running on \`us-west-01.gid.network/discord\`. Issues? Contact [Gideon Tong](https://gideontong.com) for help.`,
                 fields: [
                     {
@@ -21,7 +21,7 @@ module.exports = async (msg, args) => {
                     },
                     {
                         name: "Server Connection Time",
-                        value: `${client.ws.ping}ms`
+                        value: `${msg.client.ws.ping}ms`
                     },
                     {
                         name: "Database Connection Time",
@@ -29,7 +29,7 @@ module.exports = async (msg, args) => {
                     },
                 ],
                 footer: {
-                    text: `Currently serving ${client.users.cache.size} users!`
+                    text: `Currently serving ${msg.client.users.cache.size} users!`
                 },
                 color: 0x18ffff
             }

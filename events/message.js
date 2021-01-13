@@ -13,8 +13,8 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (isIgnored(message, prefix.amy)) return;
     if (message.content[0] == prefix.amy) {
-        commands = message.content.split(' ');
-        toRun = commands[0].slice(1).toLowerCase();
+        let commands = message.content.split(' ');
+        let toRun = commands[0].slice(1).toLowerCase();
         let cmdFile;
         if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
         try {

@@ -29,7 +29,7 @@ module.exports = async (msg, args) => {
                     },
                 ],
                 footer: {
-                    text: `Currently serving ${msg.client.users.cache.size} users!`
+                    text: `Ping menu generated for ${msg.author.tag}!`
                 },
                 color: 0x18ffff
             }

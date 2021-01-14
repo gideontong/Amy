@@ -23,12 +23,15 @@ def to_JSON():
     with open(in_file, encoding='utf-8') as csv_file, open(out_file, 'w', encoding='utf-8') as json_file:
         csv_reader = reader(csv_file)
         for command in csv_reader:
+            alias = command['Aliases'].split(',')
+            if alias == ['']:
+                alias = []
             data[command['Command']] = {
                 'command': command['Command'],
                 'name': command['Name'],
                 'description': command['Description'],
                 'category': command['Category'],
-                'alias': command['Aliases'].split(','),
+                'alias': alias,
                 'flags': {
                     'admin': command['Admin'] == 'TRUE',
                     'premium': command['Premium'] == 'TRUE',

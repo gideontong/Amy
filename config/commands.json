@@ -4,9 +4,7 @@
         "name": "Magic 8 Ball",
         "description": "Get a fortune told with magic 8 ball!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -23,9 +21,7 @@
         "name": "Amy Job Board",
         "description": "Learn about a job!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -61,9 +57,7 @@
         "name": "About Achievement",
         "description": "Learn about an achievement and get data!",
         "category": "achievements",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -80,9 +74,7 @@
         "name": "See Algeria",
         "description": "Algeria is a country in Africa. Have you heard?",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -99,9 +91,7 @@
         "name": "Be Annoying",
         "description": "Annoy your friends!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -181,9 +171,7 @@
         "name": "Binary Convertor",
         "description": "I convert stuff to 0101010 beep beep.",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -200,9 +188,7 @@
         "name": "Bold Cursive",
         "description": "\ud835\udcd1\ud835\udcf8\ud835\udcf5\ud835\udced \ud835\udcd2\ud835\udcfe\ud835\udcfb\ud835\udcfc\ud835\udcf2\ud835\udcff\ud835\udcee",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -219,9 +205,7 @@
         "name": "Latest Changes",
         "description": "See the latest changes to Amy.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -238,9 +222,7 @@
         "name": "See China",
         "description": "The mainland exists?",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -276,9 +258,7 @@
         "name": "Name of Color",
         "description": "Get the name of any color you want!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -295,9 +275,7 @@
         "name": "Command Info",
         "description": "Get info about a command!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -314,9 +292,7 @@
         "name": "Commands List",
         "description": "Get a list of the commands I support.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -333,9 +309,7 @@
         "name": "Creep List",
         "description": "Use this command to learn how to be creepy to girls!",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -352,9 +326,7 @@
         "name": "Cringetopia",
         "description": "Cringe at other people in this world.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -371,9 +343,7 @@
         "name": "Cursive Generator",
         "description": "Back to third grade yet?",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -390,9 +360,7 @@
         "name": "Daily Bonus",
         "description": "Get your daily allowance!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -429,9 +397,7 @@
         "name": "Documentation",
         "description": "See the full help pages.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -448,9 +414,7 @@
         "name": "Donate",
         "description": "Support the developer with a small donation!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -506,9 +470,7 @@
         "name": "See Egypt",
         "description": "Has a canal and a landbridge. Cool!",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -525,9 +487,7 @@
         "name": "See Eritrea",
         "description": "We always forget about East Africa.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -544,9 +504,7 @@
         "name": "See Ethiopia",
         "description": "Bigger than Erita, but still East Africa.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -603,9 +561,7 @@
         "name": "Life is Futile",
         "description": "Life is futile, deal with it (and feel bad).",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -622,9 +578,7 @@
         "name": "Minecraft Text Generator",
         "description": "Become Obi-Wan Kenobi with this text generator!",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -641,9 +595,7 @@
         "name": "Random Waifu",
         "description": "Get a random AI-generated waifu",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -660,9 +612,7 @@
         "name": "See Ghana",
         "description": "You might've seen East Africa, but how about West Africa?",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -679,9 +629,7 @@
         "name": "Source Code",
         "description": "See my source code!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -717,9 +665,7 @@
         "name": "Dr. Leo",
         "description": "Check how gay you and your friends are.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -736,9 +682,7 @@
         "name": "Not Dr. Leo",
         "description": "Check how straight you and your friends are.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -755,9 +699,7 @@
         "name": "Mother's Arms",
         "description": "Hug your friends. Go on.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -774,9 +716,7 @@
         "name": "Insane Asylum",
         "description": "Check yourself into a mental hospital.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -793,9 +733,7 @@
         "name": "Interdasting",
         "description": "That is interdasting.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -812,9 +750,7 @@
         "name": "Server Invite",
         "description": "Get a link to the support server.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -831,9 +767,7 @@
         "name": "See Japan",
         "description": "Kamikaze: Give me all your money or I'll kill myself!",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -850,9 +784,7 @@
         "name": "Get Hired",
         "description": "Apply for a job!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -869,9 +801,7 @@
         "name": "My Job Board",
         "description": "See the jobs you can work at!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -888,9 +818,7 @@
         "name": "Discord Birthday",
         "description": "See the day you joined Discord.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -907,9 +835,7 @@
         "name": "Dad Joke",
         "description": "Tell me a joke!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -926,9 +852,7 @@
         "name": "See Kenya",
         "description": "Forget scammers, see the beauitful country of Kenya.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -945,9 +869,7 @@
         "name": "See South Korea",
         "description": "See pictures of Korea, but not Pyeongyang. Because yes.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -964,9 +886,7 @@
         "name": "Leo GPS Tracker",
         "description": "See where in the world a user is!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -983,9 +903,7 @@
         "name": "Random Meme",
         "description": "Get a random meme (but not in real-time).",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1002,9 +920,7 @@
         "name": "Mirror Text",
         "description": "Mirror your text for a small fee of zero?",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1021,9 +937,7 @@
         "name": "Chemistry Info",
         "description": "Get accurate information about molecules",
         "category": "education",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": true,
@@ -1040,9 +954,7 @@
         "name": "Monthly Bonus",
         "description": "Get a monthly bonus for no reason...",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1059,9 +971,7 @@
         "name": "See North Korea",
         "description": "You can almost see Pyeongyang from here.",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1097,9 +1007,7 @@
         "name": "Patreon",
         "description": "Support us on Patreon with this simple link.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1116,9 +1024,7 @@
         "name": "Pay a Friend",
         "description": "Pay your friends using your balance!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1135,9 +1041,7 @@
         "name": "Perhaps Cow",
         "description": "Need a perhaps cow in your life? Perhaps.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1173,9 +1077,7 @@
         "name": "Pong!",
         "description": "Get the current server status of Amy.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1192,9 +1094,7 @@
         "name": "Pinned Leaderboard",
         "description": "See how many times your message got pinned?",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1211,9 +1111,7 @@
         "name": "Survey Time",
         "description": "Poll your friends to get answers!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1250,9 +1148,7 @@
         "name": "About Me",
         "description": "See your information and rank on Amy!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1269,9 +1165,7 @@
         "name": "Punch",
         "description": "Punch your enemies (or your friends, I won't judge).",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1288,9 +1182,7 @@
         "name": "QR Code",
         "description": "Generate a QR code!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1307,9 +1199,7 @@
         "name": "You're Fired!",
         "description": "Quit your job without 2 weeks needed!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1326,9 +1216,7 @@
         "name": "You're Famous",
         "description": "Get a random quote from a famous person.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1364,9 +1252,7 @@
         "name": "React to Message",
         "description": "React to the last message in a server with any emote.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1383,9 +1269,7 @@
         "name": "Server Rules",
         "description": "Get the server rules!",
         "category": "moderation",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1402,9 +1286,7 @@
         "name": "See Russia",
         "description": "Communism?",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1421,9 +1303,7 @@
         "name": "Google",
         "description": "Do a barrel roll? Or just search on the internet.",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": true,
@@ -1440,9 +1320,7 @@
         "name": "Shakespearify",
         "description": "Turn your words into poetry... Shakespeare style.",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1459,9 +1337,7 @@
         "name": "Angry Throw Shruggie",
         "description": "Forget tables, flip shruggies!",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1478,9 +1354,7 @@
         "name": "Backhand",
         "description": "Slap someone! They probably deserve it...",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1497,9 +1371,7 @@
         "name": "Slots Machine",
         "description": "Try your hand at electronic gambling.",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1516,9 +1388,7 @@
         "name": "Snowball Fight",
         "description": "Throw a snowball at a friend!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1554,9 +1424,7 @@
         "name": "/r/AmyBot",
         "description": "Get a link to the subreddit.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1573,9 +1441,7 @@
         "name": "xQc is Happy",
         "description": "See a cool xQc GIF.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1592,9 +1458,7 @@
         "name": "I am your master",
         "description": "make me a sandwich!",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1611,9 +1475,7 @@
         "name": "Suggestion Box",
         "description": "How to get new bot features?",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1650,9 +1512,7 @@
         "name": "See Taiwan",
         "description": "See the beauitful landscape and scenery of Taiwan!",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1669,9 +1529,7 @@
         "name": "Tic Tac Toe",
         "description": "Sometimes called naughts and crosses.",
         "category": "games",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1688,9 +1546,7 @@
         "name": "Change Timezone",
         "description": "Let Amy know your timezone.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1707,9 +1563,7 @@
         "name": "Tinder Browser",
         "description": "Tutorial on how to date online?",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1726,9 +1580,7 @@
         "name": "Free Tips",
         "description": "Get a free tip on life.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1745,9 +1597,7 @@
         "name": "Google Translate",
         "description": "Use ghetto Google Translate right in chat.",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": true,
@@ -1764,9 +1614,7 @@
         "name": "Trivia Game",
         "description": "Play trivia against yourself or friends.",
         "category": "games",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1783,9 +1631,7 @@
         "name": "Professional Streamer",
         "description": "See our Twitch channel!",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1822,9 +1668,7 @@
         "name": "See USA",
         "description": "See American Exceptionalism here!",
         "category": "world",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1841,9 +1685,7 @@
         "name": "The Useless Web",
         "description": "Get a random useless website... why.",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1860,9 +1702,7 @@
         "name": "Weather",
         "description": "Do I need a jacket?",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1879,9 +1719,7 @@
         "name": "Homepage",
         "description": "Get a link to my home website.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1898,9 +1736,7 @@
         "name": "Weekly Pay",
         "description": "Normally we get paid bi-weekly, but...",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1917,9 +1753,7 @@
         "name": "Wingdings",
         "description": "\ud83d\udd48\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udc4e\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udca7\ufe0e",
         "category": "text",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1936,9 +1770,7 @@
         "name": "Go to Work",
         "description": "Get paid for going to work!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1955,9 +1787,7 @@
         "name": "Comic of the Day",
         "description": "Get today's comic from XKCD.",
         "category": "internet",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -1974,9 +1804,7 @@
         "name": "My Salary",
         "description": "Get your yearly salary bonus here!",
         "category": "economy",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -2014,9 +1842,7 @@
         "name": "Professional Vlogger",
         "description": "Subscribe to the best YouTube channel.",
         "category": "utility",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -2033,9 +1859,7 @@
         "name": "Inappropiate Word",
         "description": "Don't use this inappropiate word.",
         "category": "fun",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": false,
@@ -2052,9 +1876,7 @@
         "name": "IRL Content",
         "description": "Misuse Discord when you have the web.",
         "category": "nsfw",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": true,
@@ -2071,9 +1893,7 @@
         "name": "Hand-Drawn Content",
         "description": "An unfortunate use of Discord.",
         "category": "nsfw",
-        "alias": [
-            ""
-        ],
+        "alias": [],
         "flags": {
             "admin": false,
             "premium": true,

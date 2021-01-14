@@ -1,8 +1,13 @@
-const { prefix } = require('../config/config.json');
+const { prefix, emotes } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const foldermap = require('../config/foldermap.json');
+const commands = require('../config/commands.json');
 const { isIgnored } = require('../lib/Validation');
-const { countAction, countCommand, checkCooldown } = require('../lib/Member');
+const {
+    getProfile,
+    countAction,
+    countCommand,
+    checkCooldown } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -14,7 +19,6 @@ module.exports = async message => {
     if (message.content[0] == prefix.amy) {
         let arguments = message.content.split(' ');
         let command = arguments[0].slice(1).toLowerCase();
-        let commandFile;
         if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
         if (!permissions.users.admin.includes(message.author.id)) {
             if (permissions.commands.unreleased.includes(command)) {
@@ -25,28 +29,24 @@ module.exports = async message => {
                 return;
             }
         }
-        try {
-            if (command in foldermap) {
-                commandFile = require(`../commands/${foldermap[command]}/${command}.js`);
-            } else {
-                return;
-            }
-        } catch (err) {
-            log.warn(`${message.author.tag} failed to run ${command}`);
-            return;
-        }
-        if (!commandFile) {
-            log.warn(`${message.author.tag} tried to run nonexistent command ${message.content}`);
-        } else {
-            commandFile(message, arguments).catch(err => {
-                log.error(`${message.author.tag} ran ${message.content} that resulted in error ${err}`);
+        if (command in commands) {
+            let cooldown = new Date();
+            getProfile(message.author.id, function (profile) {
+                const now = new Date();
+                const premium = now < profile.premium.expiry;
+                cooldown.setSeconds(
+                    cooldown.getSeconds() +
+                    commands[command].cooldown[premium ? 'premium' : 'standard']);
+                checkCooldown(message.author.id, command, function (data) {
+                    if (data) {
+                        message.react(emotes.no).catch(err => { });
+                    } else {
+                        execute(message, command);
+                    }
+                }, cooldown);
             });
-        }
-        // Statistics
-        try {
-            countCommand(message.author.id, command);
-        } catch (err) {
-            log.error(`Error with database: ${err}`);
+        } else {
+            execute(message, command);
         }
         return;
     }
@@ -55,5 +55,32 @@ module.exports = async message => {
         countAction(message.author.id, 'message');
     } catch (err) {
         log.error(`Error with database: ${err}`);
+    }
+}
+
+/**
+ * Execute a command
+ * @param {Message} message Message
+ * @param {String} command Command
+ */
+function execute(message, command) {
+    let commandFile;
+    if (command in foldermap) {
+        try {
+            commandFile = require(`../commands/${foldermap[command]}/${command}.js`);
+        } catch (err) {
+            return;
+        }
+    }
+    else return;
+    if (commandFile) {
+        commandFile(message, arguments).catch(err => {
+            log.error(`${message.author.tag} ran ${message.content} that resulted in: ${err}`);
+        });
+        try {
+            countCommand(message.author.id, command);
+        } catch (err) {
+            log.error(`Error logging command: ${err}`);
+        }
     }
 }

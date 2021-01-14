@@ -2,7 +2,7 @@ const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const foldermap = require('../config/foldermap.json');
 const { isIgnored } = require('../lib/Validation');
-const { countAction, countCommand } = require('../lib/Member');
+const { countAction, countCommand, checkCooldown } = require('../lib/Member');
 const log = require('log4js').getLogger('amy');
 
 /**
@@ -12,22 +12,22 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (isIgnored(message, prefix.amy)) return;
     if (message.content[0] == prefix.amy) {
-        let commands = message.content.split(' ');
-        let toRun = commands[0].slice(1).toLowerCase();
-        let cmdFile;
-        if (!RegExp(/^[a-z0-9]+$/i).test(toRun)) return;
+        let arguments = message.content.split(' ');
+        let command = arguments[0].slice(1).toLowerCase();
+        let commandFile;
+        if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
         try {
             if (!permissions.users.admin.includes(message.author.id)) {
-                if (permissions.commands.unreleased.includes(toRun)) {
+                if (permissions.commands.unreleased.includes(command)) {
                     message.reply('Command coming soon!');
                     return;
-                } else if (permissions.commands.admin.includes(toRun)) {
+                } else if (permissions.commands.admin.includes(command)) {
                     message.reply("You don't have permission to do that!");
                     return;
                 }
             }
-            if (toRun in foldermap) {
-                cmdFile = require(`../commands/${foldermap[toRun]}/${toRun}.js`);
+            if (command in foldermap) {
+                commandFile = require(`../commands/${foldermap[command]}/${command}.js`);
             } else {
                 return;
             }
@@ -35,16 +35,16 @@ module.exports = async message => {
             log.warn(`${message.author.tag} failed to run ${message.content}`);
             return;
         }
-        if (!cmdFile) {
+        if (!commandFile) {
             log.warn(`${message.author.tag} tried to run nonexistent command ${message.content}`);
         } else {
-            cmdFile(message, commands).catch(err => {
+            commandFile(message, arguments).catch(err => {
                 log.error(`${message.author.tag} ran ${message.content} that resulted in error ${err}`);
             });
         }
         // Statistics
         try {
-            countCommand(message.author.id, toRun);
+            countCommand(message.author.id, command);
         } catch (err) {
             log.error(`Error with database: ${err}`);
         }

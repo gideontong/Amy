@@ -15,6 +15,14 @@ module.exports = async (msg, args) => {
     }
     const command = commands[args[1]];
     if (command) {
+        if (command.flags.secret) {
+            const disabled = {
+                title: 'Easter Egg!',
+                description: 'That is a secret command. No-no!'
+            };
+            msg.channel.send({ embed: disabled });
+            return;
+        }
         const embed = {
             title: `${command.command}: ${command.name}`,
             description: command.description,

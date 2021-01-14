@@ -25,10 +25,6 @@ module.exports = async message => {
                 } else if (permissions.commands.admin.includes(toRun)) {
                     message.reply("You don't have permission to do that!");
                     return;
-                } else if (permissions.commands.premium.includes(toRun)) {
-                    // TODO: Implement premium
-                    message.reply('You need premium to do that! (Premium tiers are coming soon.)');
-                    return;
                 }
             }
             if (toRun in foldermap) {

@@ -338,6 +338,23 @@
             "premium": 1.0
         }
     },
+    "cum": {
+        "command": "cum",
+        "name": "Inappropiate Word",
+        "description": "Don't use this inappropiate word.",
+        "category": "fun",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": true,
+            "nsfw": true
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 1.0
+        }
+    },
     "cursive": {
         "command": "cursive",
         "name": "Cursive Generator",
@@ -556,6 +573,23 @@
             "premium": 1.0
         }
     },
+    "fuck": {
+        "command": "fuck",
+        "name": "IRL Content",
+        "description": "Misuse Discord when you have the web.",
+        "category": "nsfw",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": true,
+            "hidden": true,
+            "nsfw": true
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 1.0
+        }
+    },
     "futile": {
         "command": "futile",
         "name": "Life is Futile",
@@ -658,6 +692,23 @@
         "cooldown": {
             "standard": 1.0,
             "premium": 0.5
+        }
+    },
+    "hentai": {
+        "command": "hentai",
+        "name": "Hand-Drawn Content",
+        "description": "An unfortunate use of Discord.",
+        "category": "nsfw",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": true,
+            "hidden": true,
+            "nsfw": true
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 1.0
         }
     },
     "howgay": {
@@ -1121,6 +1172,23 @@
         "cooldown": {
             "standard": 300.0,
             "premium": 1.0
+        }
+    },
+    "premium": {
+        "command": "premium",
+        "name": "Get Premium",
+        "description": "Upgrade your Discord experience.",
+        "category": "utility",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 1.0,
+            "premium": 0.5
         }
     },
     "printemoji": {
@@ -1852,57 +1920,6 @@
         "cooldown": {
             "standard": 1.0,
             "premium": 0.5
-        }
-    },
-    "cum": {
-        "command": "cum",
-        "name": "Inappropiate Word",
-        "description": "Don't use this inappropiate word.",
-        "category": "fun",
-        "alias": [],
-        "flags": {
-            "admin": false,
-            "premium": false,
-            "hidden": true,
-            "nsfw": true
-        },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
-    },
-    "fuck": {
-        "command": "fuck",
-        "name": "IRL Content",
-        "description": "Misuse Discord when you have the web.",
-        "category": "nsfw",
-        "alias": [],
-        "flags": {
-            "admin": false,
-            "premium": true,
-            "hidden": true,
-            "nsfw": true
-        },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
-    },
-    "hentai": {
-        "command": "hentai",
-        "name": "Hand-Drawn Content",
-        "description": "An unfortunate use of Discord.",
-        "category": "nsfw",
-        "alias": [],
-        "flags": {
-            "admin": false,
-            "premium": true,
-            "hidden": true,
-            "nsfw": true
-        },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
         }
     }
 }

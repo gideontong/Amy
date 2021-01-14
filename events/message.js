@@ -16,23 +16,23 @@ module.exports = async message => {
         let command = arguments[0].slice(1).toLowerCase();
         let commandFile;
         if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
-        try {
-            if (!permissions.users.admin.includes(message.author.id)) {
-                if (permissions.commands.unreleased.includes(command)) {
-                    message.reply('Command coming soon!');
-                    return;
-                } else if (permissions.commands.admin.includes(command)) {
-                    message.reply("You don't have permission to do that!");
-                    return;
-                }
+        if (!permissions.users.admin.includes(message.author.id)) {
+            if (permissions.commands.unreleased.includes(command)) {
+                message.reply('Command coming soon!');
+                return;
+            } else if (permissions.commands.admin.includes(command)) {
+                message.reply("You don't have permission to do that!");
+                return;
             }
+        }
+        try {
             if (command in foldermap) {
                 commandFile = require(`../commands/${foldermap[command]}/${command}.js`);
             } else {
                 return;
             }
         } catch (err) {
-            log.warn(`${message.author.tag} failed to run ${message.content}`);
+            log.warn(`${message.author.tag} failed to run ${command}`);
             return;
         }
         if (!commandFile) {

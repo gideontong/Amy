@@ -3,7 +3,7 @@ const { prefix,
     probabilities,
     channels,
     emotes } = require('../../config/config.json');
-const { sarcasm } = require('../../config/responses.json');
+const { sarcasm } = require('../../config/fun.json');
 const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies

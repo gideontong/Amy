@@ -1,8 +1,7 @@
-const colors = 0xFFFFFF;
+const gold = 0xFFD700;
 const perPage = 7;
 
 const { commands } = require('../../config/commands.json');
-const { MessageEmbed } = require('discord.js');
 
 /**
  * List the commands avilable on the bot
@@ -12,23 +11,30 @@ const { MessageEmbed } = require('discord.js');
 module.exports = async (msg, args) => {
     var page = 1;
     var start = 0;
+    const keys = Object.keys(commands);
     if (args.length > 1 && !isNaN(args[1])) {
         let value = parseInt(args[1]);
         let begin = (value - 1) * perPage;
-        if (begin < commands.length && value > 0) {
+        if (begin < keys.length && value > 0) {
             page = value;
             start = begin;
         }
     }
     let description = '';
-    let embed = new MessageEmbed()
-        .setAuthor(msg.member.nickname ? msg.member.nickname : msg.client.user.username, msg.author.displayAvatarURL())
-        .setColor(Math.floor(Math.random() * colors))
-        .setFooter(`Page ${page} of ${Math.ceil(commands.length / perPage)}`);
     let end = start + perPage;
-    for (var i = start; i < (end > commands.length ? commands.length : end); i++) {
-        description += `**${commands[i].command}**: ${commands[i].description}\n`
+    for (var i = start; i < (end > keys.length ? keys.length : end); i++) {
+        description += `**${commands[keys[i]].command}**: ${commands[keys[i]].description}\n`
     }
-    embed.setDescription(description);
-    msg.channel.send(embed);
+    const embed = {
+        description: description,
+        author: {
+            name: msg.member.nickname ? msg.member.nickname : msg.client.user.username,
+            url: msg.author.displayAvatarURL()
+        },
+        color: gold,
+        footer: {
+            text: `Page ${page} of ${Math.ceil(commands.length / perPage)}`
+        }
+    };
+    msg.channel.send({ embed: embed });
 }

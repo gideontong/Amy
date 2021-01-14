@@ -1,4 +1,4 @@
-const link = 'https://www.patreon.com/dudesof708';
+const link = 'https://www.patreon.com/gideontong';
 
 /**
  * Returns the link to our Patreon page

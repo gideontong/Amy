@@ -1,4 +1,4 @@
-const { prefix, emotes } = require('../config/config.json');
+const { prefix, emotes, probabilities } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
 const foldermap = require('../config/foldermap.json');
 const commands = require('../config/commands.json');
@@ -34,6 +34,9 @@ module.exports = async message => {
             getProfile(message.author.id, function (profile) {
                 const now = new Date();
                 const premium = now < profile.premium.expiry;
+                if (!premium && Math.random() < probabilities.premiumAd) {
+                    message.channel.send('Reduce your message cooldown with a premium subscription!');
+                }
                 cooldown.setSeconds(
                     cooldown.getSeconds() +
                     commands[command].cooldown[premium ? 'premium' : 'standard']);

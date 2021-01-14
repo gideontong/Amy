@@ -34,8 +34,14 @@ module.exports = async message => {
             getProfile(message.author.id, function (profile) {
                 const now = new Date();
                 const premium = now < profile.premium.expiry;
-                if (!premium && Math.random() < probabilities.premiumAd) {
-                    message.channel.send('Reduce your message cooldown with a premium subscription!');
+                if (!premium) {
+                    if (commands[command].flags.premium) {
+                        message.channel.send(`You need to be premium to use this command! Try: \`${prefix.amy}premium\` for more information.`);
+                        return;
+                    }
+                    else if (Math.random() < probabilities.premiumAd) {
+                        message.channel.send('Reduce your message cooldown with a premium subscription!');
+                    }
                 }
                 cooldown.setSeconds(
                     cooldown.getSeconds() +

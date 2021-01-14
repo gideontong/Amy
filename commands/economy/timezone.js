@@ -25,6 +25,8 @@ module.exports = async (msg, args) => {
                         if (err) {
                             msg.channel.send(err);
                             log.error(`${msg.author.tag} called timezone with ${args[1]} but it failed.`);
+                        } else {
+                            msg.channel.send(`Your timezone has been set to: ${timezone}`);
                         }
                     }
                     return;

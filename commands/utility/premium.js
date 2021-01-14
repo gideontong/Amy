@@ -1,7 +1,7 @@
 /**
  * Premium information
- * @param {Message} message Command
+ * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async (message, args) => {
+module.exports = async (msg, args) => {
 }

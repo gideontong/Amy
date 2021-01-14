@@ -15,10 +15,11 @@
         "unreleased": [
             "achievements",
             "balancereaction",
-            "shop",
-            "vote",
+            "chess",
+            "premium",
             "rockpaperscissors",
-            "chess"
+            "shop",
+            "vote"
         ]
     },
     "users": {

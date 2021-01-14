@@ -16,7 +16,6 @@
             "achievements",
             "balancereaction",
             "shop",
-            "timezone",
             "vote",
             "rockpaperscissors",
             "chess"
@@ -32,8 +31,7 @@
             "stockprice",
             "ticker"
         ],
-        "vote": [],
-        "vote_soon": [
+        "vote": [
             "boldcursive",
             "galactic"
         ]

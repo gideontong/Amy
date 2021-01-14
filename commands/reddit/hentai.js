@@ -10,7 +10,7 @@ const subreddits = [
 ];
 
 const { probabilities } = require('../../config/config.json');
-const { antinsfw } = require('../../config/responses.json');
+const { antinsfw } = require('../../config/fun.json');
 const { getRandomImage } = require('../../lib/Reddit');
 const log = require('log4js').getLogger('amy');
 

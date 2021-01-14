@@ -31,8 +31,9 @@ module.exports = async (msg, args) => {
         .setDescription(message)
         .setFooter(`This poll expires ${hours < 1.5 ? Math.floor(hours * 60) : Math.round(hours)} ${hours < 1.5 ? 'minutes' : 'hours'} after it starts.`)
         .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username} is starting a new poll!`);
+    const options = [emotes.yes, emotes.no, emotes.maybe];
     const filter = (reaction, user) => {
-        return reaction.emoji.id == emotes.yes || reaction.emoji.id == emotes.no;
+        return options.some(emoji => emoji == reaction.emoji.id);
     }
     const time = Math.floor(hours * msHours);
     msg.channel.send(embed)
@@ -40,31 +41,35 @@ module.exports = async (msg, args) => {
             message.react(emotes.yes);
             message.react(emotes.no);
             const collector = message.createReactionCollector(filter, { dispose: true, time: time });
-            let yes = 0, no = 0;
+            let answers = [0, 0, 0];
             collector.on('collect', function (reaction, user) {
                 if (user.bot)
                     return;
                 if (reaction.emoji.id == emotes.yes) {
-                    yes++;
+                    answers[0]++;
                 } else if (reaction.emoji.id == emotes.no) {
-                    no++;
+                    answers[1]++;
+                } else if (reaction.emoji.id == emotes.maybe) {
+                    answers[2]++;
                 }
                 embed
                     .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(yes, no));
+                    .addField('Vote Tallies', getTallies(answers));
                 message.edit(embed);
             });
             collector.on('remove', function (reaction, user) {
                 if (user.bot)
                     return;
                 if (reaction.emoji.id == emotes.yes) {
-                    yes--;
+                    answers[0]--;
                 } else if (reaction.emoji.id == emotes.no) {
-                    no--;
+                    answers[1]--;
+                } else if (reaction.emoji.id == emotes.maybe) {
+                    answers[2]--;
                 }
                 embed
                     .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(yes, no));
+                    .addField('Vote Tallies', getTallies(answers));
                 message.edit(embed);
             });
             collector.on('end', collected => {
@@ -76,17 +81,21 @@ module.exports = async (msg, args) => {
 
 /**
  * Get tallies string
- * @param {Number} yes Number of yes
- * @param {Number} no Number of no
+ * @param {Number[]} answers Count of answers
  */
-function getTallies(yes, no) {
-    if (yes + no == 0) {
+function getTallies(answers) {
+    const sum = answers.reduce((acc, tot) => acc + tot);
+    if (sum == 0) {
         return 'No one has voted yet!';
     }
-    let percentage = Math.floor(100 * yes / (yes + no));
+    let percentage = new Array();
+    answers.forEach(answer => {
+        percentage.push(Math.round(100 * answer / sum));
+    });
     let strings = [
-        `<a:yes:${emotes.yes}> ${yes} Votes (${percentage}%)`,
-        `<a:no:${emotes.no}> ${no} Votes (${100 - percentage}%)`
+        `<a:yes:${emotes.yes}> ${yes} Votes (${percentage[0]}%)`,
+        `<a:no:${emotes.no}> ${no} Votes (${percentage[1]}%)`,
+        `<a:maybe:${emotes.maybe}> ${maybe} Votes (${percentage[2]}%)`
     ];
     return strings.join('\n');
 }

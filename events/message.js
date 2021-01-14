@@ -1,6 +1,5 @@
 const { prefix } = require('../config/config.json');
 const permissions = require('../config/permissions.json');
-const responses = require('../config/responses.json');
 const foldermap = require('../config/foldermap.json');
 const { isIgnored } = require('../lib/Validation');
 const { countAction, countCommand } = require('../lib/Member');
@@ -50,18 +49,6 @@ module.exports = async message => {
             log.error(`Error with database: ${err}`);
         }
         return;
-    }
-    // Memes and fun
-    try {
-        let sanitizedMessage = message.cleanContent.toLowerCase();
-        if (sanitizedMessage.includes(' of leo')) {
-            response = responses.requester[Math.floor(Math.random() * responses.requester.length)]
-                + ": " + responses.photos[Math.floor(Math.random() * responses.photos.length)];
-            message.reply(response);
-            log.info(`${message.author.tag} requested a picture of Leo`);
-        }
-    } catch (err) {
-        log.error(`Something... happened? Error: ${err}`);
     }
     // Statistics
     try {

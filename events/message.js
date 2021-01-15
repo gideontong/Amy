@@ -17,7 +17,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (isIgnored(message, prefix.amy)) return;
     if (message.content[0] == prefix.amy) {
-        var arguments = message.content.split(' ');
+        let arguments = message.content.split(' ');
         let command = arguments[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
         if (!permissions.users.admin.includes(message.author.id)) {
@@ -50,13 +50,12 @@ module.exports = async message => {
                     if (data) {
                         message.react(emotes.stop).catch(err => { });
                     } else {
-                        log.info(arguments, Array.isArray(arguments), arguments.length);
-                        execute(message, command, arguments);
+                        execute(message, command);
                     }
                 }, cooldown);
             });
         } else {
-            execute(message, command, arguments);
+            execute(message, command);
         }
         return;
     }
@@ -72,10 +71,9 @@ module.exports = async message => {
  * Execute a command
  * @param {Message} message Message
  * @param {String} command Command
- * @param {Array} arguments Args
  */
-function execute(message, command, arguments) {
-    log.info(arguments, Array.isArray(arguments), arguments.length);
+function execute(message, command) {
+    const arguments = message.content.split(' ');
     let commandFile;
     if (command in foldermap) {
         try {

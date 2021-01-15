@@ -17,7 +17,6 @@ const helpEmbed = {
  * @param {Array} args Command arguments
  */
 module.exports = async (msg, args) => {
-    console.log(args);
     if (args.length > 1) {
         require('./command')(msg, args);
         return;

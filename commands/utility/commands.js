@@ -23,7 +23,7 @@ module.exports = async (msg, args) => {
     let description = '';
     let end = start + perPage;
     for (var i = start; i < (end > keys.length ? keys.length : end); i++) {
-        if (commmands[keys[i]].flags.hidden) continue;
+        if (commands[keys[i]].flags.hidden) continue;
         description += `**${commands[keys[i]].command}**: ${commands[keys[i]].description}\n`
     }
     const embed = {

@@ -18,6 +18,7 @@ module.exports = async (msg, args) => {
                     msg.channel.send(bottom);
                 })
                 .catch(collected => {
+                    message.delete();
                     msg.channel.send('...I am not sure there are any here. Try catching somewhere else?');
                 });
         })

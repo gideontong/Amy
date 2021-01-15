@@ -34,7 +34,7 @@ module.exports = async (msg, args) => {
         },
         color: gold,
         footer: {
-            text: `Page ${page} of ${Math.ceil(commands.length / perPage)}`
+            text: `Page ${page} of ${Math.ceil(keys.length / perPage)}`
         }
     };
     msg.channel.send({ embed: embed });

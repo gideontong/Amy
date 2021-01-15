@@ -29,6 +29,7 @@ module.exports = async message => {
                 return;
             }
         }
+        log.info(arguments, Array.isArray(arguments), arguments.length);
         if (command in commands) {
             let cooldown = new Date();
             getProfile(message.author.id, function (profile) {
@@ -55,7 +56,6 @@ module.exports = async message => {
                 }, cooldown);
             });
         } else {
-            log.info(arguments, Array.isArray(arguments), arguments.length);
             execute(message, command, arguments);
         }
         return;

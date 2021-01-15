@@ -1,6 +1,7 @@
 // Have a suggestion? File a pull request or contact Gideon#5433!
 const subreddits = [
     'beerandpizza',
+    'breadit',
     'bobsburgerscreations',
     'burgers',
     'cheeseburgers',

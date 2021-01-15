@@ -17,7 +17,7 @@ module.exports = async (msg, args) => {
         msg.mentions.users.size != 1 ||
         isNaN(args[2]) ||
         allowed.includes(args[3])) {
-        msg.channel.send('Grant premium status with `grantpremium <user> <length> <days|weeks|months|years>');
+        msg.channel.send('Grant premium status with `grantpremium <user> <length> <days|weeks|months|years>`');
     }
     const snowflake = msg.mentions.users.firstKey();
     let days = parseInt(args[2]);

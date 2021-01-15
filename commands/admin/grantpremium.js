@@ -6,6 +6,7 @@ const allowed = [
 ];
 
 const { setPremium } = require('../../lib/Member');
+const log = require('log4js').getLogger('amy');
 
 /**
  * Grants premium
@@ -34,6 +35,7 @@ module.exports = async (msg, args) => {
         default:
             break;
     }
+    log.info(`Granting premium with command: ${msg.content}`);
     setPremium(function (premium, expiry) {
         if (premium) {
             msg.channel.send(`Granted premium! <@${snowflake}>'s premium now expires on ${expiry.toDateString()}.`);

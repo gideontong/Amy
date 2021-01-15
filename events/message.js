@@ -55,6 +55,7 @@ module.exports = async message => {
                 }, cooldown);
             });
         } else {
+            log.info(arguments, Array.isArray(arguments), arguments.length);
             execute(message, command, arguments);
         }
         return;

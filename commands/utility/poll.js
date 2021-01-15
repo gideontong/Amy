@@ -40,6 +40,7 @@ module.exports = async (msg, args) => {
         .then(message => {
             message.react(emotes.yes);
             message.react(emotes.no);
+            message.react(emotes.maybe);
             const collector = message.createReactionCollector(filter, { dispose: true, time: time });
             let answers = [0, 0, 0];
             collector.on('collect', function (reaction, user) {

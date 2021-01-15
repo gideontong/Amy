@@ -50,12 +50,12 @@ module.exports = async message => {
                     if (data) {
                         message.react(emotes.no).catch(err => { });
                     } else {
-                        execute(message, command);
+                        execute(message, command, arguments);
                     }
                 }, cooldown);
             });
         } else {
-            execute(message, command);
+            execute(message, command, arguments);
         }
         return;
     }
@@ -72,7 +72,7 @@ module.exports = async message => {
  * @param {Message} message Message
  * @param {String} command Command
  */
-function execute(message, command) {
+function execute(message, command, arguments) {
     let commandFile;
     if (command in foldermap) {
         try {

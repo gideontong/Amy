@@ -17,8 +17,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async message => {
     if (isIgnored(message, prefix.amy)) return;
     if (message.content[0] == prefix.amy) {
-        let arguments = message.content.split(' ');
-        log.info(Array.isArray(arguments));
+        var arguments = message.content.split(' ');
         let command = arguments[0].slice(1).toLowerCase();
         if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
         if (!permissions.users.admin.includes(message.author.id)) {
@@ -32,7 +31,6 @@ module.exports = async message => {
         }
         if (command in commands) {
             let cooldown = new Date();
-            log.info(Array.isArray(arguments));
             getProfile(message.author.id, function (profile) {
                 const now = new Date();
                 const premium = now < profile.premium.expiry;

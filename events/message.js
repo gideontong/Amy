@@ -73,6 +73,7 @@ module.exports = async message => {
  * @param {String} command Command
  */
 function execute(message, command, arguments) {
+    log.info(arguments, typeof(arguments));
     let commandFile;
     if (command in foldermap) {
         try {

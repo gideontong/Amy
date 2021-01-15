@@ -1,10 +1,3 @@
-const allowed = [
-    'days',
-    'weeks',
-    'months',
-    'years'
-];
-
 const { setPremium } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
@@ -16,9 +9,9 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (msg, args) => {
     if (args.length != 4 ||
         msg.mentions.users.size != 1 ||
-        isNaN(args[2]) ||
-        allowed.includes(args[3])) {
+        isNaN(args[2])) {
         msg.channel.send('Grant premium status with `grantpremium <user> <length> <days|weeks|months|years>`');
+        return;
     }
     const snowflake = msg.mentions.users.firstKey();
     let days = parseInt(args[2]);

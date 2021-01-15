@@ -32,7 +32,7 @@ module.exports = async (msg, args) => {
             fields: [
                 {
                     name: 'Cooldowns',
-                    value: `Normal: ${standard}s\nPremium: ${premium}s`
+                    value: `Normal: ${standard}\nPremium: ${premium}`
                 },
                 {
                     name: 'Aliases',

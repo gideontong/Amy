@@ -94,9 +94,9 @@ function getTallies(answers) {
         percentage.push(Math.round(100 * answer / sum));
     });
     let strings = [
-        `<a:yes:${emotes.yes}> ${yes} Votes (${percentage[0]}%)`,
-        `<a:no:${emotes.no}> ${no} Votes (${percentage[1]}%)`,
-        `<a:maybe:${emotes.maybe}> ${maybe} Votes (${percentage[2]}%)`
+        `<a:yes:${emotes.yes}> ${answers[0]} Votes (${percentage[0]}%)`,
+        `<a:no:${emotes.no}> ${answers[1]} Votes (${percentage[1]}%)`,
+        `<a:maybe:${emotes.maybe}> ${answers[2]} Votes (${percentage[2]}%)`
     ];
     return strings.join('\n');
 }

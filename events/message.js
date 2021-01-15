@@ -48,7 +48,7 @@ module.exports = async message => {
                     commands[command].cooldown[premium ? 'premium' : 'standard']);
                 checkCooldown(message.author.id, command, function (data) {
                     if (data) {
-                        message.react(emotes.no).catch(err => { });
+                        message.react(emotes.stop).catch(err => { });
                     } else {
                         execute(message, command, arguments);
                     }

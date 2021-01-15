@@ -29,6 +29,10 @@ module.exports = async (msg, args) => {
             color: gold,
             fields: [
                 {
+                    name: 'Cooldowns',
+                    value: `Normal: ${command.cooldown.standard}s\nPremium: ${command.cooldown.premium}s`
+                },
+                {
                     name: 'Aliases',
                     value: command.alias.length ? command.alias.join() : 'No aliases for this command.'
                 }

@@ -1,6 +1,6 @@
 const top = 'https://i.imgur.com/RdiXD5N.png';
 const bottom = 'https://i.imgur.com/nG67qex.png';
-const timeout = 30;
+const timeout = 600;
 
 /**
  * Catch a gay!
@@ -8,18 +8,19 @@ const timeout = 30;
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
     const filter = message => {
         return !message.author.bot;
     }
-    msg.channel.send(top)
+    channel.send(top)
         .then(message => {
-            msg.channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
+            channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
                 .then(collected => {
-                    msg.channel.send(bottom);
+                    channel.send(bottom);
                 })
                 .catch(collected => {
-                    message.delete();
-                    msg.channel.send('...I am not sure there are any here. Try catching somewhere else?');
+                    message.edit('...I am not sure there are any here. Try catching somewhere else?')
+                        .catch(err => { });
                 });
         })
         .catch(err => { });

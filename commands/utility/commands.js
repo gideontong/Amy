@@ -1,7 +1,7 @@
 const gold = 0xFFD700;
 const perPage = 7;
 
-const { commands } = require('../../config/commands.json');
+const commands = require('../../config/commands.json');
 
 /**
  * List the commands avilable on the bot

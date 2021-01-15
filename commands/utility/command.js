@@ -1,7 +1,7 @@
 const gold = 0xFFD700;
 
 const commands = require('../../config/commands.json');
-const { MessageEmbed } = require('discord.js');
+const { formatTime } = require('../../lib/Today');
 
 /**
  * Get help for a command
@@ -23,6 +23,8 @@ module.exports = async (msg, args) => {
             msg.channel.send({ embed: disabled });
             return;
         }
+        const standard = formatTime(command.cooldown.standard);
+        const premium = formatTime(command.cooldown.premium);
         const embed = {
             title: `${command.command}: ${command.name}`,
             description: command.description,
@@ -30,7 +32,7 @@ module.exports = async (msg, args) => {
             fields: [
                 {
                     name: 'Cooldowns',
-                    value: `Normal: ${command.cooldown.standard}s\nPremium: ${command.cooldown.premium}s`
+                    value: `Normal: ${standard}s\nPremium: ${premium}s`
                 },
                 {
                     name: 'Aliases',

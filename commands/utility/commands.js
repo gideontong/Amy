@@ -30,7 +30,7 @@ module.exports = async (msg, args) => {
         description: description,
         author: {
             name: msg.member.nickname ? msg.member.nickname : msg.client.user.username,
-            url: msg.author.displayAvatarURL()
+            icon_url: msg.author.displayAvatarURL()
         },
         color: gold,
         footer: {

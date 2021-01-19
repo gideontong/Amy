@@ -6,6 +6,7 @@ const errorNSFW = {
         text: 'This post was brought to you by the anti-horny gang.'
     }
 };
+const allowedEndings = ['.png', '.jpg', '.gif', '.jpeg'];
 
 const { getRandomPost, postToImage } = require('../../lib/Reddit');
 
@@ -26,7 +27,9 @@ module.exports = async (msg, args) => {
                 msg.channel.send({ embed: errorNSFW });
             } else {
                 const date = data.created_utc ? new Date(data.created_utc * 1000) : new Date();
-                const image = postToImage(data);
+                var link = postToImage(data);
+                const ends = (ending) => link.endsWith(ending);
+                if (!link || allowedEndings.some(ends)) link = null;
                 const embed = {
                     title: data.title ? data.title : 'Post has no title!',
                     url: data.url ? data.url : 'https://old.reddit.com',
@@ -36,7 +39,7 @@ module.exports = async (msg, args) => {
                     },
                     timestamp: date.toISOString(),
                     image: {
-                        url: image ? image : null
+                        url: link
                     }
                 };
                 msg.channel.send({ embed: embed });

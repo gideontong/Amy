@@ -30,9 +30,17 @@ module.exports = async (msg, args) => {
                 var link = postToImage(data);
                 const ends = (ending) => link.endsWith(ending);
                 if (!link || allowedEndings.some(ends)) link = null;
+                var selftext = '';
+                if (data.selftext) {
+                    selftext = data.selftext.split('\n')[0];
+                    if (selftext.length > 150) {
+                        selftext = selftext.substring(0, 150);
+                    }
+                }
                 const embed = {
                     title: data.title ? data.title : 'Post has no title!',
                     url: data.url ? data.url : 'https://old.reddit.com',
+                    dscription: selftext,
                     color: 16733952,
                     author: {
                         name: `/r/${data.subreddit ? data.subreddit : 'all'}`

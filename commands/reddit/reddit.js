@@ -37,7 +37,8 @@ module.exports = async (msg, args) => {
                     image: {
                         url: image ? image : null
                     }
-                }
+                };
+                msg.channel.send({ embed: embed });
             }
         } else {
             msg.channel.send('Hmm... you sure this is a subredit? I couldn\'t find a post.');

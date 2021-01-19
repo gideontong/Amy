@@ -19,7 +19,8 @@ module.exports = async (msg, args) => {
         msg.channel.send('You need to provide me a subreddit to find a random post from!');
         return;
     }
-    getRandomPost('', function (data) {
+    const subreddit = encodeURIComponent(args[1]);
+    getRandomPost(subreddit, function (data) {
         if (data) {
             if (data.over_18) {
                 msg.channel.send({ embed: errorNSFW });

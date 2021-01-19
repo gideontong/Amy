@@ -1383,6 +1383,23 @@
             "premium": 0.5
         }
     },
+    "reddit": {
+        "command": "reddit",
+        "name": "Timewaster Roulette",
+        "description": "Get a random post from the subreddit of your choice.",
+        "category": "internet",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 30.0,
+            "premium": 5.0
+        }
+    },
     "rules": {
         "command": "rules",
         "name": "Server Rules",

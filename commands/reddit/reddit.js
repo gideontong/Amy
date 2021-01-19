@@ -34,7 +34,7 @@ module.exports = async (msg, args) => {
                 if (data.selftext) {
                     selftext = data.selftext.split('\n')[0];
                     if (selftext.length > 150) {
-                        selftext = selftext.substring(0, 150);
+                        selftext = selftext.substring(0, 150) + '...';
                     }
                 }
                 const embed = {

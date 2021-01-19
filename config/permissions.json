@@ -19,7 +19,8 @@
             "chess",
             "rockpaperscissors",
             "shop",
-            "vote"
+            "vote",
+            "subreddit"
         ]
     },
     "users": {

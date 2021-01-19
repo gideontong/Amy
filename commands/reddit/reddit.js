@@ -29,7 +29,7 @@ module.exports = async (msg, args) => {
                 const date = data.created_utc ? new Date(data.created_utc * 1000) : new Date();
                 var link = postToImage(data);
                 const ends = (ending) => link.endsWith(ending);
-                if (!link || allowedEndings.some(ends)) link = null;
+                if (!link || !allowedEndings.some(ends)) link = null;
                 var selftext = '';
                 if (data.selftext) {
                     selftext = data.selftext.split('\n')[0];

@@ -10,6 +10,8 @@ const helpEmbed = {
     }
 };
 
+const { prefix } = require('../../config/config.json');
+
 /**
  * Returns the help screen
  * @param {Client} client Discord client
@@ -21,10 +23,10 @@ module.exports = async (msg, args) => {
         require('./command')(msg, args);
         return;
     }
-    let repeat = Math.floor(Math.random() * 10);
-    let embed = {
-        "content": helpText.repeat(repeat),
-        "embed": helpEmbed
+    const repeat = Math.floor(Math.random() * 5);
+    const embed = {
+        content: helpText.repeat(repeat),
+        embed: helpEmbed
     };
     msg.channel.send(embed);
 }

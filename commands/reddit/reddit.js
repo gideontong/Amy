@@ -40,7 +40,7 @@ module.exports = async (msg, args) => {
                 const embed = {
                     title: data.title ? data.title : 'Post has no title!',
                     url: data.url ? data.url : 'https://old.reddit.com',
-                    dscription: selftext,
+                    description: selftext,
                     color: 16733952,
                     author: {
                         name: `/r/${data.subreddit ? data.subreddit : 'all'}`

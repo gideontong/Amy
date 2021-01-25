@@ -14,7 +14,8 @@ module.exports = async (msg, args) => {
         msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
         return;
     }
-    const hours = isNaN(args[1]) ? 1 : parseFloat(args[1]);
+    const providedHours = isNaN(args[1]);
+    const hours = providedHours ? 1 : parseFloat(args[1]);
     if (hours < 0.01) {
         msg.channel.send('Your poll has to expire in the future! Try again?');
         return;
@@ -23,7 +24,7 @@ module.exports = async (msg, args) => {
         return;
     }
     args.shift();
-    args.shift();
+    providedHours && args.shift();
     const message = args.join(' ');
     var embed = new MessageEmbed()
         .addField('Vote Tallies', 'No one has voted yet!')

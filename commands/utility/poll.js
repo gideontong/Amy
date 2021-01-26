@@ -25,7 +25,7 @@ module.exports = async (msg, args) => {
         return;
     }
     args.shift();
-    providedHours && args.shift();
+    if (providedHours) args.shift();
     const message = args.join(' ');
     var embed = new MessageEmbed()
         .addField('Vote Tallies', 'No one has voted yet!')

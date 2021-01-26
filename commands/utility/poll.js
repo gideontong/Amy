@@ -1,5 +1,6 @@
 const colors = 0xFFFFFF;
 const msHours = 3600000;
+const maxHours = 96;
 
 const { emotes } = require('../../config/config.json');
 const { MessageEmbed } = require('discord.js');
@@ -19,8 +20,8 @@ module.exports = async (msg, args) => {
     if (hours < 0.01) {
         msg.channel.send('Your poll has to expire in the future! Try again?');
         return;
-    } else if (hours > 24) {
-        msg.channel.send('Currently, polls beta only supports polls up to 24 hours in the future. More options are coming soon!');
+    } else if (hours > maxHours) {
+        msg.channel.send(`Currently, polls beta only supports polls up to ${maxHours} hours in the future. More options are coming soon!`);
         return;
     }
     args.shift();

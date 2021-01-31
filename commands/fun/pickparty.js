@@ -76,7 +76,7 @@ module.exports = async (msg, args) => {
         return channel.send({ embed: error });
     }
     const players = mentions.size == 0 ? 5 : mentions.size;
-    const users = mentions.array();
+    const users = mentions.keyArray();
     var idxs = new Set();
     while (idxs.size < players) {
         idxs.add(Math.floor(Math.random() * agents.length));
@@ -84,7 +84,7 @@ module.exports = async (msg, args) => {
     var idxsArray = Array.from(idxs.keys());
     var description = new String();
     for (let i = 0; i < players; i++) {
-        description += `${agents[idxsArray[i]].icon} ${agents[idxsArray[i]].name} ${mentions.size ? 'has been assigned to ' + users[i] : ''}\n`
+        description += `${agents[idxsArray[i]].icon} ${agents[idxsArray[i]].name} ${mentions.size ? 'has been assigned to <@' + users[i] + '>' : ''}\n`
     }
     channel.send({
         embed: {

@@ -84,7 +84,7 @@ module.exports = async (msg, args) => {
     var idxsArray = Array.from(idxs.keys());
     var description = new String();
     for (let i = 0; i < players; i++) {
-        description += `${agents[idxsArray[i]].icon} ${agents[idxsArray[i]].name} ${players ? 'has been assigned to ' + users[i] : ''}\n`
+        description += `${agents[idxsArray[i]].icon} ${agents[idxsArray[i]].name} ${mentions.size ? 'has been assigned to ' + users[i] : ''}\n`
     }
     channel.send({
         embed: {

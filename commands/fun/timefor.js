@@ -45,7 +45,7 @@ module.exports = async (msg, args) => {
         return channel.send({ embed: defaults.error });
     }
     const roll = Math.random();
-    if (args[1].startsWith('valorant') && roll > 0.7) {
+    if (args[1].startsWith('valorant') && roll < 0.7) {
         return channel.send({ embed: defaults.valorant });
     } else {
         return channel.send({ embed: defaults.failure });

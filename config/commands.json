@@ -1347,6 +1347,23 @@
             "premium": 0.5
         }
     },
+    "randomparty": {
+        "command": "randomparty",
+        "name": "Random Valorant Party",
+        "description": "Pick a random Valorant party to challenge with.",
+        "category": "fun",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 0.5
+        }
+    },
     "rank": {
         "command": "rank",
         "name": "Rank Image",

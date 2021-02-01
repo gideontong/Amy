@@ -91,7 +91,7 @@ const commands = require('../../config/commands.json');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-
+    const embed = processArguments(args);
     msg.channel.send({ embed: embed });
 }
 

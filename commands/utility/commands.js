@@ -122,6 +122,7 @@ function processArguments(args) {
  */
 function defaultScreen() {
     var embed = {
+        title: 'Commands Categories',
         description: 'With hundreds of commands, Amy is one of the more versatile bots!',
         fields: [],
         color: gold,
@@ -158,11 +159,8 @@ function pageListing(page, category = false) {
         description += `**${commands[keys[i]].command}**: ${commands[keys[i]].description}\n`
     }
     const embed = {
+        title: 'Commands Listing',
         description: description,
-        author: {
-            name: msg.member.nickname ? msg.member.nickname : msg.client.user.username,
-            icon_url: msg.author.displayAvatarURL()
-        },
         color: gold,
         footer: {
             text: `Page ${page} of ${Math.ceil(keys.length / perPage)}`

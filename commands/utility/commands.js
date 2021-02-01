@@ -151,6 +151,7 @@ function pageListing(page, category = false) {
         .filter(command => !category || commands[command].category == category);
     const begin = (page - 1) * perPage;
     const start = begin < keys.length ? begin : 0;
+    const end = start + perPage;
     let description = '';
     for (var i = start; i < (end > keys.length ? keys.length : end); i++) {
         if (commands[keys[i]].flags.hidden) continue;

@@ -149,12 +149,8 @@ function pageListing(page, category = false) {
     const keys = Object.keys(commands)
         .filter(command => !commands[command].flags.hidden)
         .filter(command => !category || commands[command].category == category);
-    var start = 0;
-    let begin = (page - 1) * perPage;
-    if (begin < keys.length && value > 0) {
-        page = value;
-        start = begin;
-    }
+    const begin = (page - 1) * perPage;
+    const start = begin < keys.length ? begin : 0;
     let description = '';
     for (var i = start; i < (end > keys.length ? keys.length : end); i++) {
         if (commands[keys[i]].flags.hidden) continue;

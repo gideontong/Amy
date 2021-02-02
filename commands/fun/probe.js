@@ -1,4 +1,5 @@
 const akovID = '727603104807256168';
+const timeout = 5;
 
 const determinstic = {
     prostate: {
@@ -34,6 +35,7 @@ module.exports = async (msg, args) => {
     const user = msg.mentions.users.size > 0 ? msg.mentions.users.first() : msg.author;
     const channel = msg.channel;
     if (akov) {
+        console.log(akov.presence.status);
         if (akov.presence.status != 'offline') {
             return channel.send('My co-conspirator Akov can help you with that.');
         } else {
@@ -58,7 +60,15 @@ module.exports = async (msg, args) => {
                     text: 'Wellness Check ✅ provided by AmyHealth'
                 }
             };
-            channel.send({ embed: embed });
+            channel.send(`Now probing ${user}...`)
+                .then(message => {
+                    setTimeout(() => {
+                        message.edit({
+                            content: '',
+                            embed: embed
+                        });
+                    }, timeout * 1000);
+                });
         }
     } else {
         channel.send("I can't find my co-conspirator, Akov... I kinda need him in order to do some probing.")

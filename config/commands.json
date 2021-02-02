@@ -1847,6 +1847,23 @@
             "premium": 3.0
         }
     },
+    "trump": {
+        "command": "trump",
+        "name": "Famous Trump Quote",
+        "description": "Get a quote from Trump's Twitter.",
+        "category": "internet",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 5.0
+        }
+    },
     "twitch": {
         "command": "twitch",
         "name": "Professional Streamer",

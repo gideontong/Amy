@@ -1279,6 +1279,23 @@
             "premium": 0.5
         }
     },
+    "probe": {
+        "command": "probe",
+        "name": "Prostate Checker",
+        "description": "Check someone's prostate.",
+        "category": "fun",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 10.0,
+            "premium": 0.5
+        }
+    },
     "profile": {
         "command": "profile",
         "name": "About Me",

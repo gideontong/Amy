@@ -31,11 +31,10 @@ const determinstic = {
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    const akov = await msg.client.users.cache.find(user => user.id == akovID).fetch();
+    const akov = msg.client.users.cache.find(user => user.id == akovID);
     const user = msg.mentions.users.size > 0 ? msg.mentions.users.first() : msg.author;
     const channel = msg.channel;
     if (akov) {
-        console.log(akov.presence.status);
         if (akov.presence.status != 'offline') {
             return channel.send('My co-conspirator Akov can help you with that.');
         } else {

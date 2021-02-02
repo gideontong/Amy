@@ -166,6 +166,23 @@
             "premium": 1.0
         }
     },
+    "bigpicture": {
+        "command": "bigpicture",
+        "name": "Big Picture",
+        "description": "See the bigger pictureTM. (Of your friends.)",
+        "category": "utility",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 5.0,
+            "premium": 0.5
+        }
+    },
     "binary": {
         "command": "binary",
         "name": "Binary Convertor",

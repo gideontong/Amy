@@ -31,7 +31,7 @@ const determinstic = {
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    const akov = msg.client.users.cache.find(user => user.id == akovID);
+    const akov = await msg.client.users.cache.find(user => user.id == akovID).fetch();
     const user = msg.mentions.users.size > 0 ? msg.mentions.users.first() : msg.author;
     const channel = msg.channel;
     if (akov) {

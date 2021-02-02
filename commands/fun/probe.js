@@ -35,7 +35,7 @@ module.exports = async (msg, args) => {
     const channel = msg.channel;
     if (akov) {
         if (akov.presence.status != 'offline') {
-            channel.send('My co-conspirator Akov can help you with that.');
+            return channel.send('My co-conspirator Akov can help you with that.');
         } else {
             var description;
             if (determinstic.prostate.missing.includes(user.id) || (!determinstic.prostate.exists.includes(user.id) && Math.random() < 0.5)) {

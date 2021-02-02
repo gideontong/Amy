@@ -1,7 +1,7 @@
 {
     "8ball": {
         "command": "8ball",
-        "name": "Magic 8 Ball",
+        "name": "8 Ball",
         "description": "Get a fortune told with magic 8 ball!",
         "category": "fun",
         "alias": [],
@@ -1950,6 +1950,23 @@
         "cooldown": {
             "standard": 604800.0,
             "premium": 518400.0
+        }
+    },
+    "wikipedia": {
+        "command": "wikipedia",
+        "name": "Wikipedia",
+        "description": "Search the global encyclopedia.",
+        "category": "education",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 60.0,
+            "premium": 5.0
         }
     },
     "wingdings": {

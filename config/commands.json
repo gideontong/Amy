@@ -779,6 +779,23 @@
             "premium": 1.0
         }
     },
+    "howdepressed": {
+        "command": "howdepressed",
+        "name": "How Depressed",
+        "description": "Just how depressed are you exactly?",
+        "category": "fun",
+        "alias": [],
+        "flags": {
+            "admin": false,
+            "premium": false,
+            "hidden": false,
+            "nsfw": false
+        },
+        "cooldown": {
+            "standard": 3.0,
+            "premium": 0.5
+        }
+    },
     "howgay": {
         "command": "howgay",
         "name": "Dr. Leo",

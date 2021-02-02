@@ -11,7 +11,7 @@ module.exports = async (msg, args) => {
     const query = args.join(' ');
     pageSearch(function (title, text) {
         if (text.length > 0) {
-            if (text.length > 1000) text = text.substring(0, 1000);
+            if (text.length > 1000) text = text.substring(0, 1000) + '...';
             const embed = {
                 title: title,
                 description: text,

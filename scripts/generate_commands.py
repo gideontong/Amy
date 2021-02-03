@@ -43,7 +43,7 @@ def to_JSON():
                     'premium': float(command['PaidCooldown'])
                 }
             }
-        dump(data, json_file)
+        dump(data, json_file, sort_keys=True, indent=4)
 
 def to_CSV():
     pass

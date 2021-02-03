@@ -1,2112 +1,2129 @@
 {
     "8ball": {
-        "command": "8ball",
-        "name": "8 Ball",
-        "description": "Get a fortune told with magic 8 ball!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "8ball",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 3.0
+        },
+        "description": "Get a fortune told with magic 8 ball!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 3.0,
-            "premium": 0.5
-        }
+        "name": "8 Ball"
     },
     "aboutjob": {
-        "command": "aboutjob",
-        "name": "Amy Job Board",
-        "description": "Learn about a job!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "aboutjob",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Learn about a job!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Amy Job Board"
     },
     "accountage": {
-        "command": "accountage",
-        "name": "Account Age",
-        "description": "See how old yours, or someone else's account is.",
-        "category": "utility",
         "alias": [
             "howold"
         ],
+        "category": "utility",
+        "command": "accountage",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "See how old yours, or someone else's account is.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Account Age"
     },
     "achievements": {
-        "command": "achievements",
-        "name": "About Achievement",
-        "description": "Learn about an achievement and get data!",
-        "category": "achievements",
         "alias": [],
+        "category": "achievements",
+        "command": "achievements",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Learn about an achievement and get data!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "About Achievement"
     },
     "algeria": {
-        "command": "algeria",
-        "name": "See Algeria",
-        "description": "Algeria is a country in Africa. Have you heard?",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "algeria",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Algeria is a country in Africa. Have you heard?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Algeria"
     },
     "annoy": {
-        "command": "annoy",
-        "name": "Be Annoying",
-        "description": "Annoy your friends!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "annoy",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Annoy your friends!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Be Annoying"
     },
     "awww": {
-        "command": "awww",
-        "name": "Awww So Cute",
-        "description": "Get a cute floofy photo!",
-        "category": "world",
         "alias": [
             "aw",
             "aww",
             "awwww"
         ],
+        "category": "world",
+        "command": "awww",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Get a cute floofy photo!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Awww So Cute"
     },
     "balance": {
-        "command": "balance",
-        "name": "My Bank Account",
-        "description": "Check your wallets!",
-        "category": "economy",
         "alias": [
             "bal",
             "bank",
             "wallet"
         ],
+        "category": "economy",
+        "command": "balance",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Check your wallets!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "My Bank Account"
     },
     "battlestation": {
-        "command": "battlestation",
-        "name": "Computer Setup",
-        "description": "Find a cool picture of someone's setup.",
-        "category": "world",
         "alias": [
             "bs",
             "setup",
             "station"
         ],
+        "category": "world",
+        "command": "battlestation",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Find a cool picture of someone's setup.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Computer Setup"
     },
     "bigpicture": {
-        "command": "bigpicture",
-        "name": "Big Picture",
-        "description": "See the bigger pictureTM. (Of your friends.)",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "bigpicture",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "See the bigger pictureTM. (Of your friends.)",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Big Picture"
     },
     "binary": {
-        "command": "binary",
-        "name": "Binary Convertor",
-        "description": "I convert stuff to 0101010 beep beep.",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "binary",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "I convert stuff to 0101010 beep beep.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Binary Convertor"
     },
     "boldcursive": {
-        "command": "boldcursive",
-        "name": "Bold Cursive",
-        "description": "\ud835\udcd1\ud835\udcf8\ud835\udcf5\ud835\udced \ud835\udcd2\ud835\udcfe\ud835\udcfb\ud835\udcfc\ud835\udcf2\ud835\udcff\ud835\udcee",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "boldcursive",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "\ud835\udcd1\ud835\udcf8\ud835\udcf5\ud835\udced \ud835\udcd2\ud835\udcfe\ud835\udcfb\ud835\udcfc\ud835\udcf2\ud835\udcff\ud835\udcee",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Bold Cursive"
     },
     "catchcapitalist": {
-        "command": "catchcapitalist",
-        "name": "Catch a Capitalist",
-        "description": "CEOs are capitalist pigs!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "catchcapitalist",
+        "cooldown": {
+            "premium": 10.0,
+            "standard": 600.0
+        },
+        "description": "CEOs are capitalist pigs!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 600.0,
-            "premium": 10.0
-        }
+        "name": "Catch a Capitalist"
     },
     "catchcommunist": {
-        "command": "catchcommunist",
-        "name": "Catch a Communist",
-        "description": "Be careful... socialism is communism.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "catchcommunist",
+        "cooldown": {
+            "premium": 10.0,
+            "standard": 600.0
+        },
+        "description": "Be careful... socialism is communism.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 600.0,
-            "premium": 10.0
-        }
+        "name": "Catch a Communist"
     },
     "catchgay": {
-        "command": "catchgay",
-        "name": "Catch a Gay",
-        "description": "To catch a gay... person?",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "catchgay",
+        "cooldown": {
+            "premium": 10.0,
+            "standard": 600.0
+        },
+        "description": "To catch a gay... person?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 600.0,
-            "premium": 10.0
-        }
+        "name": "Catch a Gay"
     },
     "changelog": {
-        "command": "changelog",
-        "name": "Latest Changes",
-        "description": "See the latest changes to Amy.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "changelog",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "See the latest changes to Amy.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Latest Changes"
     },
     "china": {
-        "command": "china",
-        "name": "See China",
-        "description": "The mainland exists?",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "china",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "The mainland exists?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See China"
     },
     "coinflip": {
-        "command": "coinflip",
-        "name": "Flip a Coin",
-        "description": "Gives you a coinflip.",
-        "category": "games",
         "alias": [
             "flip"
         ],
+        "category": "games",
+        "command": "coinflip",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Gives you a coinflip.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Flip a Coin"
     },
     "color": {
-        "command": "color",
-        "name": "Name of Color",
-        "description": "Get the name of any color you want!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "color",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Get the name of any color you want!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Name of Color"
     },
     "command": {
-        "command": "command",
-        "name": "Command Info",
-        "description": "Get info about a command!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "command",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get info about a command!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Command Info"
     },
     "commands": {
-        "command": "commands",
-        "name": "Commands List",
-        "description": "Get a list of the commands I support.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "commands",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get a list of the commands I support.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Commands List"
     },
     "creepy": {
-        "command": "creepy",
-        "name": "Creep List",
-        "description": "Use this command to learn how to be creepy to girls!",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "creepy",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Use this command to learn how to be creepy to girls!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Creep List"
     },
     "cringe": {
-        "command": "cringe",
-        "name": "Cringetopia",
-        "description": "Cringe at other people in this world.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "cringe",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Cringe at other people in this world.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Cringetopia"
     },
     "cum": {
-        "command": "cum",
-        "name": "Inappropiate Word",
-        "description": "Don't use this inappropiate word.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "cum",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "Don't use this inappropiate word.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": true,
-            "nsfw": true
+            "nsfw": true,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
+        "name": "Inappropiate Word"
     },
     "cursive": {
-        "command": "cursive",
-        "name": "Cursive Generator",
-        "description": "Back to third grade yet?",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "cursive",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Back to third grade yet?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Cursive Generator"
     },
     "daily": {
-        "command": "daily",
-        "name": "Daily Bonus",
-        "description": "Get your daily allowance!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "daily",
+        "cooldown": {
+            "premium": 64800.0,
+            "standard": 64800.0
+        },
+        "description": "Get your daily allowance!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 64800.0,
-            "premium": 64800.0
-        }
+        "name": "Daily Bonus"
     },
     "diceroll": {
-        "command": "diceroll",
-        "name": "Roll a Dice",
-        "description": "Rolls a normal dice for you (should be fair).",
-        "category": "games",
         "alias": [
             "dice",
             "roll"
         ],
+        "category": "games",
+        "command": "diceroll",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Rolls a normal dice for you (should be fair).",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Roll a Dice"
     },
     "docs": {
-        "command": "docs",
-        "name": "Documentation",
-        "description": "See the full help pages.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "docs",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "See the full help pages.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Documentation"
     },
     "donate": {
-        "command": "donate",
-        "name": "Donate",
-        "description": "Support the developer with a small donation!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "donate",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Support the developer with a small donation!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Donate"
     },
     "downloadvideo": {
-        "command": "downloadvideo",
-        "name": "Video Downloader",
-        "description": "Download a YouTube video!",
-        "category": "internet",
         "alias": [
             "download",
             "dl"
         ],
+        "category": "internet",
+        "command": "downloadvideo",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 300.0
+        },
+        "description": "Download a YouTube video!",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 3.0
-        }
+        "name": "Video Downloader"
     },
     "earthpictures": {
-        "command": "earthpictures",
-        "name": "Wonders of Earth",
-        "description": "See an amazing wonder of God!",
-        "category": "world",
         "alias": [
             "earthporn"
         ],
+        "category": "world",
+        "command": "earthpictures",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See an amazing wonder of God!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Wonders of Earth"
     },
     "egypt": {
-        "command": "egypt",
-        "name": "See Egypt",
-        "description": "Has a canal and a landbridge. Cool!",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "egypt",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Has a canal and a landbridge. Cool!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Egypt"
     },
     "eritrea": {
-        "command": "eritrea",
-        "name": "See Eritrea",
-        "description": "We always forget about East Africa.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "eritrea",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "We always forget about East Africa.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Eritrea"
     },
     "ethiopia": {
-        "command": "ethiopia",
-        "name": "See Ethiopia",
-        "description": "Bigger than Erita, but still East Africa.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "ethiopia",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Bigger than Erita, but still East Africa.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Ethiopia"
     },
     "exchangerate": {
-        "command": "exchangerate",
-        "name": "Currency Exchange Rate",
-        "description": "Get the current currency exchange rates.",
-        "category": "internet",
         "alias": [
             "currency",
             "exchange",
             "forex"
         ],
+        "category": "internet",
+        "command": "exchangerate",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 300.0
+        },
+        "description": "Get the current currency exchange rates.",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 1.0
-        }
+        "name": "Currency Exchange Rate"
     },
     "food": {
-        "command": "food",
-        "name": "Foodie Time",
-        "description": "See a yummy photo of the day (or the second).",
-        "category": "world",
         "alias": [
             "foodporn"
         ],
+        "category": "world",
+        "command": "food",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See a yummy photo of the day (or the second).",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Foodie Time"
     },
     "fuck": {
-        "command": "fuck",
-        "name": "IRL Content",
-        "description": "Misuse Discord when you have the web.",
-        "category": "nsfw",
         "alias": [],
+        "category": "nsfw",
+        "command": "fuck",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "Misuse Discord when you have the web.",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": true,
-            "nsfw": true
+            "nsfw": true,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
+        "name": "IRL Content"
     },
     "futile": {
-        "command": "futile",
-        "name": "Life is Futile",
-        "description": "Life is futile, deal with it (and feel bad).",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "futile",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Life is futile, deal with it (and feel bad).",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Life is Futile"
     },
     "galactic": {
-        "command": "galactic",
-        "name": "Minecraft Text Generator",
-        "description": "Become Obi-Wan Kenobi with this text generator!",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "galactic",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Become Obi-Wan Kenobi with this text generator!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Minecraft Text Generator"
     },
     "generatewaifu": {
-        "command": "generatewaifu",
-        "name": "Random Waifu",
-        "description": "Get a random AI-generated waifu",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "generatewaifu",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 60.0
+        },
+        "description": "Get a random AI-generated waifu",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 3.0
-        }
+        "name": "Random Waifu"
     },
     "ghana": {
-        "command": "ghana",
-        "name": "See Ghana",
-        "description": "You might've seen East Africa, but how about West Africa?",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "ghana",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "You might've seen East Africa, but how about West Africa?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Ghana"
     },
     "github": {
-        "command": "github",
-        "name": "Source Code",
-        "description": "See my source code!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "github",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "See my source code!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Source Code"
     },
     "help": {
-        "command": "help",
-        "name": "Help Screen",
-        "description": "Get some help and info about this bot.",
-        "category": "utility",
         "alias": [
             "about"
         ],
+        "category": "utility",
+        "command": "help",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get some help and info about this bot.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Help Screen"
     },
     "hentai": {
-        "command": "hentai",
-        "name": "Hand-Drawn Content",
-        "description": "An unfortunate use of Discord.",
-        "category": "nsfw",
         "alias": [],
+        "category": "nsfw",
+        "command": "hentai",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "An unfortunate use of Discord.",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": true,
-            "nsfw": true
+            "nsfw": true,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
+        "name": "Hand-Drawn Content"
     },
     "howdepressed": {
-        "command": "howdepressed",
-        "name": "How Depressed",
-        "description": "Just how depressed are you exactly?",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "howdepressed",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 3.0
+        },
+        "description": "Just how depressed are you exactly?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 3.0,
-            "premium": 0.5
-        }
+        "name": "How Depressed"
     },
     "howgay": {
-        "command": "howgay",
-        "name": "Dr. Leo",
-        "description": "Check how gay you and your friends are.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "howgay",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 3.0
+        },
+        "description": "Check how gay you and your friends are.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 3.0,
-            "premium": 0.5
-        }
+        "name": "Dr. Leo"
     },
     "howstraight": {
-        "command": "howstraight",
-        "name": "Not Dr. Leo",
-        "description": "Check how straight you and your friends are.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "howstraight",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 3.0
+        },
+        "description": "Check how straight you and your friends are.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 3.0,
-            "premium": 0.5
-        }
+        "name": "Not Dr. Leo"
     },
     "hug": {
-        "command": "hug",
-        "name": "Mother's Arms",
-        "description": "Hug your friends. Go on.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "hug",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Hug your friends. Go on.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Mother's Arms"
     },
     "insaneasylum": {
-        "command": "insaneasylum",
-        "name": "Insane Asylum",
-        "description": "Check yourself into a mental hospital.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "insaneasylum",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Check yourself into a mental hospital.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Insane Asylum"
     },
     "interdasting": {
-        "command": "interdasting",
-        "name": "Interdasting",
-        "description": "That is interdasting.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "interdasting",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "That is interdasting.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Interdasting"
     },
     "invite": {
-        "command": "invite",
-        "name": "Server Invite",
-        "description": "Get a link to the support server.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "invite",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get a link to the support server.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Server Invite"
     },
     "japan": {
-        "command": "japan",
-        "name": "See Japan",
-        "description": "Kamikaze: Give me all your money or I'll kill myself!",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "japan",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Kamikaze: Give me all your money or I'll kill myself!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Japan"
     },
     "job": {
-        "command": "job",
-        "name": "Get Hired",
-        "description": "Apply for a job!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "job",
+        "cooldown": {
+            "premium": 64800.0,
+            "standard": 86400.0
+        },
+        "description": "Apply for a job!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 86400.0,
-            "premium": 64800.0
-        }
+        "name": "Get Hired"
     },
     "jobs": {
-        "command": "jobs",
-        "name": "My Job Board",
-        "description": "See the jobs you can work at!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "jobs",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "See the jobs you can work at!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "My Job Board"
     },
     "joined": {
-        "command": "joined",
-        "name": "Discord Birthday",
-        "description": "See the day you joined Discord.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "joined",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "See the day you joined Discord.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "Discord Birthday"
     },
     "joke": {
-        "command": "joke",
-        "name": "Dad Joke",
-        "description": "Tell me a joke!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "joke",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Tell me a joke!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Dad Joke"
     },
     "kenya": {
-        "command": "kenya",
-        "name": "See Kenya",
-        "description": "Forget scammers, see the beauitful country of Kenya.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "kenya",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Forget scammers, see the beauitful country of Kenya.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Kenya"
     },
     "korea": {
-        "command": "korea",
-        "name": "See South Korea",
-        "description": "See pictures of Korea, but not Pyeongyang. Because yes.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "korea",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See pictures of Korea, but not Pyeongyang. Because yes.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See South Korea"
     },
     "locate": {
-        "command": "locate",
-        "name": "Leo GPS Tracker",
-        "description": "See where in the world a user is!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "locate",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "See where in the world a user is!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Leo GPS Tracker"
     },
     "meme": {
-        "command": "meme",
-        "name": "Random Meme",
-        "description": "Get a random meme (but not in real-time).",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "meme",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Get a random meme (but not in real-time).",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Random Meme"
     },
     "mirror": {
-        "command": "mirror",
-        "name": "Mirror Text",
-        "description": "Mirror your text for a small fee of zero?",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "mirror",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Mirror your text for a small fee of zero?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Mirror Text"
     },
     "molecule": {
-        "command": "molecule",
-        "name": "Chemistry Info",
-        "description": "Get accurate information about molecules",
-        "category": "education",
         "alias": [],
+        "category": "education",
+        "command": "molecule",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 300.0
+        },
+        "description": "Get accurate information about molecules",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 3.0
-        }
+        "name": "Chemistry Info"
     },
     "monthly": {
-        "command": "monthly",
-        "name": "Monthly Bonus",
-        "description": "Get a monthly bonus for no reason...",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "monthly",
+        "cooldown": {
+            "premium": 2073600.0,
+            "standard": 2592000.0
+        },
+        "description": "Get a monthly bonus for no reason...",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 2592000.0,
-            "premium": 2073600.0
-        }
+        "name": "Monthly Bonus"
     },
     "northkorea": {
-        "command": "northkorea",
-        "name": "See North Korea",
-        "description": "You can almost see Pyeongyang from here.",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "northkorea",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "You can almost see Pyeongyang from here.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See North Korea"
     },
     "osha": {
-        "command": "osha",
-        "name": "Yikes",
-        "description": "See something that makes you say yikes.",
-        "category": "world",
         "alias": [
             "yikes"
         ],
+        "category": "world",
+        "command": "osha",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See something that makes you say yikes.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Yikes"
     },
     "patreon": {
-        "command": "patreon",
-        "name": "Patreon",
-        "description": "Support us on Patreon with this simple link.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "patreon",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Support us on Patreon with this simple link.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Patreon"
     },
     "pay": {
-        "command": "pay",
-        "name": "Pay a Friend",
-        "description": "Pay your friends using your balance!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "pay",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Pay your friends using your balance!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Pay a Friend"
     },
     "perhaps": {
-        "command": "perhaps",
-        "name": "Perhaps Cow",
-        "description": "Need a perhaps cow in your life? Perhaps.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "perhaps",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Need a perhaps cow in your life? Perhaps.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Perhaps Cow"
     },
     "pickperson": {
-        "command": "pickperson",
-        "name": "Straws",
-        "description": "Pick a person in the current channel.",
-        "category": "utility",
         "alias": [
             "pick"
         ],
+        "category": "utility",
+        "command": "pickperson",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Pick a person in the current channel.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Straws"
     },
     "ping": {
-        "command": "ping",
-        "name": "Pong!",
-        "description": "Get the current server status of Amy.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "ping",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 300.0
+        },
+        "description": "Get the current server status of Amy.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 0.5
-        }
+        "name": "Pong!"
     },
     "pinnedstats": {
-        "command": "pinnedstats",
-        "name": "Pinned Leaderboard",
-        "description": "See how many times your message got pinned?",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "pinnedstats",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 300.0
+        },
+        "description": "See how many times your message got pinned?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 0.5
-        }
+        "name": "Pinned Leaderboard"
     },
     "poll": {
-        "command": "poll",
-        "name": "Survey Time",
-        "description": "Poll your friends to get answers!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "poll",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 300.0
+        },
+        "description": "Poll your friends to get answers!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 1.0
-        }
+        "name": "Survey Time"
     },
     "premium": {
-        "command": "premium",
-        "name": "Get Premium",
-        "description": "Upgrade your Discord experience.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "premium",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Upgrade your Discord experience.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Get Premium"
     },
     "printemoji": {
-        "command": "printemoji",
-        "name": "Emoji",
-        "description": "See a Discord server emote or even animated ones.",
-        "category": "utility",
         "alias": [
             "emoji",
             "emote"
         ],
+        "category": "utility",
+        "command": "printemoji",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "See a Discord server emote or even animated ones.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "Emoji"
     },
     "probe": {
-        "command": "probe",
-        "name": "Prostate Checker",
-        "description": "Check someone's prostate.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "probe",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Check someone's prostate.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Prostate Checker"
     },
     "profile": {
-        "command": "profile",
-        "name": "About Me",
-        "description": "See your information and rank on Amy!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "profile",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "See your information and rank on Amy!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
+        "name": "About Me"
     },
     "punch": {
-        "command": "punch",
-        "name": "Punch",
-        "description": "Punch your enemies (or your friends, I won't judge).",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "punch",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Punch your enemies (or your friends, I won't judge).",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Punch"
     },
     "qr": {
-        "command": "qr",
-        "name": "QR Code",
-        "description": "Generate a QR code!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "qr",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 15.0
+        },
+        "description": "Generate a QR code!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 15.0,
-            "premium": 0.5
-        }
+        "name": "QR Code"
     },
     "quitjob": {
-        "command": "quitjob",
-        "name": "You're Fired!",
-        "description": "Quit your job without 2 weeks needed!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "quitjob",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "Quit your job without 2 weeks needed!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "You're Fired!"
     },
     "quote": {
-        "command": "quote",
-        "name": "You're Famous",
-        "description": "Get a random quote from a famous person.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "quote",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Get a random quote from a famous person.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "You're Famous"
     },
     "randomparty": {
-        "command": "randomparty",
-        "name": "Random Valorant Party",
-        "description": "Pick a random Valorant party to challenge with.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "randomparty",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "Pick a random Valorant party to challenge with.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "Random Valorant Party"
     },
     "rank": {
-        "command": "rank",
-        "name": "Rank Image",
-        "description": "See information about a rank!",
-        "category": "economy",
         "alias": [
             "aboutrank"
         ],
+        "category": "economy",
+        "command": "rank",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "See information about a rank!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Rank Image"
     },
     "react": {
-        "command": "react",
-        "name": "React to Message",
-        "description": "React to the last message in a server with any emote.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "react",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "React to the last message in a server with any emote.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "React to Message"
     },
     "reddit": {
-        "command": "reddit",
-        "name": "Timewaster Roulette",
-        "description": "Get a random post from the subreddit of your choice.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "reddit",
+        "cooldown": {
+            "premium": 5.0,
+            "standard": 30.0
+        },
+        "description": "Get a random post from the subreddit of your choice.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 30.0,
-            "premium": 5.0
-        }
+        "name": "Timewaster Roulette"
     },
     "rules": {
-        "command": "rules",
-        "name": "Server Rules",
-        "description": "Get the server rules!",
-        "category": "moderation",
         "alias": [],
+        "category": "moderation",
+        "command": "rules",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 300.0
+        },
+        "description": "Get the server rules!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 0.5
-        }
+        "name": "Server Rules"
     },
     "russia": {
-        "command": "russia",
-        "name": "See Russia",
-        "description": "Communism?",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "russia",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Communism?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See Russia"
     },
     "search": {
-        "command": "search",
-        "name": "Google",
-        "description": "Do a barrel roll? Or just search on the internet.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "search",
+        "cooldown": {
+            "premium": 5.0,
+            "standard": 300.0
+        },
+        "description": "Do a barrel roll? Or just search on the internet.",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 5.0
-        }
+        "name": "Google"
     },
     "shakespeare": {
-        "command": "shakespeare",
-        "name": "Shakespearify",
-        "description": "Turn your words into poetry... Shakespeare style.",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "shakespeare",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Turn your words into poetry... Shakespeare style.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Shakespearify"
     },
     "shrugflip": {
-        "command": "shrugflip",
-        "name": "Angry Throw Shruggie",
-        "description": "Forget tables, flip shruggies!",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "shrugflip",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Forget tables, flip shruggies!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Angry Throw Shruggie"
     },
     "slap": {
-        "command": "slap",
-        "name": "Backhand",
-        "description": "Slap someone! They probably deserve it...",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "slap",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Slap someone! They probably deserve it...",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Backhand"
     },
     "slots": {
-        "command": "slots",
-        "name": "Slots Machine",
-        "description": "Try your hand at electronic gambling.",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "slots",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Try your hand at electronic gambling.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Slots Machine"
     },
     "snowball": {
-        "command": "snowball",
-        "name": "Snowball Fight",
-        "description": "Throw a snowball at a friend!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "snowball",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Throw a snowball at a friend!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Snowball Fight"
     },
     "stockprice": {
-        "command": "stockprice",
-        "name": "Live Tickers",
-        "description": "Stonks? Make good investments!",
-        "category": "internet",
         "alias": [
             "ticker"
         ],
+        "category": "internet",
+        "command": "stockprice",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 300.0
+        },
+        "description": "Stonks? Make good investments!",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 3.0
-        }
+        "name": "Live Tickers"
     },
     "subreddit": {
-        "command": "subreddit",
-        "name": "/r/AmyBot",
-        "description": "Get a link to the subreddit.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "subreddit",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get a link to the subreddit.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "/r/AmyBot"
     },
     "suck": {
-        "command": "suck",
-        "name": "xQc is Happy",
-        "description": "See a cool xQc GIF.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "suck",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "See a cool xQc GIF.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": true,
-            "nsfw": true
+            "nsfw": true,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "xQc is Happy"
     },
     "sudo": {
-        "command": "sudo",
-        "name": "I am your master",
-        "description": "make me a sandwich!",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "sudo",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "make me a sandwich!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "I am your master"
     },
     "suggest": {
-        "command": "suggest",
-        "name": "Suggestion Box",
-        "description": "How to get new bot features?",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "suggest",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 300.0
+        },
+        "description": "How to get new bot features?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 0.5
-        }
+        "name": "Suggestion Box"
     },
     "suicide": {
-        "command": "suicide",
-        "name": "Not Alone",
-        "description": "You are not alone. Get help if you are in a crisis.",
-        "category": "utility",
         "alias": [
             "kms",
             "selfharm"
         ],
+        "category": "utility",
+        "command": "suicide",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "You are not alone. Get help if you are in a crisis.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Not Alone"
     },
     "taiwan": {
-        "command": "taiwan",
-        "name": "See Taiwan",
-        "description": "See the beauitful landscape and scenery of Taiwan!",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "taiwan",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See the beauitful landscape and scenery of Taiwan!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
+        "name": "See Taiwan"
+    },
+    "thailand": {
+        "alias": [],
+        "category": "world",
+        "command": "thailand",
         "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See a cool picture of Thailand and her pretty boys.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Thailand Pictures"
     },
     "tictactoe": {
-        "command": "tictactoe",
-        "name": "Tic Tac Toe",
-        "description": "Sometimes called naughts and crosses.",
-        "category": "games",
         "alias": [],
+        "category": "games",
+        "command": "tictactoe",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 60.0
+        },
+        "description": "Sometimes called naughts and crosses.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 0.5
-        }
+        "name": "Tic Tac Toe"
     },
     "timefor": {
-        "command": "timefor",
-        "name": "Is it time?",
-        "description": "Is it time to do X?",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "timefor",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 10.0
+        },
+        "description": "Is it time to do X?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 0.5
-        }
+        "name": "Is it time?"
     },
     "timezone": {
-        "command": "timezone",
-        "name": "Change Timezone",
-        "description": "Let Amy know your timezone.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "timezone",
+        "cooldown": {
+            "premium": 86400.0,
+            "standard": 604800.0
+        },
+        "description": "Let Amy know your timezone.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 604800.0,
-            "premium": 86400.0
-        }
+        "name": "Change Timezone"
     },
     "tinder": {
-        "command": "tinder",
-        "name": "Tinder Browser",
-        "description": "Tutorial on how to date online?",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "tinder",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Tutorial on how to date online?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "Tinder Browser"
     },
     "tip": {
-        "command": "tip",
-        "name": "Free Tips",
-        "description": "Get a free tip on life.",
-        "category": "fun",
         "alias": [],
+        "category": "fun",
+        "command": "tip",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Get a free tip on life.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Free Tips"
     },
     "translate": {
-        "command": "translate",
-        "name": "Google Translate",
-        "description": "Use ghetto Google Translate right in chat.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "translate",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 300.0
+        },
+        "description": "Use ghetto Google Translate right in chat.",
         "flags": {
             "admin": false,
-            "premium": true,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": true
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 3.0
-        }
+        "name": "Google Translate"
     },
     "trivia": {
-        "command": "trivia",
-        "name": "Trivia Game",
-        "description": "Play trivia against yourself or friends.",
-        "category": "games",
         "alias": [],
+        "category": "games",
+        "command": "trivia",
+        "cooldown": {
+            "premium": 3.0,
+            "standard": 300.0
+        },
+        "description": "Play trivia against yourself or friends.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 3.0
-        }
+        "name": "Trivia Game"
     },
     "trump": {
-        "command": "trump",
-        "name": "Famous Trump Quote",
-        "description": "Get a quote from Trump's Twitter.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "trump",
+        "cooldown": {
+            "premium": 5.0,
+            "standard": 60.0
+        },
+        "description": "Get a quote from Trump's Twitter.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 5.0
-        }
+        "name": "Famous Trump Quote"
     },
     "twitch": {
-        "command": "twitch",
-        "name": "Professional Streamer",
-        "description": "See our Twitch channel!",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "twitch",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "See our Twitch channel!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Professional Streamer"
     },
     "urbandictionary": {
-        "command": "urbandictionary",
-        "name": "Best Dictionary",
-        "description": "What does cool dawg mean?",
-        "category": "internet",
         "alias": [
             "ud",
             "urban"
         ],
+        "category": "internet",
+        "command": "urbandictionary",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "What does cool dawg mean?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 1.0
-        }
+        "name": "Best Dictionary"
     },
     "usa": {
-        "command": "usa",
-        "name": "See USA",
-        "description": "See American Exceptionalism here!",
-        "category": "world",
         "alias": [],
+        "category": "world",
+        "command": "usa",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See American Exceptionalism here!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 10.0,
-            "premium": 1.0
-        }
+        "name": "See USA"
     },
     "uselessweb": {
-        "command": "uselessweb",
-        "name": "The Useless Web",
-        "description": "Get a random useless website... why.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "uselessweb",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 5.0
+        },
+        "description": "Get a random useless website... why.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 1.0
-        }
+        "name": "The Useless Web"
     },
     "weather": {
-        "command": "weather",
-        "name": "Weather",
-        "description": "Do I need a jacket?",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "weather",
+        "cooldown": {
+            "premium": 5.0,
+            "standard": 300.0
+        },
+        "description": "Do I need a jacket?",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 5.0
-        }
+        "name": "Weather"
     },
     "website": {
-        "command": "website",
-        "name": "Homepage",
-        "description": "Get a link to my home website.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "website",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get a link to my home website.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Homepage"
     },
     "weekly": {
-        "command": "weekly",
-        "name": "Weekly Pay",
-        "description": "Normally we get paid bi-weekly, but...",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "weekly",
+        "cooldown": {
+            "premium": 518400.0,
+            "standard": 604800.0
+        },
+        "description": "Normally we get paid bi-weekly, but...",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 604800.0,
-            "premium": 518400.0
-        }
+        "name": "Weekly Pay"
     },
     "wikipedia": {
-        "command": "wikipedia",
-        "name": "Wikipedia",
-        "description": "Search the global encyclopedia.",
-        "category": "education",
         "alias": [],
+        "category": "education",
+        "command": "wikipedia",
+        "cooldown": {
+            "premium": 5.0,
+            "standard": 60.0
+        },
+        "description": "Search the global encyclopedia.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 60.0,
-            "premium": 5.0
-        }
+        "name": "Wikipedia"
     },
     "wingdings": {
-        "command": "wingdings",
-        "name": "Wingdings",
-        "description": "\ud83d\udd48\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udc4e\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udca7\ufe0e",
-        "category": "text",
         "alias": [],
+        "category": "text",
+        "command": "wingdings",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "\ud83d\udd48\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udc4e\ufe0e\u270b\ufe0e\u2620\ufe0e\u261d\ufe0e\ud83d\udca7\ufe0e",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 5.0,
-            "premium": 0.5
-        }
+        "name": "Wingdings"
     },
     "work": {
-        "command": "work",
-        "name": "Go to Work",
-        "description": "Get paid for going to work!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "work",
+        "cooldown": {
+            "premium": 3000.0,
+            "standard": 3600.0
+        },
+        "description": "Get paid for going to work!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 3600.0,
-            "premium": 3000.0
-        }
+        "name": "Go to Work"
     },
     "xkcd": {
-        "command": "xkcd",
-        "name": "Comic of the Day",
-        "description": "Get today's comic from XKCD.",
-        "category": "internet",
         "alias": [],
+        "category": "internet",
+        "command": "xkcd",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 300.0
+        },
+        "description": "Get today's comic from XKCD.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 300.0,
-            "premium": 1.0
-        }
+        "name": "Comic of the Day"
     },
     "yearly": {
-        "command": "yearly",
-        "name": "My Salary",
-        "description": "Get your yearly salary bonus here!",
-        "category": "economy",
         "alias": [],
+        "category": "economy",
+        "command": "yearly",
+        "cooldown": {
+            "premium": 24192000.0,
+            "standard": 31536000.0
+        },
+        "description": "Get your yearly salary bonus here!",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 31536000.0,
-            "premium": 24192000.0
-        }
+        "name": "My Salary"
     },
     "youmad": {
-        "command": "youmad",
-        "name": "U MAD BRO?",
-        "description": "U MAD BRO? U DEFINITELY MAD",
-        "category": "fun",
         "alias": [
             "umad",
             "umadbro",
             "youmadbro"
         ],
+        "category": "fun",
+        "command": "youmad",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "U MAD BRO? U DEFINITELY MAD",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "U MAD BRO?"
     },
     "youtube": {
-        "command": "youtube",
-        "name": "Professional Vlogger",
-        "description": "Subscribe to the best YouTube channel.",
-        "category": "utility",
         "alias": [],
+        "category": "utility",
+        "command": "youtube",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Subscribe to the best YouTube channel.",
         "flags": {
             "admin": false,
-            "premium": false,
             "hidden": false,
-            "nsfw": false
+            "nsfw": false,
+            "premium": false
         },
-        "cooldown": {
-            "standard": 1.0,
-            "premium": 0.5
-        }
+        "name": "Professional Vlogger"
     }
 }

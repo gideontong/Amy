@@ -70,9 +70,10 @@ function generatePost(data) {
             selftext = selftext.substring(0, 150) + '...';
         }
     }
+    const url = data.url ? (data.url.startswith('/r/') ? 'https://old.reddit.com' + data.url : data.url) : 'https://old.reddit.com';
     const embed = {
         title: data.title ? data.title : 'Post has no title!',
-        url: data.url ? data.url : 'https://old.reddit.com',
+        url: url,
         description: selftext,
         color: 16733952,
         author: {

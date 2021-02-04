@@ -2088,6 +2088,23 @@
         },
         "name": "Go to Work"
     },
+    "world": {
+        "alias": [],
+        "category": "world",
+        "command": "world",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 60.0
+        },
+        "description": "Explore the world and see the full potential.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Word Explorer"
+    },
     "xkcd": {
         "alias": [],
         "category": "internet",

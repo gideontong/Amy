@@ -145,6 +145,23 @@
         },
         "name": "My Bank Account"
     },
+    "ban": {
+        "alias": [],
+        "category": "moderation",
+        "command": "ban",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 30.0
+        },
+        "description": "Ban a user.",
+        "flags": {
+            "admin": true,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Ban User"
+    },
     "battlestation": {
         "alias": [
             "bs",
@@ -999,6 +1016,23 @@
             "premium": false
         },
         "name": "See Kenya"
+    },
+    "kick": {
+        "alias": [],
+        "category": "moderation",
+        "command": "kick",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 30.0
+        },
+        "description": "Kick a user.",
+        "flags": {
+            "admin": true,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Kick User"
     },
     "korea": {
         "alias": [],

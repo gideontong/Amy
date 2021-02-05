@@ -69,6 +69,23 @@
         },
         "name": "About Achievement"
     },
+    "afghanistan": {
+        "alias": [],
+        "category": "world",
+        "command": "afghanistan",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "See the beautiful parts of Afghanistan. It's a country.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Afghanistan World"
+    },
     "algeria": {
         "alias": [],
         "category": "world",
@@ -102,6 +119,23 @@
             "premium": false
         },
         "name": "Be Annoying"
+    },
+    "antarctica": {
+        "alias": [],
+        "category": "world",
+        "command": "antarctica",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Imagine if every picture was blue. Now imagine if ice was blue.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Skate Antarctica Ice"
     },
     "awww": {
         "alias": [

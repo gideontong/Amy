@@ -28,13 +28,10 @@ module.exports = async (msg, args) => {
         return;
     }
     if (isNaN(args[1])) {
-        // log.info(`Reached not a number with ${args[1]}`);
         if (args[1].toLowerCase() == 'multi') {
-            // log.info(`Reached multiple choice`)
             if (isNaN(args[2]) || args.length < 3) {
                 // Multiple Choice (1 Hour)
                 const optionsText = msg.content.substring(args[0].length + args[1].length + 2);
-                // log.info(`Reached optionsText with ${optionsText}`);
                 processMultipleChoice(channel, msg.member, optionsText, 1);
                 return;
             } else {
@@ -89,14 +86,12 @@ function checkForExpiry(channel, hours) {
  * @param {String} text Text of command
  */
 function processMultipleChoice(channel, owner, text, hours) {
-    // log.info(`processMultipleChoice reached with ${text}, ${hours}`);
     var question;
     var options = text.split(';');
     if (text.length == 0) {
         channel.send('Something went wrong! It seems you do not have a question or any answer choices.');
         return;
     } else if (options.length < 1) {
-        // log.info('No answer choices provided?')
         channel.send('You need to provide some answer options to your question!');
         return;
     } else {
@@ -117,8 +112,6 @@ function processMultipleChoice(channel, owner, text, hours) {
  * @param {Number[]} answers String associated with emotes
  */
 function managePoll(channel, owner, text, hours, emotes, answers) {
-    // log.info(`managePoll reached, ${emotes.length} emotes, ${answers.length} answers`);
-    channel.send('test');
     if (emotes.length != answers.length) {
         const code = Math.floor(Math.random() * 100);
         log.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);

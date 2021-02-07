@@ -209,8 +209,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
 function updateCounts(poll, message, counts, emotes, reaction, user, end, add = true) {
     if (user.bot) return;
     const idx = emotes.indexOf(reaction.emoji.toString());
-    log.info(`idx was ${idx}, ${emotes}, ${reaction.emoji}`);
-    if (idx > 0) {
+    if (idx >= 0) {
         counts[idx] += Number(add);
     }
     var tallies = new String();

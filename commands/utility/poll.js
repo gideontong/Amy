@@ -186,6 +186,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
                 updateCounts(poll, pollMessage, counts, emotes, reaction, user, end, false);
             });
             collector.on('end', collected => {
+                poll.title = `${owner.nickname ? owner.nickname : owner.user.username} previously ran a poll.`;
                 poll.footer.text = 'This poll has expired, and is no longer taking responses.';
                 pollMessage.edit({ embed: poll });
             });

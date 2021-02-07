@@ -14,7 +14,7 @@ const binaryOptionsText = [
 ];
 
 const { formatTime } = require('../../lib/Today');
-const logger = require('log4js').getLogger('amy');
+const log = require('log4js').getLogger('amy');
 
 /**
  * Create a poll for people to answer!
@@ -28,10 +28,13 @@ module.exports = async (msg, args) => {
         return;
     }
     if (isNaN(args[1])) {
+        log.info(`Reached not a number with ${args[1]}`);
         if (args[1].toLowerCase() == 'multi') {
+            log.info(`Reached multiple choice`)
             if (isNaN(args[2]) || args.length < 3) {
                 // Multiple Choice (1 Hour)
                 const optionsText = msg.content.substring(args[0].length + args[1].length + 2);
+                log.info(`Reached optionsText with ${optionsText}`);
                 processMultipleChoice(channel, msg.member, optionsText, 1);
                 return;
             } else {
@@ -109,7 +112,7 @@ function processMultipleChoice(channel, owner, text, hours) {
 function managePoll(channel, owner, text, hours, emotes, answers) {
     if (emotes.length != answers.length) {
         const code = Math.floor(Math.random() * 100);
-        logger.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);
+        log.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);
         channel.send(`Something went wrong, please report error code ${code}`);
         return;
     }

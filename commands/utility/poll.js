@@ -177,6 +177,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
  * @param {Boolean} add Add mode (otherwise, subtract mode)
  */
 function updateCounts(poll, message, counts, emotes, reaction, user, add = true) {
+    log.info('Reached updateCounts');
     if (user.bot) return;
     const idx = emotes.indexOf(new String(reaction));
     if (idx > 0) {

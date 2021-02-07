@@ -188,7 +188,11 @@ function updateCounts(poll, message, counts, emotes, reaction, user, add = true)
         let percentage = Math.round(100 * counts[i] / sum);
         tallies += `${emotes[i]} ${counts[i]} Votes (${percentage}%)\n`;
     }
-    poll.fields[1].value = tallies;
+    if (sum == 0) {
+        poll.fields[1].value = 'No one has voted yet!';
+    } else {
+        poll.fields[1].value = tallies;
+    }
     poll.footer.text = remainingTime(end);
     message.edit({ embed: poll });
 }

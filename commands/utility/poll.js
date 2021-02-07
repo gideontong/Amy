@@ -232,7 +232,7 @@ function updateCounts(poll, message, counts, emotes, reaction, user, end, add = 
  * @param {Date} end Ending time
  */
 function remainingTime(end) {
-    const difference = end - new Date();
+    const difference = Math.abs(end - new Date());
     const formatted = formatTime(difference / 1000, true);
     return `This poll expires in ${formatted.trim()} or less.`;
 }

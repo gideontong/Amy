@@ -117,7 +117,8 @@ function processMultipleChoice(channel, owner, text, hours) {
  * @param {Number[]} answers String associated with emotes
  */
 function managePoll(channel, owner, text, hours, emotes, answers) {
-    log.info(`managePoll reached, ${emotes.length} emotes, ${answers.length} answers`);
+    // log.info(`managePoll reached, ${emotes.length} emotes, ${answers.length} answers`);
+    channel.send('test');
     if (emotes.length != answers.length) {
         const code = Math.floor(Math.random() * 100);
         log.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);

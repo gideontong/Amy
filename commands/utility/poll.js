@@ -174,7 +174,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
                 pollMessage.react(emote);
             });
             const filter = (reaction, user) => {
-                return emotes.some(emoji => emoji == new String(reaction));
+                return emotes.some(emoji => emoji == new String(reaction.emoji));
             };
             const collector = message.createReactionCollector(filter, { dispose: true, time: timeout });
             var counts = new Array(emotes.length).fill(0);
@@ -205,7 +205,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
 function updateCounts(poll, message, counts, emotes, reaction, user, add = true) {
     log.info('Reached updateCounts');
     if (user.bot) return;
-    const idx = emotes.indexOf(new String(reaction));
+    const idx = emotes.indexOf(new String(reaction.emoji));
     if (idx > 0) {
         counts[idx] += Number(add);
     }

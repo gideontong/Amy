@@ -1,6 +1,8 @@
 const colors = 0xFFFFFF;
 const msHours = 3600000;
 const maxHours = 96;
+
+const { amy: prefix } = require('../../config/config.json').prefix;
 const tutorial = {
     title: "Polling Tutorial",
     description: "Welcome to polling by Amy! It's currently in beta, so expect bugs, but here's what you can do:",
@@ -8,19 +10,19 @@ const tutorial = {
     fields: [
         {
             name: "Yes/No Poll (1 hour)",
-            value: "```${prefix}poll [Question]```"
+            value: `\`\`\`${prefix}poll [Question]\`\`\``
         },
         {
             name: "Yes/No Poll (up to 3 days)",
-            value: "```${prefix}poll [Hours] [Question]```"
+            value: `\`\`\`${prefix}poll [Hours] [Question]\`\`\``
         },
         {
             name: "Multiple Choice (1 hour, up to 10 options)",
-            value: "```${prefix}poll multi [Question];[Answer];[Answer]```"
+            value: `\`\`\`${prefix}poll multi [Question];[Answer];[Answer]\`\`\``
         },
         {
             name: "Multiple Choice (up to 3 days, 10 options)",
-            value: "```${prefix}poll multi [Hours] [Question];[Answer];[Answer]```"
+            value: `\`\`\`${prefix}poll multi [Hours] [Question];[Answer];[Answer]\`\`\``
         }
     ]
 };

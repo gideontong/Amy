@@ -4,7 +4,8 @@ const maxHours = 96;
 
 const { emotes } = require('../../config/config.json');
 const multiOptions = [
-    '🌚', '🐦', '🍊', '😃', '🍀', '🐬', '🍇', '🌸', '🍚', '🎲'
+    '🌚', '🐦', '🍊', '😃', '🍀', '🐬', '🍇', '🌸', '🍚', '🎲', '🦊',
+    '🔥', '🎍', '🦋', '🐙', '🐷', '🥥', '🦍'
 ];
 const binaryOptions = [
     `<a:yes:${emotes.yes}>`, `<a:no:${emotes.no}>`, `<a:maybe:${emotes.maybe}>`

@@ -32,20 +32,20 @@ module.exports = async (msg, args) => {
             if (isNaN(args[2]) || args.length < 3) {
                 // Multiple Choice (1 Hour)
                 const optionsText = msg.content.substring(args[0].length + args[1].length + 2);
-                processMultipleChoice(channel, msg.author, optionsText, 1);
+                processMultipleChoice(channel, msg.member, optionsText, 1);
                 return;
             } else {
                 // Multiple Choice
                 const optionsText = msg.content.substring(args[0].length + args[1].length + args[2].length + 3);
                 const hours = parseFloat(args[2]);
                 if (checkForExpiry(channel, hours)) {
-                    processMultipleChoice(channel, msg.author, optionsText, hours);
+                    processMultipleChoice(channel, msg.member, optionsText, hours);
                     return;
                 }
             }
         } else {
             // Yes/No (1 Hour)
-            managePoll(channel, msg.author, args.slice(1).join(' '), 1, binaryOptions, binaryOptionsText);
+            managePoll(channel, msg.member, args.slice(1).join(' '), 1, binaryOptions, binaryOptionsText);
             return;
         }
     } else {
@@ -56,7 +56,7 @@ module.exports = async (msg, args) => {
                 return;
             } else {
                 // Yes/No
-                managePoll(channel, msg.author, args.slice(2).join(' '), hours, binaryOptions, binaryOptionsText);
+                managePoll(channel, msg.member, args.slice(2).join(' '), hours, binaryOptions, binaryOptionsText);
                 return;
             }
         }

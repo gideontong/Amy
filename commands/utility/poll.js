@@ -174,7 +174,6 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
                 pollMessage.react(emote);
             });
             const filter = (reaction, user) => {
-                log.info(`${reaction.emoji} ${reaction.emoji.name} ${reaction.emoji.identifier} ${reaction.emoji.id}`);
                 return emotes.some(emoji => emoji == new String(reaction.emoji));
             };
             const collector = pollMessage.createReactionCollector(filter, { dispose: true, time: timeout });
@@ -208,18 +207,20 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
  * @param {Boolean} add Add mode (otherwise, subtract mode)
  */
 function updateCounts(poll, message, counts, emotes, reaction, user, end, add = true) {
-    log.info('Reached updateCounts');
     if (user.bot) return;
     const idx = emotes.indexOf(new String(reaction.emoji));
+    log.info(`idx was ${idx}`);
     if (idx > 0) {
         counts[idx] += Number(add);
     }
     var tallies = new String();
     const sum = counts.reduce((acc, tot) => acc + tot);
+    log.info(sum);
     for (let i = 0; i < emotes.length; i++) {
         let percentage = Math.round(100 * counts[i] / sum);
         tallies += `${emotes[i]} ${counts[i]} Votes (${percentage}%)\n`;
     }
+    log.info(tallies);
     if (sum == 0) {
         poll.fields[1].value = 'No one has voted yet!';
     } else {

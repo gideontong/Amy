@@ -190,7 +190,9 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
                 pollMessage.edit({ embed: poll });
             });
         })
-        .catch(err => { });
+        .catch(err => {
+            log.error(`Got error with polls: ${err}`);
+        });
 }
 
 /**

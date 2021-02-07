@@ -63,7 +63,7 @@ function coalesceResults(results) {
 function renderResult(result) {
     const field = {
         name: result.title,
-        value: `[Click here to view](${result.link}): ${result.snippet.split('\n').join('')}`
+        value: `[Click here to view](${result.link}): ${result.snippet ? result.snippet.split('\n').join('') : 'No description'}`
     }
     return field;
 }

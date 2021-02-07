@@ -1,6 +1,29 @@
 const colors = 0xFFFFFF;
 const msHours = 3600000;
 const maxHours = 96;
+const tutorial = {
+    title: "Polling Tutorial",
+    description: "Welcome to polling by Amy! It's currently in beta, so expect bugs, but here's what you can do:",
+    color: 1223386,
+    fields: [
+        {
+            name: "Yes/No Poll (1 hour)",
+            value: "```${prefix}poll [Question]```"
+        },
+        {
+            name: "Yes/No Poll (up to 3 days)",
+            value: "```${prefix}poll [Hours] [Question]```"
+        },
+        {
+            name: "Multiple Choice (1 hour, up to 10 options)",
+            value: "```${prefix}poll multi [Question];[Answer];[Answer]```"
+        },
+        {
+            name: "Multiple Choice (up to 3 days, 10 options)",
+            value: "```${prefix}poll multi [Hours] [Question];[Answer];[Answer]```"
+        }
+    ]
+};
 
 const { emotes } = require('../../config/config.json');
 const multiOptions = [
@@ -24,7 +47,7 @@ const log = require('log4js').getLogger('amy');
 module.exports = async (msg, args) => {
     const channel = msg.channel;
     if (args.length < 2) {
-        channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
+        channel.send({ embed: tutorial });
         return;
     }
     if (isNaN(args[1])) {

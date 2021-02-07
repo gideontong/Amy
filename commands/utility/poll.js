@@ -173,6 +173,9 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
             emotes.forEach(emote => {
                 pollMessage.react(emote);
             });
+            const filter = (reaction, user) => {
+                return emotes.some(emoji => emoji == new String(reaction));
+            };
             const collector = message.createReactionCollector(filter, { dispose: true, time: timeout });
             var counts = new Array(emotes.length).fill(0);
             collector.on('collect', function (reaction, user) {

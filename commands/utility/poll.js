@@ -2,6 +2,17 @@ const colors = 0xFFFFFF;
 const msHours = 3600000;
 const maxHours = 96;
 
+const { emotes } = require('../../config/config.json');
+const multiOptions = [
+    '🌚', '🐦', '🍊', '😃', '🍀', '🐬', '🍇', '🌸', '🍚', '🎲'
+];
+const binaryOptions = [
+    `<a:yes:${emotes.yes}>`, `<a:no:${emotes.no}>`, `<a:maybe:${emotes.maybe}>`
+];
+const binaryOptionsText = [
+    'Yes', 'No', 'Maybe'
+];
+
 const { amy: prefix } = require('../../config/config.json').prefix;
 const tutorial = {
     title: "Polling Tutorial",
@@ -17,26 +28,16 @@ const tutorial = {
             value: `\`\`\`${prefix}poll [Hours] [Question]\`\`\``
         },
         {
-            name: "Multiple Choice (1 hour, up to 10 options)",
+            name: `Multiple Choice (1 hour, up to ${multiOptions.length} options)`,
             value: `\`\`\`${prefix}poll multi [Question];[Answer];[Answer]\`\`\``
         },
         {
-            name: "Multiple Choice (up to 3 days, 10 options)",
+            name: `Multiple Choice (up to 3 days, ${multiOptions.length} options)`,
             value: `\`\`\`${prefix}poll multi [Hours] [Question];[Answer];[Answer]\`\`\``
         }
     ]
 };
 
-const { emotes } = require('../../config/config.json');
-const multiOptions = [
-    '🌚', '🐦', '🍊', '😃', '🍀', '🐬', '🍇', '🌸', '🍚', '🎲'
-];
-const binaryOptions = [
-    `<a:yes:${emotes.yes}>`, `<a:no:${emotes.no}>`, `<a:maybe:${emotes.maybe}>`
-];
-const binaryOptionsText = [
-    'Yes', 'No', 'Maybe'
-];
 
 const { formatTime } = require('../../lib/Today');
 const log = require('log4js').getLogger('amy');

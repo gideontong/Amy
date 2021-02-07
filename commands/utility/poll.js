@@ -139,7 +139,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
         fields: [
             {
                 name: 'Options',
-                value: options,
+                value: options ? options : 'No options!',
                 inline: true
             },
             {
@@ -206,8 +206,8 @@ function updateCounts(poll, message, counts, emotes, reaction, user, add = true)
  */
 function remainingTime(end) {
     const difference = end - new Date();
-    const formatted = formatTime(difference, true);
-    return `This poll expires in ${formatted} or less.`;
+    const formatted = formatTime(difference / 1000, true);
+    return `This poll expires in ${formatted.trim()} or less.`;
 }
 
 /**

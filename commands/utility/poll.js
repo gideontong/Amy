@@ -3,7 +3,18 @@ const msHours = 3600000;
 const maxHours = 96;
 
 const { emotes } = require('../../config/config.json');
-const { MessageEmbed } = require('discord.js');
+const multiOptions = [
+    '🌚', '🐦', '🍊', '😃', '🍀', '🐬', '🍇', '🌸', '🍚', '🎲'
+];
+const binaryOptions = [
+    `<a:yes:${emotes.yes}>`, `<a:no:${emotes.no}>`, `<a:maybe:${emotes.maybe}>`
+];
+const binaryOptionsText = [
+    'Yes', 'No', 'Maybe'
+];
+
+const { formatTime } = require('../../lib/Today');
+const logger = require('log4js').getLogger('amy');
 
 /**
  * Create a poll for people to answer!
@@ -11,75 +22,173 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    if (args.length < 3) {
-        msg.channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
+    const channel = msg.channel;
+    if (args.length < 2) {
+        channel.send('Welcome to polls beta! Use the command as follows: `poll <hours to expire> <question?>`');
         return;
     }
-    const providedHours = isNaN(args[1]);
-    const hours = providedHours ? 1 : parseFloat(args[1]);
-    if (hours < 0.01) {
-        msg.channel.send('Your poll has to expire in the future! Try again?');
-        return;
-    } else if (hours > maxHours) {
-        msg.channel.send(`Currently, polls beta only supports polls up to ${maxHours} hours in the future. More options are coming soon!`);
-        return;
-    }
-    args.shift();
-    if (!providedHours) args.shift();
-    const message = args.join(' ');
-    var embed = new MessageEmbed()
-        .addField('Vote Tallies', 'No one has voted yet!')
-        .setColor(Math.floor(Math.random() * colors))
-        .setDescription(message)
-        .setFooter(`This poll expires ${hours < 1.5 ? Math.floor(hours * 60) : Math.round(hours)} ${hours < 1.5 ? 'minutes' : 'hours'} after it starts.`)
-        .setTitle(`${msg.member.nickname ? msg.member.nickname : msg.author.username} is starting a new poll!`);
-    const options = [emotes.yes, emotes.no, emotes.maybe];
-    const filter = (reaction, user) => {
-        return options.some(emoji => emoji == reaction.emoji.id);
-    }
-    const time = Math.floor(hours * msHours);
-    msg.channel.send(embed)
-        .then(message => {
-            message.react(emotes.yes);
-            message.react(emotes.no);
-            message.react(emotes.maybe);
-            const collector = message.createReactionCollector(filter, { dispose: true, time: time });
-            let answers = [0, 0, 0];
-            collector.on('collect', function (reaction, user) {
-                if (user.bot)
+    if (isNaN(args[1])) {
+        if (args[1].toLowerCase() == 'multi') {
+            if (isNaN(args[2]) || args.length < 3) {
+                // Multiple Choice (1 Hour)
+                const optionsText = msg.content.substring(args[0].length + args[1].length + 2);
+                processMultipleChoice(channel, msg.author, optionsText, 1);
+                return;
+            } else {
+                // Multiple Choice
+                const optionsText = msg.content.substring(args[0].length + args[1].length + args[2].length + 3);
+                const hours = parseFloat(args[2]);
+                if (checkForExpiry(channel, hours)) {
+                    processMultipleChoice(channel, msg.author, optionsText, hours);
                     return;
-                if (reaction.emoji.id == emotes.yes) {
-                    answers[0]++;
-                } else if (reaction.emoji.id == emotes.no) {
-                    answers[1]++;
-                } else if (reaction.emoji.id == emotes.maybe) {
-                    answers[2]++;
                 }
-                embed
-                    .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(answers));
-                message.edit(embed);
+            }
+        } else {
+            // Yes/No (1 Hour)
+            managePoll(channel, msg.author, args.slice(1).join(' '), 1, binaryOptions, binaryOptionsText);
+            return;
+        }
+    } else {
+        const hours = parseFloat(args[1]);
+        if (checkForExpiry(channel, hours)) {
+            if (args.length < 3) {
+                channel.send('You need to provide a question to vote on!')
+                return;
+            } else {
+                // Yes/No
+                managePoll(channel, msg.author, args.slice(2).join(' '), hours, binaryOptions, binaryOptionsText);
+                return;
+            }
+        }
+    }
+}
+
+function checkForExpiry(channel, hours) {
+    if (hours < 0.01) {
+        channel.send('Your poll has to expire in the future and take at least a minute! Try again?');
+        return false;
+    } else if (hours > maxHours) {
+        channel.send(`Too long! You can only make polls up to ${maxHours} hours.`);
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
+ * Process multiple choice poll into question and answers
+ * @param {TextChannel} channel Channel to send the poll in
+ * @param {String} text Text of command
+ */
+function processMultipleChoice(channel, owner, text, hours) {
+    var question;
+    var options = text.split(';');
+    if (text.length == 0) {
+        channel.send('Something went wrong! It seems you do not have a question or any answer choices.');
+        return;
+    } else if (options.length < 1) {
+        channel.send('You need to provide some answer options to your question!');
+        return;
+    } else {
+        question = options[0];
+        options = options.slice(1, options.length > multiOptions + 1 ? multiOptions.length + 1 : options.length);
+        managePoll(channel, owner, question, hours, multiOptions.slice(0, options.length), options);
+        return;
+    }
+}
+
+/**
+ * Manages a poll
+ * @param {TextChannel} channel Channel to start the poll
+ * @param {GuildMember} owner Owner of poll
+ * @param {String} text Poll description
+ * @param {Number} hours Hours to expiration
+ * @param {String[]} emotes Emotes to use
+ * @param {Number[]} answers String associated with emotes
+ */
+function managePoll(channel, owner, text, hours, emotes, answers) {
+    if (emotes.length != answers.length) {
+        const code = Math.floor(Math.random() * 100);
+        logger.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);
+        channel.send(`Something went wrong, please report error code ${code}`);
+        return;
+    }
+    var options = new String();
+    for (let i = 0; i < emotes.length; i++) {
+        options += `${emotes[i]} ${answers[i]}\n`;
+    }
+    var end = new Date();
+    end.setHours(end.getHours() + hours);
+    const timeout = Math.floor(hours * msHours);
+    var poll = {
+        title: `${owner.nickname ? owner.nickname : owner.user.username} is starting a new poll!`,
+        description: text,
+        color: Math.floor(Math.random() * colors),
+        fields: [
+            {
+                name: 'Options',
+                value: options,
+                inline: true
+            },
+            {
+                name: 'Vote Tallies',
+                value: 'No one has voted yet!',
+                inline: true
+            }
+        ],
+        footer: {
+            text: remainingTime(end)
+        }
+    };
+    channel.send({ embed: poll })
+        .then(pollMessage => {
+            emotes.forEach(emote => {
+                pollMessage.react(emote);
+            });
+            const collector = message.createReactionCollector(filter, { dispose: true, time: timeout });
+            var counts = new Array(emotes.length).fill(0);
+            collector.on('collect', function (reaction, user) {
+                updateCounts(poll, pollMessage, counts, emotes, reaction, user);
             });
             collector.on('remove', function (reaction, user) {
-                if (user.bot)
-                    return;
-                if (reaction.emoji.id == emotes.yes) {
-                    answers[0]--;
-                } else if (reaction.emoji.id == emotes.no) {
-                    answers[1]--;
-                } else if (reaction.emoji.id == emotes.maybe) {
-                    answers[2]--;
-                }
-                embed
-                    .spliceFields(0, 1)
-                    .addField('Vote Tallies', getTallies(answers));
-                message.edit(embed);
+                updateCounts(poll, pollMessage, counts, emotes, reaction, user, false);
             });
             collector.on('end', collected => {
-                embed.setFooter('This poll has expired, and is no longer taking responses.');
-                message.edit(embed);
+                poll.footer.text = 'This poll has expired, and is no longer taking responses.';
+                pollMessage.edit({ embed: poll });
             });
-        });
+        })
+        .catch(err => { });
+}
+
+/**
+ * Update the counts of the poll
+ * @param {Object} poll Poll object
+ * @param {Message} message Poll message
+ * @param {Number[]} counts Counts of each reaction
+ * @param {String[]} emotes Reaction emotes
+ * @param {MessageReaction} reaction Reaction of item
+ * @param {User} user User who intiated reaction
+ * @param {Boolean} add Add mode (otherwise, subtract mode)
+ */
+function updateCounts(poll, message, counts, emotes, reaction, user, add = true) {
+    if (user.bot) return;
+    const idx = emotes.indexOf(new String(reaction));
+    if (idx > 0) {
+        counts[idx] += Number(add);
+    }
+    poll.footer.text = remainingTime(end);
+    message.edit({ embed: poll });
+}
+
+/**
+ * Calculate remaining time left as a string
+ * @param {Date} end Ending time
+ */
+function remainingTime(end) {
+    const difference = end - new Date();
+    const formatted = formatTime(difference, true);
+    return `This poll expires in ${formatted} or less.`;
 }
 
 /**

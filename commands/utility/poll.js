@@ -89,14 +89,14 @@ function checkForExpiry(channel, hours) {
  * @param {String} text Text of command
  */
 function processMultipleChoice(channel, owner, text, hours) {
-    log.info(`processMultipleChoice reached with ${text}, ${hours}`);
+    // log.info(`processMultipleChoice reached with ${text}, ${hours}`);
     var question;
     var options = text.split(';');
     if (text.length == 0) {
         channel.send('Something went wrong! It seems you do not have a question or any answer choices.');
         return;
     } else if (options.length < 1) {
-        log.info('No answer choices provided?')
+        // log.info('No answer choices provided?')
         channel.send('You need to provide some answer options to your question!');
         return;
     } else {
@@ -117,6 +117,7 @@ function processMultipleChoice(channel, owner, text, hours) {
  * @param {Number[]} answers String associated with emotes
  */
 function managePoll(channel, owner, text, hours, emotes, answers) {
+    log.info(`managePoll reached, ${emotes.length} emotes, ${answers.length} answers`);
     if (emotes.length != answers.length) {
         const code = Math.floor(Math.random() * 100);
         log.error(`poll.managePoll has array size mismatch (code ${code}), emotes: ${emotes} and answers: ${answers}`);
@@ -187,6 +188,13 @@ function updateCounts(poll, message, counts, emotes, reaction, user, add = true)
     if (idx > 0) {
         counts[idx] += Number(add);
     }
+    var tallies = new String();
+    const sum = counts.reduce((acc, tot) => acc + tot);
+    for (let i = 0; i < emotes.length; i++) {
+        let percentage = Math.round(100 * counts[i] / sum);
+        tallies += `${emotes[i]} ${counts[i]} Votes (${percentage}%)\n`;
+    }
+    poll.fields[1].value = tallies;
     poll.footer.text = remainingTime(end);
     message.edit({ embed: poll });
 }

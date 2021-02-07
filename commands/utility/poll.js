@@ -209,18 +209,16 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
 function updateCounts(poll, message, counts, emotes, reaction, user, end, add = true) {
     if (user.bot) return;
     const idx = emotes.indexOf(new String(reaction.emoji));
-    log.info(`idx was ${idx}`);
+    log.info(`idx was ${idx}, ${emotes}, ${reaction.emoji}`);
     if (idx > 0) {
         counts[idx] += Number(add);
     }
     var tallies = new String();
     const sum = counts.reduce((acc, tot) => acc + tot);
-    log.info(sum);
     for (let i = 0; i < emotes.length; i++) {
         let percentage = Math.round(100 * counts[i] / sum);
         tallies += `${emotes[i]} ${counts[i]} Votes (${percentage}%)\n`;
     }
-    log.info(tallies);
     if (sum == 0) {
         poll.fields[1].value = 'No one has voted yet!';
     } else {

@@ -180,10 +180,10 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
             const collector = pollMessage.createReactionCollector(filter, { dispose: true, time: timeout });
             var counts = new Array(emotes.length).fill(0);
             collector.on('collect', function (reaction, user) {
-                updateCounts(poll, pollMessage, counts, emotes, reaction, user);
+                updateCounts(poll, pollMessage, counts, emotes, reaction, user, end);
             });
             collector.on('remove', function (reaction, user) {
-                updateCounts(poll, pollMessage, counts, emotes, reaction, user, false);
+                updateCounts(poll, pollMessage, counts, emotes, reaction, user, end, false);
             });
             collector.on('end', collected => {
                 poll.footer.text = 'This poll has expired, and is no longer taking responses.';
@@ -203,9 +203,10 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
  * @param {String[]} emotes Reaction emotes
  * @param {MessageReaction} reaction Reaction of item
  * @param {User} user User who intiated reaction
+ * @param {Date} end Add the end date
  * @param {Boolean} add Add mode (otherwise, subtract mode)
  */
-function updateCounts(poll, message, counts, emotes, reaction, user, add = true) {
+function updateCounts(poll, message, counts, emotes, reaction, user, end, add = true) {
     log.info('Reached updateCounts');
     if (user.bot) return;
     const idx = emotes.indexOf(new String(reaction.emoji));

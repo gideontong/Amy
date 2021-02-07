@@ -210,7 +210,7 @@ function updateCounts(poll, message, counts, emotes, reaction, user, end, add = 
     if (user.bot) return;
     const idx = emotes.indexOf(reaction.emoji.toString());
     if (idx >= 0) {
-        counts[idx] += Number(add);
+        counts[idx] += add ? 1 : -1;
     }
     var tallies = new String();
     const sum = counts.reduce((acc, tot) => acc + tot);

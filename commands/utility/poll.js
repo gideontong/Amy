@@ -191,7 +191,8 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
             collector.on('end', collected => {
                 poll.title = `${owner.nickname ? owner.nickname : owner.user.username} previously ran a poll.`;
                 poll.footer.text = 'This poll has expired, and is no longer taking responses.';
-                pollMessage.edit({ embed: poll });
+                pollMessage.edit({ embed: poll })
+                    .catch(err => { });
             });
         })
         .catch(err => {
@@ -228,7 +229,8 @@ function updateCounts(poll, message, counts, emotes, reaction, user, end, add = 
         poll.fields[1].value = tallies;
     }
     poll.footer.text = remainingTime(end);
-    message.edit({ embed: poll });
+    message.edit({ embed: poll })
+        .catch(err => { });
 }
 
 /**

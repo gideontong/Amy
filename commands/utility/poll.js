@@ -147,7 +147,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
     }
     var options = new String();
     for (let i = 0; i < emotes.length; i++) {
-        options += `${emotes[i]} ${answers[i]}\n`;
+        options += `${emotes[i]} ${answers[i].trim()}\n`;
     }
     var end = new Date();
     end.setHours(end.getHours() + hours);
@@ -239,25 +239,4 @@ function remainingTime(end) {
     const difference = Math.abs(end - new Date());
     const formatted = formatTime(difference / 1000, true);
     return `This poll expires in ${formatted.trim()} or less.`;
-}
-
-/**
- * Get tallies string
- * @param {Number[]} answers Count of answers
- */
-function getTallies(answers) {
-    const sum = answers.reduce((acc, tot) => acc + tot);
-    if (sum == 0) {
-        return 'No one has voted yet!';
-    }
-    let percentage = new Array();
-    answers.forEach(answer => {
-        percentage.push(Math.round(100 * answer / sum));
-    });
-    let strings = [
-        `<a:yes:${emotes.yes}> ${answers[0]} Votes (${percentage[0]}%)`,
-        `<a:no:${emotes.no}> ${answers[1]} Votes (${percentage[1]}%)`,
-        `<a:maybe:${emotes.maybe}> ${answers[2]} Votes (${percentage[2]}%)`
-    ];
-    return strings.join('\n');
 }

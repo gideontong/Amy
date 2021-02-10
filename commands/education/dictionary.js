@@ -30,7 +30,7 @@ module.exports = async (msg, args) => {
             const definition = definitions[0];
             var title;
             if (definition.word) {
-                title = `${definition.word}${definition.phonetics ? ': ' + definition.phonetics[0].text : ''}`;
+                title = definition.word;
             } else {
                 title = 'Unidentifiable word!';
             }

@@ -528,6 +528,25 @@
         },
         "name": "Roll a Dice"
     },
+    "dictionary": {
+        "alias": [
+            "define"
+        ],
+        "category": "education",
+        "command": "dictionary",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 30.0
+        },
+        "description": "Use the dictionary to learn about a word.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "English Dictionary"
+    },
     "docs": {
         "alias": [],
         "category": "utility",

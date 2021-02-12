@@ -26,6 +26,8 @@ const warnings = [
 ];
 const invalidBet = "You didn't provide a valid bet, so we've automatically used $5.";
 
+const { currency } = require('../../config/economy.json');
+
 const { MessageEmbed } = require('discord.js');
 const { updateBalance, getBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
@@ -45,7 +47,7 @@ module.exports = async (msg, args) => {
         msg.channel.send(invalidBet);
     }
     if (!bet || bet < minimum) {
-        msg.channel.send(`The minimum bet is $${minimum}. Try again!`);
+        msg.channel.send(`The minimum bet is ${currency}${minimum}. Try again!`);
         return;
     }
     if (!debug) {
@@ -80,8 +82,8 @@ async function main(msg, user, bet, debug) {
                         const winnings = modifier > 0 ? Math.floor(modifier * bet) : 0;
                         const losses = bet + (modifier < 0 ? Math.abs(Math.floor(modifier * bet)) : 0);
                         const embed = new MessageEmbed()
-                            .addField('Winnings', `$${winnings}`, true)
-                            .addField('Losses', `$${losses}`, true)
+                            .addField('Winnings', `${currency}${winnings}`, true)
+                            .addField('Losses', `${currency}${losses}`, true)
                             .setColor(Math.floor(Math.random() * colors))
                             .setDescription(spoiler)
                             .setFooter(warnings[Math.floor(Math.random() * warnings.length)])

@@ -1,5 +1,7 @@
 const error = 'Send money to friends with `pay <user> <amount>`';
 
+const { currency } = require('../../config/economy.json');
+
 const { transferBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
@@ -30,7 +32,7 @@ module.exports = async (msg, args) => {
     if (payor && payee && amount) {
         const err = transferBalance(payor, payee, amount, false, function (data) {
             if (data) {
-            msg.channel.send(`Successfully transferred $${amount} to <@${payee}>!`);
+            msg.channel.send(`Successfully transferred ${currency}${amount} to <@${payee}>!`);
             log.info(`${msg.author.tag} transferred ${amount} to ${msg.mentions.members.first().user.tag}`);
             }
             else {

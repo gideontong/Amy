@@ -692,6 +692,23 @@
         },
         "name": "Currency Exchange Rate"
     },
+    "ezclap": {
+        "alias": [],
+        "category": "fun",
+        "command": "ezclap",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 1.0
+        },
+        "description": "Get EZ CLAPPED!",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "EZ Clap"
+    },
     "food": {
         "alias": [
             "foodporn"

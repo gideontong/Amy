@@ -8,7 +8,7 @@ const bad = ['<a:amongusparty:788925073498177546>', '🪵', '🌿'];
 const minimum = 1;
 const rolls = 5;
 // Default: 0.4, Chinese New Year
-const lowerOdds = 0.1;
+const lowerOdds = 0.3;
 const upperOdds = 0.9;
 const colors = 0xFFFFFF;
 const warnings = [

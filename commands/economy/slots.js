@@ -30,28 +30,36 @@ const { MessageEmbed } = require('discord.js');
 const { updateBalance, getBalance } = require('../../lib/Member');
 const log = require('log4js').getLogger('amy');
 
+var users = new Set();
+
 /**
  * Play the slots machine
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
     const debug = false; // Reimplement debug function one day
     const user = msg.author;
+    if (users.has(user)) {
+        return channel.send('You cannot start another slots while you are already playing one!');
+    } else {
+        users.add(user);
+    }
     let bet = 5;
     if (args.length > 1) {
         bet = parseInt(args[1]);
     } else {
-        msg.channel.send(invalidBet);
+        channel.send(invalidBet);
     }
     if (!bet || bet < minimum) {
-        msg.channel.send(`The minimum bet is ${currency}${minimum}. Try again!`);
+        channel.send(`The minimum bet is ${currency}${minimum}. Try again!`);
         return;
     }
     if (!debug) {
         await getBalance(msg.author.id, function (data) {
             if (bet > data) {
-                msg.channel.send("You don't have enough money for this!");
+                channel.send("You don't have enough money for this!");
             } else {
                 main(msg, user, bet, debug);
             }
@@ -69,7 +77,7 @@ module.exports = async (msg, args) => {
  */
 async function main(msg, user, bet, debug) {
     let [current, values] = generateSlots();
-    msg.channel.send(generateSlotString(current))
+    channel.send(generateSlotString(current))
         .then(msg => {
             for (let i = 1; i <= rolls; i++) {
                 setTimeout(() => {
@@ -92,6 +100,7 @@ async function main(msg, user, bet, debug) {
                             log.info(`Slots ran normally, and ${user.tag}'s balance is changing by ${change}`);
                             updateBalance(user.id, change);
                         }
+                        users.delete(user);
                     }
                 }, i * 500);
             }

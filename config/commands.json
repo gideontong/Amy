@@ -1104,6 +1104,23 @@
         },
         "name": "Kick User"
     },
+    "kiss": {
+        "alias": [],
+        "category": "fun",
+        "command": "kiss",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 5.0
+        },
+        "description": "Give your boyfriend/girlfriend a kiss?",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Kiss"
+    },
     "korea": {
         "alias": [],
         "category": "world",

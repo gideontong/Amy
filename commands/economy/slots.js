@@ -2,13 +2,11 @@ const loading = '<a:loading:788925074052612121>';
 const left = '<a:goright:788932776908947466>';
 const right = '<a:goleft:788932776875130880>';
 const good = ['<a:partycorgi:788925997344358441>'];
-// Chinese New Year Odds
-const normal = ['🪙', '🎁', '🧧', '✨', '🧧', '🧧', '🧧', '🧧'];
+const normal = ['🪙', '🎁', '🧧', '✨'];
 const bad = ['<a:amongusparty:788925073498177546>', '🪵', '🌿'];
 const minimum = 1;
 const rolls = 5;
-// Default: 0.4, Chinese New Year
-const lowerOdds = 0.3;
+const lowerOdds = 0.4;
 const upperOdds = 0.9;
 const colors = 0xFFFFFF;
 const warnings = [

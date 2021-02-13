@@ -76,6 +76,7 @@ module.exports = async (msg, args) => {
  * @param {Boolean} debug Whether or not to debug
  */
 async function main(msg, user, bet, debug) {
+    const channel = msg.channel;
     let [current, values] = generateSlots();
     channel.send(generateSlotString(current))
         .then(msg => {

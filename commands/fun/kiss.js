@@ -24,7 +24,7 @@ module.exports = async (msg, args) => {
             if (target == msg.client.user.id) {
                 return channel.send('Um... thanks for the kiss?');
             } else {
-                return channel.send(`<@${author} kissed his robot, 'twas but a simple life with <@${target}>...`);
+                return channel.send(`<@${author}> kissed his robot, 'twas but a simple life with <@${target}>...`);
             }
         }
         if (valentines) {

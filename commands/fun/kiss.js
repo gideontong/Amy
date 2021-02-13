@@ -14,7 +14,7 @@ module.exports = async (msg, args) => {
     const valentines = today.getMonth() == 1 && Math.abs(today.getDate() - 14) < 2;
     if (msg.mentions.users.size > 0) {
         const target = msg.mentions.users.firstKey();
-        const targetUser = msg.mentinos.users.first();
+        const targetUser = msg.mentions.users.first();
         if (target == filterTarget) {
             if (author != realFilterAccept) {
                 return channel.send('Why would you want to give him a kiss...?');

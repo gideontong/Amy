@@ -266,7 +266,7 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
                             correct.push(user);
                         }
                     });
-                    const newDescription = [parts[0], `${correct.length} of you answered correctly!`].join('\n');
+                    const newDescription = [parts[0], `${correct.length} of you answered correctly! The correct answer was: ${question.correct_answer}.`].join('\n');
                     embed.description = newDescription;
                     embed.footer = endFooter;
                     questionBox.edit({ embed: embed });

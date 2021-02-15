@@ -222,6 +222,7 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
         answers = shuffle(answers);
         answer = emojis[answers.indexOf(question.correct_answer)];
     }
+    const answerString = decodeURIComponent(question.correct_answer);
     for (let i = 0; i < answers.length; i++) {
         answers[i] = `${emojis[i]} ${decodeURIComponent(answers[i])}`;
     }
@@ -266,7 +267,7 @@ function releaseQuestion(channel, color, question, multiplayer, update, player) 
                             correct.push(user);
                         }
                     });
-                    const newDescription = [parts[0], `${correct.length} of you answered correctly! The correct answer was: ${question.correct_answer}.`].join('\n');
+                    const newDescription = [parts[0], `${correct.length} of you answered correctly! The correct answer was: ${answerString}.`].join('\n');
                     embed.description = newDescription;
                     embed.footer = endFooter;
                     questionBox.edit({ embed: embed });

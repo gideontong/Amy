@@ -1589,6 +1589,23 @@
         },
         "name": "Timewaster Roulette"
     },
+    "roblox": {
+        "alias": [],
+        "category": "games",
+        "command": "roblox",
+        "cooldown": {
+            "premium": 10.0,
+            "standard": 300.0
+        },
+        "description": "Get a game reccommendation from Amy on what to play next!",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Roblox Game Finder"
+    },
     "rules": {
         "alias": [],
         "category": "moderation",

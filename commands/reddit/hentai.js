@@ -1,12 +1,41 @@
 // You are a sick person. This list was auto-generated, and I
 // don't want to see it ever again.
 const subreddits = [
-    'hentai',
-    'ecchi',
+    'ahegao',
+    'animebooty',
+    'animehandbras',
+    'animemilfs',
     'awwnime',
-    'carsfuckingdragons',
-    'clopclop',
-    'hentaimemes'
+    'chiisaihentai',
+    'cumhentai',
+    'doujinshi',
+    'ecchi',
+    'futanari',
+    'hentai_gif',
+    'hentai',
+    'hentaibondage',
+    'hentaimemes',
+    'kanmusunights',
+    'kuroihada',
+    'nekomimi',
+    'nsfwanimegifs',
+    'overwatch_porn',
+    'paizuri',
+    'pokeporn',
+    'rule34',
+    'rule34lol',
+    'rwbynsfw',
+    'sex_comics',
+    'sukebei',
+    'swimsuithentai',
+    'thighdeology',
+    'uniform_hentai',
+    'upskirthentai',
+    'waifusgonewild',
+    'western_hentai',
+    'yuri',
+    'yurigif',
+    'zettairyouiki'
 ];
 
 const { probabilities } = require('../../config/config.json');

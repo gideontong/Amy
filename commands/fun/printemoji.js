@@ -7,8 +7,6 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    msg.delete()
-        .catch(err => {});
     var emoji;
     if (args.length < 2) {
         message.channel.send('You need to provide an emote!');

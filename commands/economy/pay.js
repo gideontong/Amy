@@ -29,6 +29,10 @@ module.exports = async (msg, args) => {
         msg.reply("You can't pay yourself...");
         return;
     }
+    if (payee.user.bot) {
+        msg.reply("You can't pay bots...");
+        return;
+    }
     if (payor && payee && amount) {
         const err = transferBalance(payor, payee, amount, false, function (data) {
             if (data) {

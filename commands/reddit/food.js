@@ -9,6 +9,7 @@ const subreddits = [
     'foodporn',
     'pizza',
     'ramen',
+    'soup',
     'sushi',
     'tacos'
 ];

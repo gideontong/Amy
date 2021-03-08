@@ -13,7 +13,7 @@ module.exports = async (msg, args) => {
             content: "🏓 Successfully ponged!",
             embed: {
                 title: `📶 ${msg.client.user.username} Service Availability`,
-                description: `Currently running on \`us-west-01.gid.network/discord\`. Issues? Contact [Gideon Tong](https://gideontong.com) for help.`,
+                description: `Currently running on \`discord.us-west.gideontong.com\`. Issues? Contact [Gideon Tong](https://gideontong.com) for help.`,
                 fields: [
                     {
                         name: "Server Round Trip Time",

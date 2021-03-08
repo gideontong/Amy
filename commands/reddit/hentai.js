@@ -15,6 +15,7 @@ const subreddits = [
     'hentai',
     'hentaibondage',
     'hentaimemes',
+    'hqhentai',
     'kanmusunights',
     'kuroihada',
     'nekomimi',

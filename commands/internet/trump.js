@@ -8,8 +8,15 @@ const tweets = require('../../config/trumptweets.json');
 module.exports = async (msg, args) => {
     const channel = msg.channel;
     const tweet = tweets[Math.floor(Math.random() * tweets.length)];
+    var text = tweet.text;
+    if (text.startsWith('""') && text.endsWith('""')) {
+        const splitLoc = text.indexOf(':');
+        const rtAuthor = text.slice(3, splitLoc);
+        text = `\`Retweeted \`[\`@${rtAuthor}\`](https://www.twitter.com/${rtAuthor})`
+            + text.slice(splitLoc + 1, -2);
+    }
     const embed = {
-        description: tweet.text,
+        description: text,
         color: 1942002,
         author: {
             name: "Donald Trump",

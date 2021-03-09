@@ -336,6 +336,23 @@
         },
         "name": "Latest Changes"
     },
+    "cheese": {
+        "alias": [],
+        "category": "internet",
+        "command": "cheese",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 10.0
+        },
+        "description": "Cheese.",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Cheese"
+    },
     "china": {
         "alias": [],
         "category": "world",

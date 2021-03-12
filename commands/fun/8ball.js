@@ -33,5 +33,23 @@ const responses = [
  * @param {Array} args Arguments for the message
  */
 module.exports = async (msg, args) => {
-    msg.reply(responses[Math.floor(Math.random() * responses.length)]);
+    const channel = msg.channel;
+    const name = msg.member.nickname ? msg.member.nickname : msg.author.username;
+    const question = msg.content.slice(args[0].length).trim();
+    const answer = responses[Math.floor(Math.random() * responses.length)];
+    const embed = {
+        color: 1152865,
+        fields: [
+            {
+                name: `${name} asked:`,
+                value: question
+            },
+            {
+                name: 'Answer:',
+                value: answer
+            }
+        ]
+    };
+    channel.send({ embed: embed })
+        .catch(err => { });
 }

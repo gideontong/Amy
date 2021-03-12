@@ -1,6 +1,9 @@
 {
     "8ball": {
-        "alias": [],
+        "alias": [
+            "ask",
+            "query"
+        ],
         "category": "fun",
         "command": "8ball",
         "cooldown": {

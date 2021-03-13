@@ -25,7 +25,7 @@ module.exports = async (msg, args) => {
             },
             {
                 name: 'Emojis',
-                value: 'emojis',
+                value: emojis,
                 inline: true
             }
         ],

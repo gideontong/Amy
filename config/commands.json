@@ -1762,6 +1762,23 @@
         },
         "name": "Snowball Fight"
     },
+    "stats": {
+        "alias": [],
+        "category": "utility",
+        "command": "stats",
+        "cooldown": {
+            "premium": 0.5,
+            "standard": 30.0
+        },
+        "description": "See statistics of Amy!",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Statistics"
+    },
     "stockprice": {
         "alias": [
             "ticker"

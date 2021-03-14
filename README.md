@@ -38,9 +38,15 @@ by *Jayy from Discord*
 
 Amy is in active development, and if you have a feature request, simply fill out an [issue](https://github.com/gideontong/Amy/issues) and we will get to it as soon as possible.
 
-### Achievements
+### Screenshots
 
-![Achievements](https://i.imgur.com/2k0UDC2.png)
+![Dictionary Screenshot](https://i.imgur.com/mE0BrrC.png)
+
+![Logging Screenshot](https://i.imgur.com/XrdOQAr.png)
+
+![Molecule Screenshot](https://i.imgur.com/KZCCqh6.png)
+
+### Achievements
 
 Amy supports custom achievements, which you can add your own instance of the bot (if you're running a custom instance for a private server), and soon will support admin-configurable achievements as well as default achievements that can be enabled globally (across servers) as well as only within a server.
 

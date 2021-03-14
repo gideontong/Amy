@@ -40,6 +40,8 @@ Amy is in active development, and if you have a feature request, simply fill out
 
 ### Screenshots
 
+(I know there are issues with the screenshots in dark mode. I'll fix that soon!)
+
 ![Dictionary Screenshot](https://i.imgur.com/mE0BrrC.png)
 
 ![Logging Screenshot](https://i.imgur.com/XrdOQAr.png)

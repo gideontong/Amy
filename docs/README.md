@@ -1,8 +1,8 @@
-# Amy
+<p align="center">
+  <img src="https://i.imgur.com/W7O2qJp.png" alt="Amy's Profile">
+</p>
 
 [![Build Status](https://travis-ci.com/gideontong/Amy.svg?branch=master)](https://travis-ci.com/gideontong/Amy) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![HitCount](http://hits.dwyl.com/gideontong/Amy.svg) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy)
-
-![Amy](https://i.imgur.com/q2YAmF5.png)
 
 -----
 

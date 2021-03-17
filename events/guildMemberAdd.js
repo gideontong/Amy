@@ -5,6 +5,5 @@ const log = require('log4js').getLogger('amy');
  * @param {GuildMember} member New user that joined a server
  */
 module.exports = async member => {
-    if (member.user.bot) return;
-    log.info(`${member.user.tag} ${member} joined the server`);
+    return;
 }

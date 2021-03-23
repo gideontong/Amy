@@ -172,6 +172,7 @@ function managePoll(channel, owner, text, hours, emotes, answers) {
             text: remainingTime(end)
         }
     };
+    log.info(`Starting new poll that ends in ${hours} hours`);
     channel.send({ embed: poll })
         .then(pollMessage => {
             emotes.forEach(emote => {

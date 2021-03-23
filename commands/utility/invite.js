@@ -5,6 +5,6 @@ const link ='https://discord.gg/Mxa7kP82y4';
  * @param {Message} msg Command
  * @param {Array} args Arguments
  */
-module.exports = async(client, msg, args) => {
+module.exports = async(msg, args) => {
     msg.channel.send(link);
 }

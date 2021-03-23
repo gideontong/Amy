@@ -6,6 +6,7 @@ const pleading = '<:pleading:792119409551867925>';
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const client = msg.client;
     if (msg.mentions.users.size > 0) {
         const snowflake = msg.mentions.users.firstKey();
         if (snowflake == client.user.id) {

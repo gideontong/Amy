@@ -1,6 +1,6 @@
 {
     "name": "amy",
-    "version": "3.4.118",
+    "version": "3.4.119",
     "description": "Your personal assisstant, reimagined",
     "author": "Gideon Tong <gideon@gideontong.com>",
     "main": "index.js",
@@ -29,6 +29,7 @@
         "discord.js": "^12.5.0",
         "log4js": "^6.3.0",
         "mongodb": "^3.6.3",
+        "pm2": "^4.5.5",
         "qrcode": "^1.4.4",
         "youtube-dl": "^3.0.2"
     },

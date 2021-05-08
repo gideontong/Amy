@@ -1,9 +1,5 @@
 // Imports from local config files
-const { prefix,
-    probabilities,
-    channels,
-    emotes } = require('../../config/config.json');
-const { sarcasm } = require('../../config/fun.json');
+const { prefix } = require('../../config/config.json');
 const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies
@@ -45,19 +41,5 @@ module.exports = async message => {
             })
         }
         return;
-    }
-    try {
-        if (Math.random() < probabilities.kevinReply && !channels.disabled.includes(message.channel.id)) {
-            if (Math.random() < 0.5) {
-                let pick = Math.floor(Math.random() * sarcasm.length);
-                message.reply(sarcasm[pick]);
-                log.info(`${message.author.tag} ${message.author} triggered a sarcastic response`);
-            } else {
-                message.react(`<:yikes:${emotes.yikes}>`)
-                    .catch(log.error);
-            }
-        }
-    } catch (err) {
-        log.error(`Something... happened? Error was: ${err}`);
     }
 }

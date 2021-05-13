@@ -1,4 +1,5 @@
-const { prefix, emotes, probabilities } = require('../config/config.json');
+const { prefix, emotes, probabilities, guilds } = require('../config/config.json');
+const { emotes } = require('../config/fun.json');
 const permissions = require('../config/permissions.json');
 const foldermap = require('../config/foldermap.json');
 const commands = require('../config/commands.json');

@@ -1,5 +1,5 @@
 const { prefix, emotes, probabilities, guilds } = require('../config/config.json');
-const { emotes } = require('../config/fun.json');
+const { emotes: funmotes } = require('../config/fun.json');
 const permissions = require('../config/permissions.json');
 const foldermap = require('../config/foldermap.json');
 const commands = require('../config/commands.json');
@@ -61,7 +61,7 @@ module.exports = async message => {
         return;
     } else if (guilds.enabled.includes(message.guild.id)) {
         if (Math.random() < probabilities.reactChance) {
-            message.react(emotes[Math.floor(Math.random() * emotes.length)]);
+            message.react(funmotes[Math.floor(Math.random() * funmotes.length)]);
         }
     }
     // Statistics

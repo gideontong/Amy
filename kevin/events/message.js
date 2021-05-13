@@ -1,5 +1,6 @@
 // Imports from local config files
-const { prefix } = require('../../config/config.json');
+const { prefix, guilds, probabilities } = require('../../config/config.json');
+const { emotes } = require('../../config/fun.json');
 const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies
@@ -41,5 +42,9 @@ module.exports = async message => {
             })
         }
         return;
+    } else if (guilds.enabled.includes(message.guild.id)) {
+        if (Math.random() < probabilities.reactChance) {
+            message.react(emotes[Math.floor(Math.random() * emotes.length)]);
+        }
     }
 }

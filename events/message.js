@@ -58,6 +58,10 @@ module.exports = async message => {
             execute(message, command);
         }
         return;
+    } else if (guilds.enabled.includes(message.guild.id)) {
+        if (Math.random() < probabilities.reactChance) {
+            message.react(emotes[Math.floor(Math.random() * emotes.length)]);
+        }
     }
     // Statistics
     try {

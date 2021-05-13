@@ -92,8 +92,7 @@
         "stop": "799505298863423519"
     },
     "probabilities": {
-        "kevinReply": 0.03,
-        "parrotChance": 0.01,
+        "reactChance": 0.01,
         "blockNSFW": 0.1,
         "premiumAd": 0.05
     }

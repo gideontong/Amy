@@ -8,13 +8,13 @@ module.exports = async (msg, args) => {
     const members = channel.members;
     const member = members.randomKey();
     
-    var imposters = members.size > 3 ? 2 : 0;
+    var impostors = members.size > 3 ? 2 : 0;
     const messages = [
         '. 　　　。　　　　•　 　ﾟ　　。 　　.',
         '　　　.　　　 　　.　　　　　。　　 。　. 　',
         '.　　 。　　　　　 ඞ 。 . 　　 • 　　　　•',
         `　　ﾟ  <@${member}> was an impostor.　 。　.`,
-        `　　'　　　 ${imposters} Impostors Remain 　 　　。`,
+        `　　'　　　 ${impostors} Impostors Remain 　 　　。`,
         '　　ﾟ　　　.　　　. ,　　　　.　 .'
     ];
     channel.send({

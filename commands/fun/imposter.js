@@ -10,12 +10,16 @@ module.exports = async (msg, args) => {
     
     var imposters = members.size > 3 ? 2 : 0;
     const messages = [
-        '```. 　　　。　　　　•　 　ﾟ　　。 　　.',
+        '. 　　　。　　　　•　 　ﾟ　　。 　　.',
         '　　　.　　　 　　.　　　　　。　　 。　. 　',
         '.　　 。　　　　　 ඞ 。 . 　　 • 　　　　•',
         `　　ﾟ  <@${member}> was an impostor.　 。　.`,
         `　　'　　　 ${imposters} Impostors Remain 　 　　。`,
-        '　　ﾟ　　　.　　　. ,　　　　.　 .```'
+        '　　ﾟ　　　.　　　. ,　　　　.　 .'
     ];
-    channel.send(messages.join('\n'));
+    channel.send({
+        embed: {
+            description: messages.join('\n')
+        }
+    });
 }

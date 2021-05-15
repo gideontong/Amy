@@ -7,13 +7,23 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     let mentions = msg.mentions.members;
     if (mentions) {
         let members = mentions.array();
         if (mentions.size == 0) {
-            msg.reply(`you are ${Math.floor(Math.random() * 100)}% depressed!`);
+            return channel.send({
+                embed: {
+                    description: `You are ${Math.floor(Math.random() * 100)}% depressed!`
+                }
+            });
         } else if (mentions.size == 1) {
-            msg.channel.send(`${members[0].toString()} is ${Math.floor(Math.random() * 100)}% depressed!`);
+            return channel.send({
+                embed: {
+                    description: `${members[0].toString()} is ${Math.floor(Math.random() * 100)}% depressed!`
+                }
+            });
         } else {
             let description = '';
             for (member of members) {
@@ -23,7 +33,7 @@ module.exports = async (msg, args) => {
                 .setColor(Math.floor(Math.random() * colors))
                 .setDescription(description)
                 .setTitle('Depression Index Fund');
-            msg.channel.send(embed);
+            return channel.send(embed);
         }
     }
 }

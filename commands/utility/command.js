@@ -42,7 +42,10 @@ module.exports = async (msg, args) => {
         };
         msg.channel.send({ embed: embed });
     } else {
-        msg.channel.send("I couldn't find the command you were looking for. Check the commands list with `commands`?");
-        return;
+        return msg.channel.send({
+            embed: {
+                description: "I couldn't find the command you were looking for. Check the commands list with `commands`?"
+            }
+        });
     }
 }

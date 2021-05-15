@@ -6,14 +6,28 @@ const { extractSnowflake } = require('../../lib/Validation');
  * @param {Array} args Command arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     if (args.length < 2) {
-        msg.reply('imagine not trying to annoy someone else? HAHAHA');
+        return channel.send({
+            embed: {
+                description: 'Tag a person in order to annoy them!'
+            }
+        });
     } else {
         const annoy = extractSnowflake(args[1]);
         if (annoy) {
-            msg.channel.send(`Hey, <@${annoy}>! Your breath smells!`);
+            return channel.send({
+                embed: {
+                    description: `Hey, <@${annoy}>! Your breath smells!`
+                }
+            });
         } else {
-            msg.reply('that is not a person...?');
+            return channel.send({
+                embed: {
+                    description: 'You need to *tag* someone in the server to annoy them!'
+                }
+            });
         }
     }
 }

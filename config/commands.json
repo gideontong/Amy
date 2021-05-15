@@ -954,6 +954,23 @@
         },
         "name": "Mother's Arms"
     },
+    "imposter": {
+        "alias": [],
+        "category": "fun",
+        "command": "imposter",
+        "cooldown": {
+            "premium": 1.0,
+            "standard": 30.0
+        },
+        "description": "Is there an imposter among us?",
+        "flags": {
+            "admin": false,
+            "hidden": false,
+            "nsfw": false,
+            "premium": false
+        },
+        "name": "Imposter?"
+    },
     "insaneasylum": {
         "alias": [],
         "category": "fun",

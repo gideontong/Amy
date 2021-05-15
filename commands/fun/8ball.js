@@ -34,6 +34,14 @@ const responses = [
  */
 module.exports = async (msg, args) => {
     const channel = msg.channel;
+
+    if (args.length < 2) {
+        return channel.send({
+            embed: {
+                description: 'Please ask a question!'
+            }
+        });
+    }
     const name = msg.member.nickname ? msg.member.nickname : msg.author.username;
     const question = msg.content.slice(args[0].length).trim();
     const answer = responses[Math.floor(Math.random() * responses.length)];
@@ -50,6 +58,6 @@ module.exports = async (msg, args) => {
             }
         ]
     };
-    channel.send({ embed: embed })
+    return channel.send({ embed: embed })
         .catch(err => { });
 }

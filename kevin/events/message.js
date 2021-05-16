@@ -1,6 +1,6 @@
 // Imports from local config files
 const { prefix, guilds, probabilities } = require('../../config/config.json');
-const { emotes } = require('../../config/fun.json');
+const { emotes, offline } = require('../../config/fun.json');
 const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies
@@ -48,16 +48,14 @@ module.exports = async message => {
             channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
                 .then(collected => { })
                 .catch(collected => {
-                    channel.send('Bruh, Akov doesn\'t like you. Imagine trying to ask him something.');
+                    channel.send(offline.akov[Math.floor(Math.random() * offline.akov.length)]);
                 });
-        }
-
-        if (message.content[0] == prefix.leo) {
+        } else if (message.content[0] == prefix.leo) {
             const filter = message => message.author.id == leoID;
             channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
                 .then(collected => { })
                 .catch(collected => {
-                    channel.send('I waited so long for Calm Leo to reply that the heat death of the universe came.')
+                    channel.send(offline.leo[Math.floor(Math.random() * offline.leo.length)]);
                 });
         }
 

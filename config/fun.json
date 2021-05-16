@@ -1154,5 +1154,25 @@
         "<:RainbowTroll:805588634248937492>",
         "<:doge_troll:798023395501539340>",
         "<:leo_what_confused:737460101442437161>"
-    ]
+    ],
+    "offline": {
+        "akov": [
+            "Bruh, Akov doesn't like you. Imagine trying to ask him something.",
+            "Sometimes Akov just isn't ready to respond. This is one of those times.",
+            "Akov is currently working at the HDH. He'll be back shortly.",
+            "Akov will see this later, he's livestreaming PUBG MOBILE on Twitch.",
+            "We need an emote AkovYell, for when Akov doesn't respond.",
+            "Even *I* don't know what you asked, Akov definitely doesn't...",
+            "Try asking Akov again in another channel. Maybe he's asleep.",
+            "Who you gonna call? AKOV-Busters!"
+        ],
+        "leo": [
+            "I waited so long for Calm Leo to reply that the heat death of the universe came.",
+            "Imagine thinking Leo's bot was coded properly.",
+            "Usually Calm Leo replies with Bruh, this time I say Bruh to you.",
+            "Calm Leo's at 64 getting rice. He'll be back shortly.",
+            "Leo played with fire or played with code? No difference.",
+            "Leo's bot being MIA be like: <:PepePanties:843572315462696980>"
+        ]
+    }
 }

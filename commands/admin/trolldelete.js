@@ -6,7 +6,14 @@ const MESSAGES = [
     'This is an unmoderated channel.',
     'Sleeping on the job again, are we?',
     '640K ought to be enough for anybody.',
-    'This process is automatic.'
+    'This process is automatic.',
+    'Never forget the importance of having fun.',
+    'Do not take life too seriously.',
+    'Blowing your mind yet?',
+    'Why do they call it rush hour when nothing moves?',
+    'Life is short.',
+    'Smile while you still have teeth.',
+    'Do not read the next sentence.'
 ];
 
 /**

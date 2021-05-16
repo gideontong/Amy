@@ -14,6 +14,8 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Array of arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     log.info(`Attempting to get profile for ${msg.author.tag}`);
     let snowflake = msg.author.id;
     let member = msg.member;
@@ -22,12 +24,16 @@ module.exports = async (msg, args) => {
             snowflake = msg.mentions.members.firstKey();
             member = msg.mentions.members.first();
             if (member.user.bot) {
-                msg.channel.send("Bots aren't allowed to have profiles!");
-                return;
+                return channel.send({
+                    embed: {
+                        description: "Bots aren't allowed to have profiles!"
+                    }
+                });
             }
         }
     }
-    msg.channel.send('Looking for a profile, please wait...')
+
+    channel.send('Looking for a profile, please wait...')
         .then(async sent => {
             await getProfile(snowflake, function (data) {
                 if (data) {

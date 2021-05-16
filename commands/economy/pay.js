@@ -11,45 +11,79 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
-    if (args.length != 3) {
-        msg.channel.send(error);
-        return;
-    }
+    const channel = msg.channel;
     const payor = msg.author.id;
-    let payee;
-    let amount;
+
+    if (args.length != 3) {
+        return channel.send({
+            embed: {
+                title: 'Error!',
+                description: error
+            }
+        });
+    }
+
+    var payee;
+    var amount;
     try {
-        payee = msg.mentions.members.firstKey();
+        payee = msg.mentions.users.first();
         amount = parseInt(args[args.length - 1]);
     } catch (err) {
-        msg.channel.send(error);
-        return;
+        return channel.send({
+            embed: {
+                title: 'Error!',
+                description: error
+            }
+        });
     }
-    if (payor == payee) {
-        msg.reply("You can't pay yourself...");
-        return;
+
+    if (payor == payee.id) {
+        return channel.send({
+            embed: {
+                title: 'Duplicate money glitch?',
+                description: "You can't pay yourself..."
+            }
+        });
     }
-    if (payee.user.bot) {
-        msg.reply("You can't pay bots...");
-        return;
+
+    if (payee.bot) {
+        return channel.send({
+            embed: {
+                title: 'Charitable donation?',
+                description: "You can't pay bots..."
+            }
+        });
     }
+    
     if (payor && payee && amount) {
-        const err = transferBalance(payor, payee, amount, false, function (data) {
+        const err = transferBalance(payor, payee.id, amount, false, function (data) {
             if (data) {
-            msg.channel.send(`Successfully transferred ${currency}${amount} to <@${payee}>!`);
-            log.info(`${msg.author.tag} transferred ${amount} to ${msg.mentions.members.first().user.tag}`);
+                log.info(`${msg.author.tag} transferred ${amount} to ${payee.tag}`);
+                return channel.send({
+                    embed: {
+                        title: 'Money Sent',
+                        description: `Successfully transferred ${currency}${amount} to <@${payee.id}>!`
+                    }
+                });
             }
             else {
-                msg.channel.send("Couldn't send money. Maybe you don't have enough?");
+                return channel.send({
+                    embed: {
+                        description: "Couldn't send money. Maybe you don't have enough?"
+                    }
+                });
             }
         });
         if (err) {
             msg.channel.send(err)
-                .catch(err => {});
+                .catch(err => { });
             return;
         }
     } else {
-        msg.channel.send(error);
-        return;
+        return channel.send({
+            embed: {
+                description: error
+            }
+        });
     }
 }

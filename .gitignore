@@ -1,11 +1,16 @@
+# Secrets
 ads.json
 secrets.json
 
 # Editors
 .vscode
 
-# Code
+# Javascript
 node_modules
 *.log*
 .yarn
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Python
+venv
+*.pyc

@@ -4,5 +4,5 @@
  * @param {Array} args Command arguments
  */
 module.exports = async (msg, args) => {
-    require('./tell')(client, msg, args);
+    require('./tell')(msg, args);
 }

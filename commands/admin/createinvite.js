@@ -41,6 +41,7 @@ module.exports = async (msg, args) => {
                         page--;
                         [message, indexes] = generatePage(guilds, page);
                         object.description = message;
+                        object.footer.text = `Page ${page + 1}/${pages}: ${guilds.length} servers available.`;
                         msg.edit({ embed: object });
                     }
                 } else if (reaction.emoji.name == RIGHT) {
@@ -48,6 +49,7 @@ module.exports = async (msg, args) => {
                         page++;
                         [message, indexes] = generatePage(guilds, page);
                         object.description = message;
+                        object.footer.text = `Page ${page + 1}/${pages}: ${guilds.length} servers available.`;
                         msg.edit({ embed: object });
                     }
                 } else {

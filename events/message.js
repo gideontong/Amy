@@ -23,8 +23,14 @@ module.exports = async message => {
         if (!RegExp(/^[a-z0-9]+$/i).test(command)) return;
         if (!permissions.users.admin.includes(message.author.id)) {
             if (permissions.commands.unreleased.includes(command)) {
-                message.reply('Command coming soon!');
-                return;
+                return message.channel.send({
+                    embed: {
+                        description: 'That command is coming soon!',
+                        footer: {
+                            text: 'Try joining Amy\'s server to use beta commands...'
+                        }
+                    }
+                });
             } else if (permissions.commands.admin.includes(command)) {
                 return message.channel.send({
                     embed: {

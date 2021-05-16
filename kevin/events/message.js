@@ -4,15 +4,18 @@ const { emotes } = require('../../config/fun.json');
 const permissions = require('../../config/permissions.json');
 
 // Imports from dependencies
-const { isIgnored } = require('../../lib/Validation');
 const log = require('log4js').getLogger('kevin');
+
+const akovID = '727603104807256168';
+const leoID = '756208954031341688';
+const trollTime = 3;
 
 /**
  * Handles messages for newly sent messages, parsing for commands and actions
  * @param {Message} message Message that was newly sent
  */
 module.exports = async message => {
-    if (isIgnored(message, prefix)) return;
+    const channel = message.channel;
     if (message.content[0] == prefix.kevin) {
         commands = message.content.split(' ');
         toRun = commands[0].slice(1).toLowerCase();
@@ -20,29 +23,42 @@ module.exports = async message => {
         try {
             if (!permissions.users.admin.includes(message.author.id)) {
                 if (permissions.commands.unreleased.includes(toRun)) {
-                    message.reply('Command coming soon!');
-                    log.info(`${message.author.tag} ${message.author} tried to run upcoming command ${message.content}`);
-                    return;
+                    return channel.send('Command coming soon!');
                 } else if (permissions.commands.admin.includes(toRun)) {
-                    message.reply("You don't have permission to do that!");
-                    log.info(`${message.author.tag} ${message.author} tried to run admin command ${message.content}`);
-                    return;
+                    return channel.send("You don't have permission to do that!");
                 }
             }
             cmdFile = require(`../commands/${toRun}.js`);
         } catch {
-            log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
-            return;
+            return log.warn(`${message.author.tag} ${message.author} tried to run invalid command ${message.content}`);
         }
+
         if (!cmdFile) {
-            log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
+            return log.warn(`${message.author.tag} ${message.author} tried to run nonexistent command ${message.content}`);
         } else {
             cmdFile(message.client, message, commands).catch(err => {
-                log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
+                return log.error(`${message.author.tag} ${message.author} ran ${message.content} that resulted in error ${err}`);
             })
         }
-        return;
     } else if (guilds.enabled.includes(message.guild.id)) {
+        if (message.content[0] == prefix.akov) {
+            const filter = message => message.author.id == akovID;
+            channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
+                .then(collected => { })
+                .catch(collected => {
+                    channel.send('Bruh, Akov doesn\'t like you. Imagine trying to ask him something.');
+                });
+        }
+
+        if (message.content[0] == prefix.leo) {
+            const filter = message => message.author.id == leoID;
+            channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
+                .then(collected => { })
+                .catch(collected => {
+                    channel.send('I waited so long for Calm Leo to reply that the heat death of the universe came.')
+                });
+        }
+
         if (Math.random() < probabilities.reactChance) {
             message.react(emotes[Math.floor(Math.random() * emotes.length)]);
         }

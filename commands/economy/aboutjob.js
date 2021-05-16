@@ -15,9 +15,14 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     if (args.length < 2) {
-        msg.channel.send('To get info about a job, use `aboutjob <job name>`!');
-        return;
+        return channel.send({
+            embed: {
+                description: 'To get info about a job, use `aboutjob <job name>`!'
+            }
+        });
     }
     args.shift();
     const search = args.join('').toLowerCase();
@@ -34,8 +39,12 @@ module.exports = async (msg, args) => {
             .setDescription(job.description)
             .setThumbnail(job.image)
             .setTitle(job.name);
-        msg.channel.send(embed);
+        channel.send(embed);
     } else {
-        msg.channel.send("I couldn't find that job name! Did you spell it correctly?");
+        channel.send({
+            embed: {
+                description: "I couldn't find that job name! Did you spell it correctly?"
+            }
+        });
     }
 }

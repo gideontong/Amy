@@ -8,9 +8,14 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     if (args.length < 2) {
-        msg.channel.send('You can use this command to get a new job! Simply type `job <job name>`!');
-        return;
+        return channel.send({
+            embed: {
+                description: 'You can use this command to get a new job! Simply type `job <job name>`!'
+            }
+        });
     }
     args.shift();
     const search = args.join('');
@@ -21,10 +26,14 @@ module.exports = async (msg, args) => {
                 msg.reply(`Your new job is ${data[1]}! Work begins immediately, so get crackin'!`);
                 log.info(`${msg.author.tag} set their job to ${data[1]}`);
             } else {
-                msg.channel.send(data[1]);
+                return channel.send(data[1]);
             }
         });
     } else {
-        msg.channel.send("I can't seem to find that job. Maybe try using `jobs` to see what jobs you qualify for?");
+        return channel.send({
+            embed: {
+                description: "I can't seem to find that job. Maybe try using `jobs` to see what jobs you qualify for?"
+            }
+        });
     }
 }

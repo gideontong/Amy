@@ -15,6 +15,8 @@ const trollTime = 3;
  * @param {Message} message Message that was newly sent
  */
 module.exports = async message => {
+    if (message.author.bot) return;
+
     const channel = message.channel;
     if (message.content[0] == prefix.kevin) {
         commands = message.content.split(' ');

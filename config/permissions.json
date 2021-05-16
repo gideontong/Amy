@@ -21,8 +21,7 @@
             "chess",
             "rockpaperscissors",
             "shop",
-            "vote",
-            "respond"
+            "vote"
         ]
     },
     "users": {

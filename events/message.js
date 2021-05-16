@@ -26,8 +26,14 @@ module.exports = async message => {
                 message.reply('Command coming soon!');
                 return;
             } else if (permissions.commands.admin.includes(command)) {
-                message.reply("You don't have permission to do that!");
-                return;
+                return message.channel.send({
+                    embed: {
+                        description: `<@${message.author.id}>, you don't have permission to do that!`,
+                        footer: {
+                            text: 'You need to be the creator of Amy...'
+                        }
+                    }
+                });
             }
         }
         if (command in commands) {

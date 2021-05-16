@@ -12,6 +12,7 @@
             "say",
             "setbalance",
             "tell",
+            "trolldelete",
             "welcome"
         ],
         "unreleased": [

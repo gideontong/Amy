@@ -2,6 +2,7 @@
     "commands": {
         "admin": [
             "clear",
+            "createinvite",
             "countreactions",
             "debugslots",
             "generateachievement",

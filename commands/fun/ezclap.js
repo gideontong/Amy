@@ -8,5 +8,5 @@ const emotes = '<:EZ:809906880062685265> <a:clap:809906878225055744>';
 module.exports = async (msg, args) => {
     const channel = msg.channel;
     channel.send(emotes)
-        .catch(err => { });
+        .catch(_ => { });
 }

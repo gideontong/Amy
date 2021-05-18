@@ -27,10 +27,15 @@ module.exports = async (msg, args) => {
                         };
                         dm.send({ embed: banned });
                         channel.success(`<@${toBan.id}> has been banned for reason: ${reason}`);
-                    } catch (err) { }
+                    } catch (_) { }
                 });
         } else {
-            channel.send('Mention the user you want to ban and a reason why!');
+            channel.send({
+                embed: {
+                    description: 'Message the user you wish to ban and provide a reason why!'
+                }
+            })
+                .catch(_ => { });
         }
     } else {
         msg.react('<a:no:729594117017042964>');

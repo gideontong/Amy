@@ -20,7 +20,8 @@ module.exports = async (msg, args) => {
                 title: 'Error!',
                 description: error
             }
-        });
+        })
+            .catch(_ => { });
     }
 
     var payee;
@@ -34,7 +35,8 @@ module.exports = async (msg, args) => {
                 title: 'Error!',
                 description: error
             }
-        });
+        })
+            .catch(_ => { });
     }
 
     if (payor == payee.id) {
@@ -43,7 +45,8 @@ module.exports = async (msg, args) => {
                 title: 'Duplicate money glitch?',
                 description: "You can't pay yourself..."
             }
-        });
+        })
+            .catch(_ => { });
     }
 
     if (payee.bot) {
@@ -52,7 +55,8 @@ module.exports = async (msg, args) => {
                 title: 'Charitable donation?',
                 description: "You can't pay bots..."
             }
-        });
+        })
+            .catch(_ => { });
     }
     
     if (payor && payee && amount) {
@@ -64,26 +68,29 @@ module.exports = async (msg, args) => {
                         title: 'Money Sent',
                         description: `Successfully transferred ${currency}${amount} to <@${payee.id}>!`
                     }
-                });
+                })
+                    .catch(_ => { });
             }
             else {
                 return channel.send({
                     embed: {
                         description: "Couldn't send money. Maybe you don't have enough?"
                     }
-                });
+                })
+                    .catch(_ => { });
             }
         });
+
         if (err) {
-            msg.channel.send(err)
-                .catch(err => { });
-            return;
+            return channel.send(err)
+                .catch(_ => { });
         }
     } else {
         return channel.send({
             embed: {
                 description: error
             }
-        });
+        })
+            .catch(_ => { });
     }
 }

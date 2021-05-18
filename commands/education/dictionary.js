@@ -15,15 +15,18 @@ const log = require('log4js').getLogger('amy');
  */
 module.exports = async (msg, args) => {
     const channel = msg.channel;
+
     if (args.length < 2) {
         return channel.send('You need to provide a word to look up!')
-            .catch(err => { });
+            .catch(_ => { });
     }
+
     let word = args[1];
     if (!(/^[A-Za-z]+$/.test(word))) {
         return channel.send('Your word can be made up of only standard letters!')
-            .catch(err => { });
+            .catch(_ => { });
     }
+
     log.info(`Looking up dictionary word: ${word}`);
     authenticatedGet(function (definitions) {
         if (Array.isArray(definitions) && definitions.length > 0) {
@@ -49,10 +52,10 @@ module.exports = async (msg, args) => {
                 }
             };
             return channel.send({ embed: embed })
-                .catch(err => { });
+                .catch(_ => { });
         } else {
             return channel.send('I am not so sure that was a word...')
-                .catch(err => { });
+                .catch(_ => { });
         }
     }, host, endpoint + word);
 }

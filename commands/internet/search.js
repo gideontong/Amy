@@ -10,10 +10,16 @@ const { MessageEmbed } = require('discord.js');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
     if (args.length < 2) {
-        msg.channel.send('You have to give me something to search for!');
-        return;
+        return channel.send({
+            embed: {
+                description: 'You have to give me something to search for!'
+            }
+        })
+            .catch(_ => { });
     }
+
     const query = msg.content.substring(args[0].length + 1);
     getGoogleSearch(function (results) {
         var embed = new MessageEmbed()
@@ -22,23 +28,23 @@ module.exports = async (msg, args) => {
             .setDescription(`Got ${results.count} results in ${results.time} seconds.${results.corrected ? '\n*Did you mean: ' + results.corrected + '?*' : ''}`)
             .setFooter(`React 🗑 within 10 minutes to delete this search result.`)
             .setTitle(`Search Results for ${query}`);
-        msg.channel.send(embed)
+        channel.send(embed)
             .then(searchResultBox => {
                 searchResultBox.react('🗑');
                 const filter = (reaction, user) => {
                     return reaction.emoji.name == '🗑'  && user.id == msg.author.id;
                 };
                 searchResultBox.awaitReactions(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
-                    .then(collected => {
+                    .then(_ => {
                         msg.delete();
                         searchResultBox.delete();
                     })
-                    .catch(collected => {
+                    .catch(_ => {
                         embed.setFooter('This search result can no longer be deleteed.');
                         searchResultBox.edit(embed);
                     });
             })
-            .catch(err => { });
+            .catch(_ => { });
     }, query, !msg.channel.nsfw);
 }
 

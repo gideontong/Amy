@@ -8,12 +8,16 @@ const log = require('log4js').getLogger('amy');
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     const err = getBalance(msg.author.id, function (data) {
-        msg.channel.send(`You have ${currency}${data} in your wallet!`);
+        channel.send(`You have ${currency}${data} in your wallet!`)
+            .catch(_ => { });
         log.info(`${msg.author.tag} requested their balance`);
     });
+    
     if (err) {
-        msg.channel.send(err)
-            .catch(err => { });
+        channel.send(err)
+            .catch(_ => { });
     }
 }

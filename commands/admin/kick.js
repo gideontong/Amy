@@ -30,7 +30,11 @@ module.exports = async (msg, args) => {
                     } catch (err) { }
                 });
         } else {
-            channel.send('Mention the user you want to kick and a reason why!');
+            channel.send({
+                embed: {
+                    description: 'Mention the user you want to kick and a reason why!'
+                }
+            });
         }
     } else {
         msg.react('<a:no:729594117017042964>');

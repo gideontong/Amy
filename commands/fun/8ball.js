@@ -40,8 +40,10 @@ module.exports = async (msg, args) => {
             embed: {
                 description: 'Please ask a question!'
             }
-        });
+        })
+            .catch(_ => { });
     }
+    
     const name = msg.member.nickname ? msg.member.nickname : msg.author.username;
     const question = msg.content.slice(args[0].length).trim();
     const answer = responses[Math.floor(Math.random() * responses.length)];
@@ -59,5 +61,5 @@ module.exports = async (msg, args) => {
         ]
     };
     return channel.send({ embed: embed })
-        .catch(err => { });
+        .catch(_ => { });
 }

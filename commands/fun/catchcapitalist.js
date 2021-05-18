@@ -15,13 +15,15 @@ module.exports = async (msg, args) => {
     channel.send(top)
         .then(message => {
             channel.awaitMessages(filter, { max: 1, time: timeout * 1000, errors: ['time'] })
-                .then(collected => {
-                    channel.send(bottom);
+                .then(_ => {
+                    channel.send(bottom)
+                        .catch(_ => { });
                 })
-                .catch(collected => {
+
+                .catch(_ => {
                     message.edit('...I am not sure there are any here. Try catching somewhere else?')
-                        .catch(err => { });
+                        .catch(_ => { });
                 });
         })
-        .catch(err => { });
+        .catch(_ => { });
 }

@@ -12,12 +12,14 @@ module.exports = async (msg, args) => {
             const snowflake = extractSnowflake(args[1]);
             if (snowflake) {
                 const channel = msg.client.channels.cache.get(snowflake);
-                channel.send(msg.content.substring(args[0].length + args[1].length + 2));
+                channel.send(msg.content.substring(args[0].length + args[1].length + 2))
+                    .catch(_ => { });
                 log.info(`${msg.author.tag} ${msg.author} told me to send a message in #${channel.name}`);
                 return;
             }
         } else {
-            msg.channel.send(msg.content.substring(args[0].length + 1));
+            msg.channel.send(msg.content.substring(args[0].length + 1))
+                .catch(_ => { });
             msg.delete();
             log.info(`${msg.author.tag} ${msg.author} told me to send a message in #${msg.channel.name}`);
         }

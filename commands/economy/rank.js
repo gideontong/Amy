@@ -9,14 +9,18 @@ const { getRank } = require("../../lib/Achievement")
  * @param {Array} args Arguments
  */
 module.exports = async (msg, args) => {
+    const channel = msg.channel;
+
     if(args.length < 2) {
-        msg.channel.send(`You need to give me a rank number to see its icon, like \`rank ${Math.random() < 0.5 ? '69': '42'}\`!`);
-        return;
+        return channel.send(`You need to give me a rank number to see its icon, like \`rank ${Math.random() < 0.5 ? '69': '42'}\`!`);
     }
     const rank = parseInt(args[1]);
     if (rank == NaN) {
-        msg.channel.send('You... gave me something other than a rank number?');
-        return;
+        return channel.send({
+            embed: {
+                description: 'Is that a rank number? Make sure you provide a number!'
+            }
+        });
     } else {
         const [available, data] = getRank(rank);
         if (available) {
@@ -25,11 +29,13 @@ module.exports = async (msg, args) => {
                 .setDescription('Not much to say about ranks currently, but at least you can look at a pretty picture.')
                 .setThumbnail(data.image)
                 .setTitle(data.name);
-            msg.channel.send(embed);
-            return;
+            return channel.send(embed);
         } else {
-            msg.channel.send('I searched far and wide and failed to find that rank number. Request it?');
-            return;
+            return channel.send({
+                embed: {
+                    description: 'We don\'t have ranks that high just yet! Join the support server to let me know.'
+                }
+            });
         }
     }
 }

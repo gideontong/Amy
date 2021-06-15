@@ -11,7 +11,12 @@ const enabledUsers = {
 };
 
 const trackingGuild = '691848461217169438';
-const updateChannel = '735272343773118504';
+const updateChannel = '727649976766693416';
+const debugChannel = '735272343773118504';
+
+const leoMain = '578715287491182595';
+const leoSecondary = '756250474478305390';
+
 const log = require('log4js').getLogger('kevin');
 
 // TODO:
@@ -21,6 +26,7 @@ const log = require('log4js').getLogger('kevin');
 // Leo has gone outside (main on mobile)
 // Leo is taking a dump (second account online)
 // User is wanking (posting in sauce channel)
+// Rate limit to an hour, and also check timezones
 
 /**
  * Determine a presence change. Used for updating when
@@ -40,8 +46,28 @@ module.exports = async (oldPresence, newPresence) => {
 
     const client = newPresence.client;
     const channels = client.channels;
+
+    const oldStatus = oldPresence.clientStatus;
+    const newStatus = newPresence.clientStatus;
+    const oldWebStatus = 'web' in oldStatus ? oldStatus['web'] : 'offline';
+    const newWebStatus = 'web' in newStatus ? newStatus['web'] : 'offline';
+    const oldMobileStatus = 'mobile' in oldStatus ? oldStatus['mobile'] : 'offline';
+    const newMobileStatus = 'mobile' in newStatus ? newStatus['mobile'] : 'offline';
+    const oldDesktopStatus = 'desktop' in oldStatus ? oldStatus['desktop'] : 'offline';
+    const newDesktopStatus = 'desktop' in newStatus ? newStatus['desktop'] : 'offline';
     
     channels.fetch(updateChannel)
+        .then((channel) => {
+            // Leo's main appears online on mobile
+            if (snowflake == leoMain) {
+                if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
+                    channel.send('Leo has gone outside');
+                }
+            }
+        })
+        .catch(_ => { });
+    
+    channels.fetch(debugChannel)
         .then((channel) => {
             const emit = new Array();
             
@@ -49,14 +75,6 @@ module.exports = async (oldPresence, newPresence) => {
                 emit.push(`from ${oldPresence.status} to ${newPresence.status}`);
             }
 
-            const oldStatus = oldPresence.clientStatus;
-            const newStatus = newPresence.clientStatus;
-            const oldWebStatus = 'web' in oldStatus ? oldStatus['web'] : 'offline';
-            const newWebStatus = 'web' in newStatus ? newStatus['web'] : 'offline';
-            const oldMobileStatus = 'mobile' in oldStatus ? oldStatus['mobile'] : 'offline';
-            const newMobileStatus = 'mobile' in newStatus ? newStatus['mobile'] : 'offline';
-            const oldDesktopStatus = 'desktop' in oldStatus ? oldStatus['desktop'] : 'offline';
-            const newDesktopStatus = 'desktop' in newStatus ? newStatus['desktop'] : 'offline';
             
             if (oldWebStatus != newWebStatus) {
                 emit.push(`web status from ${oldWebStatus} to ${newWebStatus}`);

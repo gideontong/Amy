@@ -11,6 +11,7 @@ const enabledUsers = {
 };
 
 const updateChannel = '548523285172715550';
+const log = require('log4js').getLogger('kevin');
 
 /**
  * Determine a presence change. Used for updating when
@@ -20,6 +21,7 @@ const updateChannel = '548523285172715550';
  */
 module.exports = async (oldPresence, newPresence) => {
     const snowflake = newPresence.userID;
+    log.info(`Presence update to ID ${newPresence.userID} with status ${newPresence.status}`)
     if (!(snowflake in enabledUsers)) return;
 
     const client = newPresence.client;

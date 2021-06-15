@@ -51,10 +51,23 @@ module.exports = async (oldPresence, newPresence) => {
 
             const oldStatus = oldPresence.clientStatus;
             const newStatus = newPresence.clientStatus;
-            const oldMobile = 'mobile' in oldStatus && oldStatus['mobile'] != 'idle';
-            const newMobile = 'mobile' in newStatus && newStatus['mobile'] != 'idle';
-            if (oldMobile != newMobile) {
-                emit.push('mobile status');
+            const oldWebStatus = 'web' in oldStatus ? oldStatus['web'] : 'offline';
+            const newWebStatus = 'web' in newStatus ? newStatus['web'] : 'offline';
+            const oldMobileStatus = 'mobile' in oldStatus ? oldStatus['mobile'] : 'offline';
+            const newMobileStatus = 'mobile' in newStatus ? newStatus['mobile'] : 'offline';
+            const oldDesktopStatus = 'desktop' in oldStatus ? oldStatus['desktop'] : 'offline';
+            const newDesktopStatus = 'desktop' in newStatus ? newStatus['desktop'] : 'offline';
+            
+            if (oldWebStatus != newWebStatus) {
+                emit.push(`web status from ${oldWebStatus} to ${newWebStatus}`);
+            }
+
+            if (oldMobileStatus != newMobileStatus) {
+                emit.push(`mobile status from ${oldMobileStatus} to ${newMobileStatus}`);
+            }
+
+            if (oldDesktopStatus != newDesktopStatus) {
+                emit.push(`desktop status from ${oldDesktopStatus} to ${newDesktopStatus}`);
             }
 
             if (!emit.length) return;

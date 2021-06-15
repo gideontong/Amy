@@ -57,6 +57,7 @@ module.exports = async (oldPresence, newPresence) => {
                 emit.push('mobile status');
             }
 
+            if (!emit.length) return;
             channel.send(name + ' changed ' + emit.join(' and '))
                 .catch(_ => { });
         })

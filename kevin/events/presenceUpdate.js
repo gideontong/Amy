@@ -20,8 +20,9 @@ const log = require('log4js').getLogger('kevin');
  * @param {Presence} newPresence New Presence data
  */
 module.exports = async (oldPresence, newPresence) => {
-    const snowflake = newPresence.userID + '';
+    const snowflake = newPresence.userID;
     if (!(snowflake in enabledUsers)) return;
+    log.info(`${snowflake} changed their status to ${newPresence.status}`);
 
     const client = newPresence.client;
     const channels = client.channels;

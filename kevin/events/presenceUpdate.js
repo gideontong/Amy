@@ -10,6 +10,7 @@ const enabledUsers = {
     '756250474478305390': 'Leo'
 };
 
+const trackingGuild = '691848461217169438';
 const updateChannel = '735272343773118504';
 const log = require('log4js').getLogger('kevin');
 
@@ -20,9 +21,14 @@ const log = require('log4js').getLogger('kevin');
  * @param {Presence} newPresence New Presence data
  */
 module.exports = async (oldPresence, newPresence) => {
+    const guild = newPresence.guild;
+    if (!(guild.available && guild.id == trackingGuild)) return;
+
     const snowflake = newPresence.userID;
     if (!(snowflake in enabledUsers)) return;
-    log.info(`${snowflake} changed their status to ${newPresence.status}`);
+    const name = enabledUsers[snowflake];
+    
+    log.info(`${name} changed their status to ${newPresence.status}`);
 
     const client = newPresence.client;
     const channels = client.channels;
@@ -30,7 +36,7 @@ module.exports = async (oldPresence, newPresence) => {
     channels.fetch(updateChannel)
         .then((channel) => {
             if (oldPresence.status != newPresence.status) {
-                channel.send(`${enabledUsers[snowflake]} changed their status from ${oldPresence.status} to ${newPresence.status}`);
+                channel.send(`${name} changed their status from ${oldPresence.status} to ${newPresence.status}`);
             }
         })
         .catch(err => { });

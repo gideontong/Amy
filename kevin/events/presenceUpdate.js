@@ -10,7 +10,7 @@ const enabledUsers = {
     '756250474478305390': 'Leo'
 };
 
-const updateChannel = '548523285172715550';
+const updateChannel = '735272343773118504';
 const log = require('log4js').getLogger('kevin');
 
 /**

@@ -23,8 +23,6 @@ const log = require('log4js').getLogger('kevin');
 // User has woken up
 // User has gone back to sleep
 // User has finally turned on their computer
-// Leo has gone outside (main on mobile)
-// Leo is taking a dump (second account online)
 // User is wanking (posting in sauce channel)
 // Rate limit to an hour, and also check timezones
 
@@ -58,11 +56,14 @@ module.exports = async (oldPresence, newPresence) => {
     
     channels.fetch(updateChannel)
         .then((channel) => {
-            // Leo's main appears online on mobile
-            if (snowflake == leoMain) {
-                if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
-                    channel.send('Leo has gone outside');
-                }
+            // Anyone appears online on mobile
+            if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
+                channel.send(`${name} has gone outside`);
+            }
+
+            // Leo's second account online
+            else if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'offline') {
+                channel.send('Leo is taking a dump');
             }
         })
         .catch(_ => { });

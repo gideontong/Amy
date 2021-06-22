@@ -11,13 +11,13 @@ const enabledUsers = {
 };
 
 const trackingGuild = '691848461217169438';
-const updateChannel = '727649976766693416';
+const botTestingChannel = '727649976766693416';
 const debugChannel = '735272343773118504';
 
 const leoMain = '578715287491182595';
 const leoSecondary = '756250474478305390';
 
-const log = require('log4js').getLogger('kevin');
+const timeZone = 'America/Los_Angeles';
 
 // TODO:
 // User has woken up
@@ -53,30 +53,46 @@ module.exports = async (oldPresence, newPresence) => {
     const newMobileStatus = 'mobile' in newStatus ? newStatus['mobile'] : 'offline';
     const oldDesktopStatus = 'desktop' in oldStatus ? oldStatus['desktop'] : 'offline';
     const newDesktopStatus = 'desktop' in newStatus ? newStatus['desktop'] : 'offline';
-    
+
+    const currentTime = new Date(new Date().toLocaleString([], { timeZone: timeZone }));
+    const currentHour = currentTime.getHours();
+
     channels.fetch(debugChannel)
         .then((channel) => {
             // Anyone appears online on mobile
             if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
-                channel.send(`${name} has gone outside`);
+                // Early morning
+                if (currentHour < 6) {
+                    channel.send(`${name} is staying up real late`);
+                }
+
+                // Normal morning
+                else if (currentHour < 13) {
+                    channel.send(`${name} is finally waking up`);
+                }
+
+                // Afternoon
+                else if (currentHour < 17) {
+                    channel.send(`${name} is possibly going outside`);
+                }
             }
 
             // Leo's second account online
-            else if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'offline') {
+            else if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'online') {
                 channel.send('Leo is taking a dump');
             }
         })
         .catch(_ => { });
-    
+
     channels.fetch(debugChannel)
         .then((channel) => {
             const emit = new Array();
-            
+
             if (oldPresence.status != newPresence.status) {
                 emit.push(`from ${oldPresence.status} to ${newPresence.status}`);
             }
 
-            
+
             if (oldWebStatus != newWebStatus) {
                 emit.push(`web status from ${oldWebStatus} to ${newWebStatus}`);
             }
@@ -90,7 +106,13 @@ module.exports = async (oldPresence, newPresence) => {
             }
 
             if (!emit.length) return;
-            channel.send('[DEBUG] ' + name + ' changed ' + emit.join(' and '))
+            channel.send({
+                embed: {
+                    title: 'Tracking Debug Alert',
+                    description: name + ' changed ' + emit.join(' and '),
+                    color: 962228
+                }
+            })
                 .catch(_ => { });
         })
         .catch(_ => { });

@@ -20,10 +20,7 @@ const leoSecondary = '756250474478305390';
 const timeZone = 'America/Los_Angeles';
 
 // TODO:
-// User has woken up
-// User has gone back to sleep
 // User has finally turned on their computer
-// User is wanking (posting in sauce channel)
 // Rate limit to an hour, and also check timezones
 
 /**
@@ -59,8 +56,13 @@ module.exports = async (oldPresence, newPresence) => {
 
     channels.fetch(debugChannel)
         .then((channel) => {
+            // Leo's second account online
+            if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'offline') {
+                channel.send('Leo is taking a dump');
+            }
+
             // Anyone appears online on mobile
-            if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
+            else if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {
                 // Early morning
                 if (currentHour < 6) {
                     channel.send(`${name} is staying up real late`);
@@ -77,9 +79,12 @@ module.exports = async (oldPresence, newPresence) => {
                 }
             }
 
-            // Leo's second account online
-            else if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'online') {
-                channel.send('Leo is taking a dump');
+            // Anyone goes offline on mobile and offline completely
+            else if (oldMobileStatus != 'offline' && newMobileStatus == 'offline' && newStatus == 'offline') {
+                // Morning
+                if (currentHour > 5 & currentHour < 12) {
+                    channel.send(`${name} is going back to sleep`);
+                }
             }
         })
         .catch(_ => { });

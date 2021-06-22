@@ -90,7 +90,7 @@ module.exports = async (oldPresence, newPresence) => {
             }
 
             if (!emit.length) return;
-            channel.send(name + ' changed ' + emit.join(' and '))
+            channel.send('[DEBUG] ' + name + ' changed ' + emit.join(' and '))
                 .catch(_ => { });
         })
         .catch(_ => { });

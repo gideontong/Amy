@@ -11,16 +11,12 @@ const enabledUsers = {
 };
 
 const trackingGuild = '691848461217169438';
-const botTestingChannel = '727649976766693416';
 const debugChannel = '735272343773118504';
-
-const leoMain = '578715287491182595';
 const leoSecondary = '756250474478305390';
 
 const timeZone = 'America/Los_Angeles';
 
 // TODO:
-// User has finally turned on their computer
 // Rate limit to an hour, and also check timezones
 
 /**
@@ -79,10 +75,18 @@ module.exports = async (oldPresence, newPresence) => {
                 }
             }
 
+            // Turn on the computer
+            else if (oldDesktopStatus == 'offline' && newDesktopStatus == 'offline') {
+                // Morning
+                if (currentHour > 5 && currentHour < 12) {
+                    channel.send(`${name} has finally turned on their computer`);
+                }
+            }
+
             // Anyone goes offline on mobile and offline completely
             else if (oldMobileStatus != 'offline' && newMobileStatus == 'offline' && newStatus == 'offline') {
                 // Morning
-                if (currentHour > 5 & currentHour < 12) {
+                if (currentHour > 5 && currentHour < 12) {
                     channel.send(`${name} is going back to sleep`);
                 }
             }

@@ -54,7 +54,7 @@ module.exports = async (oldPresence, newPresence) => {
     const oldDesktopStatus = 'desktop' in oldStatus ? oldStatus['desktop'] : 'offline';
     const newDesktopStatus = 'desktop' in newStatus ? newStatus['desktop'] : 'offline';
     
-    channels.fetch(updateChannel)
+    channels.fetch(debugChannel)
         .then((channel) => {
             // Anyone appears online on mobile
             if (oldMobileStatus == 'offline' && newMobileStatus != 'offline') {

@@ -117,7 +117,7 @@ module.exports = async (oldPresence, newPresence) => {
             if (!emit.length) return;
             channel.send({
                 embed: {
-                    title: 'Tracking Debug Alert',
+                    title: 'Online Status Change',
                     description: name + ' changed ' + emit.join(' and '),
                     color: 962228
                 }

@@ -10,7 +10,7 @@ module.exports = async (emoji) => {
 
     emoji.fetchAuthor()
         .then((author) => {
-            for (channelID of logging.logging) {
+            for (channelID of logging.alerts) {
                 channels.fetch(channelID)
                     .then((channel) => {
                         emitAlert(emoji, author, channel);

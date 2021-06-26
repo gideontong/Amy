@@ -76,7 +76,7 @@ module.exports = async (oldPresence, newPresence) => {
             }
 
             // Turn on the computer
-            else if (oldDesktopStatus == 'offline' && newDesktopStatus == 'offline') {
+            else if (oldDesktopStatus == 'offline' && newDesktopStatus != 'offline') {
                 // Morning
                 if (currentHour > 5 && currentHour < 12) {
                     channel.send(`${name} has finally turned on their computer`);

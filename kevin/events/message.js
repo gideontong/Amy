@@ -44,6 +44,7 @@ module.exports = async message => {
         }
     } else if (guilds.enabled.includes(message.guild.id)) {
         if (message.content[0] == prefix.akov) {
+            if (message.content.length < 2 || message.content[1] == '.') return;
             const filter = message => message.author.id == akovID;
             channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
                 .then(collected => { })

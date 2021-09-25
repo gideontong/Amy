@@ -43,15 +43,7 @@ module.exports = async message => {
             })
         }
     } else if (guilds.enabled.includes(message.guild.id)) {
-        if (message.content[0] == prefix.akov) {
-            if (message.content.length < 2 || message.content[1] == '.') return;
-            const filter = message => message.author.id == akovID;
-            channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
-                .then(collected => { })
-                .catch(collected => {
-                    channel.send(offline.akov[Math.floor(Math.random() * offline.akov.length)]);
-                });
-        } else if (message.content[0] == prefix.leo) {
+        if (message.content[0] == prefix.leo) {
             const filter = message => message.author.id == leoID;
             channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
                 .then(collected => { })

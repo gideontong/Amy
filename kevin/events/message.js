@@ -43,15 +43,6 @@ module.exports = async message => {
             })
         }
     } else if (guilds.enabled.includes(message.guild.id)) {
-        if (message.content[0] == prefix.leo) {
-            const filter = message => message.author.id == leoID;
-            channel.awaitMessages(filter, { max: 1, time: trollTime * 1000, errors: ['time'] })
-                .then(collected => { })
-                .catch(collected => {
-                    channel.send(offline.leo[Math.floor(Math.random() * offline.leo.length)]);
-                });
-        }
-
         if (Math.random() < probabilities.reactChance) {
             message.react(emotes[Math.floor(Math.random() * emotes.length)]);
         }

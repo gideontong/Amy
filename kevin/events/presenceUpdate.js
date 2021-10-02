@@ -116,6 +116,7 @@ module.exports = async (oldPresence, newPresence) => {
             }
 
             if (!emit.length) return;
+            return;
             channel.send({
                 embed: {
                     title: 'Online Status Change',

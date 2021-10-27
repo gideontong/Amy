@@ -53,6 +53,8 @@ module.exports = async (oldPresence, newPresence) => {
 
     channels.fetch(debugChannel)
         .then((channel) => {
+            return;
+            
             // Leo's second account online
             if (snowflake == leoSecondary && oldPresence.status == 'offline' && newPresence.status != 'offline') {
                 channel.send('Leo is taking a dump');

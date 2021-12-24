@@ -100,7 +100,3 @@ Amy is maintained by [Gideon Tong](https://gideontong.com), whom you can contact
 Contributions and feedback from [Amy Nguyen](https://www.github.com/amytnguyen01/), [Max Buydakov](https://github.com/mbuyd), [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), [Leo Zhang](https://github.com/Leo10250), and [Jesus Castillo](https://github.com/oscillatingneutrino) have been implemented into this project.
 
 Their contributions can be found in the contributor's graph, and range from finding typos in strings to creating feature request issues. Special thanks to Amy Nguyen for allowing her namesake to be the inspiration of this project.
-
-### Licensing
-
-**Amy** is licensed under the MIT License and is copyrighted by &copy; Gideon Tong 2019-2021. She depends on the [Discord.js](https://discord.js.org), [qrcode](https://github.com/soldair/node-qrcode), [canvas](https://github.com/Automattic/node-canvas), [youtube-dl](https://github.com/przemyslawpluta/node-youtube-dl#readme), and [log4js](https://github.com/log4js-node/log4js-node) Node packages, which are both licensed under the Apache-2.0 License.

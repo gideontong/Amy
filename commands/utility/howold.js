@@ -1,8 +1,0 @@
-/**
- * Alias for accountage command
- * @param {Message} msg Command
- * @param {Array} args Command arguments
- */
-module.exports = async (msg, args) => {
-    require('./accountage')(msg, args);
-}

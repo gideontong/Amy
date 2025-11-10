@@ -1,0 +1,19 @@
+[project]
+name = "amy"
+version = "4.0.0"
+description = "The reimagined Discord assistant"
+authors = [
+    {name = "Gideon Tong",email = "gideon@gideontong.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py[voice] (>=2.6.4,<3.0.0)",
+    "requests (>=2.32.5,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

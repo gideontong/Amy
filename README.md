@@ -2,15 +2,28 @@
   <img src="https://i.imgur.com/uHTvv0U.png" alt="Amy's Profile">
 </p>
 
-[![Build Status](https://travis-ci.com/gideontong/Amy.svg?branch=master)](https://travis-ci.com/gideontong/Amy) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) ![Latest Release](https://img.shields.io/github/v/release/gideontong/Amy) ![MIT License](https://img.shields.io/github/license/gideontong/Amy)
 
 -----
 
-🐱‍🏍 Amy is your personal assisstant, reimagined. In other words, Amy is a Discord bot for the [Dudes of 708 Discord server](https://discord.gg/WUGMTcZ). You can also visit our [YouTube homepage](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA) to see the kind of content that is relevant to the usage of Amy. To see the full docs, click [here](docs/README.md). [Click here to add Amy to your Discord server.](https://discord.com/api/oauth2/authorize?client_id=721503241531162707&permissions=8&redirect_uri=https%3A%2F%2Famyhelps.ml&scope=bot)
+Amy is currently under development for a major rewrite, and changes will be
+merged at a future date. The original README is below until it can be updated.
+Officially branded as Amyy or Amy v2, this is known internally as Amy v4.
 
-Amy builds upon over a decade of experience in social interactions at scale using various messaging platforms, with the current platform of choice being [Discord](https://discord.com) as the community comes together to build best-in-class ideas and practices for our own purposes.
+🐱‍🏍 Amy is your reimagined personal assistant on Discord. As the primary
+assistant on the [708 Innovations Discord server](https://discord.gg/WUGMTcZ),
+it has stood up to the test of time and has proved extremely reliable since
+\2019. For more information, you can also visit the
+[708 Innovations YouTube channel](https://www.youtube.com/channel/UCdbqUWT3_0WgybqNuCX9uJA)
+to see the kind of content creation that is partially powered by Amy. Amy is
+currently not available to be added to Discord servers, so please join the
+[708 Innovations Discord server](https://discord.gg/WUGMTcZ) in order to
+experience Amy.
 
-Amy currently runs on [Gideon Tong's Server Network](https://me.gideontong.com) and has been given her own private subdomain space. If you would like to get involved in helping to shape the evolution of not just Amy but also future smart personal assisstants, consider reading the [contributor's guide](CONTRIBUTING.md) to get started.
+Amy builds upon over a decade of experience in social interactions at scale
+using various messaging platforms, with the current platform of choice being
+Discord as the community comes together to build best-in-class ideas and
+practices for our own purposes.
 
 -----
 
@@ -22,81 +35,29 @@ by *Jayy from Discord*
 
 ## Features
 
-* Custom welcome, about, join, and help messages tailored to communities
-* Utility commands to find out user information
-* Moderation commands to help moderators manage a community and find out user details
-  * Wipe recent channel history
-  * Control and manage announcements
-* Easter eggs and collectible achievements to create friendly competition between memebers of a community
-  * Intelligently respond to certain users
-* Calls members out when they delete a spicy message (like an image)
-* Randomly prank users of a Discord server
-* All values, variables, and settings are admin-configurable
-* Advanced permissions system with clear hierarchy and inhereitance
-* Multiple bot instances controlled via one dashboard
-* Automatic multi-process load balancing without dependencies
+A full list of features is currently not available, but is coming soon.
 
-Amy is in active development, and if you have a feature request, simply fill out an [issue](https://github.com/gideontong/Amy/issues) and we will get to it as soon as possible.
+## For Developers
 
-### Screenshots
-
-(I know there are issues with the screenshots in dark mode. I'll fix that soon!)
-
-![Dictionary Screenshot](https://i.imgur.com/mE0BrrC.png)
-
-![Logging Screenshot](https://i.imgur.com/XrdOQAr.png)
-
-![Molecule Screenshot](https://i.imgur.com/KZCCqh6.png)
-
-### Achievements
-
-Amy supports custom achievements, which you can add your own instance of the bot (if you're running a custom instance for a private server), and soon will support admin-configurable achievements as well as default achievements that can be enabled globally (across servers) as well as only within a server.
-
-## Getting Started
-
-To get started, simply clone this repository to your hard drive. You'll need [Node 12.x](https://nodejs.org) or another JS code interpreter. Assuming you have Node installed, simply type
+To get started, you'll need Python and Poetry installed, and your Discord API
+key set to the `DISCORD_TOKEN` environment variable.
 
 ```bash
-npm install --production
+poetry run python -m amy
 ```
-
-and while Node grabs the dependencies for you, move the file in `config/secrets-blank.json` to `config/secrets.json` and replace `token` with your [Discord API key](https://discord.com/developers/applications). Then start the application with
-
-```bash
-npm start
-```
-
-### Developers
-
-If you're a developer and would like to get started, see the [setup guide](docs/setup/README.md) in the documentation `/docs` folder.
-
-## Support
-
-If you need support, you can start with reference guides and Google searches.
-
-That said, if you have questions, feel free to [reach out to me](mailto:gideon@gideontong.com) if you have any questions.
-
-## Contributing
-
-There are many ways you can contribute to the project, and we greatly appreicate all the work you want to put into helping me making Amy better! For example:
-
-* [Submit bugs and feature requests](https://github.com/gideontong/Amy/issues), and if you see a bug report, you can help verify it by testing it as well.
-* Review the [documentation](https://github.com/gideontong/Amy/blob/master/docs/README.md), then make a [pull request](https://github.com/gideontong/Amy/pulls) for anything from typos to new content.
-* Make comments on upcoming [changes to the source code](https://github.com/gideontong/Amy/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc).
-* Contribute to writing more comprehensive [unit tests](https://github.com/gideontong/Amy/tree/master/tests).
-
-If you'd like to contribute directly to the code base, see the [contributor's guide](CONTRIBUTING.md) before getting started. But thank you so much if you'd like to contribute! Just submit a [pull request](https://github.com/gideontong/Amy/pulls), as I review pull requests thoroughly and would love to see what you can cook up. If you want to just submit an idea instead, feel free to submit an [issue](https://github.com/gideontong/Amy/issues) instead.
 
 ### Feedback
 
-If you have any feedback, feel free to take this opportunity to become a contributor and open an [issue](https://github.com/gideontong/Amy/issues). Additionally, you can email the maintainer [Gideon Tong](https://gideontong.com) at [gideon@gideontong.com](mailto:gideon@gideontong.com).
-
-### Maintainers
-
-Amy is maintained by [Gideon Tong](https://gideontong.com), whom you can contact by email at [gideon@gideontong.com](mailto:gideon@gideontong.com) if you have any private concerns, security disclosures, or would like professional support. If you feel that you have a security disclosure and would like an encrypted form of transport, you may reach out to me with the PGP key listed in the [security page](SECURITY.md) of this repository.
+If you have any feedback, feel free to take this opportunity to become a
+contributor and open an [issue](https://github.com/gideontong/Amy/issues).
 
 #### Special Thanks
 
-Contributions and feedback from [Amy Nguyen](https://www.github.com/amytnguyen01/), [Max Buydakov](https://github.com/mbuyd), [Kevin Stubbings](https://github.com/Kwstubbs), [Brian Lam](https://github.com/brilam8), [Leo Zhang](https://github.com/Leo10250), and [Jesus Castillo](https://github.com/oscillatingneutrino) have been implemented into this project.
-
-Their contributions can be found in the contributor's graph, and range from finding typos in strings to creating feature request issues. Special thanks to Amy Nguyen for allowing her namesake to be the inspiration of this project.
+Contributions and feedback from
+[Amy Nguyen](https://www.github.com/amytnguyen01/),
+[Max Buydakov](https://github.com/mbuyd),
+[Kevin Stubbings](https://github.com/Kwstubbs),
+[Brian Lam](https://github.com/brilam8),
+[Leo Zhang](https://github.com/Leo10250),
+and [Jesus Castillo](https://github.com/oscillatingneutrino) have been
+implemented into this project.

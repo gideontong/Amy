@@ -14,15 +14,17 @@ class GameCommands(commands.Cog):
         self.bot = bot
         logger.debug(f"{__name__} Cog initialized")
 
-    @commands.command(name="hello", help="Says hello to the gamer")
-    async def hello(self, ctx: commands.Context):
-        await ctx.reply("Hello, gamer!")
-
     @commands.command(name="setbalance", help="Set your game balance (admin only)")
     @commands.is_owner()
     async def set_balance(self, ctx: commands.Context, amount: int):
         # TODO
         await ctx.reply(f"Game balance set to {amount} coins.")
+    
+    @commands.command(name="changebalance", help="Change your game balance (admin only)")
+    @commands.is_owner()
+    async def change_balance(self, ctx: commands.Context, amount: int):
+        # TODO
+        await ctx.reply(f"Game balance changed by {amount} coins.")
 
     @discord.app_commands.command(name="balance", description="Check your game balance")
     async def balance(self, interaction: discord.Interaction):
